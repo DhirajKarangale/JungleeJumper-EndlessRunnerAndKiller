@@ -11,11 +11,11 @@ public class CoinGenerator : MonoBehaviour
 
         int numberOfCoin = (int)Random.Range(2f, groundWidth/1.3f);
 
-        float heightOfCoin = Random.Range(2, 5.5f);
+        float heightOfCoin = Random.Range(2, 5f);
         for(int i=0;i<numberOfCoin;i++)
         {
             GameObject coin = coinPooler.GetPooledGameObject();
-            coin.transform.position = new Vector3(position.x - ((groundWidth/2)-2)+i, position.y+2 + heightOfCoin, 0);
+            coin.transform.position = new Vector3(position.x - ((groundWidth/2)-2)+i, position.y+ heightOfCoin, 0);
             coin.SetActive(true);
         }
     }

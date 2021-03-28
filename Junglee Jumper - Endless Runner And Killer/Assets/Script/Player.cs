@@ -8,19 +8,21 @@ public class Player : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask deathGround;
+    [SerializeField] ScrowllingBackGround scrowlling;
     public float speed;
     public float originalSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] float jumpTime;
     [SerializeField] AudioSource jumpSound;
-    [SerializeField] AudioSource deathSound;
+    public AudioSource deathSound;
     [SerializeField] float levelDistance;
     private float levelDistanceCount;
     [SerializeField] float speedMultiplier;
-    private float jumpTimeCounter, runingSpeedAnim;
+    private float jumpTimeCounter;
     private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
     public bool isPlayerDead,playerRuning;
     private Vector3 playerStartPosition;
+    public float runingSpeedAnim;
 
     private void Start()
     {
@@ -32,15 +34,15 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (this.transform.hasChanged)
-        {
-            playerRuning = true;
-        }
-        else
+        if (playerStartPosition == transform.position)
         {
             playerRuning = false;
         }
-
+        else
+        {
+            playerRuning = true;
+        }
+        playerStartPosition = transform.position;
 
         isPlayerDead = Physics2D.IsTouchingLayers(playerCollider, deathGround);
         if (isPlayerDead) deathSound.Play();
@@ -73,11 +75,11 @@ public class Player : MonoBehaviour
         {
             levelDistanceCount += levelDistance;
             speed = speed * speedMultiplier;
-            runingSpeedAnim += speedMultiplier;
+            runingSpeedAnim += (speedMultiplier/20);
             animator.SetFloat("RuningSpeed", runingSpeedAnim);
             levelDistance = levelDistance * speedMultiplier;
+            scrowlling.backGroundSpeed += (speedMultiplier / 27);
         }
-        playerStartPosition = transform.position;
     }
 
 

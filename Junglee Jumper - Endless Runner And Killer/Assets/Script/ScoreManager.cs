@@ -1,5 +1,6 @@
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -51,5 +52,10 @@ public class ScoreManager : MonoBehaviour
         Time.timeScale = 1f;
         scoreCanvas.SetActive(true);
         pauseScreen.SetActive(false);
+    }
+
+    public void HomeButton(string sceneToLoad)
+    {
+        SceneManager.LoadScene(0);
     }
 }

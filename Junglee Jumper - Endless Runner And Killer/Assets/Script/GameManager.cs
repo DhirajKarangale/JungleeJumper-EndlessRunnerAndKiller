@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] AudioSource restartSound;
     [SerializeField] GameObject continueScreen;
+    [SerializeField] ScrowllingBackGround scrowlling;
     
 
     private Vector3 playerStartingpoint;
@@ -23,7 +25,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        continueScreen.SetActive(false);
+        Time.timeScale = 0f;
+        continueScreen.SetActive(true);
         playerStartingpoint = player.transform.position;
         groundGenerationStartingPoint = groundPoolers.transform.position;
         gameOverScreen.SetActive(false);
@@ -31,15 +34,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (player.isPlayerDead) GameOver();
+        if (player.isPlayerDead) Invoke("GameOver", 0.5f);
         score.text = Mathf.Round(scoreManager.score).ToString();
         highScore.text = Mathf.Round(scoreManager.highScore).ToString();
     }
 
     public void GameOver()
     {
+        scoreManager.enabled = false;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
+        if (Input.GetKey(KeyCode.Escape))
+            SceneManager.LoadScene(0);
     }
 
     public void Quit()
@@ -49,6 +55,8 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        scoreManager.enabled = true;
+        player.deathSound.Stop();
         restartSound.Play();
         Invoke("DelayInRestart", 0.2f);
     }
@@ -58,6 +66,8 @@ public class GameManager : MonoBehaviour
         continueScreen.SetActive(true);
         Time.timeScale = 0f;
         restartSound.Stop();
+        scrowlling.backGroundSpeed = 0.2f;
+        player.runingSpeedAnim = 1f;
         player.isPlayerDead = false;
         GroundDestroyer[] groundDestroyer = FindObjectsOfType<GroundDestroyer>();
         for (int i = 0; i < groundDestroyer.Length; i++)
@@ -78,5 +88,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         continueScreen.SetActive(false);
+    }
+
+    public void HomeButton(string sceneToLoad)
+    {
+        SceneManager.LoadScene(0);
     }
 }

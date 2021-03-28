@@ -4,7 +4,7 @@ public class ScrowllingBackGround : MonoBehaviour
 {
     [SerializeField] Renderer backGround;
     [SerializeField] Player player;
-    [SerializeField] float backGroundSpeed;
+    public float backGroundSpeed;
 
     private void Update()
     {
