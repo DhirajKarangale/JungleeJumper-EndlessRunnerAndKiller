@@ -6,6 +6,7 @@ public class GroundPoolers : MonoBehaviour
     [SerializeField] Transform minHeightPoint;
     [SerializeField] Transform maxHeightPoint;
     [SerializeField] ObjectPooler[] groundPoolers;
+    [SerializeField] CoinGenerator coinGenerator;
     private float minY, maxY;
     [SerializeField] float minGap, maxGap;
     private float[] groundWidths;
@@ -35,6 +36,7 @@ public class GroundPoolers : MonoBehaviour
             GameObject ground = groundPoolers[random].GetPooledGameObject();
             ground.transform.position = transform.position;
             ground.SetActive(true);
+            coinGenerator.SpwanCoin(transform.position, groundWidths[random]);
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         }
     }
