@@ -10,20 +10,29 @@ public class Player : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
     [SerializeField] float jumpTime;
-    private float jumpTimeCounter;
-    private bool isGrounded,doubleJumpAllowed,isJumping,isButtonPressed,isDoubleJump;
+    [SerializeField] AudioSource jumpSound;
+    [SerializeField] float levelDistance;
+    private float levelDistanceCount;
+    [SerializeField] float speedMultiplier;
+    private float jumpTimeCounter, runingSpeedAnim;
+    private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
+
+    private void Start()
+    {
+        levelDistanceCount = levelDistance;
+        runingSpeedAnim = 1f;
+    }
 
     private void Update()
     {
-
         rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
         isGrounded = Physics2D.IsTouchingLayers(playerCollider, ground);
-        if(isGrounded)
+        if (isGrounded)
         {
             isDoubleJump = false;
         }
 
-        if((Input.touchCount>0) && EventSystem.current != null)
+        if ((Input.touchCount > 0) && EventSystem.current != null)
         {
             if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
             {
@@ -40,9 +49,18 @@ public class Player : MonoBehaviour
             Jump();
         }
 
+        if (transform.position.x > levelDistanceCount)
+        {
+            levelDistanceCount += levelDistance;
+            speed = speed * speedMultiplier;
+            runingSpeedAnim += speedMultiplier;
+            animator.SetFloat("RuningSpeed", runingSpeedAnim);
+            levelDistance = levelDistance * speedMultiplier;
+        }
+
     }
 
-    
+
 
     private void Jump()
     {
@@ -67,22 +85,20 @@ public class Player : MonoBehaviour
                 isJumping = true;
                 doubleJumpAllowed = true;
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
+                if (jumpSound.isPlaying) jumpSound.Stop();
+                jumpSound.Play();
             }
             else if (doubleJumpAllowed && ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) || Input.GetKeyDown(KeyCode.Space))
             {
                 isDoubleJump = true;
                 doubleJumpAllowed = false;
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
+                if (jumpSound.isPlaying) jumpSound.Stop();
+                jumpSound.Play();
             }
         }
 
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("isDoubleJump", isDoubleJump);
     }
-
-    public void Bu()
-    {
-        Debug.Log("Button Press Sucess");
-    }
-
 }

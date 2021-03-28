@@ -11,7 +11,7 @@ public class CoinGenerator : MonoBehaviour
 
         int numberOfCoin = (int)Random.Range(2f, groundWidth/1.3f);
 
-        float heightOfCoin = Random.Range(1, 6);
+        float heightOfCoin = Random.Range(2, 5.5f);
         for(int i=0;i<numberOfCoin;i++)
         {
             GameObject coin = coinPooler.GetPooledGameObject();
