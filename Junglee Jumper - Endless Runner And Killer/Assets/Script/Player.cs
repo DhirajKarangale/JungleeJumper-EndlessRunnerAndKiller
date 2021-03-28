@@ -7,24 +7,44 @@ public class Player : MonoBehaviour
     [SerializeField] Collider2D playerCollider;
     [SerializeField] Animator animator;
     [SerializeField] LayerMask ground;
-    [SerializeField] float speed;
+    [SerializeField] LayerMask deathGround;
+    public float speed;
+    public float originalSpeed;
     [SerializeField] float jumpForce;
     [SerializeField] float jumpTime;
     [SerializeField] AudioSource jumpSound;
+    [SerializeField] AudioSource deathSound;
     [SerializeField] float levelDistance;
     private float levelDistanceCount;
     [SerializeField] float speedMultiplier;
     private float jumpTimeCounter, runingSpeedAnim;
     private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
+    public bool isPlayerDead,playerRuning;
+    private Vector3 playerStartPosition;
 
     private void Start()
     {
+        originalSpeed = speed;
         levelDistanceCount = levelDistance;
         runingSpeedAnim = 1f;
+        playerStartPosition = transform.position;
     }
 
     private void Update()
     {
+        if (this.transform.hasChanged)
+        {
+            playerRuning = true;
+        }
+        else
+        {
+            playerRuning = false;
+        }
+
+
+        isPlayerDead = Physics2D.IsTouchingLayers(playerCollider, deathGround);
+        if (isPlayerDead) deathSound.Play();
+
         rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
         isGrounded = Physics2D.IsTouchingLayers(playerCollider, ground);
         if (isGrounded)
@@ -57,7 +77,7 @@ public class Player : MonoBehaviour
             animator.SetFloat("RuningSpeed", runingSpeedAnim);
             levelDistance = levelDistance * speedMultiplier;
         }
-
+        playerStartPosition = transform.position;
     }
 
 
