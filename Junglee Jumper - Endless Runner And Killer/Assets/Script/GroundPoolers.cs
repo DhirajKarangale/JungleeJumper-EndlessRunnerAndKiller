@@ -3,11 +3,17 @@ using UnityEngine;
 public class GroundPoolers : MonoBehaviour
 {
     [SerializeField] Transform groundPoint;
+    [SerializeField] Transform minHeightPoint;
+    [SerializeField] Transform maxHeightPoint;
     [SerializeField] ObjectPooler[] groundPoolers;
+    private float minY, maxY;
+    [SerializeField] float minGap, maxGap;
     private float[] groundWidths;
 
     private void Start()
     {
+        minY = minHeightPoint.position.y;
+        maxY = maxHeightPoint.position.y;
         groundWidths = new float[groundPoolers.Length];
 
         for(int i=0;i<groundPoolers.Length;i++)
@@ -22,8 +28,9 @@ public class GroundPoolers : MonoBehaviour
         {
             int random = Random.Range(0, groundPoolers.Length);
             float distance = groundWidths[random] / 2;
-
-            transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
+            float gap = Random.Range(minGap, maxGap);
+            float height = Random.Range(minY, maxY);
+            transform.position = new Vector3(transform.position.x + distance + gap, height , transform.position.z);
 
             GameObject ground = groundPoolers[random].GetPooledGameObject();
             ground.transform.position = transform.position;
