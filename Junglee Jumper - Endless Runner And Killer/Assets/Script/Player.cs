@@ -3,27 +3,39 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
+    [Header("Refrences")]
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] Collider2D playerCollider;
     [SerializeField] Animator animator;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask deathGround;
     [SerializeField] ScrowllingBackGround scrowlling;
-    public float speed;
-    public float originalSpeed;
-    [SerializeField] float jumpForce;
-    [SerializeField] float jumpTime;
-    [SerializeField] AudioSource jumpSound;
-    public AudioSource deathSound;
-    [SerializeField] float levelDistance;
-    private float levelDistanceCount;
-    [SerializeField] float speedMultiplier;
+   
+
+    [Header("Attributes")]
+    public float speed, originalSpeed;
+    [SerializeField] float jumpForce, jumpTime;
     private float jumpTimeCounter;
-    private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
+    public float runingSpeedAnim;
     public bool playerRuning;
     public static bool isPlayerDead;
     private Vector3 playerStartPosition;
-    public float runingSpeedAnim;
+
+    [Header("Dash")]
+    [SerializeField] GameObject dashEffect;
+    [SerializeField] float dashSpeed;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource jumpSound;
+    public AudioSource deathSound;
+
+    [Header("Level")]
+    [SerializeField] float levelDistance;
+    private float levelDistanceCount;
+    [SerializeField] float speedMultiplier;
+    
+    private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
+    
 
     private void Start()
     {
@@ -35,6 +47,11 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.D))
+        {
+            Dash();
+        }
+
         if (playerStartPosition == transform.position)
         {
             playerRuning = false;
@@ -83,15 +100,17 @@ public class Player : MonoBehaviour
         }
     }
 
-
-
+    private void Dash()
+    {
+        rigidBody.MovePosition(transform.position + Vector3.right * dashSpeed);
+    }
+       
     private void Jump()
     {
         if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Stationary) && (isJumping))
         {
             if (jumpTimeCounter > 0)
             {
-                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
                 jumpTimeCounter -= Time.deltaTime;
             }
             else

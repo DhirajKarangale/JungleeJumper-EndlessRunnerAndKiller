@@ -2749,11 +2749,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 6
   m_Material: {fileID: 6200000, guid: 6cbccd126533bec47ab20078f49fcfe0, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!212 &962507644
 SpriteRenderer:
@@ -2844,15 +2844,17 @@ MonoBehaviour:
     m_Bits: 128
   scrowlling: {fileID: 2048933704}
   speed: 12
-  originalSpeed: 0
+  originalSpeed: 100
   jumpForce: 18
   jumpTime: 0.37
+  runingSpeedAnim: 0
+  playerRuning: 0
+  dashEffect: {fileID: 4328013565267778457, guid: a695902cb6217b34abe084b368e1806c, type: 3}
+  dashSpeed: 50
   jumpSound: {fileID: 2099857141}
   deathSound: {fileID: 1224310503}
   levelDistance: 100
   speedMultiplier: 1.03
-  playerRuning: 0
-  runingSpeedAnim: 0
 --- !u!95 &962507647
 Animator:
   serializedVersion: 3
