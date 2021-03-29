@@ -4,6 +4,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject quitPanel;
+    [SerializeField] AudioSource buttonPressSound;
     private bool isQuitPanelActive;
 
     private void Update()
@@ -17,7 +18,8 @@ public class MainMenu : MonoBehaviour
 
     public void StartButton(string sceneToLoad)
     {
-        rigidBody.velocity = new Vector2(12f, rigidBody.velocity.y);
+        buttonPressSound.Play();
+        rigidBody.velocity = new Vector2(16, rigidBody.velocity.y);
         FindObjectOfType<SceneFader>().FadeTo(sceneToLoad);
     }
 

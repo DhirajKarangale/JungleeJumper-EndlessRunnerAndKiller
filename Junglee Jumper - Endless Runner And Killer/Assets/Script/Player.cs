@@ -183,8 +183,15 @@ public class Player : MonoBehaviour
 
     public void SwipeUp()
     {
-        isSwipeDown = true;
-         if (dashSound.isPlaying) dashSound.Stop();
-        dashSound.Play();
+        if(isGrounded)
+        {
+            isSwipeDown = true;
+            if (dashSound.isPlaying) dashSound.Stop();
+            dashSound.Play();
+        }
+        else
+        {
+            isSwipeDown = false;
+        }
     }
 }
