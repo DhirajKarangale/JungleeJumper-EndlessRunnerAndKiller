@@ -7,19 +7,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] AudioSource restartSound;
+    [SerializeField] AudioSource backGroundMusic;
     [SerializeField] GameObject continueScreen;
-    [SerializeField] ScrowllingBackGround scrowlling;
-    
 
-    private Vector3 playerStartingpoint;
-    private Vector3 groundGenerationStartingPoint;
-
-    [SerializeField] GroundPoolers groundPoolers;
-
-    [SerializeField] GameObject smallGround;
-    [SerializeField] GameObject largeGround;
     [SerializeField] GameObject gameOverScreen;
-    [SerializeField] GameObject inGameUI;
     [SerializeField] Text score;
     [SerializeField] Text highScore;
 
@@ -27,21 +18,22 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         continueScreen.SetActive(true);
-        playerStartingpoint = player.transform.position;
-        groundGenerationStartingPoint = groundPoolers.transform.position;
         gameOverScreen.SetActive(false);
+        Player.isPlayerDead = false;
     }
 
     private void Update()
     {
-        if (player.isPlayerDead) Invoke("GameOver", 0.5f);
+        if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
         score.text = Mathf.Round(scoreManager.score).ToString();
         highScore.text = Mathf.Round(scoreManager.highScore).ToString();
     }
 
     public void GameOver()
     {
-        scoreManager.enabled = false;
+        backGroundMusic.Stop();
+        Player.isPlayerDead = true;
+        Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
         if (Input.GetKey(KeyCode.Escape))
@@ -55,34 +47,16 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        scoreManager.enabled = true;
         player.deathSound.Stop();
         restartSound.Play();
+        Player.isPlayerDead = false;
         Invoke("DelayInRestart", 0.2f);
     }
 
     private void DelayInRestart()
     {
-        continueScreen.SetActive(true);
-        Time.timeScale = 0f;
-        restartSound.Stop();
-        scrowlling.backGroundSpeed = 0.2f;
-        player.runingSpeedAnim = 1f;
-        player.isPlayerDead = false;
-        GroundDestroyer[] groundDestroyer = FindObjectsOfType<GroundDestroyer>();
-        for (int i = 0; i < groundDestroyer.Length; i++)
-        {
-            groundDestroyer[i].gameObject.SetActive(false);
-        }
-        player.speed = player.originalSpeed;
-        smallGround.SetActive(true);
-        largeGround.SetActive(true);
-        player.transform.position = playerStartingpoint;
-        groundPoolers.transform.position = groundGenerationStartingPoint;
-        scoreManager.score = 0;
-        player.gameObject.SetActive(true);
-        gameOverScreen.SetActive(false);
-        inGameUI.SetActive(true);
+        backGroundMusic.Play();
+        SceneManager.LoadScene(1);
     }
     public void Continue()
     {
@@ -90,7 +64,7 @@ public class GameManager : MonoBehaviour
         continueScreen.SetActive(false);
     }
 
-    public void HomeButton(string sceneToLoad)
+    public void HomeButton()
     {
         SceneManager.LoadScene(0);
     }

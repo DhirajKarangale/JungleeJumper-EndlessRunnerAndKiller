@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject quitPanel;
     private bool isQuitPanelActive;
 
@@ -16,6 +17,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartButton(string sceneToLoad)
     {
+        rigidBody.velocity = new Vector2(12f, rigidBody.velocity.y);
         FindObjectOfType<SceneFader>().FadeTo(sceneToLoad);
     }
 

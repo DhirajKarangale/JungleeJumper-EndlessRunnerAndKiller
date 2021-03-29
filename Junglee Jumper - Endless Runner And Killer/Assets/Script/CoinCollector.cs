@@ -4,7 +4,7 @@ public class CoinCollector : MonoBehaviour
 {
     private AudioSource coinPickSound;
     private ScoreManager scoreManager;
-    private float coinPickPoints = 10f;
+    private float coinPickPoints = 15f;
 
     private void Start()
     {

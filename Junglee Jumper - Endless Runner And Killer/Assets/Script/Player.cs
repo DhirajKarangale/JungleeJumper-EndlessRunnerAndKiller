@@ -20,7 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] float speedMultiplier;
     private float jumpTimeCounter;
     private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
-    public bool isPlayerDead,playerRuning;
+    public bool playerRuning;
+    public static bool isPlayerDead;
     private Vector3 playerStartPosition;
     public float runingSpeedAnim;
 
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (!isButtonPressed)
+        if (!isButtonPressed && !isPlayerDead)
         {
             Jump();
         }

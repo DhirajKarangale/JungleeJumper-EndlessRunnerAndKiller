@@ -22,10 +22,15 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if(!player.isPlayerDead && !isPause && player.playerRuning)
-        score += pointePerSecond * Time.deltaTime;
+        if(!Player.isPlayerDead && !isPause && player.playerRuning)
+        {
+            score += pointePerSecond * Time.deltaTime ;
+        }
 
-        if (score > highScore) highScore = score;
+        if (score > highScore)
+        {
+            highScore = score;
+        }
         PlayerPrefs.SetFloat("HighScore", highScore);
 
         scoreText.text = Mathf.Round(score).ToString();
@@ -54,8 +59,14 @@ public class ScoreManager : MonoBehaviour
         pauseScreen.SetActive(false);
     }
 
-    public void HomeButton(string sceneToLoad)
+    public void HomeButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(1);
     }
 }
