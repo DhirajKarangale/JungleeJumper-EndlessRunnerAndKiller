@@ -10,10 +10,9 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask deathGround;
     [SerializeField] ScrowllingBackGround scrowlling;
-   
 
     [Header("Attributes")]
-    public float speed, originalSpeed;
+    public float speed,originalSpeed;
     [SerializeField] float jumpForce, jumpTime;
     private float jumpTimeCounter;
     public float runingSpeedAnim;
@@ -23,7 +22,10 @@ public class Player : MonoBehaviour
 
     [Header("Dash")]
     [SerializeField] GameObject dashEffect;
-    [SerializeField] float dashSpeed;
+    [SerializeField] float dashTime;
+    [SerializeField] AudioSource dashSound;
+    public float speedAfterdash;
+    private bool isPlayerDash,isDashAllowed,isSwipeDown;
 
     [Header("Audio")]
     [SerializeField] AudioSource jumpSound;
@@ -39,19 +41,15 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        originalSpeed = speed;
         levelDistanceCount = levelDistance;
         runingSpeedAnim = 1f;
         playerStartPosition = transform.position;
+        originalSpeed = speed;
+        isDashAllowed = true;
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            Dash();
-        }
-
         if (playerStartPosition == transform.position)
         {
             playerRuning = false;
@@ -93,16 +91,53 @@ public class Player : MonoBehaviour
         {
             levelDistanceCount += levelDistance;
             speed = speed * speedMultiplier;
-            runingSpeedAnim += (speedMultiplier/20);
+            runingSpeedAnim += (speedMultiplier/100);
             animator.SetFloat("RuningSpeed", runingSpeedAnim);
             levelDistance = levelDistance * speedMultiplier;
-            scrowlling.backGroundSpeed += (speedMultiplier / 27);
+            scrowlling.backGroundSpeed += (speedMultiplier / 120);
+            originalSpeed = speed;
+        }
+
+        if (isSwipeDown && isGrounded && isDashAllowed)
+        {
+            isDashAllowed = false;
+            isPlayerDash = true;
+
+        }
+
+        if (isPlayerDash)
+        {
+            Dash();
+        }
+
+        if (isGrounded && !isPlayerDash)
+        {
+            animator.SetBool("PlayerDash", false);
+            animator.SetBool("PlayerRuning", true);
         }
     }
 
     private void Dash()
     {
-        rigidBody.MovePosition(transform.position + Vector3.right * dashSpeed);
+       
+        GameObject currentDashEffect = Instantiate(dashEffect, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity);
+        Destroy(currentDashEffect, 1f);
+        isSwipeDown = false;
+        speed = (originalSpeed * 1.5f);
+        speedAfterdash = speed;
+        animator.SetBool("PlayerDash", true);
+        animator.SetBool("PlayerRuning", false);
+        Invoke("DesableDash", dashTime);
+    }
+
+    private void DesableDash()
+    {
+        isSwipeDown = false;
+        speed = (speedAfterdash / 1.5f);
+        animator.SetBool("PlayerDash", false);
+        animator.SetBool("PlayerRuning", true);
+        isPlayerDash = false;
+        isDashAllowed = true;
     }
        
     private void Jump()
@@ -111,6 +146,7 @@ public class Player : MonoBehaviour
         {
             if (jumpTimeCounter > 0)
             {
+                rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
                 jumpTimeCounter -= Time.deltaTime;
             }
             else
@@ -141,6 +177,14 @@ public class Player : MonoBehaviour
         }
 
         animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("PlayerRuning", false);
         animator.SetBool("isDoubleJump", isDoubleJump);
+    }
+
+    public void SwipeUp()
+    {
+        isSwipeDown = true;
+         if (dashSound.isPlaying) dashSound.Stop();
+        dashSound.Play();
     }
 }
