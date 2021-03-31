@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask deathGround;
     [SerializeField] ScrowllingBackGround scrowlling;
     [SerializeField] GameObject cutedPlayer;
+    [SerializeField] GameObject playerBloodEffect;
+    [SerializeField] GameObject bloodSplash;
 
     [Header("Attributes")]
     public float speed,originalSpeed;
@@ -201,6 +203,9 @@ public class Player : MonoBehaviour
         if(collision.gameObject.tag == "Cutter")
         {
             GameObject currentCuttedPlayer = Instantiate(cutedPlayer, transform.position + new Vector3(0,1,0), Quaternion.identity);
+            GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
+            Instantiate(bloodSplash, transform.position, Quaternion.identity);
+            Destroy(currentBloodEffect, 2f);
             this.gameObject.SetActive(false);
             Invoke("PlayerDead", 2f);
         }

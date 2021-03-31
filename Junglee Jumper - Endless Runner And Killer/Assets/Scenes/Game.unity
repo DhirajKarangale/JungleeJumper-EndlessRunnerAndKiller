@@ -3102,7 +3102,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   scrowlling: {fileID: 2048933704}
-  cutedPlayer: {fileID: 3435512948793336920, guid: 25217481ae877bb4281d183c1ce55d1f, type: 3}
+  cutedPlayer: {fileID: 1845821449483246172, guid: fc14285a4a3c2204da07cccc3cdac504, type: 3}
+  playerBloodEffect: {fileID: 7262123784175544433, guid: 2893087286353784b8b86c38bd7d7743, type: 3}
+  bloodSplash: {fileID: 7513520954465443869, guid: 99baa0e4470d94a46ac63b209da0e3a9, type: 3}
   speed: 12
   originalSpeed: 0
   jumpForce: 18
