@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public float highScore;
     [SerializeField] GameObject scoreCanvas;
     [SerializeField] GameObject pauseScreen;
-    private bool isPause;
+    public bool isPause;
 
     private void Start()
     {
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if(!Player.isPlayerDead && !isPause && player.playerRuning)
+        if(!Player.isPlayerDead && !isPause && player.playerRuning && !Player.isPlayerHitObstacles)
         {
             score += pointePerSecond * Time.deltaTime ;
         }

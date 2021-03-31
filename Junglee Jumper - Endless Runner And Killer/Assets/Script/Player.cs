@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private float jumpTimeCounter;
     public float runingSpeedAnim;
     public bool playerRuning;
-    public static bool isPlayerDead;
+    public static bool isPlayerDead,isPlayerHitObstacles;
     private Vector3 playerStartPosition;
 
     [Header("Dash")]
@@ -200,19 +200,30 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Cutter")
+        if (collision.gameObject.tag == "Cutter")
         {
-            GameObject currentCuttedPlayer = Instantiate(cutedPlayer, transform.position + new Vector3(0,1,0), Quaternion.identity);
+            isPlayerHitObstacles = true;
+            Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
             GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
-            Instantiate(bloodSplash, transform.position, Quaternion.identity);
+            Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), Quaternion.identity);
             Destroy(currentBloodEffect, 2f);
             this.gameObject.SetActive(false);
+            Invoke("GameOverSound", 1f);
             Invoke("PlayerDead", 2f);
+        }
+        else
+        {
+            isPlayerHitObstacles = false;
         }
     }
 
     private void PlayerDead()
     {
         isPlayerDead = true;
+    }
+
+    private void GameOverSound()
+    {
+        deathSound.Play();
     }
 }

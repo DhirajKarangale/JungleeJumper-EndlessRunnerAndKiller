@@ -10,9 +10,9 @@ public class Obstacles : MonoBehaviour
         {
             obstaclesSound.Play();
         }
-        else
+        /*else
         {
             obstaclesSound.Stop();
-        }
+        }*/
     }
 }

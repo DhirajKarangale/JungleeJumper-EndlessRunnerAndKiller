@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
         score.text = Mathf.Round(scoreManager.score).ToString();
         highScore.text = Mathf.Round(scoreManager.highScore).ToString();
+        if (scoreManager.isPause) continueScreen.SetActive(false);
     }
 
     public void GameOver()

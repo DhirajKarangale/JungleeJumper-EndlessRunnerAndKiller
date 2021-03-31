@@ -7,6 +7,8 @@ public class GroundPoolers : MonoBehaviour
     [SerializeField] Transform maxHeightPoint;
     [SerializeField] ObjectPooler[] groundPoolers;
     [SerializeField] CoinGenerator coinGenerator;
+    [SerializeField] CutterGenerator cutterGenerator;
+    [SerializeField] ScoreManager scoreManager;
     private float minY, maxY;
     [SerializeField] float minGap, maxGap;
     private float[] groundWidths;
@@ -25,7 +27,7 @@ public class GroundPoolers : MonoBehaviour
 
     private void Update()
     {
-        if(transform.position.x<groundPoint.position.x)
+        if((transform.position.x < groundPoint.position.x) && !Player.isPlayerDead && !scoreManager.isPause)
         {
             int random = Random.Range(0, groundPoolers.Length);
             float distance = groundWidths[random] / 2;
@@ -36,7 +38,12 @@ public class GroundPoolers : MonoBehaviour
             GameObject ground = groundPoolers[random].GetPooledGameObject();
             ground.transform.position = transform.position;
             ground.SetActive(true);
+
+
             coinGenerator.SpwanCoin(transform.position, groundWidths[random]);
+
+            cutterGenerator.SpwanCutter(transform.position);
+
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         }
     }
