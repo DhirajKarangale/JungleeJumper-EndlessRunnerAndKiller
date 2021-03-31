@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask deathGround;
     [SerializeField] ScrowllingBackGround scrowlling;
+    [SerializeField] GameObject cutedPlayer;
 
     [Header("Attributes")]
     public float speed,originalSpeed;
@@ -193,5 +194,20 @@ public class Player : MonoBehaviour
         {
             isSwipeDown = false;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Cutter")
+        {
+            GameObject currentCuttedPlayer = Instantiate(cutedPlayer, transform.position + new Vector3(0,1,0), Quaternion.identity);
+            this.gameObject.SetActive(false);
+            Invoke("PlayerDead", 2f);
+        }
+    }
+
+    private void PlayerDead()
+    {
+        isPlayerDead = true;
     }
 }

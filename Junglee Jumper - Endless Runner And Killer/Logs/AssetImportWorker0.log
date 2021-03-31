@@ -1,0 +1,899 @@
+Using pre-set license
+Built from '2021.1/release' branch; Version is '2021.1.0f1 (61a549675243) revision 6399305'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19042.867; Version 2009; 64bit' Language: 'en' Physical Memory: 7914 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+59874
+Successfully changed project path to: E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer
+E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 229.16 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.0f1 (61a549675243)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce MX330 (ID=0x1d16)
+    Vendor:   NVIDIA
+    VRAM:     1983 MB
+    Driver:   27.21.14.5167
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56144
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003370 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 215.20 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.014 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005037 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 210.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.365 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 0.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3378 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 129.1 MB.
+System memory in use after: 129.3 MB.
+
+Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 3837.
+Total: 3.444700 ms (FindLiveObjects: 0.512200 ms CreateObjectMapping: 0.201300 ms MarkObjects: 2.481600 ms  DeleteObjects: 0.248400 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c97415a8b2922a632f919afb92b9ce8') in 0.050458 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 559.274678 seconds.
+  path: Assets/Material
+  artifactKey: Guid(af2a4a09d60a82240a5bca4fa229314d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material using Guid(af2a4a09d60a82240a5bca4fa229314d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed3261350df2dfc822a1a11561d1ab33') in 0.004670 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000791 seconds.
+  path: Assets/Material/Friction.physicsMaterial2D
+  artifactKey: Guid(6cbccd126533bec47ab20078f49fcfe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/Friction.physicsMaterial2D using Guid(6cbccd126533bec47ab20078f49fcfe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43da99005b59e2abfb92cfb43400a332') in 0.106755 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.379600 seconds.
+  path: Assets/Material/Cutter
+  artifactKey: Guid(c5eff93c53cb2f84c82e8869e672a4c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/Cutter using Guid(c5eff93c53cb2f84c82e8869e672a4c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f3d0cd15776f3409c776b2f09e4fa23') in 0.004321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 29.655393 seconds.
+  path: Assets/Material/Cutter/Circle.mat
+  artifactKey: Guid(b194046819235c4479fc9cbd9b6797e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/Cutter/Circle.mat using Guid(b194046819235c4479fc9cbd9b6797e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b76a02ad3b71c2e536d1ce32057777ec') in 0.191323 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1865.420003 seconds.
+  path: Assets/Art/Cutter.png
+  artifactKey: Guid(cc7cafd0176ea1e468a276c6a11567e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Cutter.png using Guid(cc7cafd0176ea1e468a276c6a11567e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1849163da98974bff415ec183880dfa3') in 0.106711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 96.824039 seconds.
+  path: Assets/Sounds/Cutter.mp3
+  artifactKey: Guid(1ac3bbc862ea67b4e9969a59859d00c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sounds/Cutter.mp3 using Guid(1ac3bbc862ea67b4e9969a59859d00c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '803aab8df99df1b5e8068684d65fc1f5') in 0.042680 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004555 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.102 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.03 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3372 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 133.7 MB.
+System memory in use after: 133.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3900.
+Total: 3.792900 ms (FindLiveObjects: 0.326400 ms CreateObjectMapping: 0.171100 ms MarkObjects: 3.275800 ms  DeleteObjects: 0.018200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004548 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.90 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.013 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.17 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 133.7 MB.
+System memory in use after: 133.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3904.
+Total: 3.642200 ms (FindLiveObjects: 0.327300 ms CreateObjectMapping: 0.213700 ms MarkObjects: 3.056300 ms  DeleteObjects: 0.043000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 238.828150 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ffcfee3305f425ddd46858516c29201') in 0.031899 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 68.682937 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts
+  artifactKey: Guid(d5ae31f1a6c050c4bb7610c0b1394228) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts using Guid(d5ae31f1a6c050c4bb7610c0b1394228) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '642110779c4822c9fae44673aa2c5b39') in 0.004602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000660 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/upper torso.PNG
+  artifactKey: Guid(f7e16fea1a4446645afe6cd98602c280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/upper torso.PNG using Guid(f7e16fea1a4446645afe6cd98602c280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a1202625138dc9a26dfd4716998e38') in 0.133899 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001308 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Feet.PNG
+  artifactKey: Guid(3b6c8db7bd30e8c4ab4de47918ed3c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Feet.PNG using Guid(3b6c8db7bd30e8c4ab4de47918ed3c64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5f78a465fb05cd85e391023d3734c65') in 0.102290 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000550 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Shoulder2.PNG
+  artifactKey: Guid(28dff07e0693bcf4b9736f748c36cd24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Shoulder2.PNG using Guid(28dff07e0693bcf4b9736f748c36cd24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15e386538791defbc0d57d8644a7c3b9') in 0.065252 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000613 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/4.png
+  artifactKey: Guid(f903d1b2fe6a25041a892be301d187e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/4.png using Guid(f903d1b2fe6a25041a892be301d187e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0abe4184f69dcd31fa2be2c3a542914a') in 0.069437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000729 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/shoulder.PNG
+  artifactKey: Guid(c3acb3783be83bb498fa622f01f7580e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/shoulder.PNG using Guid(c3acb3783be83bb498fa622f01f7580e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0b11bdab4856fba5ceb6e5487be6a3f') in 0.089580 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000484 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/lower torso.PNG
+  artifactKey: Guid(6cd044c635b91ba4da0beb1962421a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/lower torso.PNG using Guid(6cd044c635b91ba4da0beb1962421a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aebb891881dc17504dc6013405855459') in 0.054679 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000571 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Right Hand.PNG
+  artifactKey: Guid(7e8aae1e1c86590458318c0cd038bc9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Right Hand.PNG using Guid(7e8aae1e1c86590458318c0cd038bc9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bef2e414408bfd03153533a61d8d33f6') in 0.044923 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000631 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Knee.PNG
+  artifactKey: Guid(0d6a14a99dd782146be146d3f60cc2f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Knee.PNG using Guid(0d6a14a99dd782146be146d3f60cc2f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6532027a813848244ca4d43b88e99e4b') in 0.079988 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000910 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/leg.PNG
+  artifactKey: Guid(813841653a476f14f8a9c5a713136559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/leg.PNG using Guid(813841653a476f14f8a9c5a713136559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '610ddf42fe06b582bf18482e4cfa6186') in 0.038187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000468 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Head.PNG
+  artifactKey: Guid(2cc15b85208ce624cbbd22d2ae5ccef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Head.PNG using Guid(2cc15b85208ce624cbbd22d2ae5ccef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd421d442ec427430d3a7d24d493feac8') in 0.145249 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000638 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/sword.PNG
+  artifactKey: Guid(f2ea487f62fd65944b6389c00e56eb6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/sword.PNG using Guid(f2ea487f62fd65944b6389c00e56eb6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a1508b141da4c75591a7075c0ba20f7') in 0.042167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000744 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Left hand.PNG
+  artifactKey: Guid(316f8ad96d8f7d24a9c46944f1f90902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Left hand.PNG using Guid(316f8ad96d8f7d24a9c46944f1f90902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35543958525aa682c3ff35e6af5c01e8') in 0.046628 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004435 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.07 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.895 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3383 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.5 MB.
+System memory in use after: 139.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 4109.
+Total: 3.904600 ms (FindLiveObjects: 0.386000 ms CreateObjectMapping: 0.175600 ms MarkObjects: 3.302000 ms  DeleteObjects: 0.039400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 12.130489 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Materials
+  artifactKey: Guid(518a41dbe6553b148b18a282d36d5c45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Materials using Guid(518a41dbe6553b148b18a282d36d5c45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '873590579e37980707737da3fb20bbe3') in 0.015656 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.020768 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Materials/4.mat
+  artifactKey: Guid(d3641d88389c87141b0824a6852c1ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Materials/4.mat using Guid(d3641d88389c87141b0824a6852c1ba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1de732a40753fafca2e5d3533a67980') in 0.120935 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000687 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Materials/Head.mat
+  artifactKey: Guid(5374012018d274b4e9f82dcbcfbac8d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Materials/Head.mat using Guid(5374012018d274b4e9f82dcbcfbac8d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df12e53602b8c630ec477a86c0d70f97') in 0.018410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 581.503277 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword
+  artifactKey: Guid(f82c9cd7ccd0875488065b8e2bb0e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword using Guid(f82c9cd7ccd0875488065b8e2bb0e57c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e2b2da7a28971cc0a5efc3b47d518ca') in 0.004661 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.028412 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.04 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.918 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.31 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.0 MB.
+System memory in use after: 139.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4114.
+Total: 4.954900 ms (FindLiveObjects: 0.474300 ms CreateObjectMapping: 0.307000 ms MarkObjects: 4.123500 ms  DeleteObjects: 0.047400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004455 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.05 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.828 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.01 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.1 MB.
+System memory in use after: 139.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4118.
+Total: 5.420300 ms (FindLiveObjects: 0.785800 ms CreateObjectMapping: 0.225500 ms MarkObjects: 4.325800 ms  DeleteObjects: 0.080400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004811 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.59 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.243 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.00 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 139.1 MB.
+System memory in use after: 139.3 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4122.
+Total: 2.611600 ms (FindLiveObjects: 0.290400 ms CreateObjectMapping: 0.108200 ms MarkObjects: 2.187800 ms  DeleteObjects: 0.024400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 1559.907019 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part
+  artifactKey: Guid(ad955f11ae0cf284195777e1bcf66a07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part using Guid(ad955f11ae0cf284195777e1bcf66a07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6195161f7ebeeeb1db17602fa2c4f3e7') in 0.028723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.212209 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Body.png
+  artifactKey: Guid(e7a568d70cc25f345a0fa5ce969538d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Body.png using Guid(e7a568d70cc25f345a0fa5ce969538d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2827d8e1738dcbae45a98705f697d262') in 0.118602 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001116 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Head new.png
+  artifactKey: Guid(9f531b9c59588e544b92563bb533209b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Head new.png using Guid(9f531b9c59588e544b92563bb533209b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '300569cfa5b1d1cd68b3cb7eba4375f4') in 0.026399 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000794 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Legs.png
+  artifactKey: Guid(08d3b9bb3dbffef4e89290d6bb5c1503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Legs.png using Guid(08d3b9bb3dbffef4e89290d6bb5c1503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd22244957178c74bc0e22aeeef1fd105') in 0.046086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 74.136884 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Cuted Player.prefab
+  artifactKey: Guid(c6602b56c78de5a468f9804b3c921670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Cuted Player.prefab using Guid(c6602b56c78de5a468f9804b3c921670) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90b6bcc906349b8185756d089262efed') in 0.056465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 45.942937 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Materials
+  artifactKey: Guid(8342808f9dded264080b6019c943d7df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Materials using Guid(8342808f9dded264080b6019c943d7df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fde3638bd05dae3a25729f7f472949dc') in 0.004118 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002912 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.68 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.108 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.57 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3374 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 142.2 MB.
+System memory in use after: 142.4 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4174.
+Total: 3.372800 ms (FindLiveObjects: 0.592500 ms CreateObjectMapping: 0.118500 ms MarkObjects: 2.637300 ms  DeleteObjects: 0.023000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 258.566705 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/CutedPlayer.prefab
+  artifactKey: Guid(25217481ae877bb4281d183c1ce55d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/CutedPlayer.prefab using Guid(25217481ae877bb4281d183c1ce55d1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd2a3d674e3ca401e995165defc23afe') in 0.183833 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 124.865759 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 1.png
+  artifactKey: Guid(89ae96b1de0445e4da26c14357037e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 1.png using Guid(89ae96b1de0445e4da26c14357037e06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b38e2e8f21c3c5707765ecb88ff907') in 0.171232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000917 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 4.png
+  artifactKey: Guid(96787a5609484dd41b3c824b32a81683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 4.png using Guid(96787a5609484dd41b3c824b32a81683) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a77185e12c42802259560b6767e678d2') in 0.077985 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001005 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 5.png
+  artifactKey: Guid(90b85a56273b5824babf9e346f5a1dd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 5.png using Guid(90b85a56273b5824babf9e346f5a1dd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ea88d0a12b47f4f847dcb66342e8e56') in 0.075083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000755 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 6.png
+  artifactKey: Guid(0e3eab9a852f18a41bea1210093f1507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 6.png using Guid(0e3eab9a852f18a41bea1210093f1507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f55c3a776290995bdb9c88e9c2fef8c') in 0.057432 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000921 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jump 1.png
+  artifactKey: Guid(c2cee2112187dcd4eb1ac1fffe8c6672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jump 1.png using Guid(c2cee2112187dcd4eb1ac1fffe8c6672) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0774e211149d683a273a863bbfaf0626') in 0.064896 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000620 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 3.png
+  artifactKey: Guid(033925a69723e7d44a1b260d8a565959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 3.png using Guid(033925a69723e7d44a1b260d8a565959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dbc31919afe2c6c5aa9e7816cd87d50') in 0.070172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000970 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 2.png
+  artifactKey: Guid(1d00667ad1362724aabd24033fea8f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 2.png using Guid(1d00667ad1362724aabd24033fea8f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97608483978c660d2f7b6b6a915241f0') in 0.079733 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000890 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 7.png
+  artifactKey: Guid(0894075068e06f44d9366d514e15ae82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 7.png using Guid(0894075068e06f44d9366d514e15ae82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a90ae22495128d207680c3e147c460e') in 0.090549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000632 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouchdash 2.png
+  artifactKey: Guid(7a83642838ac2374892f9e3a9dfee97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouchdash 2.png using Guid(7a83642838ac2374892f9e3a9dfee97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '253408de9ef46a42343d9b9a46f76808') in 0.058975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000502 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 6.png
+  artifactKey: Guid(0fe1375f28bbdb54aba9c3209e52e885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 6.png using Guid(0fe1375f28bbdb54aba9c3209e52e885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c3df2f24a10c61ac85ad294bbd93da') in 0.064862 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001032 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jump 3.png
+  artifactKey: Guid(e20229ce2cfd15f48a4f9ae3caf859f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jump 3.png using Guid(e20229ce2cfd15f48a4f9ae3caf859f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeaa256364d6a3642524244040e5deca') in 0.073729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000857 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 3.png
+  artifactKey: Guid(8059df17b0fb92e448deb3386cfa8fdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 3.png using Guid(8059df17b0fb92e448deb3386cfa8fdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4079df3439f4b73331fa363b8430299') in 0.050677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000960 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 7.png
+  artifactKey: Guid(26e338e15e97ef243a6b1d0c76ece73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 7.png using Guid(26e338e15e97ef243a6b1d0c76ece73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2ddbc341c500a941e91114212788c9b') in 0.072785 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000767 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt2 2.png
+  artifactKey: Guid(72ba34b8991f3cb4d8ea318dd62c80c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt2 2.png using Guid(72ba34b8991f3cb4d8ea318dd62c80c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1609960f25b54da761c8c780b6112b4') in 0.059382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000791 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 3.png
+  artifactKey: Guid(99a3801cedd77374b97cf281a5aacbaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 3.png using Guid(99a3801cedd77374b97cf281a5aacbaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5449b43413b5cdf65304d327872f81a9') in 0.050837 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000966 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 4.png
+  artifactKey: Guid(157ba604a20db9e4990566a87d8213f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 4.png using Guid(157ba604a20db9e4990566a87d8213f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b2bfc154e92989241e259136b647622') in 0.070145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000882 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 3.png
+  artifactKey: Guid(c4f9c303fa7373743b691acdaab528b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 3.png using Guid(c4f9c303fa7373743b691acdaab528b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2a1fd5c46d1b56832636e1f3f521f6e') in 0.055604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000817 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 5.png
+  artifactKey: Guid(32361bdfba809be45a54cea2fb169843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 5.png using Guid(32361bdfba809be45a54cea2fb169843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd138adbd81d66c0a87e0354fce5e7a32') in 0.076239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000967 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 1.png
+  artifactKey: Guid(097737625e3c0e8419ccfffab34674a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 1.png using Guid(097737625e3c0e8419ccfffab34674a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a2dd3f9e918bd213483cbfd467ce587') in 0.060084 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000585 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 4.png
+  artifactKey: Guid(eed319708f4c5574ca7edfcaa8edf37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 4.png using Guid(eed319708f4c5574ca7edfcaa8edf37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a742e9bad9266345e50c125f4db5cac4') in 0.033765 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000686 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 1.png
+  artifactKey: Guid(be610b2f2f329584d89546946922c22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 1.png using Guid(be610b2f2f329584d89546946922c22e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08690ff8192efbe6ec466a7cfdbec56e') in 0.057912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000872 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouchdash 1.png
+  artifactKey: Guid(a9ed98873af4cba4ca76829483d9ab4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouchdash 1.png using Guid(a9ed98873af4cba4ca76829483d9ab4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29cd8f5ff129bd0e2a1f540b866b1e37') in 0.050501 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000708 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt 1.png
+  artifactKey: Guid(e0f89212860d7a948bebcfac6db6f258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt 1.png using Guid(e0f89212860d7a948bebcfac6db6f258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '298124a0367ac2296967a1ebaf1b74bf') in 0.037666 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000718 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 1.png
+  artifactKey: Guid(74fceca65e6f3f14ab571fa57f0b4047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 1.png using Guid(74fceca65e6f3f14ab571fa57f0b4047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81b88e0b2d598dfd0a36890a52571140') in 0.074015 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000851 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 5.png
+  artifactKey: Guid(b953ed1c9abf0e14186f93ed007cec97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 5.png using Guid(b953ed1c9abf0e14186f93ed007cec97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3697c1ab5289da629f59d46d1cf5acd') in 0.047485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000757 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 2.png
+  artifactKey: Guid(505be5ebf4da2c540b488c5b474d8dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 2.png using Guid(505be5ebf4da2c540b488c5b474d8dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fbdf1ecd3f61300d47a681cf306bd63') in 0.030309 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000737 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 1.png
+  artifactKey: Guid(ab3188fe059792143a7d4300733ebf4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 1.png using Guid(ab3188fe059792143a7d4300733ebf4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '232432eb4685079840b5cb0dca15f46a') in 0.091866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000848 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 3.png
+  artifactKey: Guid(be889995b3be023429a7b85da9e3669e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 3.png using Guid(be889995b3be023429a7b85da9e3669e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c4826313799a8bc64961b431933f6dd') in 0.044416 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000849 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 2.png
+  artifactKey: Guid(4cbf323f2b082724d9c0fc883d00a056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 2.png using Guid(4cbf323f2b082724d9c0fc883d00a056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2ea8358f01ad32e1282e28e1f792c3f') in 0.059002 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000823 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 5.png
+  artifactKey: Guid(b7766b08bf5cd484daea97e275e9a9f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 5.png using Guid(b7766b08bf5cd484daea97e275e9a9f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b1389b96715329dc01b22741e9324dc') in 0.038558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000747 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt 2.png
+  artifactKey: Guid(528bc50efdc77754e8ee2577ac09b46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt 2.png using Guid(528bc50efdc77754e8ee2577ac09b46e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '779224ead0fcd1eb551c69496245907c') in 0.045257 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000710 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 2.png
+  artifactKey: Guid(3ea544fe66504d445b19c1aeb1d40d98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpskill 2.png using Guid(3ea544fe66504d445b19c1aeb1d40d98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61369b817cec059e934128c7e53801db') in 0.051255 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000731 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 4.png
+  artifactKey: Guid(8095a0c84560910449d037c91955854e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 4.png using Guid(8095a0c84560910449d037c91955854e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96b0234b61d732981d7af63ea8068fe2') in 0.030161 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000742 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 6.png
+  artifactKey: Guid(75b2d03ade6b52e44ba78e0b7d3757c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 6.png using Guid(75b2d03ade6b52e44ba78e0b7d3757c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f73331c2fcc4cb2a8a80b1cd389194cd') in 0.035451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000718 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 2.png
+  artifactKey: Guid(8088b1c6d2833b444bbd27340fc39136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_idle 2.png using Guid(8088b1c6d2833b444bbd27340fc39136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88ae90c4571018fb453d5691e29d97b7') in 0.043629 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000994 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouch 2.png
+  artifactKey: Guid(e8c8739792537bc4b94123d7f7bbeddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouch 2.png using Guid(e8c8739792537bc4b94123d7f7bbeddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36483a02ac433f80c2ab1ab92c741665') in 0.067558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000683 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 6.png
+  artifactKey: Guid(60b398398d9726846babb1e1bdcd60ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_redsword 6.png using Guid(60b398398d9726846babb1e1bdcd60ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e5de5752e73d5257ce60902e74e1f95') in 0.060976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000813 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt2 3.png
+  artifactKey: Guid(84b41f98dd629414084df8b3c1ab2b82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt2 3.png using Guid(84b41f98dd629414084df8b3c1ab2b82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0f11b6cb3081a26d99a29c1cee405fd') in 0.066984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000899 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouch 1.png
+  artifactKey: Guid(3c78e9e88810bd04fa2287397aa97bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouch 1.png using Guid(3c78e9e88810bd04fa2287397aa97bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f05301dcd88215c6acc171085161b2a9') in 0.047009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000693 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt2 1.png
+  artifactKey: Guid(7052ea87f8dc183459cf4e59cad05dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_hurt2 1.png using Guid(7052ea87f8dc183459cf4e59cad05dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b144edb4ca5798829458b4d1e14a55f2') in 0.038711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000748 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jump 2.png
+  artifactKey: Guid(1644a2b8032c15f418fddda082a896eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jump 2.png using Guid(1644a2b8032c15f418fddda082a896eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd170bcf4d2a2beb2c380b97240ed7eb7') in 0.031361 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000633 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 4.png
+  artifactKey: Guid(93c33ca7cb3a1d24287406a0e08b8a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 4.png using Guid(93c33ca7cb3a1d24287406a0e08b8a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b344a4854411a16f66c80206356a64a4') in 0.066887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000888 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 6.png
+  artifactKey: Guid(a06903b1a6e7f324da0d963fdbe61124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_Atk 6.png using Guid(a06903b1a6e7f324da0d963fdbe61124) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '649174aa81d8d0458e26a002bc40cce0') in 0.045800 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000460 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouch 3.png
+  artifactKey: Guid(39b4a38a98cb74a42b5a199bcf02aeee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_crouch 3.png using Guid(39b4a38a98cb74a42b5a199bcf02aeee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '234dfa3616e6e8613c502c3ac99a9458') in 0.056518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000849 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 5.png
+  artifactKey: Guid(6103555071fdaa744845e814c94750fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Sword/SNinja_jumpatk 5.png using Guid(6103555071fdaa744845e814c94750fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1681c13e760a002a33abca67f71866b') in 0.060171 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004328 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.296 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3416 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 168.4 MB.
+System memory in use after: 168.7 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4856.
+Total: 4.383700 ms (FindLiveObjects: 0.298200 ms CreateObjectMapping: 0.093800 ms MarkObjects: 3.931600 ms  DeleteObjects: 0.058600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002293 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.271 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.66 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.7 MB.
+System memory in use after: 167.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4860.
+Total: 3.874500 ms (FindLiveObjects: 0.352200 ms CreateObjectMapping: 0.113600 ms MarkObjects: 3.373700 ms  DeleteObjects: 0.033400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002797 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.241 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.5 MB.
+System memory in use after: 166.8 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4864.
+Total: 3.820600 ms (FindLiveObjects: 0.328800 ms CreateObjectMapping: 0.126200 ms MarkObjects: 3.317500 ms  DeleteObjects: 0.046400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002217 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.066 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.98 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.8 MB.
+System memory in use after: 167.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4868.
+Total: 2.917800 ms (FindLiveObjects: 0.396100 ms CreateObjectMapping: 0.108200 ms MarkObjects: 2.379800 ms  DeleteObjects: 0.031900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003195 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.217 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3371 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.7 MB.
+System memory in use after: 166.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4872.
+Total: 3.158600 ms (FindLiveObjects: 0.356000 ms CreateObjectMapping: 0.106400 ms MarkObjects: 2.661300 ms  DeleteObjects: 0.032800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002333 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.94 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.367 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.64 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3372 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.9 MB.
+System memory in use after: 167.1 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4877.
+Total: 3.088100 ms (FindLiveObjects: 0.452000 ms CreateObjectMapping: 0.141300 ms MarkObjects: 2.457100 ms  DeleteObjects: 0.036100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002831 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.60 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.151 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.58 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3372 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.7 MB.
+System memory in use after: 167.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4881.
+Total: 3.090700 ms (FindLiveObjects: 0.334400 ms CreateObjectMapping: 0.090000 ms MarkObjects: 2.617100 ms  DeleteObjects: 0.047600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004570 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.204 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3372 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.9 MB.
+System memory in use after: 167.2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4885.
+Total: 3.645700 ms (FindLiveObjects: 0.458000 ms CreateObjectMapping: 0.112000 ms MarkObjects: 3.027500 ms  DeleteObjects: 0.047200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002319 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.306 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(537395200) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 0.95 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3372 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 166.7 MB.
+System memory in use after: 167.0 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 4889.
+Total: 10.107300 ms (FindLiveObjects: 0.866200 ms CreateObjectMapping: 0.357400 ms MarkObjects: 8.838500 ms  DeleteObjects: 0.042700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
