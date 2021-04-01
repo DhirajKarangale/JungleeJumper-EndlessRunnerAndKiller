@@ -19,7 +19,7 @@ public class GroundPoolers : MonoBehaviour
         maxY = maxHeightPoint.position.y;
         groundWidths = new float[groundPoolers.Length];
 
-        for(int i=0;i<groundPoolers.Length;i++)
+        for (int i=0;i<groundPoolers.Length;i++)
         {
             groundWidths[i] = groundPoolers[i].pooledObject.GetComponent<BoxCollider2D>().size.x;
         }
@@ -42,7 +42,7 @@ public class GroundPoolers : MonoBehaviour
 
             coinGenerator.SpwanCoin(transform.position, groundWidths[random]);
 
-            cutterGenerator.SpwanCutter(transform.position);
+            cutterGenerator.SpwanCutter(transform.position, groundWidths[random]);
 
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         }

@@ -122,7 +122,8 @@ public class Player : MonoBehaviour
 
     private void Dash()
     {
-       
+        GetComponent<BoxCollider2D>().size = new Vector2(2.172187f, 1.5f);
+        GetComponent<BoxCollider2D>().offset = new Vector2(-0.2299106f, -1.15f);
         GameObject currentDashEffect = Instantiate(dashEffect, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity);
         Destroy(currentDashEffect, 1f);
         isSwipeDown = false;
@@ -135,6 +136,8 @@ public class Player : MonoBehaviour
 
     private void DesableDash()
     {
+        GetComponent<BoxCollider2D>().size = new Vector2(2.172187f, 3.740528f);
+        GetComponent<BoxCollider2D>().offset = new Vector2(-0.2299106f, -0.06270278f);
         isSwipeDown = false;
         speed = (speedAfterdash / 1.5f);
         animator.SetBool("PlayerDash", false);
