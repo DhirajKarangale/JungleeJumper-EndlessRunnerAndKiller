@@ -27,7 +27,7 @@ public class GroundPoolers : MonoBehaviour
 
     private void Update()
     {
-        if((transform.position.x < groundPoint.position.x) && !Player.isPlayerDead && !scoreManager.isPause)
+        if((transform.position.x < groundPoint.position.x) && !scoreManager.isPause)
         {
             int random = Random.Range(0, groundPoolers.Length);
             float distance = groundWidths[random] / 2;
@@ -43,6 +43,7 @@ public class GroundPoolers : MonoBehaviour
             coinGenerator.SpwanCoin(transform.position, groundWidths[random]);
 
             cutterGenerator.SpwanCutter(transform.position, groundWidths[random]);
+
 
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         }

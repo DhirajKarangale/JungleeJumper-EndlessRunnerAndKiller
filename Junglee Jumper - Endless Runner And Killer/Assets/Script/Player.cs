@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private float jumpTimeCounter;
     public float runingSpeedAnim;
     public bool playerRuning;
-    public static bool isPlayerDead,isPlayerHitObstacles;
+    public bool isPlayerDead,isPlayerHitObstacles;
     private Vector3 playerStartPosition;
 
     [Header("Dash")]
@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
     
     private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
     
-
     private void Start()
     {
         levelDistanceCount = levelDistance;

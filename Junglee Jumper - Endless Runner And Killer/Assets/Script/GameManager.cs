@@ -19,12 +19,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);
-        Player.isPlayerDead = false;
+        player.isPlayerDead = false;
     }
 
     private void Update()
     {
-        if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
+        if (player.isPlayerDead) Invoke("GameOver", 0.5f);
         score.text = Mathf.Round(scoreManager.score).ToString();
         highScore.text = Mathf.Round(scoreManager.highScore).ToString();
         if (scoreManager.isPause) continueScreen.SetActive(false);
@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         backGroundMusic.Stop();
-        Player.isPlayerDead = true;
+        player.isPlayerDead = true;
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     {
         player.deathSound.Stop();
         restartSound.Play();
-        Player.isPlayerDead = false;
+        player.isPlayerDead = false;
         Invoke("DelayInRestart", 0.2f);
     }
 

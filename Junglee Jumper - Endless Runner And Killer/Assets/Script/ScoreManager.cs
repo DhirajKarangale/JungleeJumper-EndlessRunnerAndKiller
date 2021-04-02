@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if(!Player.isPlayerDead && !isPause && player.playerRuning && !Player.isPlayerHitObstacles)
+        if(!player.isPlayerDead && !isPause && player.playerRuning && !player.isPlayerHitObstacles)
         {
             score += pointePerSecond * Time.deltaTime ;
         }
