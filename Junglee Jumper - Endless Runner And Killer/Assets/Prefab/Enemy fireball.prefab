@@ -158,3 +158,4 @@ MonoBehaviour:
   rigidbody: {fileID: 1186210858226304276}
   impactEffect: {fileID: 9122608879392446620, guid: 95b4178a29dab9d48acfa892fbfb5b6e, type: 3}
   speed: 20
+  damage: 50

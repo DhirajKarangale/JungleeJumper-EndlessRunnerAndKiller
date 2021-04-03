@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject cutedPlayer;
     [SerializeField] GameObject playerBloodEffect;
     [SerializeField] GameObject bloodSplash;
+    [SerializeField] Slider healthSlider;
 
     [Header("Attributes")]
     public float speed,originalSpeed;
@@ -22,6 +24,8 @@ public class Player : MonoBehaviour
     public bool playerRuning;
     public bool isPlayerDead,isPlayerHitObstacles;
     private Vector3 playerStartPosition;
+    [SerializeField] float health;
+    private float currentHealth;
 
     [Header("Dash")]
     [SerializeField] GameObject dashEffect;
@@ -48,10 +52,13 @@ public class Player : MonoBehaviour
         playerStartPosition = transform.position;
         originalSpeed = speed;
         isDashAllowed = true;
+        currentHealth = health;
+        healthSlider.value = currentHealth / health;
     }
 
     private void Update()
     {
+        healthSlider.value = currentHealth / health;
         if (playerStartPosition == transform.position)
         {
             playerRuning = false;
@@ -205,17 +212,23 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Cutter")
         {
             isPlayerHitObstacles = true;
-            Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-            GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
-            Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), Quaternion.identity);
-            Destroy(currentBloodEffect, 2f);
-            this.gameObject.SetActive(false);
-            Invoke("GameOverSound", 1f);
-            Invoke("PlayerDead", 2f);
+            DestroyPlayer();
         }
         else
         {
             isPlayerHitObstacles = false;
+        }
+    }
+
+    public void TakeDamege(int damage)
+    {
+        if (currentHealth <= 0)
+        {
+            DestroyPlayer();
+        }
+        else
+        {
+            currentHealth -= damage;
         }
     }
 
@@ -227,5 +240,16 @@ public class Player : MonoBehaviour
     private void GameOverSound()
     {
         deathSound.Play();
+    }
+            
+    private void DestroyPlayer()
+    {
+        Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
+        Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), Quaternion.identity);
+        Destroy(currentBloodEffect, 2f);
+        this.gameObject.SetActive(false);
+        Invoke("GameOverSound", 1f);
+        Invoke("PlayerDead", 2f);
     }
 }
