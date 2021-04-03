@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cutter
+  - Zombie
+  - Ground
   layers:
   - Default
   - TransparentFX
