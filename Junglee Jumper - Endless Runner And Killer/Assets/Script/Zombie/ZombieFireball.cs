@@ -15,6 +15,14 @@ public class ZombieFireball : MonoBehaviour
         rigidBody.velocity = transform.right * (-speed);
     }
 
+    private void Update()
+    {
+        if(PlayerFireball.twoFireballCollide)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")

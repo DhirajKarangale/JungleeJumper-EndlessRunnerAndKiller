@@ -254,7 +254,7 @@ public class Player : MonoBehaviour
     {
         Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
-        Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), Quaternion.identity);
+        Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), transform.rotation);
         Destroy(currentBloodEffect, 2f);
         this.gameObject.SetActive(false);
         Invoke("GameOverSound", 1f);

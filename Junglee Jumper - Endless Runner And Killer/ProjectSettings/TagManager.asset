@@ -7,6 +7,8 @@ TagManager:
   - Cutter
   - Zombie
   - Ground
+  - ZombieFireball
+  - PlayerFireball
   layers:
   - Default
   - TransparentFX

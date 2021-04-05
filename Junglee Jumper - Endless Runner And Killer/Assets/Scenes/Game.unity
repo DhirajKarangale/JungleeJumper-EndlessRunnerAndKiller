@@ -2186,6 +2186,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2276,6 +2277,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &519420033
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6677e20b1d6ef1341b068ad264e67446, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &546702593
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,6 +6419,14 @@ PrefabInstance:
       propertyPath: sliderObject
       value: 
       objectReference: {fileID: 1181241174}
+    - target: {fileID: 1035928999520511207, guid: 7fd1e993d3c420843bd1e70f39a1c416, type: 3}
+      propertyPath: zombieBloodSplash
+      value: 
+      objectReference: {fileID: 6172181126059984011, guid: 176a9bb144803704084d6db7cad18de5, type: 3}
+    - target: {fileID: 1035928999520511207, guid: 7fd1e993d3c420843bd1e70f39a1c416, type: 3}
+      propertyPath: enemieDestriyEffect
+      value: 
+      objectReference: {fileID: 6172181126059984011, guid: 176a9bb144803704084d6db7cad18de5, type: 3}
     - target: {fileID: 1035928999696699477, guid: 7fd1e993d3c420843bd1e70f39a1c416, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

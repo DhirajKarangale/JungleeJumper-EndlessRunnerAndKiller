@@ -8,13 +8,13 @@ public class Zombie : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Transform attackPoint;
     [SerializeField] Player player;
-    [SerializeField] GameObject cuttedZombie;
+    [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject fireBall;
     [SerializeField] GameObject enemieDestriyEffect;
     [SerializeField] GameObject sliderObject;
     [SerializeField] Slider enemyHealthSlider;
     [SerializeField] float health;
-    public float currentHealth;
+    private float currentHealth;
     [SerializeField] float attackRange;
     [SerializeField] float timeBetweenAttack;
     private float currentTimeBetweenAttack;
@@ -71,16 +71,18 @@ public class Zombie : MonoBehaviour
 
     private void DestroyEnemie()
     {
-        sliderObject.SetActive(false);
+        animator.SetBool("Attack", false);
+        animator.SetBool("Idel", false);
+        animator.SetBool("Dye", true);
         isZombieDead = true;
         GameObject currentEnemieDestroyEffect = Instantiate(enemieDestriyEffect, transform.position, transform.rotation);
         Destroy(currentEnemieDestroyEffect,3f);
+        GameObject currentZombieBloodSplash = Instantiate(zombieBloodSplash, transform.position + new Vector3(0, -2, -1), transform.rotation);
+        Destroy(currentZombieBloodSplash, 5f);
         boxCollider.size = new Vector2(3.667627f, 1.569048f);
         boxCollider.offset = new Vector2(1.594227f, -2.260478f);
         headColider.radius = 1.934007f;
         headColider.offset = new Vector2(1.246684f, -0.34857f);
-        animator.SetBool("Attack", false);
-        animator.SetBool("Idel", false);
-        animator.SetBool("Dye", true);
+        sliderObject.SetActive(false);
     }
 }
