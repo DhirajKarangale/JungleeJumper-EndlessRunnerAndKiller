@@ -25,7 +25,7 @@ public class Zombie : MonoBehaviour
         sliderObject.SetActive(true);
         currentHealth = health;
         currentTimeBetweenAttack = timeBetweenAttack;
-         enemyHealthSlider.value = currentHealth/health;
+        enemyHealthSlider.value = currentHealth/health;
     }
 
     private void Update()

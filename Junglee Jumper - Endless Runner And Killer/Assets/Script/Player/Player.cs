@@ -40,7 +40,10 @@ public class Player : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] AudioSource jumpSound;
-    public AudioSource deathSound;
+    [SerializeField] AudioSource fireBallCollisionSound;
+    [SerializeField] AudioSource deathSound;
+    [SerializeField] AudioSource hurtSound;
+    public AudioSource gameOverSound;
 
     [Header("Level")]
     [SerializeField] float levelDistance;
@@ -75,7 +78,7 @@ public class Player : MonoBehaviour
         playerStartPosition = transform.position;
 
         isPlayerDead = Physics2D.IsTouchingLayers(playerCollider, deathGround);
-        if (isPlayerDead) deathSound.Play();
+        if (isPlayerDead) gameOverSound.Play();
 
         rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
         isGrounded = Physics2D.IsTouchingLayers(playerCollider, ground);
@@ -133,6 +136,12 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.A))
         {
             GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
+        }
+
+        if(PlayerFireball.twoFireballCollide)
+        {
+            if (fireBallCollisionSound.isPlaying) fireBallCollisionSound.Stop();
+            fireBallCollisionSound.Play();
         }
     }
 
@@ -232,10 +241,12 @@ public class Player : MonoBehaviour
 
     public void TakeDamege(float damage)
     {
+        if (hurtSound.isPlaying) hurtSound.Stop();
+        hurtSound.Play();
         if (currentHealth <= 0)
         {
             GameObject currentPlayerDestroyEffect = Instantiate(playerDestroyEffect, transform.position, transform.rotation);
-            Destroy(currentPlayerDestroyEffect, 3f);
+            Destroy(currentPlayerDestroyEffect, 5f);
             isEnemyFireballAllowed = false;
             DestroyPlayer();
         }
@@ -247,11 +258,12 @@ public class Player : MonoBehaviour
 
     private void GameOverSound()
     {
-        deathSound.Play();
+        gameOverSound.Play();
     }
             
     private void DestroyPlayer()
     {
+        deathSound.Play();
         Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
         Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), transform.rotation);

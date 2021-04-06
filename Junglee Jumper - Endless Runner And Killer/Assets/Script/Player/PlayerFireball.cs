@@ -4,8 +4,8 @@ public class PlayerFireball : MonoBehaviour
 {
     private Zombie zombie;
     private Animator camAnimator;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject fireballExplosionEffect;
-    private AudioSource fireballExplosionSound;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float damage;
@@ -13,7 +13,7 @@ public class PlayerFireball : MonoBehaviour
     public static bool twoFireballCollide;
     private void Start()
     {
-        fireballExplosionSound = GetComponent<AudioSource>();
+        twoFireballCollide = false;
         camAnimator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
         zombie = GameObject.FindGameObjectWithTag("Zombie").GetComponent<Zombie>();
         rigidBody.velocity = transform.right * speed;
@@ -23,6 +23,8 @@ public class PlayerFireball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
+            if (audioSource.isPlaying) audioSource.Stop();
+            audioSource.Play();
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
             Destroy(gameObject);
@@ -32,6 +34,8 @@ public class PlayerFireball : MonoBehaviour
 
         if (collision.gameObject.tag == "Zombie")
         {
+            if (audioSource.isPlaying) audioSource.Stop();
+            audioSource.Play();
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
             zombie.TakeDamage(damage);
@@ -44,9 +48,9 @@ public class PlayerFireball : MonoBehaviour
         {
             twoFireballCollide = true;
             Destroy(gameObject);
-            fireballExplosionSound.Play();
             camAnimator.SetBool("Shake", true);
             GameObject currentFireballExplosionEffect = Instantiate(fireballExplosionEffect, transform.position, transform.rotation);
+            Destroy(currentFireballExplosionEffect, 4f);
         }
         else
         {

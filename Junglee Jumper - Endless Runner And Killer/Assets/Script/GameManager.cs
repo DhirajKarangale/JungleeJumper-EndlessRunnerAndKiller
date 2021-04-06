@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        player.deathSound.Stop();
+        player.gameOverSound.Stop();
         restartSound.Play();
         player.isPlayerDead = false;
         Invoke("DelayInRestart", 0.2f);

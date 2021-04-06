@@ -160,7 +160,7 @@ MonoBehaviour:
   rigidBody: {fileID: 1341596558784036299}
   impactEffect: {fileID: 9122608879392446620, guid: 95b4178a29dab9d48acfa892fbfb5b6e, type: 3}
   speed: 20
-  damage: 50
+  damage: 0
 --- !u!82 &1341596558784036303
 AudioSource:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2fd6b4dd280bc354eb023db734f9c0db, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a406089e1ff124248bad68c005af2eb0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
