@@ -8,6 +8,7 @@ public class GroundPoolers : MonoBehaviour
     [SerializeField] ObjectPooler[] groundPoolers;
     [SerializeField] CoinGenerator coinGenerator;
     [SerializeField] CutterGenerator cutterGenerator;
+    [SerializeField] ZombieGenerator zombieGenerator;
     [SerializeField] ScoreManager scoreManager;
     private float minY, maxY;
     [SerializeField] float minGap, maxGap;
@@ -44,6 +45,7 @@ public class GroundPoolers : MonoBehaviour
 
             cutterGenerator.SpwanCutter(transform.position, groundWidths[random]);
 
+            if(!cutterGenerator.isCutterGenerated) zombieGenerator.SpwanZombie(transform.position);
 
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         }

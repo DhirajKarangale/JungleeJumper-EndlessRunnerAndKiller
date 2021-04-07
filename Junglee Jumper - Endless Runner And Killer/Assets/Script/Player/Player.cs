@@ -15,13 +15,18 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject playerBloodEffect;
     [SerializeField] GameObject bloodSplash;
     [SerializeField] Slider healthSlider;
+    [SerializeField] GameObject healthSliderGameObject;
+    [SerializeField] GameObject dashButton;
     [SerializeField] GameObject playerDestroyEffect;
     [SerializeField] GameObject fireBall;
+    [SerializeField] GameObject playerDeadBody;
+    [SerializeField] GameObject zombieFireball;
     [SerializeField] Transform attackPoint;
     public bool isEnemyFireballAllowed;
 
     [Header("Attributes")]
-    public float speed,originalSpeed;
+    public float speed;
+    public float originalSpeed;
     [SerializeField] float jumpForce, jumpTime;
     private float jumpTimeCounter;
     public float runingSpeedAnim;
@@ -54,6 +59,9 @@ public class Player : MonoBehaviour
     
     private void Start()
     {
+        zombieFireball.SetActive(true);
+        dashButton.SetActive(true);
+        healthSliderGameObject.SetActive(true);
         isEnemyFireballAllowed = true;
         levelDistanceCount = levelDistance;
         runingSpeedAnim = 1f;
@@ -233,6 +241,12 @@ public class Player : MonoBehaviour
             isPlayerHitObstacles = true;
             DestroyPlayer();
         }
+        else if(collision.gameObject.tag == "Zombie")
+        {
+            isEnemyFireballAllowed =false;
+            zombieFireball.SetActive(false);
+            Invoke("PlayerHitZombie", 0.3f);
+        }
         else
         {
             isPlayerHitObstacles = false;
@@ -264,11 +278,15 @@ public class Player : MonoBehaviour
     private void DestroyPlayer()
     {
         deathSound.Play();
+        currentHealth = 0;
         Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
         Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), transform.rotation);
         Destroy(currentBloodEffect, 2f);
+        healthSliderGameObject.SetActive(false);
+        dashButton.SetActive(false);
         this.gameObject.SetActive(false);
+        zombieFireball.SetActive(false);
         Invoke("GameOverSound", 1f);
         Invoke("PlayerDead", 2f);
     }
@@ -276,5 +294,19 @@ public class Player : MonoBehaviour
     private void PlayerDead()
     {
         isPlayerDead = true;
+    }
+
+    private void PlayerHitZombie()
+    {
+        GameObject currentPlayerDestroyEffect = Instantiate(playerDestroyEffect, transform.position, transform.rotation);
+        Destroy(currentPlayerDestroyEffect, 5f);
+        dashButton.SetActive(false);
+        speed = 0;
+        deathSound.Play();
+        gameObject.SetActive(false);
+        Instantiate(playerDeadBody, transform.position, Quaternion.identity);
+        currentHealth = 0;
+        Invoke("GameOverSound", 1f);
+        Invoke("PlayerDead", 2f);
     }
 }

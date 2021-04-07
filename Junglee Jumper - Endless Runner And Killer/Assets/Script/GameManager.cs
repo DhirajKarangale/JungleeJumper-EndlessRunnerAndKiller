@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text score;
     [SerializeField] Text highScore;
 
+    [SerializeField] AudioSource playerFireballHitSound;
+    [SerializeField] AudioSource zombieFireballHitSound;
+
     private void Start()
     {
         Time.timeScale = 0f;
@@ -28,6 +31,20 @@ public class GameManager : MonoBehaviour
         score.text = Mathf.Round(scoreManager.score).ToString();
         highScore.text = Mathf.Round(scoreManager.highScore).ToString();
         if (scoreManager.isPause) continueScreen.SetActive(false);
+
+        if(PlayerFireball.playerFireballHitObject)
+        {
+            if (playerFireballHitSound.isPlaying) playerFireballHitSound.Stop();
+            playerFireballHitSound.Play();
+            PlayerFireball.playerFireballHitObject = false;
+        }
+
+        if(ZombieFireball.zombieFireballHitObject)
+        {
+            if (zombieFireballHitSound.isPlaying) zombieFireballHitSound.Stop();
+            zombieFireballHitSound.Play();
+            ZombieFireball.zombieFireballHitObject = false;
+        }
     }
 
     public void GameOver()

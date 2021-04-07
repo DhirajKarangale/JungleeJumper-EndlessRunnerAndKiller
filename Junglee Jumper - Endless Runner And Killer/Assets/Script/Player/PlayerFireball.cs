@@ -2,20 +2,18 @@ using UnityEngine;
 
 public class PlayerFireball : MonoBehaviour
 {
-    private Zombie zombie;
+    [SerializeField] Zombie zombie;
     private Animator camAnimator;
-    [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject fireballExplosionEffect;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float damage;
     [SerializeField] float speed;
-    public static bool twoFireballCollide;
+    public static bool twoFireballCollide, playerFireballHitObject;
     private void Start()
     {
         twoFireballCollide = false;
         camAnimator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
-        zombie = GameObject.FindGameObjectWithTag("Zombie").GetComponent<Zombie>();
         rigidBody.velocity = transform.right * speed;
     }
 
@@ -23,8 +21,7 @@ public class PlayerFireball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            if (audioSource.isPlaying) audioSource.Stop();
-            audioSource.Play();
+            playerFireballHitObject = true;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
             Destroy(gameObject);
@@ -32,20 +29,20 @@ public class PlayerFireball : MonoBehaviour
             Destroy(currentImpactEffect, 1f);
         }
 
-        if (collision.gameObject.tag == "Zombie")
-        {
-            if (audioSource.isPlaying) audioSource.Stop();
-            audioSource.Play();
+       else if (collision.gameObject.tag == "Zombie")
+       {
+            playerFireballHitObject = true;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
             zombie.TakeDamage(damage);
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
-        }
+       }
 
-        if(collision.gameObject.tag == "ZombieFireball")
+       else if(collision.gameObject.tag == "ZombieFireball")
         {
+            playerFireballHitObject = false;
             twoFireballCollide = true;
             Destroy(gameObject);
             camAnimator.SetBool("Shake", true);
@@ -54,6 +51,7 @@ public class PlayerFireball : MonoBehaviour
         }
         else
         {
+            playerFireballHitObject = false;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
         }

@@ -7,7 +7,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] CircleCollider2D headColider;
     [SerializeField] Animator animator;
     [SerializeField] Transform attackPoint;
-    [SerializeField] Player player;
+    private Player player;
     [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject fireBall;
     [SerializeField] GameObject enemieDestriyEffect;
@@ -22,6 +22,7 @@ public class Zombie : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         sliderObject.SetActive(true);
         currentHealth = health;
         currentTimeBetweenAttack = timeBetweenAttack;

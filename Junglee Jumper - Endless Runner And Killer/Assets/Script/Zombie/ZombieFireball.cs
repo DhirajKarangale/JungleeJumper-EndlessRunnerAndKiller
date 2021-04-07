@@ -3,11 +3,11 @@ using UnityEngine;
 public class ZombieFireball : MonoBehaviour
 {
     private Player player;
-    [SerializeField] AudioSource audioSource;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float speed;
     [SerializeField] float damage;
+    public static bool zombieFireballHitObject;
 
     private void Start()
     {
@@ -30,24 +30,26 @@ public class ZombieFireball : MonoBehaviour
         {
             if(!PlayerFireball.twoFireballCollide)
             {
-                if (audioSource.isPlaying) audioSource.Stop();
-                audioSource.Play();
+                zombieFireballHitObject = true;
                 Destroy(gameObject);
                 GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
                 Destroy(currentImpactEffect, 1f);
             }
         }
-        if(collision.gameObject.tag == "Player")
+        else if(collision.gameObject.tag == "Player")
         {
            if(!PlayerFireball.twoFireballCollide)
-            {
-                if (audioSource.isPlaying) audioSource.Stop();
-                audioSource.Play();
+           {
+                zombieFireballHitObject = true;
                 player.TakeDamege(damage);
                 Destroy(gameObject);
                 GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
                 Destroy(currentImpactEffect, 1f);
-            }
+           }
+        }
+        else
+        {
+            zombieFireballHitObject = false;
         }
     }
 }
