@@ -159,5 +159,5 @@ MonoBehaviour:
   fireballExplosionEffect: {fileID: 9208721102414400564, guid: 5e06cb992f278d84ca851200062af77d, type: 3}
   rigidBody: {fileID: 1186210858226304276}
   impactEffect: {fileID: 596011849568190565, guid: c7136642ee0f10d4f8af20317f366df4, type: 3}
-  damage: 55
-  speed: 20
+  damage: 20
+  speed: 25

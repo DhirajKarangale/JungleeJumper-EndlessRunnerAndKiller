@@ -2,16 +2,13 @@ using UnityEngine;
 
 public class ZombieFireball : MonoBehaviour
 {
-    private Player player;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float speed;
-    [SerializeField] float damage;
-    public static bool zombieFireballHitObject;
+    public static bool zombieFireballHitObject,zombieFireballHitPlayer;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         rigidBody.velocity = transform.right * (-speed);
     }
 
@@ -34,6 +31,7 @@ public class ZombieFireball : MonoBehaviour
                 Destroy(gameObject);
                 GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
                 Destroy(currentImpactEffect, 1f);
+                zombieFireballHitPlayer = false;
             }
         }
         else if(collision.gameObject.tag == "Player")
@@ -41,7 +39,7 @@ public class ZombieFireball : MonoBehaviour
            if(!PlayerFireball.twoFireballCollide)
            {
                 zombieFireballHitObject = true;
-                player.TakeDamege(damage);
+                zombieFireballHitPlayer = true;
                 Destroy(gameObject);
                 GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
                 Destroy(currentImpactEffect, 1f);
@@ -50,6 +48,7 @@ public class ZombieFireball : MonoBehaviour
         else
         {
             zombieFireballHitObject = false;
+            zombieFireballHitPlayer = false;
         }
     }
 }

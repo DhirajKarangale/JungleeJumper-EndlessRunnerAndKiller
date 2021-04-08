@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class PlayerFireball : MonoBehaviour
 {
-    [SerializeField] Zombie zombie;
     private Animator camAnimator;
     [SerializeField] GameObject fireballExplosionEffect;
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float damage;
     [SerializeField] float speed;
-    public static bool twoFireballCollide, playerFireballHitObject;
+    public static bool twoFireballCollide, playerFireballHitObject,playerFireballCollideZombie;
     private void Start()
     {
         twoFireballCollide = false;
@@ -21,6 +20,7 @@ public class PlayerFireball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
+            playerFireballCollideZombie = false;
             playerFireballHitObject = true;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
@@ -31,10 +31,10 @@ public class PlayerFireball : MonoBehaviour
 
        else if (collision.gameObject.tag == "Zombie")
        {
+            playerFireballCollideZombie = true;
             playerFireballHitObject = true;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
-            zombie.TakeDamage(damage);
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
@@ -42,6 +42,7 @@ public class PlayerFireball : MonoBehaviour
 
        else if(collision.gameObject.tag == "ZombieFireball")
         {
+            playerFireballCollideZombie = false;
             playerFireballHitObject = false;
             twoFireballCollide = true;
             Destroy(gameObject);
@@ -51,6 +52,7 @@ public class PlayerFireball : MonoBehaviour
         }
         else
         {
+            playerFireballCollideZombie = false;
             playerFireballHitObject = false;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);

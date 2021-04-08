@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     private Vector3 playerStartPosition;
     [SerializeField] float health;
     private float currentHealth;
+    [SerializeField] float zombieFireballDamage;
 
     [Header("Dash")]
     [SerializeField] GameObject dashEffect;
@@ -151,6 +152,11 @@ public class Player : MonoBehaviour
             if (fireBallCollisionSound.isPlaying) fireBallCollisionSound.Stop();
             fireBallCollisionSound.Play();
         }
+
+        if(ZombieFireball.zombieFireballHitPlayer)
+        {
+            TakeDamege(zombieFireballDamage);
+        }
     }
 
     private void Dash()
@@ -241,9 +247,9 @@ public class Player : MonoBehaviour
             isPlayerHitObstacles = true;
             DestroyPlayer();
         }
-        else if(collision.gameObject.tag == "Zombie")
+        else if((collision.gameObject.tag == "Zombie") && !Zombie.isZombieDead)
         {
-            isEnemyFireballAllowed =false;
+            isEnemyFireballAllowed = false;
             zombieFireball.SetActive(false);
             Invoke("PlayerHitZombie", 0.3f);
         }
