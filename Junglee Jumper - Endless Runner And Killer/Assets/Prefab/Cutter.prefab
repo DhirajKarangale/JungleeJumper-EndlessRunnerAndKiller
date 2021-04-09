@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6802418995359717817}
   - component: {fileID: 6802418995359717813}
   - component: {fileID: -9129233221052724176}
+  - component: {fileID: -4899532566540469768}
   m_Layer: 0
   m_Name: Cutter
   m_TagString: Cutter
@@ -133,3 +134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e816da89ed84842909dc0a807a338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4899532566540469768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6802418995359717818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d78d00ac0e6dc448a0d53e975050f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}

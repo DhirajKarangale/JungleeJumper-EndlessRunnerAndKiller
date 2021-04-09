@@ -1366,6 +1366,7 @@ GameObject:
   - component: {fileID: 1631974453039494167}
   - component: {fileID: 1631974453039494160}
   - component: {fileID: 2223390258603681330}
+  - component: {fileID: -2897199458180113328}
   m_Layer: 0
   m_Name: VerticalCutter
   m_TagString: Cutter
@@ -1445,6 +1446,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e816da89ed84842909dc0a807a338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2897199458180113328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631974453039494166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d78d00ac0e6dc448a0d53e975050f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
 --- !u!1 &1631974453126077225
 GameObject:
   m_ObjectHideFlags: 0

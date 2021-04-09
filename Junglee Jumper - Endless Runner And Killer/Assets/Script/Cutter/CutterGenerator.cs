@@ -25,35 +25,33 @@ public class CutterGenerator : MonoBehaviour
 
     public void SpwanCutter(Vector3 position,float groundWidth)
     {
-        random = Random.Range(1, 100);
-        if ((playerInitialPosition < 100) && (random < 80))
+         random = Random.Range(1, 100);
+        if ((playerInitialPosition < 100) && (random < 85))
         {
             isCutterGenerated = false;
             return;
         }
-        else if ((playerInitialPosition < 200) && (random < 70))
+        else if ((playerInitialPosition < 200) && (random < 75))
         {
             isCutterGenerated = false;
             return;
         }
-        else if ((playerInitialPosition < 400) && (random < 60))
+        else if ((playerInitialPosition < 400) && (random < 70))
         {
             isCutterGenerated = false;
             return;
         }
-        else if ((playerInitialPosition < 550) && (random < 50))
+        else if ((playerInitialPosition < 550) && (random < 60))
         {
             isCutterGenerated = false;
             return;
         }
-        else if ((playerInitialPosition < 750) && (random < 40))
+        else if ((playerInitialPosition < 750) && (random < 50))
         {
             isCutterGenerated = false;
             return;
-        }
-        else
-        {
-            isCutterGenerated = true;
+        } 
+         isCutterGenerated = true;
             if (groundWidth > 7)
             {
                 numberOfCutter = (int)Random.Range(1, 3);
@@ -64,7 +62,7 @@ public class CutterGenerator : MonoBehaviour
             }
             for (int i = 0; i < numberOfCutter; i++)
             {
-                int distanceBetweenCutter = (int)Random.Range(1, groundWidth);
+                int distanceBetweenCutter = (int)Random.Range(1, (groundWidth - 2));
                 cutter = cutterPooler.GetPooledGameObject();
                 verticalCutter = verticalCutterPooler.GetPooledGameObject();
                 if (i == 0)
@@ -81,7 +79,7 @@ public class CutterGenerator : MonoBehaviour
                         verticalCutter.SetActive(true);
                     }
                 }
-                else if (i == 2)
+                else if (i == 1)
                 {
                     int randomCutter = Random.Range(0, 100);
                     if (randomCutter < 50)
@@ -107,6 +105,5 @@ public class CutterGenerator : MonoBehaviour
             {
                 cutterSound.Stop();
             }
-        }
     }
 }

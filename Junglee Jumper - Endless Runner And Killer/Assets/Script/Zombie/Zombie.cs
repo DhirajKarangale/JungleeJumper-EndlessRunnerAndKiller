@@ -30,7 +30,6 @@ public class Zombie : MonoBehaviour
                 animator.SetBool("Idel", false);
                 animator.SetBool("Dye", false);
                 GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-                Debug.Log("Zombie fireball sucess");
                 Destroy(currentFireball, 3f);
                 currentTimeBetweenAttack = timeBetweenAttack;
                 Invoke("SetAttackAnimToFalse", 0.5f);

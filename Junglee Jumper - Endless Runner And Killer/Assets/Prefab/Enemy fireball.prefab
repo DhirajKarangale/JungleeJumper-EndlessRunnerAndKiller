@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1341596558784036298}
   - component: {fileID: 1341596558784036300}
   m_Layer: 0
-  m_Name: Enemy Fireball
+  m_Name: Enemy fireball
   m_TagString: ZombieFireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,4 +158,3 @@ MonoBehaviour:
   rigidBody: {fileID: 1341596558784036299}
   impactEffect: {fileID: 9122608879392446620, guid: 95b4178a29dab9d48acfa892fbfb5b6e, type: 3}
   speed: 20
-  damage: 1
