@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
     public bool playerRuning;
     public bool isPlayerDead,isPlayerHitObstacles;
     private Vector3 playerStartPosition;
-    [SerializeField] float health;
-    private float currentHealth;
+    public float health;
+    public float currentHealth;
     [SerializeField] float zombieFireballDamage;
 
     [Header("Dash")]
@@ -142,11 +142,6 @@ public class Player : MonoBehaviour
             animator.SetBool("PlayerRuning", true);
         }
 
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-        }
-
         if(PlayerFireball.twoFireballCollide)
         {
             if (fireBallCollisionSound.isPlaying) fireBallCollisionSound.Stop();
@@ -156,6 +151,7 @@ public class Player : MonoBehaviour
         if(ZombieFireball.zombieFireballHitPlayer)
         {
             TakeDamege(zombieFireballDamage);
+            ZombieFireball.zombieFireballHitPlayer = false;
         }
     }
 
@@ -247,7 +243,7 @@ public class Player : MonoBehaviour
             isPlayerHitObstacles = true;
             DestroyPlayer();
         }
-        else if((collision.gameObject.tag == "Zombie") && !Zombie.isZombieDead)
+        else if(collision.gameObject.tag == "Zombie")
         {
             isEnemyFireballAllowed = false;
             zombieFireball.SetActive(false);
@@ -314,5 +310,10 @@ public class Player : MonoBehaviour
         currentHealth = 0;
         Invoke("GameOverSound", 1f);
         Invoke("PlayerDead", 2f);
+    }
+
+    public void FireBallButton()
+    {
+      GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
     }
 }

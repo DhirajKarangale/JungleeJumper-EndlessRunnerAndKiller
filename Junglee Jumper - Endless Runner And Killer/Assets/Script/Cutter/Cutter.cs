@@ -8,8 +8,8 @@ public class Cutter : MonoBehaviour
        if(PlayerFireball.playerFireballCollideWithCutter)
        {
           PlayerFireball.playerFireballCollideWithCutter = false;
-          GameObject currentDestryEffect = Instantiate(destroyEffect,transform.position,transform.rotation);
           gameObject.SetActive(false);
+          GameObject currentDestryEffect = Instantiate(destroyEffect,transform.position,transform.rotation);
           Destroy(currentDestryEffect,2f);
        }
    }

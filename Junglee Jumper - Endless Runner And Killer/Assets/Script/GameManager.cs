@@ -17,12 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource playerFireballHitSound;
     [SerializeField] AudioSource zombieFireballHitSound;
 
+    public bool isGameStart;
+
     private void Start()
     {
         Time.timeScale = 0f;
         continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);
         player.isPlayerDead = false;
+        isGameStart = false;
     }
 
     private void Update()
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         continueScreen.SetActive(false);
+        isGameStart = true; 
     }
 
     public void HomeButton()

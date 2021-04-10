@@ -6,16 +6,17 @@ public class CutterGenerator : MonoBehaviour
     [SerializeField] ObjectPooler cutterPooler;
     [SerializeField] ObjectPooler verticalCutterPooler;
     [SerializeField] AudioSource cutterSound;
+    [SerializeField] GameManager gameManager;
     public bool isCutterGenerated;
     private GameObject cutter;
     private GameObject verticalCutter;
     private int numberOfCutter;
     private float playerInitialPosition;
-    public int random;
 
     private void Start()
     {
         playerInitialPosition = player.transform.position.x;
+        gameManager.isGameStart = false;
     }
 
     private void Update()
@@ -25,7 +26,7 @@ public class CutterGenerator : MonoBehaviour
 
     public void SpwanCutter(Vector3 position,float groundWidth)
     {
-         random = Random.Range(1, 100);
+        int random = Random.Range(1, 100);
         if ((playerInitialPosition < 100) && (random < 85))
         {
             isCutterGenerated = false;
@@ -54,7 +55,7 @@ public class CutterGenerator : MonoBehaviour
          isCutterGenerated = true;
             if (groundWidth > 7)
             {
-                numberOfCutter = (int)Random.Range(1, 3);
+                numberOfCutter = (int)Random.Range(1, 2);
             }
             else
             {
@@ -62,7 +63,7 @@ public class CutterGenerator : MonoBehaviour
             }
             for (int i = 0; i < numberOfCutter; i++)
             {
-                int distanceBetweenCutter = (int)Random.Range(1, (groundWidth - 2));
+                int distanceBetweenCutter = (int)Random.Range(1, (groundWidth/2));
                 cutter = cutterPooler.GetPooledGameObject();
                 verticalCutter = verticalCutterPooler.GetPooledGameObject();
                 if (i == 0)
@@ -97,7 +98,7 @@ public class CutterGenerator : MonoBehaviour
             }
 
             float distanceBetweenPlayerAndCutter = cutter.transform.position.x - transform.position.x;
-            if ((distanceBetweenPlayerAndCutter < 30) && !player.isPlayerDead)
+            if ((distanceBetweenPlayerAndCutter < 30) && !player.isPlayerDead && gameManager.isGameStart)
             {
                 cutterSound.Play();
             }
