@@ -320,5 +320,6 @@ public class Player : MonoBehaviour
     {
       GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
       Destroy(currentFireball,1.5f);
+      if(isPlayerDead) Destroy(currentFireball);
     }
 }

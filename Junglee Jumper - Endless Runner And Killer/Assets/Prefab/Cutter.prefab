@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6802418995359717818}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.45, y: -4.37, z: 10}
-  m_LocalScale: {x: 0.58875, y: 0.58875, z: 0.58875}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cc7cafd0176ea1e468a276c6a11567e4, type: 3}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  m_Color: {r: 1, g: 0.27342165, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
+  gameManager: {fileID: 0}
   cutterSound: {fileID: 4601882588401949173}
 --- !u!82 &4601882588401949173
 AudioSource:
@@ -161,7 +162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1ac3bbc862ea67b4e9969a59859d00c4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.15
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0

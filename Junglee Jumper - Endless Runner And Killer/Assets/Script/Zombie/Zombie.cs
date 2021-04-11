@@ -22,7 +22,7 @@ public class Zombie : MonoBehaviour
 
     private void Update()
     {
-        if (player.isEnemyFireballAllowed)
+        if (player.isEnemyFireballAllowed && !player.isPlayerDead)
         {
             if(currentTimeBetweenAttack <= 0)
             {

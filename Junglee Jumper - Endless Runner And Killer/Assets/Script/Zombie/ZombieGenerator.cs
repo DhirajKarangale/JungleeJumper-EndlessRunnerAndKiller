@@ -18,10 +18,10 @@ public class ZombieGenerator : MonoBehaviour
 
     public void SpwanZombie(Vector3 position)
     {
-        if(playerInitialPosition > 150)
+        if(playerInitialPosition > 50)
         {
            int platfrom = Random.Range(0, 100);
-           if (platfrom < 50) return;
+           if (platfrom < 70) return;
            GameObject zombie = zombiePooler.GetPooledGameObject();
            zombie.transform.position = new Vector3(position.x, position.y + 2, 0);
            zombie.SetActive(true);
