@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1186210858226304274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.1659262, y: -5.675255, z: -1}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   rigidBody: {fileID: 1186210858226304276}
   impactEffect: {fileID: 596011849568190565, guid: c7136642ee0f10d4f8af20317f366df4, type: 3}
   damage: 20
-  speed: 25
+  speed: 28
 --- !u!82 &1529728964019208660
 AudioSource:
   m_ObjectHideFlags: 0

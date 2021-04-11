@@ -1248,7 +1248,6 @@ MonoBehaviour:
   player: {fileID: 962507646}
   cutterPooler: {fileID: 1916656987}
   verticalCutterPooler: {fileID: 1936840545}
-  cutterSound: {fileID: 214653458}
   gameManager: {fileID: 1864508231}
   isCutterGenerated: 0
 --- !u!4 &235081070
@@ -2185,7 +2184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3148,7 +3147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682792669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8786, y: 7.9, z: 0}
+  m_LocalPosition: {x: 0.8786, y: 9.82, z: 0}
   m_LocalScale: {x: 28.925829, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -4080,6 +4079,7 @@ MonoBehaviour:
   healthSlider: {fileID: 53811391}
   healthSliderGameObject: {fileID: 53811389}
   dashButton: {fileID: 464306881}
+  fireballButton: {fileID: 2095606100}
   playerDestroyEffect: {fileID: 428160608291510419, guid: 782cb5cd87ebd7a419e171c71a04060c, type: 3}
   fireBall: {fileID: 1186210858226304274, guid: d1bdc402ba7279b4686b5193b07c14d5, type: 3}
   playerDeadBody: {fileID: 2875631406590252437, guid: 0d9df1ea6073a8541a28ffab9df5e823, type: 3}
@@ -4096,7 +4096,7 @@ MonoBehaviour:
   isPlayerHitObstacles: 0
   health: 100
   currentHealth: 0
-  zombieFireballDamage: 1
+  zombieFireballDamage: 35
   dashEffect: {fileID: 4328013565267778457, guid: a695902cb6217b34abe084b368e1806c, type: 3}
   dashTime: 0.5
   dashSound: {fileID: 1317276781}
@@ -6234,6 +6234,7 @@ MonoBehaviour:
   playerFireballHitSound: {fileID: 219319005}
   zombieFireballHitSound: {fileID: 559501858}
   isGameStart: 0
+  isGameOver: 0
 --- !u!1 &1872693153
 GameObject:
   m_ObjectHideFlags: 0
@@ -6562,8 +6563,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048933700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.887, y: -1.6217, z: 1000}
-  m_LocalScale: {x: 27.893473, y: 17.293007, z: 1}
+  m_LocalPosition: {x: 0.6121, y: -0.2934, z: 1000}
+  m_LocalScale: {x: 38.886013, y: 19.948656, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
   m_RootOrder: 3
@@ -6981,7 +6982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

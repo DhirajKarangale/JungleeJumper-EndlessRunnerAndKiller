@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = Mathf.Round(score).ToString();
         highScoreText.text = Mathf.Round(highScore).ToString();
 
-        if(Input.GetKey(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPause) ResumeButton();
             else PauseButton();

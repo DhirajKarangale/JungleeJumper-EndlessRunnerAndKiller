@@ -5,7 +5,6 @@ public class CutterGenerator : MonoBehaviour
     [SerializeField] Player player;
     [SerializeField] ObjectPooler cutterPooler;
     [SerializeField] ObjectPooler verticalCutterPooler;
-    [SerializeField] AudioSource cutterSound;
     [SerializeField] GameManager gameManager;
     public bool isCutterGenerated;
     private GameObject cutter;
@@ -97,14 +96,5 @@ public class CutterGenerator : MonoBehaviour
 
             }
 
-            float distanceBetweenPlayerAndCutter = cutter.transform.position.x - transform.position.x;
-            if ((distanceBetweenPlayerAndCutter < 30) && !player.isPlayerDead && gameManager.isGameStart)
-            {
-                cutterSound.Play();
-            }
-            else
-            {
-                cutterSound.Stop();
-            }
     }
 }

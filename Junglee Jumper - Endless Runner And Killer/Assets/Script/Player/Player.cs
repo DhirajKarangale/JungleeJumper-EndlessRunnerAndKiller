@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject healthSliderGameObject;
     [SerializeField] GameObject dashButton;
+    [SerializeField] GameObject fireballButton;
     [SerializeField] GameObject playerDestroyEffect;
     [SerializeField] GameObject fireBall;
     [SerializeField] GameObject playerDeadBody;
@@ -62,6 +63,7 @@ public class Player : MonoBehaviour
     {
         zombieFireball.SetActive(true);
         dashButton.SetActive(true);
+        fireballButton.SetActive(true);
         healthSliderGameObject.SetActive(true);
         isEnemyFireballAllowed = true;
         levelDistanceCount = levelDistance;
@@ -287,6 +289,7 @@ public class Player : MonoBehaviour
         Destroy(currentBloodEffect, 2f);
         healthSliderGameObject.SetActive(false);
         dashButton.SetActive(false);
+        fireballButton.SetActive(false);
         this.gameObject.SetActive(false);
         zombieFireball.SetActive(false);
         Invoke("GameOverSound", 1f);
@@ -303,6 +306,7 @@ public class Player : MonoBehaviour
         GameObject currentPlayerDestroyEffect = Instantiate(playerDestroyEffect, transform.position, transform.rotation);
         Destroy(currentPlayerDestroyEffect, 5f);
         dashButton.SetActive(false);
+        fireballButton.SetActive(false);
         speed = 0;
         deathSound.Play();
         gameObject.SetActive(false);
@@ -315,5 +319,6 @@ public class Player : MonoBehaviour
     public void FireBallButton()
     {
       GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
+      Destroy(currentFireball,1.5f);
     }
 }

@@ -17,10 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource playerFireballHitSound;
     [SerializeField] AudioSource zombieFireballHitSound;
 
-    public bool isGameStart;
+    public bool isGameStart,isGameOver;
 
     private void Start()
     {
+        isGameOver = false;
         Time.timeScale = 0f;
         continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        isGameOver = true;
         backGroundMusic.Stop();
         player.isPlayerDead = true;
         Time.timeScale = 1f;
@@ -60,10 +62,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
             SceneManager.LoadScene(0);
     }
-
+  
     public void Quit()
     {
         Application.Quit();
+        isGameOver = false;
     }
 
     public void Restart()
@@ -72,6 +75,7 @@ public class GameManager : MonoBehaviour
         restartSound.Play();
         player.isPlayerDead = false;
         Invoke("DelayInRestart", 0.2f);
+        isGameOver = false;
     }
 
     private void DelayInRestart()
@@ -89,5 +93,6 @@ public class GameManager : MonoBehaviour
     public void HomeButton()
     {
         SceneManager.LoadScene(0);
+        isGameOver = false;
     }
 }
