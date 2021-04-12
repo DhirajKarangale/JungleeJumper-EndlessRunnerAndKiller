@@ -1245,7 +1245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83ec39ed96d984468cf8b8153fe2709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 962507646}
   cutterPooler: {fileID: 1916656987}
   verticalCutterPooler: {fileID: 1936840545}
   gameManager: {fileID: 1864508231}
@@ -2432,7 +2431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3f89c5f0ca9d746ada07cf1e422e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 962507646}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -4065,9 +4063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fcdd8383576c24cae28a6c2fbce592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 962507643}
-  playerCollider: {fileID: 962507642}
-  animator: {fileID: 962507647}
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -6225,7 +6220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50aa93cab5c86a54ea7b51f477652553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 962507646}
   scoreManager: {fileID: 581298321}
   restartSound: {fileID: 284116225}
   backGroundMusic: {fileID: 514414361}
@@ -6235,7 +6229,6 @@ MonoBehaviour:
   highScore: {fileID: 1396774065}
   playerFireballHitSound: {fileID: 219319005}
   zombieFireballHitSound: {fileID: 559501858}
-  isGameStart: 0
 --- !u!1 &1872693153
 GameObject:
   m_ObjectHideFlags: 0
@@ -6281,7 +6274,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePooler: {fileID: 69387937}
-  player: {fileID: 962507646}
 --- !u!1 &1916656986
 GameObject:
   m_ObjectHideFlags: 0
@@ -6632,8 +6624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65a4c8b00a099c94a9eb469f41655dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backGround: {fileID: 2048933702}
-  player: {fileID: 962507646}
   backGroundSpeed: 0.17
 --- !u!1 &2067757575
 GameObject:

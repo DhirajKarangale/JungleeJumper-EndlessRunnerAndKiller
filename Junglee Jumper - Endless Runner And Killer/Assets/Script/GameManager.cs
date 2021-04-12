@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Player player;
+    private Player player;
     [SerializeField] ScoreManager scoreManager;
     [SerializeField] AudioSource restartSound;
     [SerializeField] AudioSource backGroundMusic;
@@ -17,10 +17,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource playerFireballHitSound;
     [SerializeField] AudioSource zombieFireballHitSound;
 
-    public bool isGameStart;
+    public static bool isGameStart;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         Time.timeScale = 0f;
         continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);

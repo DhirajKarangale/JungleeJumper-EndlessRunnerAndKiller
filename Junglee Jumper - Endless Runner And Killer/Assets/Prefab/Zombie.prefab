@@ -550,12 +550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37446d2b9ad233d4ab5fa73cfaa32007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1906698483615137354}
   attackPoint: {fileID: 1906698483392803949}
   zombieBloodSplash: {fileID: 6172181126059984011, guid: 176a9bb144803704084d6db7cad18de5, type: 3}
   fireBall: {fileID: 1341596558784036293, guid: ead4bce2a7939274a83f5bd6f04bbb7b, type: 3}
-  enemieDestriyEffect: {fileID: 6172181126059984011, guid: 176a9bb144803704084d6db7cad18de5, type: 3}
-  attackRange: 30
+  enemieDestriyEffect: {fileID: 7262123784175544433, guid: 6b24c58fe4a4d684ca1e4d3294915684, type: 3}
   timeBetweenAttack: 2
 --- !u!114 &1906698483615137358
 MonoBehaviour:

@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Camera_Controller : MonoBehaviour
 {
-    [SerializeField] Player player;
+    private Player player;
     private Vector3 lastPosition;
     private float distance;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         lastPosition = player.transform.position;
     }
 

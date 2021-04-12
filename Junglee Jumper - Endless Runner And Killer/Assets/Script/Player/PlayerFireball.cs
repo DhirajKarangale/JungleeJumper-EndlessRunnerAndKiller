@@ -5,13 +5,14 @@ public class PlayerFireball : MonoBehaviour
     private Animator camAnimator;
     private AudioSource firballReleseSound;
     [SerializeField] GameObject fireballExplosionEffect;
-    [SerializeField] Rigidbody2D rigidBody;
+    private Rigidbody2D rigidBody;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float damage;
     [SerializeField] float speed;
     public static bool twoFireballCollide, playerFireballHitObject,playerFireballCollideZombie,playerFireballCollideWithCutter;
     private void Start()
     {
+        rigidBody = GetComponent<Rigidbody2D>();
         firballReleseSound = GetComponent<AudioSource>(); 
         twoFireballCollide = false;
         camAnimator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();

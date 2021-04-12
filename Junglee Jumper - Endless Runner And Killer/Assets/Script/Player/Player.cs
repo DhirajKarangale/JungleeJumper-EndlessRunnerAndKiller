@@ -5,9 +5,9 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {
     [Header("Refrences")]
-    [SerializeField] Rigidbody2D rigidBody;
-    [SerializeField] Collider2D playerCollider;
-    [SerializeField] Animator animator;
+    private Rigidbody2D rigidBody;
+    private Collider2D playerCollider;
+    private Animator animator;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask deathGround;
     [SerializeField] ScrowllingBackGround scrowlling;
@@ -61,6 +61,9 @@ public class Player : MonoBehaviour
     
     private void Start()
     {
+        rigidBody = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
+        animator = GetComponent<Animator>();
         zombieFireball.SetActive(true);
         dashButton.SetActive(true);
         fireballButton.SetActive(true);
@@ -243,6 +246,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Cutter")
         {
             isPlayerHitObstacles = true;
+            scrowlling.backGroundSpeed = 0f;
             DestroyPlayer();
         }
         else if(collision.gameObject.tag == "Zombie")
@@ -318,8 +322,11 @@ public class Player : MonoBehaviour
 
     public void FireBallButton()
     {
-      GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-      Destroy(currentFireball,1.5f);
-      if(isPlayerDead) Destroy(currentFireball);
+     if(GameManager.isGameStart)
+     {
+        GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
+        Destroy(currentFireball,1.5f);
+        if(isPlayerDead) Destroy(currentFireball);
+     }
     }
 }

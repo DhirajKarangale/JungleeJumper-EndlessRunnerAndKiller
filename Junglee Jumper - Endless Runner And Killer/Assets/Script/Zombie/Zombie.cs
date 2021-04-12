@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Zombie : MonoBehaviour
 {
     private Player player;
-    [SerializeField] Animator animator;
+    private Animator animator;
     [SerializeField] Transform attackPoint;
     [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject fireBall;
@@ -15,6 +15,7 @@ public class Zombie : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         currentTimeBetweenAttack = timeBetweenAttack;
         isZombieDead = false;
