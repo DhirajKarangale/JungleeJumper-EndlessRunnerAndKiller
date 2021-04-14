@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private Player player;
     [SerializeField] ScoreManager scoreManager;
+    [SerializeField] GameObject scoreManagerObject;
     [SerializeField] AudioSource restartSound;
     [SerializeField] AudioSource backGroundMusic;
     [SerializeField] GameObject continueScreen;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioSource playerFireballHitSound;
     [SerializeField] AudioSource zombieFireballHitSound;
+    [SerializeField] AudioSource clickSound;
 
     public static bool isGameStart;
 
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         player.isPlayerDead = false;
         isGameStart = false;
+        scoreManagerObject.SetActive(true);
     }
 
     private void Update()
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         backGroundMusic.Stop();
         player.isPlayerDead = true;
+        scoreManagerObject.SetActive(false);
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
@@ -64,6 +68,7 @@ public class GameManager : MonoBehaviour
   
     public void Quit()
     {
+        clickSound.Play();
         Application.Quit();
     }
 
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
+        clickSound.Play();
         SceneManager.LoadScene(0);
     }
 }

@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text scoreText;
     [SerializeField] Text highScoreText;
     [SerializeField] Player player;
+    [SerializeField] AudioSource clickSound;
+    [SerializeField] AudioSource backGroundMusic;
     public float score;
     public float highScore;
     [SerializeField] GameObject scoreCanvas;
@@ -18,6 +20,7 @@ public class ScoreManager : MonoBehaviour
     {
         highScore = PlayerPrefs.GetFloat("HighScore", 0f);
         pauseScreen.SetActive(false);
+        backGroundMusic.Play();
     }
 
     private void Update()
@@ -45,6 +48,8 @@ public class ScoreManager : MonoBehaviour
 
     public void PauseButton()
     {
+        backGroundMusic.Stop();
+        clickSound.Play();
         isPause = true;
         Time.timeScale = 0f;
         scoreCanvas.SetActive(false);
@@ -53,6 +58,8 @@ public class ScoreManager : MonoBehaviour
 
     public void ResumeButton()
     {
+        backGroundMusic.Play();
+        clickSound.Play();
         isPause = false;
         Time.timeScale = 1f;
         scoreCanvas.SetActive(true);
@@ -61,12 +68,14 @@ public class ScoreManager : MonoBehaviour
 
     public void HomeButton()
     {
+        clickSound.Play();
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
     public void RestartButton()
     {
+        clickSound.Play();
         SceneManager.LoadScene(1);
     }
 }

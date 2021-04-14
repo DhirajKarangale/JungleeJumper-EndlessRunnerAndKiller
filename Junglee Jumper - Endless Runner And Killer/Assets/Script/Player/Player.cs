@@ -325,7 +325,7 @@ public class Player : MonoBehaviour
      if(GameManager.isGameStart)
      {
         GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-        Destroy(currentFireball,1.5f);
+        Destroy(currentFireball,1.1f);
         if(isPlayerDead) Destroy(currentFireball);
      }
     }
