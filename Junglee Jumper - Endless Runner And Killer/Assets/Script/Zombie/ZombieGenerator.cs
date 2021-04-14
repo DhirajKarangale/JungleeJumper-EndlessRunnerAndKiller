@@ -7,7 +7,7 @@ public class ZombieGenerator : MonoBehaviour
     public void SpwanZombie(Vector3 position)
     {
         int platfrom = Random.Range(0, 100);
-           if (platfrom < 50)
+           if (platfrom > 75)
           {
            GameObject zombie = zombiePooler.GetPooledGameObject();
            zombie.transform.position = new Vector3(position.x, position.y + 2, 0);

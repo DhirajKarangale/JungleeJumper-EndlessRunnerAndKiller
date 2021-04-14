@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
     public float highScore;
     [SerializeField] GameObject scoreCanvas;
     [SerializeField] GameObject pauseScreen;
-    public bool isPause;
+    public static bool isPause;
 
     private void Start()
     {

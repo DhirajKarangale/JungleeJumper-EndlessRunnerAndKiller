@@ -4,18 +4,17 @@ public class Cutter : MonoBehaviour
 {
     private Player player;
     [SerializeField] GameObject destroyEffect;
-
     [SerializeField] AudioSource cutterSound;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        if(!cutterSound.isPlaying && !player.isPlayerDead && GameManager.isGameStart) cutterSound.Play();
+        if(!cutterSound.isPlaying && !player.isPlayerDead && GameManager.isGameStart && !ScoreManager.isPause) cutterSound.Play();
     }
 
    private void Update()
    {
-        if(player.isPlayerDead) cutterSound.Stop();
+        if(player.isPlayerDead || ScoreManager.isPause) cutterSound.Stop();
        if(PlayerFireball.playerFireballCollideWithCutter)
        {
           PlayerFireball.playerFireballCollideWithCutter = false;

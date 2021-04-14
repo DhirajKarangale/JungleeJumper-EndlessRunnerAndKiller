@@ -9,12 +9,14 @@ public class Zombie : MonoBehaviour
     [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject fireBall;
     [SerializeField] GameObject enemieDestriyEffect;
+    [SerializeField] AudioSource zombieSound;
     [SerializeField] float timeBetweenAttack;
     private float currentTimeBetweenAttack;
     public static bool isZombieDead;
 
     private void Start()
     {
+      //  if(!zombieSound.isPlaying && !player.isPlayerDead && GameManager.isGameStart) zombieSound.Play();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         currentTimeBetweenAttack = timeBetweenAttack;

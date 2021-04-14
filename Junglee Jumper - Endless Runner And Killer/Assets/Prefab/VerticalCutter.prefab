@@ -1460,7 +1460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
-  gameManager: {fileID: 0}
   cutterSound: {fileID: 88935860949439291}
 --- !u!82 &88935860949439291
 AudioSource:
@@ -1473,8 +1472,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1ac3bbc862ea67b4e9969a59859d00c4, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_PlayOnAwake: 0
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0

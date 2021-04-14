@@ -10,7 +10,6 @@ public class GroundPoolers : MonoBehaviour
     [SerializeField] CutterGenerator cutterGenerator;
     [SerializeField] ZombieGenerator zombieGenerator;
     [SerializeField] HealthPackGenerator healthPackGenerator;
-    [SerializeField] ScoreManager scoreManager;
     [SerializeField] Player player;
     private float minY, maxY;
     [SerializeField] float minGap, maxGap;
@@ -30,7 +29,7 @@ public class GroundPoolers : MonoBehaviour
 
     private void Update()
     {
-        if((transform.position.x < groundPoint.position.x) && !scoreManager.isPause)
+        if((transform.position.x < groundPoint.position.x) && !ScoreManager.isPause)
         {
             int random = Random.Range(0, groundPoolers.Length);
             float distance = groundWidths[random] / 2;

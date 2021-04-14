@@ -200,27 +200,26 @@ public class Player : MonoBehaviour
                 isJumping = false;
             }
         }
-        else
-        {
-            isJumping = false;
-            if (isGrounded && ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) || Input.GetKeyDown(KeyCode.Space))
-            {
+       else   if (isGrounded && ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) || Input.GetKeyDown(KeyCode.Space))
+       {
+                isJumping = false;
                 jumpTimeCounter = jumpTime;
                 isJumping = true;
                 doubleJumpAllowed = true;
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
                 if (jumpSound.isPlaying) jumpSound.Stop();
                 jumpSound.Play();
-            }
-            else if (doubleJumpAllowed && ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) || Input.GetKeyDown(KeyCode.Space))
-            {
+       }
+        else if (doubleJumpAllowed && ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began)) || Input.GetKeyDown(KeyCode.Space))
+        {
+                isJumping = false;
                 isDoubleJump = true;
                 doubleJumpAllowed = false;
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
                 if (jumpSound.isPlaying) jumpSound.Stop();
                 jumpSound.Play();
-            }
         }
+        
 
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("PlayerRuning", false);
@@ -251,6 +250,7 @@ public class Player : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Zombie")
         {
+            scrowlling.backGroundSpeed = 0f;
             isEnemyFireballAllowed = false;
             zombieFireball.SetActive(false);
             Invoke("PlayerHitZombie", 0.3f);
