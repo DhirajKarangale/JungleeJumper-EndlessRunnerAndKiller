@@ -5,6 +5,7 @@ public class CutterGenerator : MonoBehaviour
     [SerializeField] ObjectPooler cutterPooler;
     [SerializeField] ObjectPooler verticalCutterPooler;
     [SerializeField] GameManager gameManager;
+    public int generator = 75;
     public bool isCutterGenerated;
     private GameObject cutter;
     private GameObject verticalCutter;
@@ -17,7 +18,7 @@ public class CutterGenerator : MonoBehaviour
     public void SpwanCutter(Vector3 position,float groundWidth)
     {
         int random = Random.Range(1, 100);
-        if ((random > 65) && (groundWidth > 9))
+        if ((random > generator) && (groundWidth > 9))
         {
             isCutterGenerated = true;
            int randomCutter = Random.Range(0, 100);

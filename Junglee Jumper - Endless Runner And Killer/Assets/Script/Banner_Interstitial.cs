@@ -1,21 +1,42 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Advertisements;
+using UnityEngine.SceneManagement;
 
 public class Banner_Interstitial : MonoBehaviour
 {
     private const string gameId = "4086101";
     private string surfacingId = "Banner_Android";
     private string placement_Interstitial = "Interstitial_Android";
-    private bool testMode = true;
+    private bool testMode = false;
 
     private void Start()
     {
-#if UNITY_ANDROID
+         int currentScene = SceneManager.GetActiveScene().buildIndex;
         Advertisement.Initialize (gameId,testMode);
-        StartCoroutine(ShowBannerWhenInitialized());
+        if(currentScene == 0)
+        {
+            StartCoroutine(ShowBannerWhenInitialized());
+        }
+        else
+        {
+            Advertisement.Banner.Hide();
+        }
         Invoke("ShowInterstitialAd",3f);
-#endif        
+       
+        if(currentScene == 1) 
+        {
+          Advertisement.Banner.Hide();
+        }
+    }
+
+    private void Update()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        if(currentScene == 1) 
+        {
+          Advertisement.Banner.Hide();
+        }
     }
 
     public void OnDestroy()
@@ -44,5 +65,6 @@ public class Banner_Interstitial : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
         Advertisement.Banner.Show (surfacingId);
+        Debug.Log("Banner Ad Sucess DK");
     }
 }

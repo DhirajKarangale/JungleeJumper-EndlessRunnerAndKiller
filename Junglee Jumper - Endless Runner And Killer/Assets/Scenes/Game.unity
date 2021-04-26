@@ -1121,6 +1121,7 @@ MonoBehaviour:
   cutterPooler: {fileID: 1916656987}
   verticalCutterPooler: {fileID: 1936840545}
   gameManager: {fileID: 1864508231}
+  generator: 75
   isCutterGenerated: 0
 --- !u!4 &235081070
 Transform:
@@ -1849,68 +1850,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366269808}
   m_CullTransparentMesh: 1
---- !u!1001 &457050820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1248094174}
-    m_Modifications:
-    - target: {fileID: 8122645122344784426, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_Name
-      value: Banner_InterstitialAd
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
---- !u!4 &457050821 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8122645122344784428, guid: ecb2ede32d2865a42b6654208f3c706f, type: 3}
-  m_PrefabInstance: {fileID: 457050820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &463324861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,14 +1957,14 @@ RectTransform:
   m_GameObject: {fileID: 464306881}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalScale: {x: 1.05, y: 1.05, z: 1.05}
   m_Children: []
   m_Father: {fileID: 1780151585}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 121, y: 223}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -477, y: 150.75}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464306884
@@ -2810,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f91ce4d06d206041a624fd5da25ed64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointePerSecond: 7
+  pointePerSecond: 3
   scoreText: {fileID: 1720178340}
   highScoreText: {fileID: 1465293445}
   player: {fileID: 962507646}
@@ -3687,9 +3626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Tap and hold to Jump
-
-'
+  m_Text: "Tap to Continue \nHold to Jump Higher\n"
 --- !u!222 &890134545
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3845,6 +3782,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9fcdd8383576c24cae28a6c2fbce592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zombieGenerator: {fileID: 1872693155}
+  cutterGenerator: {fileID: 235081069}
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -5002,7 +4941,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 755555003}
-  - {fileID: 457050821}
   m_Father: {fileID: 1864508230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6339,6 +6277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePooler: {fileID: 69387937}
+  generator: 90
 --- !u!1 &1916656986
 GameObject:
   m_ObjectHideFlags: 0
@@ -7015,14 +6954,14 @@ RectTransform:
   m_GameObject: {fileID: 2095606100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
   m_Children: []
   m_Father: {fileID: 1780151585}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -361, y: 91}
+  m_AnchoredPosition: {x: -164, y: 154.25}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095606102

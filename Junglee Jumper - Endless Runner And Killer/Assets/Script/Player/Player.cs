@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Collider2D playerCollider;
     private Animator animator;
+    [SerializeField] ZombieGenerator zombieGenerator;
+    [SerializeField] CutterGenerator cutterGenerator;
     [SerializeField] LayerMask ground;
     [SerializeField] LayerMask deathGround;
     [SerializeField] ScrowllingBackGround scrowlling;
@@ -124,6 +126,8 @@ public class Player : MonoBehaviour
             speed = speed * speedMultiplier;
             runingSpeedAnim += (speedMultiplier/100);
             animator.SetFloat("RuningSpeed", runingSpeedAnim);
+            zombieGenerator.generator -= 3;
+            cutterGenerator.generator -= 6;
             levelDistance = levelDistance * speedMultiplier;
             scrowlling.backGroundSpeed += (speedMultiplier / 120);
             originalSpeed = speed;
@@ -325,7 +329,7 @@ public class Player : MonoBehaviour
      if(GameManager.isGameStart)
      {
         GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-        Destroy(currentFireball,1.1f);
+        Destroy(currentFireball,1.2f);
         if(isPlayerDead) Destroy(currentFireball);
      }
     }

@@ -5,6 +5,7 @@ public class Zombie : MonoBehaviour
 {
     private Player player;
     private Animator animator;
+    private ScoreManager scoreManager;
     [SerializeField] Transform attackPoint;
     [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject fireBall;
@@ -21,6 +22,7 @@ public class Zombie : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         currentTimeBetweenAttack = timeBetweenAttack;
         isZombieDead = false;
+         scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     private void Update()
@@ -46,6 +48,7 @@ public class Zombie : MonoBehaviour
         if(PlayerFireball.playerFireballCollideZombie)
         {
             DestroyEnemie();
+            scoreManager.score += 30;
         }
     }
 

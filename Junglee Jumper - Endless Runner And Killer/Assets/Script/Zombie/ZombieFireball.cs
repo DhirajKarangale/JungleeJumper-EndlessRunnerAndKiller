@@ -25,14 +25,11 @@ public class ZombieFireball : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            if(!PlayerFireball.twoFireballCollide)
-            {
-                zombieFireballHitObject = true;
+             zombieFireballHitObject = true;
                 Destroy(gameObject);
                 GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
                 Destroy(currentImpactEffect, 1f);
                 zombieFireballHitPlayer = false;
-            }
         }
         else if(collision.gameObject.tag == "Player")
         {
@@ -44,6 +41,14 @@ public class ZombieFireball : MonoBehaviour
                 GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
                 Destroy(currentImpactEffect, 1f);
            }
+        }
+        else if(collision.gameObject.tag == "Cutter")
+        {
+            zombieFireballHitObject = true;
+                Destroy(gameObject);
+                GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(-1, 0, 0), transform.rotation);
+                Destroy(currentImpactEffect, 1f);
+                zombieFireballHitPlayer = false;
         }
         else
         {
