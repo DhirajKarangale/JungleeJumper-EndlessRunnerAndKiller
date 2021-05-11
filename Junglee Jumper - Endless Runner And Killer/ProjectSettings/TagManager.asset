@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - ZombieFireball
   - PlayerFireball
+  - VerC
   layers:
   - Default
   - TransparentFX

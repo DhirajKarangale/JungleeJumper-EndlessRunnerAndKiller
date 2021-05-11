@@ -42,7 +42,7 @@ public class ZombieFireball : MonoBehaviour
                 Destroy(currentImpactEffect, 1f);
            }
         }
-        else if(collision.gameObject.tag == "Cutter")
+        else if((collision.gameObject.tag == "Cutter") || (collision.gameObject.tag == "VerC"))
         {
             zombieFireballHitObject = true;
                 Destroy(gameObject);

@@ -3805,7 +3805,6 @@ MonoBehaviour:
   attackPoint: {fileID: 1580220390}
   isEnemyFireballAllowed: 0
   speed: 10
-  originalSpeed: 0
   jumpForce: 18
   jumpTime: 0.37
   runingSpeedAnim: 0
@@ -3816,16 +3815,15 @@ MonoBehaviour:
   currentHealth: 0
   zombieFireballDamage: 35
   dashEffect: {fileID: 4328013565267778457, guid: a695902cb6217b34abe084b368e1806c, type: 3}
-  dashTime: 0.5
+  dashTime: 0.6
   dashSound: {fileID: 1317276781}
-  speedAfterdash: 0
   jumpSound: {fileID: 2099857141}
   fireBallCollisionSound: {fileID: 1861782176}
   deathSound: {fileID: 1069768148}
   hurtSound: {fileID: 560349593}
   gameOverSound: {fileID: 1224310503}
-  levelDistance: 150
-  speedMultiplier: 1.01
+  levelDistance: 100
+  speedMultiplier: 1.08
 --- !u!95 &962507647
 Animator:
   serializedVersion: 3
@@ -6308,7 +6306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 6802418995359717818, guid: c8c76546c5a4d1a41b5589a3dfba705c, type: 3}
-  numberOfObject: 2
+  numberOfObject: 1
 --- !u!4 &1916656988
 Transform:
   m_ObjectHideFlags: 0

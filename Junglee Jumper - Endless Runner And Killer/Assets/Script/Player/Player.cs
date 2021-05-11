@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
 
     [Header("Attributes")]
     public float speed;
-    public float originalSpeed;
     [SerializeField] float jumpForce, jumpTime;
     private float jumpTimeCounter;
     public float runingSpeedAnim;
@@ -44,7 +43,6 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject dashEffect;
     [SerializeField] float dashTime;
     [SerializeField] AudioSource dashSound;
-    public float speedAfterdash;
     private bool isPlayerDash,isDashAllowed,isSwipeDown;
 
     [Header("Audio")]
@@ -74,7 +72,6 @@ public class Player : MonoBehaviour
         levelDistanceCount = levelDistance;
         runingSpeedAnim = 1f;
         playerStartPosition = transform.position;
-        originalSpeed = speed;
         isDashAllowed = true;
         currentHealth = health;
         healthSlider.value = currentHealth / health;
@@ -83,7 +80,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         healthSlider.value = currentHealth / health;
-        if (playerStartPosition == transform.position)
+        if (playerStartPosition.x == transform.position.x)
         {
             playerRuning = false;
         }
@@ -130,7 +127,6 @@ public class Player : MonoBehaviour
             cutterGenerator.generator -= 6;
             levelDistance = levelDistance * speedMultiplier;
             scrowlling.backGroundSpeed += (speedMultiplier / 120);
-            originalSpeed = speed;
         }
 
         if (isSwipeDown && isGrounded && isDashAllowed)
@@ -168,11 +164,8 @@ public class Player : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().size = new Vector2(2.172187f, 1.5f);
         GetComponent<BoxCollider2D>().offset = new Vector2(-0.2299106f, -1.15f);
-        GameObject currentDashEffect = Instantiate(dashEffect, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity);
-        Destroy(currentDashEffect, 1f);
+        Destroy(Instantiate(dashEffect, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity), 0.085f);
         isSwipeDown = false;
-        speed = (originalSpeed * 1.5f);
-        speedAfterdash = speed;
         animator.SetBool("PlayerDash", true);
         animator.SetBool("PlayerRuning", false);
         Invoke("DesableDash", dashTime);
@@ -183,7 +176,6 @@ public class Player : MonoBehaviour
         GetComponent<BoxCollider2D>().size = new Vector2(2.172187f, 3.740528f);
         GetComponent<BoxCollider2D>().offset = new Vector2(-0.2299106f, -0.06270278f);
         isSwipeDown = false;
-        speed = (speedAfterdash / 1.5f);
         animator.SetBool("PlayerDash", false);
         animator.SetBool("PlayerRuning", true);
         isPlayerDash = false;
@@ -240,13 +232,14 @@ public class Player : MonoBehaviour
         }
         else
         {
+            rigidBody.AddForce(-transform.up * 40 , ForceMode2D.Impulse);
             isSwipeDown = false;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Cutter")
+        if ((collision.gameObject.tag == "Cutter") || (collision.gameObject.tag == "VerC"))
         {
             isPlayerHitObstacles = true;
             scrowlling.backGroundSpeed = 0f;
@@ -329,7 +322,7 @@ public class Player : MonoBehaviour
      if(GameManager.isGameStart)
      {
         GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-        Destroy(currentFireball,1.2f);
+        Destroy(currentFireball,1.3f);
         if(isPlayerDead) Destroy(currentFireball);
      }
     }

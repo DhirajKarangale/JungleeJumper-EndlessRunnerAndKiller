@@ -9,11 +9,11 @@ public class PlayerFireball : MonoBehaviour
     [SerializeField] GameObject impactEffect;
     [SerializeField] float damage;
     [SerializeField] float speed;
-    public static bool twoFireballCollide, playerFireballHitObject,playerFireballCollideZombie,playerFireballCollideWithCutter;
+    public static bool twoFireballCollide, playerFireballHitObject, playerFireballCollideZombie, playerFireballCollideWithCutter, playerFireballCollideWithVerticalCutter;
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        firballReleseSound = GetComponent<AudioSource>(); 
+        firballReleseSound = GetComponent<AudioSource>();
         twoFireballCollide = false;
         camAnimator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
         rigidBody.velocity = transform.right * speed;
@@ -26,6 +26,7 @@ public class PlayerFireball : MonoBehaviour
         {
             firballReleseSound.Stop();
             playerFireballCollideWithCutter = false;
+            playerFireballCollideWithVerticalCutter = false;
             playerFireballCollideZombie = false;
             playerFireballHitObject = true;
             twoFireballCollide = false;
@@ -35,10 +36,9 @@ public class PlayerFireball : MonoBehaviour
             Destroy(currentImpactEffect, 1f);
         }
 
-       else if (collision.gameObject.tag == "Zombie")
-       {
+        else if (collision.gameObject.tag == "Zombie")
+        {
             firballReleseSound.Stop();
-         //   playerFireballCollideWithCutter = false;
             playerFireballCollideZombie = true;
             playerFireballHitObject = true;
             twoFireballCollide = false;
@@ -46,13 +46,10 @@ public class PlayerFireball : MonoBehaviour
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
-       }
-
-       else if(collision.gameObject.tag == "ZombieFireball")
+        }
+        else if (collision.gameObject.tag == "ZombieFireball")
         {
             firballReleseSound.Stop();
-         //   playerFireballCollideWithCutter = false;
-          //  playerFireballCollideZombie = false;
             playerFireballHitObject = false;
             twoFireballCollide = true;
             Destroy(gameObject);
@@ -60,11 +57,23 @@ public class PlayerFireball : MonoBehaviour
             GameObject currentFireballExplosionEffect = Instantiate(fireballExplosionEffect, transform.position, transform.rotation);
             Destroy(currentFireballExplosionEffect, 4f);
         }
-        else if(collision.gameObject.tag == "Cutter")
+        else if (collision.gameObject.tag == "Cutter")
         {
             playerFireballCollideWithCutter = true;
+            playerFireballCollideWithVerticalCutter = false;
             firballReleseSound.Stop();
-         //   playerFireballCollideZombie = false;
+            playerFireballHitObject = true;
+            twoFireballCollide = false;
+            camAnimator.SetBool("Shake", false);
+            Destroy(gameObject);
+            GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
+            Destroy(currentImpactEffect, 1f);
+        }
+        else if (collision.gameObject.tag == "VerC")
+        {
+            playerFireballCollideWithVerticalCutter = true;
+            playerFireballCollideWithCutter = false;
+            firballReleseSound.Stop();
             playerFireballHitObject = true;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);
@@ -74,8 +83,6 @@ public class PlayerFireball : MonoBehaviour
         }
         else
         {
-         //   playerFireballCollideWithCutter = false;
-          //  playerFireballCollideZombie = false;
             playerFireballHitObject = false;
             twoFireballCollide = false;
             camAnimator.SetBool("Shake", false);

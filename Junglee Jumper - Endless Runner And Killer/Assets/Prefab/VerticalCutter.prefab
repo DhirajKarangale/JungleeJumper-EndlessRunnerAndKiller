@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1631974451714103474}
   - component: {fileID: 1631974451714103473}
-  - component: {fileID: 1631974451714103475}
   m_Layer: 0
   m_Name: Square
   m_TagString: Cutter
@@ -84,32 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1631974451714103475
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631974451714103472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1631974451783980258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,11 +1339,12 @@ GameObject:
   - component: {fileID: 1631974453039494167}
   - component: {fileID: 1631974453039494160}
   - component: {fileID: 2223390258603681330}
-  - component: {fileID: -2897199458180113328}
   - component: {fileID: 88935860949439291}
+  - component: {fileID: -122980337991645730}
+  - component: {fileID: 1417056469950099821}
   m_Layer: 0
   m_Name: VerticalCutter
-  m_TagString: Cutter
+  m_TagString: VerC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1447,20 +1421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1e816da89ed84842909dc0a807a338b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2897199458180113328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631974453039494166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d78d00ac0e6dc448a0d53e975050f99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
-  cutterSound: {fileID: 88935860949439291}
 --- !u!82 &88935860949439291
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1557,6 +1517,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-122980337991645730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631974453039494166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5dcd022676c64789969b9b2e568e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
+  cutterSound: {fileID: 88935860949439291}
+--- !u!70 &1417056469950099821
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631974453039494166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011501789, y: 5.8646445}
+  m_Size: {x: 1.9492731, y: 12.705037}
+  m_Direction: 0
 --- !u!1 &1631974453126077225
 GameObject:
   m_ObjectHideFlags: 0
