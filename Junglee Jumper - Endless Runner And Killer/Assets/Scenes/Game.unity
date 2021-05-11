@@ -872,7 +872,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c02320f0541a7b34989e4ddcbb7d1aa0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1964,8 +1964,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -477, y: 150.75}
-  m_SizeDelta: {x: 150, y: 150}
+  m_AnchoredPosition: {x: -442, y: 144}
+  m_SizeDelta: {x: 201.1809, y: 111.0049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464306884
 MonoBehaviour:
@@ -1989,10 +1989,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 0.4339623, g: 0.43375665, b: 0.3254717, a: 0.4117647}
+    m_PressedColor: {r: 0.43529412, g: 0.43529412, b: 0.3254902, a: 0.49803922}
+    m_SelectedColor: {r: 0.43529412, g: 0.43529412, b: 0.3254902, a: 0.41960785}
+    m_DisabledColor: {r: 0.43529412, g: 0.43529412, b: 0.3254902, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 663bb6d691690c34dae852e8d5eb6e9d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19bfb62fe3f6a5644bdcbd293101c027, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2090,7 +2090,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9cc29f02975bd1c4abb03220a1c9f31c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2298,7 +2298,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6677e20b1d6ef1341b068ad264e67446, type: 2}
   m_CullingMode: 0
@@ -2418,7 +2418,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ed93e4edb848cc0409f381409c7a0eb6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2545,7 +2545,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0bd1f6fc464322245a7059c3f8ffbfb6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2749,7 +2749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f91ce4d06d206041a624fd5da25ed64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointePerSecond: 3
+  pointePerSecond: 0.5
   scoreText: {fileID: 1720178340}
   highScoreText: {fileID: 1465293445}
   player: {fileID: 962507646}
@@ -3796,7 +3796,7 @@ MonoBehaviour:
   bloodSplash: {fileID: 6172181126059984011, guid: 99baa0e4470d94a46ac63b209da0e3a9, type: 3}
   healthSlider: {fileID: 53811391}
   healthSliderGameObject: {fileID: 53811389}
-  dashButton: {fileID: 464306881}
+  dashButtonObject: {fileID: 464306881}
   fireballButton: {fileID: 2095606100}
   playerDestroyEffect: {fileID: 428160608291510419, guid: 782cb5cd87ebd7a419e171c71a04060c, type: 3}
   fireBall: {fileID: 1186210858226304274, guid: d1bdc402ba7279b4686b5193b07c14d5, type: 3}
@@ -3814,6 +3814,9 @@ MonoBehaviour:
   health: 100
   currentHealth: 0
   zombieFireballDamage: 35
+  dashButton: {fileID: 464306884}
+  dashImage: {fileID: 21300000, guid: 19bfb62fe3f6a5644bdcbd293101c027, type: 3}
+  crounchImage: {fileID: 21300000, guid: c07382767ed9c60418d74b3497dd3e5d, type: 3}
   dashEffect: {fileID: 4328013565267778457, guid: a695902cb6217b34abe084b368e1806c, type: 3}
   dashTime: 0.6
   dashSound: {fileID: 1317276781}
@@ -3823,7 +3826,7 @@ MonoBehaviour:
   hurtSound: {fileID: 560349593}
   gameOverSound: {fileID: 1224310503}
   levelDistance: 100
-  speedMultiplier: 1.08
+  speedMultiplier: 1.05
 --- !u!95 &962507647
 Animator:
   serializedVersion: 3
@@ -3919,7 +3922,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ba3354c15ae19a049ae1f907c6236ed6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4353,7 +4356,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: da499eb4b20a0a44d9c36da2236508c3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4767,7 +4770,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b44e2eb7e524ddb4583e43c3fc220363, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6090,7 +6093,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b072d6fcfd001134eb288f6fc47b7c80, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6543,7 +6546,7 @@ GameObject:
   - component: {fileID: 2048933703}
   - component: {fileID: 2048933702}
   - component: {fileID: 2048933704}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7099,7 +7102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b7ce6d16b52d6104083fc5a937b3e532, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

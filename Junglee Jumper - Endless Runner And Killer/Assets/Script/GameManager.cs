@@ -24,12 +24,12 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        Time.timeScale = 0f;
         continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);
         player.isPlayerDead = false;
         isGameStart = false;
         scoreManagerObject.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     private void Update()

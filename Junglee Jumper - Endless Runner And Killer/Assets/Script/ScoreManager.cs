@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     {
         if(!player.isPlayerDead && !isPause && player.playerRuning && !player.isPlayerHitObstacles)
         {
-            score += pointePerSecond * Time.deltaTime ;
+            score += pointePerSecond * Time.deltaTime * player.speed;
         }
 
         if (score > highScore)
@@ -77,5 +77,6 @@ public class ScoreManager : MonoBehaviour
     {
         clickSound.Play();
         SceneManager.LoadScene(1);
+        ResumeButton();
     }
 }

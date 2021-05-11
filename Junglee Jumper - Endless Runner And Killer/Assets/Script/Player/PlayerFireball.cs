@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerFireball : MonoBehaviour
 {
-    private Animator camAnimator;
     private AudioSource firballReleseSound;
     [SerializeField] GameObject fireballExplosionEffect;
     private Rigidbody2D rigidBody;
@@ -10,12 +9,19 @@ public class PlayerFireball : MonoBehaviour
     [SerializeField] float damage;
     [SerializeField] float speed;
     public static bool twoFireballCollide, playerFireballHitObject, playerFireballCollideZombie, playerFireballCollideWithCutter, playerFireballCollideWithVerticalCutter;
+
+    [Header("Camera Shake")]
+    Vector3 cameraInitialPosition;
+    public float shakeMagnetude = 0.05f, shakeTime = 0.5f;
+    private Camera mainCamera;
+
+
     private void Start()
     {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();
         firballReleseSound = GetComponent<AudioSource>();
         twoFireballCollide = false;
-        camAnimator = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
         rigidBody.velocity = transform.right * speed;
         firballReleseSound.Play();
     }
@@ -30,7 +36,6 @@ public class PlayerFireball : MonoBehaviour
             playerFireballCollideZombie = false;
             playerFireballHitObject = true;
             twoFireballCollide = false;
-            camAnimator.SetBool("Shake", false);
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
@@ -38,45 +43,45 @@ public class PlayerFireball : MonoBehaviour
 
         else if (collision.gameObject.tag == "Zombie")
         {
+            ShakeIt();
             firballReleseSound.Stop();
             playerFireballCollideZombie = true;
             playerFireballHitObject = true;
             twoFireballCollide = false;
-            camAnimator.SetBool("Shake", false);
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
         }
         else if (collision.gameObject.tag == "ZombieFireball")
         {
+            ShakeIt();
             firballReleseSound.Stop();
             playerFireballHitObject = false;
             twoFireballCollide = true;
             Destroy(gameObject);
-            camAnimator.SetBool("Shake", true);
             GameObject currentFireballExplosionEffect = Instantiate(fireballExplosionEffect, transform.position, transform.rotation);
             Destroy(currentFireballExplosionEffect, 4f);
         }
         else if (collision.gameObject.tag == "Cutter")
         {
+            ShakeIt();
             playerFireballCollideWithCutter = true;
             playerFireballCollideWithVerticalCutter = false;
             firballReleseSound.Stop();
             playerFireballHitObject = true;
             twoFireballCollide = false;
-            camAnimator.SetBool("Shake", false);
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
         }
         else if (collision.gameObject.tag == "VerC")
         {
+            ShakeIt();
             playerFireballCollideWithVerticalCutter = true;
             playerFireballCollideWithCutter = false;
             firballReleseSound.Stop();
             playerFireballHitObject = true;
             twoFireballCollide = false;
-            camAnimator.SetBool("Shake", false);
             Destroy(gameObject);
             GameObject currentImpactEffect = Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation);
             Destroy(currentImpactEffect, 1f);
@@ -85,7 +90,30 @@ public class PlayerFireball : MonoBehaviour
         {
             playerFireballHitObject = false;
             twoFireballCollide = false;
-            camAnimator.SetBool("Shake", false);
         }
     }
+
+    private void ShakeIt()
+    {
+        cameraInitialPosition = mainCamera.transform.position;
+        InvokeRepeating("StartCameraShaking", 0f, 0.005f);
+        Invoke("StopCameraShaking", shakeTime);
+    }
+
+    private void StartCameraShaking()
+    {
+        float cameraShakingOffsetX = Random.value * shakeMagnetude * 2 - shakeMagnetude;
+        float cameraShakingOffsetY = Random.value * shakeMagnetude * 2 - shakeMagnetude;
+        Vector3 cameraIntermadiatePosition = mainCamera.transform.position;
+        cameraIntermadiatePosition.x += cameraShakingOffsetX;
+        cameraIntermadiatePosition.y += cameraShakingOffsetY;
+        mainCamera.transform.position = cameraIntermadiatePosition;
+    }
+
+   private void StopCameraShaking()
+    {
+        CancelInvoke("StartCameraShaking");
+        mainCamera.transform.position = cameraInitialPosition;
+    }
+
 }

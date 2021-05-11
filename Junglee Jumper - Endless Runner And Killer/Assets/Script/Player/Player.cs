@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject bloodSplash;
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject healthSliderGameObject;
-    [SerializeField] GameObject dashButton;
+    [SerializeField] GameObject dashButtonObject;
     [SerializeField] GameObject fireballButton;
     [SerializeField] GameObject playerDestroyEffect;
     [SerializeField] GameObject fireBall;
@@ -40,6 +40,9 @@ public class Player : MonoBehaviour
     [SerializeField] float zombieFireballDamage;
 
     [Header("Dash")]
+    [SerializeField] Button dashButton;
+    [SerializeField] Sprite dashImage;
+    [SerializeField] Sprite crounchImage;
     [SerializeField] GameObject dashEffect;
     [SerializeField] float dashTime;
     [SerializeField] AudioSource dashSound;
@@ -65,7 +68,7 @@ public class Player : MonoBehaviour
         playerCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         zombieFireball.SetActive(true);
-        dashButton.SetActive(true);
+        dashButtonObject.SetActive(true);
         fireballButton.SetActive(true);
         healthSliderGameObject.SetActive(true);
         isEnemyFireballAllowed = true;
@@ -158,6 +161,9 @@ public class Player : MonoBehaviour
             TakeDamege(zombieFireballDamage);
             ZombieFireball.zombieFireballHitPlayer = false;
         }
+
+        if(!isGrounded) dashButton.image.sprite = crounchImage;
+        else dashButton.image.sprite = dashImage;
     }
 
     private void Dash()
@@ -241,15 +247,16 @@ public class Player : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Cutter") || (collision.gameObject.tag == "VerC"))
         {
-            isPlayerHitObstacles = true;
-            scrowlling.backGroundSpeed = 0f;
             DestroyPlayer();
         }
         else if(collision.gameObject.tag == "Zombie")
         {
             scrowlling.backGroundSpeed = 0f;
+            isPlayerHitObstacles = true;
             isEnemyFireballAllowed = false;
             zombieFireball.SetActive(false);
+            dashButtonObject.SetActive(false);
+            fireballButton.SetActive(false);
             Invoke("PlayerHitZombie", 0.3f);
         }
         else
@@ -264,8 +271,7 @@ public class Player : MonoBehaviour
         hurtSound.Play();
         if (currentHealth <= 0)
         {
-            GameObject currentPlayerDestroyEffect = Instantiate(playerDestroyEffect, transform.position, transform.rotation);
-            Destroy(currentPlayerDestroyEffect, 5f);
+            Destroy(Instantiate(playerDestroyEffect, transform.position, transform.rotation), 3f);
             isEnemyFireballAllowed = false;
             DestroyPlayer();
         }
@@ -282,14 +288,15 @@ public class Player : MonoBehaviour
             
     private void DestroyPlayer()
     {
+        isPlayerHitObstacles = true;
+        scrowlling.backGroundSpeed = 0f;
         deathSound.Play();
         currentHealth = 0;
         Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
-        GameObject currentBloodEffect = Instantiate(playerBloodEffect, transform.position, Quaternion.identity);
         Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), transform.rotation);
-        Destroy(currentBloodEffect, 2f);
+        Destroy(Instantiate(playerBloodEffect, transform.position, Quaternion.identity), 2f);
         healthSliderGameObject.SetActive(false);
-        dashButton.SetActive(false);
+        dashButtonObject.SetActive(false);
         fireballButton.SetActive(false);
         this.gameObject.SetActive(false);
         zombieFireball.SetActive(false);
@@ -304,10 +311,8 @@ public class Player : MonoBehaviour
 
     private void PlayerHitZombie()
     {
-        GameObject currentPlayerDestroyEffect = Instantiate(playerDestroyEffect, transform.position, transform.rotation);
-        Destroy(currentPlayerDestroyEffect, 5f);
-        dashButton.SetActive(false);
-        fireballButton.SetActive(false);
+        Destroy(Instantiate(playerDestroyEffect, transform.position, transform.rotation), 5f);
+        
         speed = 0;
         deathSound.Play();
         gameObject.SetActive(false);
