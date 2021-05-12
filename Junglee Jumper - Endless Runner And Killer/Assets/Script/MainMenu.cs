@@ -1,11 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rigidBody;
     [SerializeField] GameObject quitPanel;
     [SerializeField] AudioSource buttonPressSound;
+    [SerializeField] Text highScoreCount;
+    [SerializeField] Text coinCount;
     private bool isQuitPanelActive;
+
+    private void Start()
+    {
+        coinCount.text = PlayerPrefs.GetInt("Coin", 0).ToString();
+        highScoreCount.text = Mathf.Round(PlayerPrefs.GetFloat("HighScore", 0f)).ToString();
+    }
 
     private void Update()
     {

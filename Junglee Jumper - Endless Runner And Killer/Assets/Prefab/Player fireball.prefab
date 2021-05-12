@@ -160,8 +160,8 @@ MonoBehaviour:
   impactEffect: {fileID: 596011849568190565, guid: c7136642ee0f10d4f8af20317f366df4, type: 3}
   damage: 20
   speed: 28
-  shakeMagnetude: 0.2
-  shakeTime: 0.6
+  shakeMagnetude: 0.18
+  shakeTime: 0.58
 --- !u!82 &1529728964019208660
 AudioSource:
   m_ObjectHideFlags: 0

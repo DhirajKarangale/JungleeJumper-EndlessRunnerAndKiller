@@ -448,8 +448,8 @@ GameObject:
   - component: {fileID: 1906698483615137355}
   - component: {fileID: 1906698483615137352}
   - component: {fileID: 1906698483615137353}
-  - component: {fileID: 1906698483615137358}
   - component: {fileID: 337251588600980908}
+  - component: {fileID: -2104786460353585176}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -557,18 +557,6 @@ MonoBehaviour:
   enemieDestriyEffect: {fileID: 7262123784175544433, guid: 6b24c58fe4a4d684ca1e4d3294915684, type: 3}
   zombieSound: {fileID: 337251588600980908}
   timeBetweenAttack: 2
---- !u!114 &1906698483615137358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906698483615137359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e816da89ed84842909dc0a807a338b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &337251588600980908
 AudioSource:
   m_ObjectHideFlags: 0
@@ -665,6 +653,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2104786460353585176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906698483615137359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd92f5909b0cdb54e86f1d93a253895b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1906698483817841105
 GameObject:
   m_ObjectHideFlags: 0

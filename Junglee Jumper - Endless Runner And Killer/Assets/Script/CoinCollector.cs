@@ -3,13 +3,14 @@ using UnityEngine;
 public class CoinCollector : MonoBehaviour
 {
     private AudioSource coinPickSound;
-    private ScoreManager scoreManager;
-    private float coinPickPoints = 17f;
+    public static bool isCoinHit;
+   
+   
 
     private void Start()
     {
         coinPickSound = GameObject.Find("CoinPickSound").GetComponent<AudioSource>();
-        scoreManager = FindObjectOfType<ScoreManager>();
+        isCoinHit = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -19,7 +20,11 @@ public class CoinCollector : MonoBehaviour
             if (coinPickSound.isPlaying) coinPickSound.Stop();
             coinPickSound.Play();
             gameObject.SetActive(false);
-            scoreManager.score += coinPickPoints;
+            isCoinHit = true;
+        }
+        else
+        {
+            isCoinHit = false;
         }
     }
 }

@@ -1338,10 +1338,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1631974453039494167}
   - component: {fileID: 1631974453039494160}
-  - component: {fileID: 2223390258603681330}
   - component: {fileID: 88935860949439291}
-  - component: {fileID: -122980337991645730}
   - component: {fileID: 1417056469950099821}
+  - component: {fileID: -122980337991645730}
+  - component: {fileID: -2446521529128653496}
   m_Layer: 0
   m_Name: VerticalCutter
   m_TagString: VerC
@@ -1409,18 +1409,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2223390258603681330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631974453039494166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1e816da89ed84842909dc0a807a338b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &88935860949439291
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1517,20 +1505,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-122980337991645730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631974453039494166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c5dcd022676c64789969b9b2e568e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
-  cutterSound: {fileID: 88935860949439291}
 --- !u!70 &1417056469950099821
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1547,6 +1521,32 @@ CapsuleCollider2D:
   m_Offset: {x: -0.011501789, y: 5.8646445}
   m_Size: {x: 1.9492731, y: 12.705037}
   m_Direction: 0
+--- !u!114 &-122980337991645730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631974453039494166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c5dcd022676c64789969b9b2e568e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyEffect: {fileID: 1025232282049675153, guid: 1ebf314e12326694eb3c0263c68c166a, type: 3}
+  cutterSound: {fileID: 88935860949439291}
+--- !u!114 &-2446521529128653496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631974453039494166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd92f5909b0cdb54e86f1d93a253895b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1631974453126077225
 GameObject:
   m_ObjectHideFlags: 0

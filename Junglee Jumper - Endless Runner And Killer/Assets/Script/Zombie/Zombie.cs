@@ -48,7 +48,7 @@ public class Zombie : MonoBehaviour
         if(PlayerFireball.playerFireballCollideZombie)
         {
             DestroyEnemie();
-            scoreManager.score += 30;
+            scoreManager.score += 15;
         }
     }
 
