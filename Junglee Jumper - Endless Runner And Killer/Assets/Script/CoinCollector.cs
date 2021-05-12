@@ -4,8 +4,6 @@ public class CoinCollector : MonoBehaviour
 {
     private AudioSource coinPickSound;
     public static bool isCoinHit;
-   
-   
 
     private void Start()
     {

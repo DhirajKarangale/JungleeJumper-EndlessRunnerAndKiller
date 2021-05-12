@@ -1,5 +1,7 @@
 using UnityEngine;
+using System;
 using UnityEngine.UI;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
@@ -18,6 +20,13 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Text coinText;
     [SerializeField] GameObject scoreDecreseTextObject;
     [SerializeField] Text scoreDescreaseText;
+
+
+    [Header("Coin Collect")]
+    [SerializeField] float speed;
+    [SerializeField] Transform target;
+    [SerializeField] GameObject coinPrefab;
+    [SerializeField] Camera cam;
     private int coin;
     private int coinPickPoints = 2;
 
@@ -28,6 +37,10 @@ public class ScoreManager : MonoBehaviour
         pauseScreen.SetActive(false);
         backGroundMusic.Play();
         coin = PlayerPrefs.GetInt("Coin", 0);
+        if (cam == null)
+        {
+            cam = Camera.main;
+        }
     }
 
     private void Update()
@@ -54,7 +67,7 @@ public class ScoreManager : MonoBehaviour
 
         if(CoinCollector.isCoinHit)
         {
-            coin += coinPickPoints;
+            StartCoinMove(player.transform.position, ()=> { coin += coinPickPoints;});
             CoinCollector.isCoinHit = false;
         }
         coinText.text = coin.ToString();
@@ -87,6 +100,27 @@ public class ScoreManager : MonoBehaviour
     private void OnDestroy()
     {
         PlayerPrefs.SetInt("Coin", coin);
+    }
+
+
+    private void StartCoinMove(Vector3 initial, Action onComplete)
+    {
+        Vector3 targetPos = cam.ScreenToWorldPoint(new Vector3(target.position.x, target.position.y, cam.transform.position.z * -1));
+        GameObject _coin = Instantiate(coinPrefab, transform);
+        StartCoroutine(MoveCoin(_coin.transform, initial, targetPos, onComplete));
+    }
+
+    IEnumerator MoveCoin(Transform obj, Vector3 startPos, Vector3 endPos, Action onComplete)
+    {
+        float time = 0;
+        while (time < 1)
+        {
+            time += speed * Time.deltaTime;
+            obj.position = Vector3.Lerp(startPos, endPos, time);
+            yield return new WaitForEndOfFrame();
+        }
+        onComplete.Invoke();
+        Destroy(obj.gameObject);
     }
 
     public void PauseButton()

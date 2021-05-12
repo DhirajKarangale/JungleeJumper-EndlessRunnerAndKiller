@@ -134,7 +134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a302410ef9e7e842a61cb3f95a41d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
+  speed: 0
+  target: {fileID: 0}
+  initialPos: {fileID: 0}
+  coinPrefab: {fileID: 5943383158063764342}
+  cam: {fileID: 0}
 --- !u!114 &4797227200615901226
 MonoBehaviour:
   m_ObjectHideFlags: 0

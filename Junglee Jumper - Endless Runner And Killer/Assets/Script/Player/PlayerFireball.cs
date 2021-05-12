@@ -12,8 +12,8 @@ public class PlayerFireball : MonoBehaviour
 
     [Header("Camera Shake")]
     private Vector3 cameraInitialPosition;
-    private float shakeMagnetude = 0.18f, shakeTime = 0.58f;
-    private float shakeMagnetudeLarge = 0.36f, shakeTimeLarge = 0.6f;
+    private float shakeMagnetude = 0.18f, shakeTime = 0.43f;
+    private float shakeMagnetudeLarge = 0.36f, shakeTimeLarge = 0.58f;
     private Camera mainCamera;
 
 
