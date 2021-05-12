@@ -3,6 +3,7 @@ using UnityEngine;
 public class CoinCollector : MonoBehaviour
 {
     private AudioSource coinPickSound;
+    [SerializeField] GameObject coinCollectEffect;
     public static bool isCoinHit;
 
     private void Start()
@@ -18,6 +19,7 @@ public class CoinCollector : MonoBehaviour
             if (coinPickSound.isPlaying) coinPickSound.Stop();
             coinPickSound.Play();
             gameObject.SetActive(false);
+            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position,Quaternion.identity), 0.28f);
             isCoinHit = true;
         }
         else

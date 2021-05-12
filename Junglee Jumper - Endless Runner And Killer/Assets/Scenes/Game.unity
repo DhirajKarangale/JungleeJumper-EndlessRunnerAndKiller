@@ -2847,6 +2847,7 @@ MonoBehaviour:
   target: {fileID: 758707933}
   coinPrefab: {fileID: 1013983375335521727, guid: 52d2b352bf525bc438da7385279dc6b0, type: 3}
   cam: {fileID: 519420031}
+  coinCollectEffect: {fileID: 6198003379055463540, guid: e8f9f6e145050e74fb976060bc78f87e, type: 3}
 --- !u!1 &638497973
 GameObject:
   m_ObjectHideFlags: 0
