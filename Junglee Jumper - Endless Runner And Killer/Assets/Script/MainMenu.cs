@@ -37,6 +37,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void LeaderBoardButton()
+    {
+        PlayGamesController.ShowLeaderboardUI();
+    }
 
     private void SetQuitPanel()
     {

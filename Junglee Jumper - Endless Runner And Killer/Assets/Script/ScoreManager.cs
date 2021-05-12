@@ -54,6 +54,7 @@ public class ScoreManager : MonoBehaviour
         {
             highScore = score;
         }
+        PlayGamesController.PostToLeaderboard(Convert.ToInt64(highScore));
         PlayerPrefs.SetFloat("HighScore", highScore);
 
         scoreText.text = Mathf.Round(score).ToString();
@@ -90,18 +91,14 @@ public class ScoreManager : MonoBehaviour
             scoreDecreseTextObject.SetActive(true);
             Invoke("ScoreDecreaseTestFalse", 0.8f);
         }
+
+        PlayerPrefs.SetInt("Coin", coin);
     }
 
     private void ScoreDecreaseTestFalse()
     {
         scoreDecreseTextObject.SetActive(false);
     }
-
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetInt("Coin", coin);
-    }
-
 
     private void StartCoinMove(Vector3 initial, Action onComplete)
     {
