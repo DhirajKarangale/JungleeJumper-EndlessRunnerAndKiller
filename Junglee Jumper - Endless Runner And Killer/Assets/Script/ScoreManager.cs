@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] float pointePerSecond;
@@ -13,7 +14,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] AudioSource clickSound;
     [SerializeField] AudioSource backGroundMusic;
     public float score;
-    public float highScore;
     [SerializeField] GameObject scoreCanvas;
     [SerializeField] GameObject pauseScreen;
     public static bool isPause;
@@ -27,16 +27,17 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] Camera cam;
-    private int coin;
     private int coinPickPoints = 2;
+
+
+
+   
 
     private void Start()
     {
         scoreDecreseTextObject.SetActive(false);
-        highScore = PlayerPrefs.GetFloat("HighScore", 0f);
         pauseScreen.SetActive(false);
         backGroundMusic.Play();
-        coin = PlayerPrefs.GetInt("Coin", 0);
         if (cam == null)
         {
             cam = Camera.main;
@@ -45,20 +46,15 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if(!player.isPlayerDead && !isPause && player.playerRuning && !player.isPlayerHitObstacles)
+        if(!Player.isPlayerDead && !isPause && player.playerRuning && !player.isPlayerHitObstacles)
         {
             score += pointePerSecond * Time.deltaTime * player.speed;
         }
 
-        if (score > highScore)
+        if (score > GPGCSaving.highScore)
         {
-            highScore = score;
+            GPGCSaving.highScore = score;
         }
-        PlayGamesController.PostToLeaderboard(Convert.ToInt64(highScore));
-        PlayerPrefs.SetFloat("HighScore", highScore);
-
-        scoreText.text = Mathf.Round(score).ToString();
-        highScoreText.text = Mathf.Round(highScore).ToString();
 
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -68,31 +64,35 @@ public class ScoreManager : MonoBehaviour
 
         if(CoinCollector.isCoinHit)
         {
-            StartCoinMove(player.transform.position, ()=> { coin += coinPickPoints;});
+            StartCoinMove(player.transform.position, ()=> { GPGCSaving.coin += coinPickPoints;});
             CoinCollector.isCoinHit = false;
         }
-        coinText.text = coin.ToString();
-
+        
         if(PlayerFireball.playerFireballCollideWithCutter)
         {
+            scoreDescreaseText.color = Color.red;
             scoreDescreaseText.text = "-3";
             scoreDecreseTextObject.SetActive(true);
-            Invoke("ScoreDecreaseTestFalse", 0.8f);
+            Invoke("ScoreDecreaseTestFalse", 1f);
         }
         else if(PlayerFireball.playerFireballCollideWithVerticalCutter)
         {
+            scoreDescreaseText.color = Color.red;
             scoreDescreaseText.text = "-7";
             scoreDecreseTextObject.SetActive(true);
-            Invoke("ScoreDecreaseTestFalse", 0.8f);
+            Invoke("ScoreDecreaseTestFalse", 1f);
         }
         else if (PlayerFireball.playerFireballCollideZombie)
         {
+            scoreDescreaseText.color = Color.green;
             scoreDescreaseText.text = "+15";
             scoreDecreseTextObject.SetActive(true);
-            Invoke("ScoreDecreaseTestFalse", 0.8f);
+            Invoke("ScoreDecreaseTestFalse", 1f);
         }
 
-        PlayerPrefs.SetInt("Coin", coin);
+        scoreText.text = Mathf.Round(score).ToString();
+        highScoreText.text = Mathf.Round(GPGCSaving.highScore).ToString();
+        coinText.text = GPGCSaving.coin + "";
     }
 
     private void ScoreDecreaseTestFalse()

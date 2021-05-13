@@ -19,7 +19,7 @@ public class CoinCollector : MonoBehaviour
             if (coinPickSound.isPlaying) coinPickSound.Stop();
             coinPickSound.Play();
             gameObject.SetActive(false);
-            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position,Quaternion.identity), 0.15f);
+            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position,Quaternion.identity), 0.1f);
             isCoinHit = true;
         }
         else

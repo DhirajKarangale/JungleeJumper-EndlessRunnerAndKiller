@@ -1,26 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using UnityEngine.UI;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using UnityEngine.SocialPlatforms;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PlayGamesController : MonoBehaviour {
 
-    public Text mainText;
-    public GameObject googlePlayPanel;
+    public Text msgText;
+    [SerializeField] GameObject msgTextObject;
+    private static bool isSignInAllowed = true;
+    
 
     private void Start()
     {
-        AuthenticateUser();
+        if(isSignInAllowed)
+        {
+            msgTextObject.SetActive(true);
+            AuthenticateUser();
+            isSignInAllowed = false;
+        }
+        else
+        {
+            msgTextObject.SetActive(false);
+        }
     }
-    
-    void AuthenticateUser()
+
+
+    private void OnApplicationQuit()
     {
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+        isSignInAllowed = true;
+    }
+
+    private void AuthenticateUser()
+    {
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().EnableSavedGames().Build();
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
         Social.localUser.Authenticate((bool success) =>
@@ -28,23 +40,59 @@ public class PlayGamesController : MonoBehaviour {
             if (success == true)
             {
                 Debug.Log("Logged in to Google Play Games Services");
-                mainText.text = "Successfully Logged";
-
-                googlePlayPanel.SetActive(false);
+                msgTextObject.SetActive(true);
+                msgText.text = "Successfully Logged in";
+                Invoke("DesablemsgText", 3);
             }
             else
             {
                 Debug.LogError("Unable to sign in to Google Play Games Services");
-                mainText.text = "Could not login to Google Play Games Services. \n Try Again.";
-                mainText.color = Color.red;
+                msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
+                msgText.color = Color.red;
+                Invoke("DesablemsgText", 3);
             }
         });
-        
+    }
+
+    public void SignInButton()
+    {
+        if(Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.text = "Already Logged In";
+            Invoke("DesablemsgText", 3);
+        }
+        else
+        {
+            AuthenticateUser();
+        }
+    }
+
+    public void SignOutButton()
+    {
+        if(!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.text = "Already Logged Out";
+            Invoke("DesablemsgText", 3);
+        }
+        else
+        {
+            PlayGamesPlatform.Instance.SignOut();
+            msgTextObject.SetActive(true);
+            msgText.text = "LogOut Sucessfully";
+            Invoke("DesablemsgText", 3);
+        }
+    }
+
+    private void DesablemsgText()
+    {
+        msgTextObject.SetActive(false);
     }
 
     public static void PostToLeaderboard(long newScore)
     {
-        Social.ReportScore(newScore, GPGSIds.leaderboard_high_score, (bool success) => {
+        Social.ReportScore(newScore, "CgkI59ausbsKEAIQAg", (bool success) => {
             if (success)
             {
                 Debug.Log("Posted new score to leaderboard");
@@ -56,8 +104,18 @@ public class PlayGamesController : MonoBehaviour {
         });
     }
 
-    public static void ShowLeaderboardUI()
+    public void ShowLeaderboardUI()
     {
-        PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard_high_score);
+         if(Social.localUser.authenticated)
+        {
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI59ausbsKEAIQAg");
+        }
+         else
+        {
+            msgTextObject.SetActive(true);
+            msgText.text = "You are Logged Out.\nLogin First.";
+            msgText.color = Color.red;
+            Invoke("DesablemsgText", 3);
+        }
     }
 }

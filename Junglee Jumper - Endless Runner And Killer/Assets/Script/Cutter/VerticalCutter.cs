@@ -11,12 +11,12 @@ public class VerticalCutter : MonoBehaviour
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        if (!cutterSound.isPlaying && !player.isPlayerDead && GameManager.isGameStart && !ScoreManager.isPause) cutterSound.Play();
+        if (!cutterSound.isPlaying && !Player.isPlayerDead && GameManager.isGameStart && !ScoreManager.isPause) cutterSound.Play();
     }
 
     private void Update()
     {
-        if (player.isPlayerDead || ScoreManager.isPause) cutterSound.Stop();
+        if (Player.isPlayerDead || ScoreManager.isPause) cutterSound.Stop();
         if (PlayerFireball.playerFireballCollideWithVerticalCutter)
         {
             scoreManager.score -= 7;

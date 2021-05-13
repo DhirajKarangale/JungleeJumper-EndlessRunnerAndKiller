@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
     private float jumpTimeCounter;
     public float runingSpeedAnim;
     public bool playerRuning;
-    public bool isPlayerDead,isPlayerHitObstacles;
+    public bool isPlayerHitObstacles;
+    public static bool isPlayerDead;
     private Vector3 playerStartPosition;
     public float health;
     public float currentHealth;

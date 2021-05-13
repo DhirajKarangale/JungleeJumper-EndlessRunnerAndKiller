@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);
-        player.isPlayerDead = false;
+        Player.isPlayerDead = false;
         isGameStart = false;
         scoreManagerObject.SetActive(true);
         Time.timeScale = 0f;
@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (player.isPlayerDead) Invoke("GameOver", 0.5f);
+        if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
         score.text = Mathf.Round(scoreManager.score).ToString();
-        highScore.text = Mathf.Round(scoreManager.highScore).ToString();
+        highScore.text = Mathf.Round(GPGCSaving.highScore).ToString();
         if (ScoreManager.isPause) continueScreen.SetActive(false);
 
         if(PlayerFireball.playerFireballHitObject)
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         backGroundMusic.Stop();
-        player.isPlayerDead = true;
+        Player.isPlayerDead = true;
         scoreManagerObject.SetActive(false);
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         player.gameOverSound.Stop();
         restartSound.Play();
-        player.isPlayerDead = false;
+        Player.isPlayerDead = false;
         Invoke("DelayInRestart", 0.2f);
     }
 

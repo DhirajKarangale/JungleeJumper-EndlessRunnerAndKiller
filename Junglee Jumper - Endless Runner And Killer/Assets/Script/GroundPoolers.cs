@@ -48,7 +48,7 @@ public class GroundPoolers : MonoBehaviour
 
             if(!cutterGenerator.isCutterGenerated) zombieGenerator.SpwanZombie(transform.position);
 
-            if((player.currentHealth < player.health) && !player.isPlayerDead) healthPackGenerator.SpwanHealthPack(transform.position);
+            if((player.currentHealth < player.health) && !Player.isPlayerDead) healthPackGenerator.SpwanHealthPack(transform.position);
 
             transform.position = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
         }

@@ -9,16 +9,13 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
     private bool isQuitPanelActive;
-
-    private void Start()
+   
+    private void Update()
     {
         coinCount.text = PlayerPrefs.GetInt("Coin", 0).ToString();
         highScoreCount.text = Mathf.Round(PlayerPrefs.GetFloat("HighScore", 0f)).ToString();
-    }
 
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();
@@ -35,11 +32,6 @@ public class MainMenu : MonoBehaviour
     public void QuitButton()
     {
         Application.Quit();
-    }
-
-    public void LeaderBoardButton()
-    {
-        PlayGamesController.ShowLeaderboardUI();
     }
 
     private void SetQuitPanel()
