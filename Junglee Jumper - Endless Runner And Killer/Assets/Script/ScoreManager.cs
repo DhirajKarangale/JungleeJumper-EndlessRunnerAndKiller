@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] float pointePerSecond;
+    private float pointePerSecond = 40;
     [SerializeField] Text scoreText;
     [SerializeField] Text highScoreText;
     [SerializeField] Player player;
@@ -28,6 +28,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] GameObject coinPrefab;
     [SerializeField] Camera cam;
     private int coinPickPoints = 2;
+    private int coin;
+    private float highScore;
 
 
 
@@ -42,6 +44,9 @@ public class ScoreManager : MonoBehaviour
         {
             cam = Camera.main;
         }
+
+        coin = GameDataVariable.dataVariables[1];
+        highScore = float.Parse(GameDataVariable.dataVariables[0].ToString());
     }
 
     private void Update()
@@ -51,9 +56,9 @@ public class ScoreManager : MonoBehaviour
             score += pointePerSecond * Time.deltaTime * player.speed;
         }
 
-        if (score > GPGCSaving.highScore)
+        if (score > highScore)
         {
-            GPGCSaving.highScore = score;
+           highScore = score;
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -64,7 +69,7 @@ public class ScoreManager : MonoBehaviour
 
         if(CoinCollector.isCoinHit)
         {
-            StartCoinMove(player.transform.position, ()=> { GPGCSaving.coin += coinPickPoints;});
+            StartCoinMove(player.transform.position, ()=> {coin += coinPickPoints;});
             CoinCollector.isCoinHit = false;
         }
         
@@ -91,8 +96,16 @@ public class ScoreManager : MonoBehaviour
         }
 
         scoreText.text = Mathf.Round(score).ToString();
-        highScoreText.text = Mathf.Round(GPGCSaving.highScore).ToString();
-        coinText.text = GPGCSaving.coin + "";
+        highScoreText.text = Mathf.Round(highScore).ToString();
+        coinText.text = coin.ToString();
+
+        if(Player.isPlayerDead)
+        {
+            GameDataVariable.dataVariables[0] = Convert.ToInt32(highScore);
+            GameDataVariable.dataVariables[1] = coin;
+            PlayGamesController.Instance.SaveData();
+            if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
+        }
     }
 
     private void ScoreDecreaseTestFalse()

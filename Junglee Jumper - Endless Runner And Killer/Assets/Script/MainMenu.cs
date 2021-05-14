@@ -12,14 +12,14 @@ public class MainMenu : MonoBehaviour
    
     private void Update()
     {
-        coinCount.text = PlayerPrefs.GetInt("Coin", 0).ToString();
-        highScoreCount.text = Mathf.Round(PlayerPrefs.GetFloat("HighScore", 0f)).ToString();
-
         if (Input.GetKey(KeyCode.Escape))
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();
         }
+
+        coinCount.text = GameDataVariable.dataVariables[1].ToString();
+        highScoreCount.text = GameDataVariable.dataVariables[0].ToString();
     }
 
     public void StartButton(string sceneToLoad)

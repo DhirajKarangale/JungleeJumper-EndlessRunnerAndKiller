@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] Text score;
     [SerializeField] Text highScore;
+    [SerializeField] Text coin;
+
 
     [SerializeField] AudioSource playerFireballHitSound;
     [SerializeField] AudioSource zombieFireballHitSound;
@@ -21,10 +23,14 @@ public class GameManager : MonoBehaviour
 
     public static bool isGameStart;
 
+    private void Awake()
+    {
+        continueScreen.SetActive(true);
+    }
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        continueScreen.SetActive(true);
         gameOverScreen.SetActive(false);
         Player.isPlayerDead = false;
         isGameStart = false;
@@ -36,7 +42,8 @@ public class GameManager : MonoBehaviour
     {
         if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
         score.text = Mathf.Round(scoreManager.score).ToString();
-        highScore.text = Mathf.Round(GPGCSaving.highScore).ToString();
+        highScore.text = GameDataVariable.dataVariables[0].ToString();
+        coin.text = GameDataVariable.dataVariables[1].ToString();
         if (ScoreManager.isPause) continueScreen.SetActive(false);
 
         if(PlayerFireball.playerFireballHitObject)
@@ -94,6 +101,7 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
+        Player.isPlayerDead = false;
         clickSound.Play();
         SceneManager.LoadScene(0);
     }
