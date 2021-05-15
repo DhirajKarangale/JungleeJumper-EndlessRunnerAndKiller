@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    private float pointePerSecond = 40;
+    private float pointePerSecond = 0.5f;
     [SerializeField] Text scoreText;
     [SerializeField] Text highScoreText;
     [SerializeField] Player player;

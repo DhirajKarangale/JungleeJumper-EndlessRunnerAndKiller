@@ -3,19 +3,27 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rigidBody;
+    [SerializeField] GameObject mainPanel;
+    [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
-    [SerializeField] AudioSource buttonPressSound;
+    [SerializeField] AudioSource startButtonSound;
+    [SerializeField] AudioSource buttonSound;
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
     private bool isQuitPanelActive;
+    public static bool isProfilePanelActive;
    
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive)
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();
+        }
+
+        if(Input.GetKey(KeyCode.Escape) && isProfilePanelActive)
+        {
+            CloseProfileButton();
         }
 
         coinCount.text = GameDataVariable.dataVariables[1].ToString();
@@ -24,25 +32,43 @@ public class MainMenu : MonoBehaviour
 
     public void StartButton(string sceneToLoad)
     {
-        buttonPressSound.Play();
-        rigidBody.velocity = new Vector2(16, rigidBody.velocity.y);
+        startButtonSound.Play();
         FindObjectOfType<SceneFader>().FadeTo(sceneToLoad);
     }
 
     public void QuitButton()
     {
+        buttonSound.Play();
         Application.Quit();
     }
 
     private void SetQuitPanel()
     {
+        buttonSound.Play();
         quitPanel.SetActive(true);
         isQuitPanelActive = true;
     }
 
     public void DesableQuitPanel()
     {
+        buttonSound.Play();
         quitPanel.SetActive(false);
         isQuitPanelActive = false;
+    }
+
+    public void ProfileButton()
+    {
+        buttonSound.Play();
+        isProfilePanelActive = true;
+        profilePanel.SetActive(true);
+        mainPanel.SetActive(false);
+    }
+
+    public void CloseProfileButton()
+    {
+        buttonSound.Play();
+        isProfilePanelActive = false;
+        profilePanel.SetActive(false);
+        mainPanel.SetActive(true);
     }
 }

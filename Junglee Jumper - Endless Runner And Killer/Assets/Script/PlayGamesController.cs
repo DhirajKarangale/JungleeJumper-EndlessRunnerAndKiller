@@ -4,6 +4,7 @@ using GooglePlayGames.BasicApi.SavedGame;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class PlayGamesController : MonoBehaviour
 {
@@ -13,8 +14,18 @@ public class PlayGamesController : MonoBehaviour
     const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData";
     bool isSaving;
     bool isCloudDataLoaded = false;
+    [SerializeField] AudioSource buttonSound;
+    [SerializeField] Image playerProfile;
+    [SerializeField] Texture2D deafultPlayerImage;
+    [SerializeField] Text playerName;
+    [SerializeField] Image playerProfile2;
+    [SerializeField] Text playerName2;
     [SerializeField] GameObject msgTextObject;
     [SerializeField] Text msgText;
+    [SerializeField] Text profileMsgTxt;
+    [SerializeField] GameObject profileMsgTxtObject;
+
+    public static bool isSignInCheck = true;
 
     // Use this for initialization
     void Start()
@@ -35,23 +46,88 @@ public class PlayGamesController : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
 
-        SignIn();
+        if(isSignInCheck) SignIn();
     }
 
+    private void OnApplicationQuit()
+    {
+        isSignInCheck =true;
+    }
+
+    private void Update()
+    {
+       if(!Social.localUser.authenticated)
+        {
+            Texture2D tex;
+            tex = deafultPlayerImage;
+            if (playerProfile != null)
+                playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+            if (playerProfile != null)
+                playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+            if (playerName != null)
+                playerName.text = "Junglee Jumper";
+            if (playerName2 != null)
+                playerName2.text = "Junglee Jumper";
+        }
+    }
+
+    #region Sign In/Out Button
     void SignIn()
     {
         //when authentication process is done (successfuly or not), we load cloud data
-        Social.localUser.Authenticate(success => { LoadData(); });
-    }
 
+        Social.localUser.Authenticate((bool success) =>
+        {
+            if (success == true)
+            {
+                isSignInCheck = false;
+                LoadData();
+                StartCoroutine(PlayerImage());
+                if(playerName != null)
+                playerName.text = Social.localUser.userName;
+                if (playerName2 != null)
+                    playerName2.text = Social.localUser.userName;
+                Debug.Log("Logged in to Google Play Games Services");
+                msgText.color = Color.green;
+                if (msgTextObject != null) msgTextObject.SetActive(true);
+                if (msgText != null) msgText.text = "Successfully Logged in";
+                if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+                profileMsgTxt.color = Color.green;
+                if (profileMsgTxt != null) profileMsgTxt.text = "Successfully Logged in";
+                Invoke("DesablemsgText", 3);
+                Invoke("DesableProfilemsgText", 3);
+            }
+            else
+            {
+                Texture2D tex;
+                tex = deafultPlayerImage;
+                if (playerProfile != null)
+                    playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+                if (playerProfile != null)
+                    playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+                if (playerName != null)
+                    playerName.text = "Junglee Jumper";
+                if (playerName2 != null)
+                    playerName2.text = "Junglee Jumper";
+                Debug.LogError("Unable to sign in to Google Play Games Services");
+                if (msgTextObject != null) msgTextObject.SetActive(true);
+                msgText.color = Color.red;
+                if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
+                Invoke("DesablemsgText", 3);
+            }
+        });
+
+    }
 
     public void SignInButton()
     {
+        buttonSound.Play();
         if (Social.localUser.authenticated)
         {
-            if (msgTextObject != null) msgTextObject.SetActive(true);
-            if (msgText != null) msgText.text = "Already Logged In";
-            Invoke("DesablemsgText", 3);
+            if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+            profileMsgTxt.color = Color.green;
+            if (profileMsgTxt != null) profileMsgTxt.text = "Already Logged In";
+            Invoke("DesableProfilemsgText", 3);
         }
         else
         {
@@ -61,18 +137,21 @@ public class PlayGamesController : MonoBehaviour
 
     public void SignOutButton()
     {
+        buttonSound.Play();
         if (!Social.localUser.authenticated)
         {
-            if (msgTextObject != null) msgTextObject.SetActive(true);
-            if (msgText != null) msgText.text = "Already Logged Out";
-            Invoke("DesablemsgText", 3);
+            if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+            profileMsgTxt.color = Color.red;
+            if (profileMsgTxt != null) profileMsgTxt.text = "Already Logged Out";
+            Invoke("DesableProfilemsgText", 3);
         }
         else
         {
             PlayGamesPlatform.Instance.SignOut();
-            if (msgTextObject != null) msgTextObject.SetActive(true);
-            if (msgText != null) msgText.text = "LogOut Sucessfully";
-            Invoke("DesablemsgText", 3);
+            if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+            profileMsgTxt.color = Color.red;
+            if (profileMsgTxt != null) profileMsgTxt.text = "LogOut Sucessfully";
+            Invoke("DesableProfilemsgText", 3);
         }
     }
 
@@ -81,6 +160,13 @@ public class PlayGamesController : MonoBehaviour
         msgTextObject.SetActive(false);
     }
 
+    private void DesableProfilemsgText()
+    {
+        profileMsgTxtObject.SetActive(false);
+    }
+    #endregion /Sign In/Out Button
+
+    #region LeaderBoard
     public static void PostToLeaderboard(long newScore)
     {
         Social.ReportScore(newScore, "CgkI59ausbsKEAIQAg", (bool success) => {
@@ -97,19 +183,32 @@ public class PlayGamesController : MonoBehaviour
 
     public void ShowLeaderboardUI()
     {
+        buttonSound.Play();
         if (Social.localUser.authenticated)
         {
             PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI59ausbsKEAIQAg");
         }
         else
         {
-            msgTextObject.SetActive(true);
-            msgText.text = "You are Logged Out.\nLogin First.";
-            msgText.color = Color.red;
-            Invoke("DesablemsgText", 3);
+            if(MainMenu.isProfilePanelActive)
+            {
+                profileMsgTxtObject.SetActive(true);
+                profileMsgTxt.color = Color.red;
+                profileMsgTxt.text = "You are Logged Out." + "\n" +
+                    "Login First.";
+                Invoke("DesableProfilemsgText", 3);
+            }
+           else
+            {
+                msgTextObject.SetActive(true);
+                msgText.text = "You are Logged Out." + "\n" +
+                    "Login First.";
+                msgText.color = Color.red;
+                Invoke("DesablemsgText", 3);
+            }
         }
     }
-
+    #endregion /LeaderBoard
 
     #region Saved Games
     //making a string out of game data (highscores...)
@@ -341,4 +440,20 @@ public class PlayGamesController : MonoBehaviour
 
     }
     #endregion /Saved Games
+
+
+    IEnumerator PlayerImage()
+    {
+        Texture2D tex;
+        while(Social.localUser.image == null)
+        {
+            yield return null;
+        }
+        tex = Social.localUser.image;
+        if(playerProfile != null)
+            playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+        if (playerProfile != null)
+            playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+    }
+         
 }
