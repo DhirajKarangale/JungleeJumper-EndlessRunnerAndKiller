@@ -31,6 +31,8 @@ public class PlayGamesController : MonoBehaviour
     void Start()
     {
         Instance = this;
+        msgTextObject.SetActive(false);
+        profileMsgTxtObject.SetActive(false);
         //setting default value, if the game is played for the first time
         if (!PlayerPrefs.HasKey(SAVE_NAME))
             PlayerPrefs.SetString(SAVE_NAME, string.Empty);
@@ -62,8 +64,8 @@ public class PlayGamesController : MonoBehaviour
             tex = deafultPlayerImage;
             if (playerProfile != null)
                 playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
-            if (playerProfile != null)
-                playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+            if (playerProfile2 != null)
+                playerProfile2.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
             if (playerName != null)
                 playerName.text = "Junglee Jumper";
             if (playerName2 != null)
@@ -83,19 +85,25 @@ public class PlayGamesController : MonoBehaviour
                 isSignInCheck = false;
                 LoadData();
                 StartCoroutine(PlayerImage());
-                if(playerName != null)
-                playerName.text = Social.localUser.userName;
+                if (playerName != null)
+                    playerName.text = Social.localUser.userName;
                 if (playerName2 != null)
                     playerName2.text = Social.localUser.userName;
+                if (MainMenu.isProfilePanelActive)
+                {
+                    if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+                    profileMsgTxt.color = Color.green;
+                    if (profileMsgTxt != null) profileMsgTxt.text = "Successfully Logged in";
+                    Invoke("DesableProfilemsgText", 3);
+                }
+                else
+                {
+                    msgText.color = Color.green;
+                    if (msgTextObject != null) msgTextObject.SetActive(true);
+                    if (msgText != null) msgText.text = "Successfully Logged in";
+                    Invoke("DesablemsgText", 3);
+                }
                 Debug.Log("Logged in to Google Play Games Services");
-                msgText.color = Color.green;
-                if (msgTextObject != null) msgTextObject.SetActive(true);
-                if (msgText != null) msgText.text = "Successfully Logged in";
-                if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
-                profileMsgTxt.color = Color.green;
-                if (profileMsgTxt != null) profileMsgTxt.text = "Successfully Logged in";
-                Invoke("DesablemsgText", 3);
-                Invoke("DesableProfilemsgText", 3);
             }
             else
             {
@@ -103,13 +111,13 @@ public class PlayGamesController : MonoBehaviour
                 tex = deafultPlayerImage;
                 if (playerProfile != null)
                     playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
-                if (playerProfile != null)
-                    playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+                if (playerProfile2 != null)
+                    playerProfile2.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
                 if (playerName != null)
                     playerName.text = "Junglee Jumper";
                 if (playerName2 != null)
                     playerName2.text = "Junglee Jumper";
-                Debug.LogError("Unable to sign in to Google Play Games Services");
+                Debug.Log("Unable to sign in to Google Play Games Services");
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 msgText.color = Color.red;
                 if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
@@ -452,8 +460,8 @@ public class PlayGamesController : MonoBehaviour
         tex = Social.localUser.image;
         if(playerProfile != null)
             playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
-        if (playerProfile != null)
-            playerProfile.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
+        if (playerProfile2 != null)
+            playerProfile2.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
     }
          
 }

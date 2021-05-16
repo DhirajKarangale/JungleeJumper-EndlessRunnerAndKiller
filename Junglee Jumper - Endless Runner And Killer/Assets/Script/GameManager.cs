@@ -23,11 +23,6 @@ public class GameManager : MonoBehaviour
 
     public static bool isGameStart;
 
-    private void Awake()
-    {
-        continueScreen.SetActive(true);
-    }
-
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
