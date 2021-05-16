@@ -95,11 +95,35 @@ public class ScoreManager : MonoBehaviour
             Invoke("ScoreDecreaseTestFalse", 1f);
         }
 
-        scoreText.text = Mathf.Round(score).ToString();
-        highScoreText.text = Mathf.Round(highScore).ToString();
-        coinText.text = coin.ToString();
+        if (score >= 1000)
+        {
+            scoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((score / 1000)), int.Parse((score%1000).ToString()[0].ToString()));
+        }
+        else
+        {
+            scoreText.text = Mathf.Round(score).ToString();
+        }
+        if (highScore >= 1000)
+        {
+            highScoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((highScore / 1000)), int.Parse((highScore%1000).ToString()[0].ToString()));
 
-        if(Player.isPlayerDead)
+        }
+        else
+        {
+            highScoreText.text = highScore.ToString();
+        }
+
+        if (coin >= 1000)
+        {
+            coinText.text = string.Format("{0}.{1}K", Convert.ToInt32((coin / 1000)), int.Parse((coin%1000).ToString()[0].ToString()));
+        }
+        else
+        {
+            coinText.text = coin.ToString();
+        }
+
+
+        if (Player.isPlayerDead)
         {
             GameDataVariable.dataVariables[0] = Convert.ToInt32(highScore);
             GameDataVariable.dataVariables[1] = coin;

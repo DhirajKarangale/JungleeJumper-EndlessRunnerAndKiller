@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class MainMenu : MonoBehaviour
 {
@@ -26,8 +27,25 @@ public class MainMenu : MonoBehaviour
             CloseProfileButton();
         }
 
-        coinCount.text = GameDataVariable.dataVariables[1].ToString();
-        highScoreCount.text = GameDataVariable.dataVariables[0].ToString();
+        if (GameDataVariable.dataVariables[0] >= 1000)
+        {
+            highScoreCount.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[0] / 1000)), int.Parse((GameDataVariable.dataVariables[0]%1000).ToString()[0].ToString()));
+
+        }
+        else
+        {
+            highScoreCount.text = GameDataVariable.dataVariables[0].ToString();
+        }
+
+        if(GameDataVariable.dataVariables[1] >= 1000)
+        {
+            coinCount.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[1] / 1000)), int.Parse((GameDataVariable.dataVariables[1]%1000).ToString()[0].ToString()));
+        }
+        else
+        {
+            coinCount.text = GameDataVariable.dataVariables[1].ToString();
+
+        }
     }
 
     public void StartButton(string sceneToLoad)

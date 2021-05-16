@@ -4290,10 +4290,10 @@ MonoBehaviour:
   cutterGenerator: {fileID: 235081069}
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   deathGround:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
   scrowlling: {fileID: 2048933704}
   cutedPlayer: {fileID: 1845821449483246172, guid: fc14285a4a3c2204da07cccc3cdac504, type: 3}
   playerBloodEffect: {fileID: 7262123784175544433, guid: 2893087286353784b8b86c38bd7d7743, type: 3}
@@ -4329,7 +4329,7 @@ MonoBehaviour:
   hurtSound: {fileID: 560349593}
   gameOverSound: {fileID: 1224310503}
   levelDistance: 100
-  speedMultiplier: 1.06
+  speedMultiplier: 1.062
 --- !u!95 &962507647
 Animator:
   serializedVersion: 3
@@ -5302,7 +5302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166906921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.53, y: 0.06, z: 0}
+  m_LocalPosition: {x: -13.85, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -6895,7 +6895,7 @@ GameObject:
   - component: {fileID: 1950831673}
   - component: {fileID: 1950831672}
   - component: {fileID: 1950831671}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Player Catcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}

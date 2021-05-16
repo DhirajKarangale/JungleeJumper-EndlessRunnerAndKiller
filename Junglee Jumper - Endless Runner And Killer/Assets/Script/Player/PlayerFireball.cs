@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerFireball : MonoBehaviour
 {
+    private Player player;
     private AudioSource firballReleseSound;
     [SerializeField] GameObject fireballExplosionEffect;
     private Rigidbody2D rigidBody;
@@ -19,11 +20,12 @@ public class PlayerFireball : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();
         firballReleseSound = GetComponent<AudioSource>();
         twoFireballCollide = false;
-        rigidBody.velocity = transform.right * speed;
+        rigidBody.velocity = transform.right * speed * player.speed;
         firballReleseSound.Play();
     }
 

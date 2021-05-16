@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,9 +37,33 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
-        score.text = Mathf.Round(scoreManager.score).ToString();
-        highScore.text = GameDataVariable.dataVariables[0].ToString();
-        coin.text = GameDataVariable.dataVariables[1].ToString();
+        if (scoreManager.score >= 1000)
+        {
+            score.text = string.Format("{0}.{1}K", Convert.ToInt32((scoreManager.score / 1000)), int.Parse((scoreManager.score%1000).ToString()[0].ToString()));
+        }
+        else
+        {
+            score.text = Mathf.Round(scoreManager.score).ToString();
+        }
+        if (GameDataVariable.dataVariables[0] >= 1000)
+        {
+            highScore.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[0] / 1000)), int.Parse((GameDataVariable.dataVariables[0]%1000).ToString()[0].ToString()));
+
+        }
+        else
+        {
+            highScore.text = GameDataVariable.dataVariables[0].ToString();
+        }
+
+        if (GameDataVariable.dataVariables[1] >= 1000)
+        {
+            coin.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[1] / 1000)), int.Parse((GameDataVariable.dataVariables[1]%1000).ToString()[0].ToString()));
+        }
+        else
+        {
+            coin.text = GameDataVariable.dataVariables[1].ToString();
+
+        }
         if (ScoreManager.isPause) continueScreen.SetActive(false);
 
         if(PlayerFireball.playerFireballHitObject)
