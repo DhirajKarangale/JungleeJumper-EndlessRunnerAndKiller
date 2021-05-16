@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour
 
         if (GameDataVariable.dataVariables[0] >= 1000)
         {
-            highScoreCount.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[0] / 1000)), int.Parse((GameDataVariable.dataVariables[0]%1000).ToString()[0].ToString()));
+            highScoreCount.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[0] / 1000)), int.Parse(((GameDataVariable.dataVariables[0]%1000)/100).ToString()[0].ToString()));
 
         }
         else
@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
 
         if(GameDataVariable.dataVariables[1] >= 1000)
         {
-            coinCount.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[1] / 1000)), int.Parse((GameDataVariable.dataVariables[1]%1000).ToString()[0].ToString()));
+            coinCount.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[1] / 1000)), int.Parse(((GameDataVariable.dataVariables[1]%1000)/100).ToString()[0].ToString()));
         }
         else
         {

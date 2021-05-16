@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
         if (scoreManager.score >= 1000)
         {
-            score.text = string.Format("{0}.{1}K", Convert.ToInt32((scoreManager.score / 1000)), int.Parse((scoreManager.score%1000).ToString()[0].ToString()));
+            score.text = string.Format("{0}.{1}K", Convert.ToInt32((scoreManager.score / 1000)), int.Parse(((scoreManager.score%1000)/100).ToString()[0].ToString()));
         }
         else
         {
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         }
         if (GameDataVariable.dataVariables[0] >= 1000)
         {
-            highScore.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[0] / 1000)), int.Parse((GameDataVariable.dataVariables[0]%1000).ToString()[0].ToString()));
+            highScore.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[0] / 1000)), int.Parse(((GameDataVariable.dataVariables[0]%1000)/100).ToString()[0].ToString()));
 
         }
         else
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
 
         if (GameDataVariable.dataVariables[1] >= 1000)
         {
-            coin.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[1] / 1000)), int.Parse((GameDataVariable.dataVariables[1]%1000).ToString()[0].ToString()));
+            coin.text = string.Format("{0}.{1}K", Convert.ToInt32((GameDataVariable.dataVariables[1] / 1000)), int.Parse(((GameDataVariable.dataVariables[1]%1000)/100).ToString()[0].ToString()));
         }
         else
         {
@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        player.runingSound.Stop();
         backGroundMusic.Stop();
         Player.isPlayerDead = true;
         scoreManagerObject.SetActive(false);
@@ -121,6 +122,7 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
+        Time.timeScale = 1f;
         Player.isPlayerDead = false;
         clickSound.Play();
         SceneManager.LoadScene(0);

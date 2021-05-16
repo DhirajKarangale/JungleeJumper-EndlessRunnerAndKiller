@@ -97,7 +97,7 @@ public class ScoreManager : MonoBehaviour
 
         if (score >= 1000)
         {
-            scoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((score / 1000)), int.Parse((score%1000).ToString()[0].ToString()));
+            scoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((score / 1000)), int.Parse(((score%1000)/100).ToString()[0].ToString()));
         }
         else
         {
@@ -105,17 +105,17 @@ public class ScoreManager : MonoBehaviour
         }
         if (highScore >= 1000)
         {
-            highScoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((highScore / 1000)), int.Parse((highScore%1000).ToString()[0].ToString()));
+            highScoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((highScore / 1000)), int.Parse(((highScore%1000)/100).ToString()[0].ToString()));
 
         }
         else
         {
-            highScoreText.text = highScore.ToString();
+            highScoreText.text = Convert.ToInt32(highScore).ToString();
         }
 
         if (coin >= 1000)
         {
-            coinText.text = string.Format("{0}.{1}K", Convert.ToInt32((coin / 1000)), int.Parse((coin%1000).ToString()[0].ToString()));
+            coinText.text = string.Format("{0}.{1}K", Convert.ToInt32((coin / 1000)), int.Parse(((coin%1000)/100).ToString()[0].ToString()));
         }
         else
         {
@@ -159,6 +159,7 @@ public class ScoreManager : MonoBehaviour
 
     public void PauseButton()
     {
+        player.runingSound.Stop();
         backGroundMusic.Stop();
         clickSound.Play();
         isPause = true;
@@ -169,6 +170,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ResumeButton()
     {
+        player.runingSound.Play();
         backGroundMusic.Play();
         clickSound.Play();
         isPause = false;
@@ -182,6 +184,7 @@ public class ScoreManager : MonoBehaviour
         clickSound.Play();
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        ResumeButton();
     }
 
     public void RestartButton()

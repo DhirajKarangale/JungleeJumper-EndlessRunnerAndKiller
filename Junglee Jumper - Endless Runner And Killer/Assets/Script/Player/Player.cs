@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
     [SerializeField] AudioSource fireBallCollisionSound;
     [SerializeField] AudioSource deathSound;
     [SerializeField] AudioSource hurtSound;
+    public AudioSource runingSound;
+    [SerializeField] AudioSource slideDownSound;
     public AudioSource gameOverSound;
 
     [Header("Level")]
@@ -150,8 +152,15 @@ public class Player : MonoBehaviour
             animator.SetBool("PlayerDash", false);
             animator.SetBool("PlayerRuning", true);
         }
+        
+       
+        if (!isGrounded && !isPlayerDash)
+        {
+            runingSound.Play();
+        }
 
-        if(PlayerFireball.twoFireballCollide)
+
+        if (PlayerFireball.twoFireballCollide)
         {
             if (fireBallCollisionSound.isPlaying) fireBallCollisionSound.Stop();
             fireBallCollisionSound.Play();
@@ -239,6 +248,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            slideDownSound.Play();
             rigidBody.AddForce(-transform.up * 40 , ForceMode2D.Impulse);
             isSwipeDown = false;
         }
@@ -252,6 +262,7 @@ public class Player : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Zombie")
         {
+            runingSound.Stop();
             scrowlling.backGroundSpeed = 0f;
             isPlayerHitObstacles = true;
             isEnemyFireballAllowed = false;
@@ -289,6 +300,7 @@ public class Player : MonoBehaviour
             
     private void DestroyPlayer()
     {
+        runingSound.Stop();
         isPlayerHitObstacles = true;
         scrowlling.backGroundSpeed = 0f;
         deathSound.Play();

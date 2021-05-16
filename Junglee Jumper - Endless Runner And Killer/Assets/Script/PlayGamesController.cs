@@ -48,7 +48,16 @@ public class PlayGamesController : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(config);
         PlayGamesPlatform.Activate();
 
-        if(isSignInCheck) SignIn();
+        if(isSignInCheck)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.white;
+            msgText.text = "Signing in to Google Play .....";
+            profileMsgTxtObject.SetActive(true);
+            profileMsgTxt.color = Color.white;
+            profileMsgTxt.text = "Signing in to Google Play .....";
+            SignIn();
+        }
     }
 
     private void OnApplicationQuit()
@@ -71,6 +80,14 @@ public class PlayGamesController : MonoBehaviour
             if (playerName2 != null)
                 playerName2.text = "Junglee Jumper";
         }
+       else
+        {
+            StartCoroutine(PlayerImage());
+            if (playerName != null)
+                playerName.text = Social.localUser.userName;
+            if (playerName2 != null)
+                playerName2.text = Social.localUser.userName;
+        }
     }
 
     #region Sign In/Out Button
@@ -89,20 +106,14 @@ public class PlayGamesController : MonoBehaviour
                     playerName.text = Social.localUser.userName;
                 if (playerName2 != null)
                     playerName2.text = Social.localUser.userName;
-                if (MainMenu.isProfilePanelActive)
-                {
-                    if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
-                    profileMsgTxt.color = Color.green;
-                    if (profileMsgTxt != null) profileMsgTxt.text = "Successfully Logged in";
-                    Invoke("DesableProfilemsgText", 3);
-                }
-                else
-                {
-                    msgText.color = Color.green;
-                    if (msgTextObject != null) msgTextObject.SetActive(true);
-                    if (msgText != null) msgText.text = "Successfully Logged in";
-                    Invoke("DesablemsgText", 3);
-                }
+                if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+                profileMsgTxt.color = Color.green;
+                if (profileMsgTxt != null) profileMsgTxt.text = "Successfully Logged in";
+                Invoke("DesableProfilemsgText", 3);
+                msgText.color = Color.green;
+                if (msgTextObject != null) msgTextObject.SetActive(true);
+                if (msgText != null) msgText.text = "Successfully Logged in";
+                Invoke("DesablemsgText", 3);
                 Debug.Log("Logged in to Google Play Games Services");
             }
             else
@@ -118,6 +129,10 @@ public class PlayGamesController : MonoBehaviour
                 if (playerName2 != null)
                     playerName2.text = "Junglee Jumper";
                 Debug.Log("Unable to sign in to Google Play Games Services");
+                if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+                profileMsgTxt.color = Color.red;
+                if (profileMsgTxt != null) profileMsgTxt.text = "Could not login to Google Play Games Services. \n Try Again.";
+                Invoke("DesableProfilemsgText", 3);
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 msgText.color = Color.red;
                 if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
@@ -198,22 +213,16 @@ public class PlayGamesController : MonoBehaviour
         }
         else
         {
-            if(MainMenu.isProfilePanelActive)
-            {
-                profileMsgTxtObject.SetActive(true);
-                profileMsgTxt.color = Color.red;
-                profileMsgTxt.text = "You are Logged Out." + "\n" +
-                    "Login First.";
-                Invoke("DesableProfilemsgText", 3);
-            }
-           else
-            {
-                msgTextObject.SetActive(true);
+            profileMsgTxtObject.SetActive(true);
+            profileMsgTxt.color = Color.red;
+            profileMsgTxt.text = "You are Logged Out.Login First.";
+
+            Invoke("DesableProfilemsgText", 3);
+           msgTextObject.SetActive(true);
                 msgText.text = "You are Logged Out." + "\n" +
                     "Login First.";
                 msgText.color = Color.red;
                 Invoke("DesablemsgText", 3);
-            }
         }
     }
     #endregion /LeaderBoard
