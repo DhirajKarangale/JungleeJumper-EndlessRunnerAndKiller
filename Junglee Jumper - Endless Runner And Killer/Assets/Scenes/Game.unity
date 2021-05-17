@@ -4331,7 +4331,7 @@ MonoBehaviour:
   slideDownSound: {fileID: 2111054804}
   gameOverSound: {fileID: 1224310503}
   levelDistance: 100
-  speedMultiplier: 1.062
+  speedMultiplier: 1.045
 --- !u!95 &962507647
 Animator:
   serializedVersion: 3

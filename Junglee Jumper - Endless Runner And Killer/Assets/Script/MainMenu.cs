@@ -7,11 +7,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
+    [SerializeField] GameObject shopCanvas;
+    [SerializeField] GameObject playerObject;
+    [SerializeField] GameObject groundObject;
+    [SerializeField] GameObject quadBGObject;
     [SerializeField] AudioSource startButtonSound;
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
-    private bool isQuitPanelActive;
+    private bool isQuitPanelActive,isShopActive;
     public static bool isProfilePanelActive;
    
     private void Update()
@@ -25,6 +29,11 @@ public class MainMenu : MonoBehaviour
         if(Input.GetKey(KeyCode.Escape) && isProfilePanelActive)
         {
             CloseProfileButton();
+        }
+
+        if(Input.GetKey(KeyCode.Escape) && isShopActive)
+        {
+            CloseShopButton();
         }
 
         if (GameDataVariable.dataVariables[0] >= 1000)
@@ -89,4 +98,27 @@ public class MainMenu : MonoBehaviour
         profilePanel.SetActive(false);
         mainPanel.SetActive(true);
     }
+
+    public void ShopButton()
+    {
+        buttonSound.Play();
+        isShopActive = true;
+        mainPanel.SetActive(false);
+        playerObject.SetActive(false);
+        groundObject.SetActive(false);
+        quadBGObject.SetActive(false);
+        shopCanvas.SetActive(true);
+    }
+      
+    public void CloseShopButton()
+    {
+        buttonSound.Play();
+        isShopActive = false;
+        mainPanel.SetActive(true);
+        playerObject.SetActive(true);
+        groundObject.SetActive(true);
+        quadBGObject.SetActive(true);
+        shopCanvas.SetActive(false);
+    }
+
 }
