@@ -472,5 +472,22 @@ public class PlayGamesController : MonoBehaviour
         if (playerProfile2 != null)
             playerProfile2.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
     }
+
+    public void ChangeProfileButton()
+    {
+        if(Social.localUser.authenticated)
+        {
+            Application.OpenURL("https://play.google.com/store/apps/details?id=com.google.android.play.games&hl=en_IN&gl=US");
+        }
+        else
+        {
+            if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
+            if(profileMsgTxt != null)
+            {
+                profileMsgTxt.color = Color.red;
+                profileMsgTxt.text = "You are Loggout ! Login First";
+            }
+        }
+    }
          
 }
