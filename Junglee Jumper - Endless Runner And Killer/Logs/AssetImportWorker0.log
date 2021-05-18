@@ -1,0 +1,1275 @@
+Using pre-set license
+Built from '2021.1/release' branch; Version is '2021.1.0f1 (61a549675243) revision 6399305'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro N; OS build 19042.631; Version 2009; 64bit' Language: 'en' Physical Memory: 4016 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53950
+Successfully changed project path to: E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer
+E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 217.82 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.1.0f1 (61a549675243)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Junglee Jumper - Endless Runner And Killer/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 5500 (ID=0x1616)
+    Vendor:   Intel
+    VRAM:     2008 MB
+    Driver:   20.19.15.4326
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56032
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003185 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 186.95 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.925 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008332 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.354 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.31 seconds
+Refreshing native plugins compatible for Editor in 2.04 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3324 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 119.4 MB.
+System memory in use after: 119.6 MB.
+
+Unloading 89 unused Assets to reduce memory usage. Loaded Objects now: 3723.
+Total: 10.901300 ms (FindLiveObjects: 0.734500 ms CreateObjectMapping: 0.402700 ms MarkObjects: 9.683700 ms  DeleteObjects: 0.077700 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Art/PlayerFireball 2
+  artifactKey: Guid(f9756341532ffee4f8240bed8918fc45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/PlayerFireball 2 using Guid(f9756341532ffee4f8240bed8918fc45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0149085c2304a2c49956b00490eed798') in 0.018509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.229372 seconds.
+  path: Assets/Art/PlayerFireball 2/spritesheet-512px-by197px-per-frame.png
+  artifactKey: Guid(4bba34953a8f9a1408388509e249ed5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/PlayerFireball 2/spritesheet-512px-by197px-per-frame.png using Guid(4bba34953a8f9a1408388509e249ed5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5a60d8844cfe2bf2378aa3fb476ce13') in 0.530746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.620340 seconds.
+  path: Assets/Art/PlayerFireball 2/spritesheet-512px-by197px-per-frame.png
+  artifactKey: Guid(4bba34953a8f9a1408388509e249ed5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/PlayerFireball 2/spritesheet-512px-by197px-per-frame.png using Guid(4bba34953a8f9a1408388509e249ed5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30627e333480be6394a0237e127d6507') in 0.092984 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 243.160233 seconds.
+  path: Assets/Art/PlayerFireball 2/spritesheet-512px-by197px-per-frame.png
+  artifactKey: Guid(4bba34953a8f9a1408388509e249ed5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/PlayerFireball 2/spritesheet-512px-by197px-per-frame.png using Guid(4bba34953a8f9a1408388509e249ed5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feedcce3e749ce90888879be41de8f02') in 0.173952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 82.357218 seconds.
+  path: Assets/Prefab/Enemy fireball.prefab
+  artifactKey: Guid(ead4bce2a7939274a83f5bd6f04bbb7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/Enemy fireball.prefab using Guid(ead4bce2a7939274a83f5bd6f04bbb7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fadf5c4dfa5612349d63137fca5397e0') in 0.852803 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.355585 seconds.
+  path: Assets/Prefab/PlayerFireball 2.prefab
+  artifactKey: Guid(79973f95b32a25a429ce70ee0f32f2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab/PlayerFireball 2.prefab using Guid(79973f95b32a25a429ce70ee0f32f2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (spritesheet-512px-by197px-per-frame_2) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
+
+The Animator Controller (spritesheet-512px-by197px-per-frame_2) you have used is not valid. Animations will not play
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
+
+[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
+
+ -> (artifact id: '302401f3407bc842ddb7816245b35151') in 0.038332 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 85.308540 seconds.
+  path: Assets/Art/Shop Item
+  artifactKey: Guid(cdc8268ef30af8b4fa9a892db9ef6e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item using Guid(cdc8268ef30af8b4fa9a892db9ef6e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf5a4a5661f7a34f3fdb6cfeaf395909') in 0.016745 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.771027 seconds.
+  path: Assets/Art/Shop Item/1.png
+  artifactKey: Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/1.png using Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8287f81e8330f5f63a6da3c28e9b41cf') in 0.035104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.473011 seconds.
+  path: Assets/Art/Shop Item/1.png
+  artifactKey: Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/1.png using Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2582372a41b32f00eeed288fe6943ff4') in 0.039429 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013825 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  3.515 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 3.56 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 127.6 MB.
+System memory in use after: 127.9 MB.
+
+Unloading 81 unused Assets to reduce memory usage. Loaded Objects now: 3821.
+Total: 24.441300 ms (FindLiveObjects: 0.665200 ms CreateObjectMapping: 0.535700 ms MarkObjects: 23.101100 ms  DeleteObjects: 0.134500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 578.082330 seconds.
+  path: Assets/Art/Shop Item/—Pngtree—christmas border with transparent_5670054.png
+  artifactKey: Guid(5c12c6b0824499e4e98dcdc1f486a08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/—Pngtree—christmas border with transparent_5670054.png using Guid(5c12c6b0824499e4e98dcdc1f486a08b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c1166eec1f62a59b8a8ecb014c4ab3') in 0.297584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 171.141104 seconds.
+  path: Assets/Art/Shop Item/34588-6-green-border-frame-transparent-background.png
+  artifactKey: Guid(b4407032b985018409ea4542e2283244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/34588-6-green-border-frame-transparent-background.png using Guid(b4407032b985018409ea4542e2283244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4e24bd1ab19f739d59bbaa9d607d726') in 0.115474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.462220 seconds.
+  path: Assets/Art/Shop Item/34588-6-green-border-frame-transparent-background.png
+  artifactKey: Guid(b4407032b985018409ea4542e2283244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/34588-6-green-border-frame-transparent-background.png using Guid(b4407032b985018409ea4542e2283244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '780520004973897bc01cc956b8bd4558') in 0.108180 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 105.562265 seconds.
+  path: Assets/Art/Shop Item/1.png
+  artifactKey: Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/1.png using Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f46143fadc95bf6208cbf77afd633c73') in 0.036611 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.341307 seconds.
+  path: Assets/Art/Shop Item/1.png
+  artifactKey: Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/1.png using Guid(1797ce33f72d4cc46bd75911e552de22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4846a3bd86549c25ea1ffa4b93bfd8bc') in 0.044430 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.038177 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.52 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  3.550 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.39 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3322 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 134.5 MB.
+System memory in use after: 134.7 MB.
+
+Unloading 81 unused Assets to reduce memory usage. Loaded Objects now: 3902.
+Total: 16.824500 ms (FindLiveObjects: 0.668300 ms CreateObjectMapping: 0.388900 ms MarkObjects: 15.628600 ms  DeleteObjects: 0.134700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 210.038486 seconds.
+  path: Assets/Art/Shop Item/1 (3).png
+  artifactKey: Guid(cec8e0b303ce942468d6814b51c3e30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/1 (3).png using Guid(cec8e0b303ce942468d6814b51c3e30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3481980d94815840170c1c5cd55309e2') in 0.187961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 269.751061 seconds.
+  path: Assets/Fonts/Roboto-ThinItalic.ttf
+  artifactKey: Guid(e283e1b90132dc147b7e9c2bb8be6806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto-ThinItalic.ttf using Guid(e283e1b90132dc147b7e9c2bb8be6806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8a9f8f2a272850fb2c2d9f9222ce684') in 0.654221 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000375 seconds.
+  path: Assets/Fonts/Transformers Movie.ttf
+  artifactKey: Guid(98b51ce890c247e47b4c485ca2bdc05f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Transformers Movie.ttf using Guid(98b51ce890c247e47b4c485ca2bdc05f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71aba009add683c1457b82673eef1f9a') in 0.077374 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Fonts/SwipeRaceDemo.ttf
+  artifactKey: Guid(e18a7d6af78933b4d937a98411e83755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/SwipeRaceDemo.ttf using Guid(e18a7d6af78933b4d937a98411e83755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9951140b1ce33562606383d336479c0') in 0.107062 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000373 seconds.
+  path: Assets/Fonts/Sofija.ttf
+  artifactKey: Guid(49af46448a7d4b74e93692bcdccbc512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Sofija.ttf using Guid(49af46448a7d4b74e93692bcdccbc512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53749158569c01b5b9943c1660822249') in 0.071639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.643619 seconds.
+  path: Assets/Fonts/Roboto-Regular.ttf
+  artifactKey: Guid(db0fcb009e6cfe04c9571a53b68476eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto-Regular.ttf using Guid(db0fcb009e6cfe04c9571a53b68476eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06616e167592fdb7b85d61c3296dfae') in 0.087135 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000898 seconds.
+  path: Assets/Fonts/Roboto-Thin.ttf
+  artifactKey: Guid(8033b1ebfcd1cb343a212b452ff049c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto-Thin.ttf using Guid(8033b1ebfcd1cb343a212b452ff049c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ffd5bb28042dec82cf977c1b4815baa') in 0.099654 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 263.132999 seconds.
+  path: Assets/Art/Shop Item/Bye Button.png
+  artifactKey: Guid(fd584f4a297883d469922ac5501f2c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/Bye Button.png using Guid(fd584f4a297883d469922ac5501f2c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ab982176ac3c52fc0fb8b149ee8482f') in 0.086103 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.247345 seconds.
+  path: Assets/Art/Shop Item/Bye Button.png
+  artifactKey: Guid(fd584f4a297883d469922ac5501f2c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/Bye Button.png using Guid(fd584f4a297883d469922ac5501f2c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd0e2cbd08784566bbd98b4bdf8456f') in 0.062909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1249.522306 seconds.
+  path: Assets/Art/Shop Item/coin-icon-3830.png
+  artifactKey: Guid(1a89b2189baf8e647bd567d35add6fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/coin-icon-3830.png using Guid(1a89b2189baf8e647bd567d35add6fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd929ef981efdf04d61ab117f4724a72f') in 0.146184 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.470621 seconds.
+  path: Assets/Art/Shop Item/coin-icon-3830.png
+  artifactKey: Guid(1a89b2189baf8e647bd567d35add6fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/coin-icon-3830.png using Guid(1a89b2189baf8e647bd567d35add6fc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7432c4d6ecbca2dd8dbac2e53edb780') in 0.108048 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 224.224651 seconds.
+  path: Assets/Art/Shop Item/—Pngtree—gold coin vector design with_5302323.png
+  artifactKey: Guid(c6e43368d802df34ba3145b3aef12f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/—Pngtree—gold coin vector design with_5302323.png using Guid(c6e43368d802df34ba3145b3aef12f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1d4ea951bf10c4a61877ae0d149dc4d') in 0.175079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.770489 seconds.
+  path: Assets/Art/Shop Item/—Pngtree—gold coin vector design with_5302323.png
+  artifactKey: Guid(c6e43368d802df34ba3145b3aef12f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/—Pngtree—gold coin vector design with_5302323.png using Guid(c6e43368d802df34ba3145b3aef12f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81fd79d5eab3b1f4b4b17b4f0f4c90ae') in 0.130394 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 122.214414 seconds.
+  path: Assets/Art/Shop Item/pngfind.com-gold-coins-png-37408.png
+  artifactKey: Guid(cc049487eddacd048a3cda0350529100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/pngfind.com-gold-coins-png-37408.png using Guid(cc049487eddacd048a3cda0350529100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fab74977eae821982e0a262243ea7c2') in 0.244226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.198773 seconds.
+  path: Assets/Art/Shop Item/pngfind.com-gold-coins-png-37408.png
+  artifactKey: Guid(cc049487eddacd048a3cda0350529100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/pngfind.com-gold-coins-png-37408.png using Guid(cc049487eddacd048a3cda0350529100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4cdfe08b8d1e5fa824c8fb948c06e0cf') in 0.152969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 271.373529 seconds.
+  path: Assets/Art/Shop Item/pngfind.com-web-button-png-2214475.png
+  artifactKey: Guid(c5662d76b75652249b6bb2469c8982af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/pngfind.com-web-button-png-2214475.png using Guid(c5662d76b75652249b6bb2469c8982af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e04ffb7e552dbb83248668b240bba996') in 0.259700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.995109 seconds.
+  path: Assets/Art/Shop Item/pngfind.com-web-button-png-2214475.png
+  artifactKey: Guid(c5662d76b75652249b6bb2469c8982af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/pngfind.com-web-button-png-2214475.png using Guid(c5662d76b75652249b6bb2469c8982af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d79fd55886b367e6bc508415eb32842') in 0.118627 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 86.195779 seconds.
+  path: Assets/Art/artwork/Environment/props/platform-long.png
+  artifactKey: Guid(15fdc3c0ac15e4a62b3f968392db8b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/platform-long.png using Guid(15fdc3c0ac15e4a62b3f968392db8b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6904cd4ec1592b6124c56149b75c102e') in 0.148364 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Right Hand.PNG
+  artifactKey: Guid(7e8aae1e1c86590458318c0cd038bc9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Right Hand.PNG using Guid(7e8aae1e1c86590458318c0cd038bc9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e77bc1e84846b19a342baded1b0af7e2') in 0.408379 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000770 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/opossum/opossum-5.png
+  artifactKey: Guid(d3b400141540442d5a4497e34887083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/opossum/opossum-5.png using Guid(d3b400141540442d5a4497e34887083f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc83161645c1e8db215dde485d292165') in 0.105485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000396 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/lower torso.PNG
+  artifactKey: Guid(6cd044c635b91ba4da0beb1962421a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/lower torso.PNG using Guid(6cd044c635b91ba4da0beb1962421a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f063ca48c7c5ca4de3c1b37819819949') in 0.125599 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000452 seconds.
+  path: Assets/Art/artwork/Environment/middle.png
+  artifactKey: Guid(de41d366c687a46beb6a9acaa88c12db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/middle.png using Guid(de41d366c687a46beb6a9acaa88c12db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd61bb7c39d44387173aa7584a30c66e8') in 0.168982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Files/images/leg_left-7.png
+  artifactKey: Guid(7733cb71e24e6e842b9e09c74d63bfca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Files/images/leg_left-7.png using Guid(7733cb71e24e6e842b9e09c74d63bfca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8b9bde9a68f77f6cbfee41bbb863f07') in 0.180970 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000738 seconds.
+  path: Assets/Art/2D Zombie/Cutted Zombie/Left Leg.png
+  artifactKey: Guid(6355147eff0e5f941856997fff7d71e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Cutted Zombie/Left Leg.png using Guid(6355147eff0e5f941856997fff7d71e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '134a1b1cc4d5c4f3d19b2760ecbd5600') in 0.368640 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000876 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/opossum/opossum-4.png
+  artifactKey: Guid(23510f1f0d6994dccbcdd1aa3cfe73be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/opossum/opossum-4.png using Guid(23510f1f0d6994dccbcdd1aa3cfe73be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '259b56306f8cf3d67ae9eb54eb11e281') in 0.146944 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000457 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/opossum/opossum-3.png
+  artifactKey: Guid(74c5b1be9ca4343ca9d68c58dd8b7332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/opossum/opossum-3.png using Guid(74c5b1be9ca4343ca9d68c58dd8b7332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28d7a4e20f05d5bef2bde4a8a7fee7dd') in 0.103601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000454 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/leg.PNG
+  artifactKey: Guid(813841653a476f14f8a9c5a713136559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/leg.PNG using Guid(813841653a476f14f8a9c5a713136559) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaf689217427aab91e7ef146d4561c30') in 0.157423 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000747 seconds.
+  path: Assets/Art/2D Zombie/Cutted Zombie/Right Hand.png
+  artifactKey: Guid(280e3896dcaaf554c8ff336b08eeffd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Cutted Zombie/Right Hand.png using Guid(280e3896dcaaf554c8ff336b08eeffd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67121b9c2d0e0405e9f28c0d667ff81') in 0.184142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000368 seconds.
+  path: Assets/Art/2D Zombie/Cutted Zombie/Right Leg.png
+  artifactKey: Guid(e3b1906c289a11b419a58d3486a8838d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Cutted Zombie/Right Leg.png using Guid(e3b1906c289a11b419a58d3486a8838d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '504d68eeb08958e0991586fd29208cf7') in 0.189366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000470 seconds.
+  path: Assets/Art/artwork/Environment/props/crank-up.png
+  artifactKey: Guid(441a2d89600064d4d9ced045b19d0ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/crank-up.png using Guid(441a2d89600064d4d9ced045b19d0ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c8930bf32f1d7d38d5720e3b71cb73a') in 0.131535 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000546 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-4.png
+  artifactKey: Guid(63301056ddf5f4841800915f26c302d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-4.png using Guid(63301056ddf5f4841800915f26c302d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abec0eea8d01e0eae36dc775e3c4baa1') in 0.110522 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000465 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Body.png
+  artifactKey: Guid(e7a568d70cc25f345a0fa5ce969538d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Body.png using Guid(e7a568d70cc25f345a0fa5ce969538d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f42c0dae34a3dbf20e0d97642cfd7b4f') in 0.263143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000735 seconds.
+  path: Assets/Art/ImpactEffect/explosion 4.png
+  artifactKey: Guid(30dd82d86475ae34e8596ed8d735845f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/ImpactEffect/explosion 4.png using Guid(30dd82d86475ae34e8596ed8d735845f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83ff876ae47534c3beddd24904a85769') in 0.689545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000401 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/4.png
+  artifactKey: Guid(f903d1b2fe6a25041a892be301d187e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/4.png using Guid(f903d1b2fe6a25041a892be301d187e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16293725fa9307ab479abddea282fce3') in 0.205864 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000394 seconds.
+  path: Assets/Art/artwork/Environment/props/door.png
+  artifactKey: Guid(8a26d60fb45014bcd9bb392106f7c98b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/door.png using Guid(8a26d60fb45014bcd9bb392106f7c98b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '621b94063b17dc158ba30962624d619e') in 0.106457 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000800 seconds.
+  path: Assets/Art/ImpactEffect/explosion 1.png
+  artifactKey: Guid(b4105c5762d76314ead5ab0a50b50c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/ImpactEffect/explosion 1.png using Guid(b4105c5762d76314ead5ab0a50b50c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '347e0e30f036ea5dcbb37d23a19807ab') in 1.490538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000867 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-5.png
+  artifactKey: Guid(273ba8fade558457eb836eefe69bba7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-5.png using Guid(273ba8fade558457eb836eefe69bba7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0117bc235eddbeddb7e5fcd3b51aed1') in 0.111958 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000424 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-4.png
+  artifactKey: Guid(4f3dc6ccaf04b4061a059006d96715f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-4.png using Guid(4f3dc6ccaf04b4061a059006d96715f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd68175fe3125554f1b22a66c5ff2804') in 0.097977 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000420 seconds.
+  path: Assets/Art/artwork/Environment/props/crank-down.png
+  artifactKey: Guid(d3240c946631a4966b1bcab3db999126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/crank-down.png using Guid(d3240c946631a4966b1bcab3db999126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a59f423cc2ca2f7f3715efc94b5d1740') in 0.100243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000992 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Files/images/01_arm_right_n.png
+  artifactKey: Guid(4a4e37fcbbe7aa640b815ae4fcc27e49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Files/images/01_arm_right_n.png using Guid(4a4e37fcbbe7aa640b815ae4fcc27e49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48beec360a8626b338576f5f3581ef62') in 0.144991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001440 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-3.png
+  artifactKey: Guid(06c04197e6f394ba897942f561e896c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-3.png using Guid(06c04197e6f394ba897942f561e896c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67f1c5bf75e13bc8f666b3a0c396fba') in 0.052322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000505 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-2.png
+  artifactKey: Guid(c97786e9459b34e058449b84cd9aab61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-2.png using Guid(c97786e9459b34e058449b84cd9aab61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c77f52608f4ddf16c5c2bc7f5418c2') in 0.162857 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000826 seconds.
+  path: Assets/Art/ImpactEffect/explosion 3.png
+  artifactKey: Guid(6e5603af1ae2f22439ea5a15b74080ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/ImpactEffect/explosion 3.png using Guid(6e5603af1ae2f22439ea5a15b74080ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a92d693cd16022badf1b9eb676b4a3e') in 0.552236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000411 seconds.
+  path: Assets/Art/artwork/Environment/props/rock.png
+  artifactKey: Guid(3604a08945c65491a9ffb90ad9a8ff57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/rock.png using Guid(3604a08945c65491a9ffb90ad9a8ff57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bc0589041d152655f6174fc2a14453b') in 0.132887 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Legs.png
+  artifactKey: Guid(08d3b9bb3dbffef4e89290d6bb5c1503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Cuted Part/Legs.png using Guid(08d3b9bb3dbffef4e89290d6bb5c1503) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dddecae4cb8ff29a80e71750b6da9967') in 0.107601 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000409 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Ninja Slip.png
+  artifactKey: Guid(f541f3c78c617c149a816ed0075739b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Ninja Slip.png using Guid(f541f3c78c617c149a816ed0075739b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11c48621bdd8e6613ba6b3c6b7f3186c') in 0.095731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000386 seconds.
+  path: Assets/Art/artwork/Environment/props/block-big.png
+  artifactKey: Guid(5bccf13ce09bd43e39c1c3416d5de92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/block-big.png using Guid(5bccf13ce09bd43e39c1c3416d5de92c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21f8efe00e3ab6522e5f4bda779a81f5') in 0.160500 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000870 seconds.
+  path: Assets/Art/2D Zombie/Cutted Zombie/Left Hand.png
+  artifactKey: Guid(09d120e13fe74c742a9cefae4ec645b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Cutted Zombie/Left Hand.png using Guid(09d120e13fe74c742a9cefae4ec645b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2528673603815c52af3e1cf25cc976c8') in 0.270360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000489 seconds.
+  path: Assets/Art/artwork/Environment/props/big-crate.png
+  artifactKey: Guid(3fc2bbd409bf34ab6af1637bab569da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/big-crate.png using Guid(3fc2bbd409bf34ab6af1637bab569da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b93adff3e08f74c71f95c4c2c49c1c5') in 0.117330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000494 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-2.png
+  artifactKey: Guid(8582e97fa62334fbd8bd10c1052e27b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-2.png using Guid(8582e97fa62334fbd8bd10c1052e27b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '974eb91ec0fbdcc46cbcbca4255cf65d') in 0.100603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/opossum/opossum-6.png
+  artifactKey: Guid(764fc52f7266843e9b3dac17448f873f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/opossum/opossum-6.png using Guid(764fc52f7266843e9b3dac17448f873f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '158a2d836b8f435ae22fcb8c3557e1cb') in 0.124315 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000749 seconds.
+  path: Assets/Art/artwork/Environment/props/crate.png
+  artifactKey: Guid(794aa25d484d140d89ea9601c122ece0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/crate.png using Guid(794aa25d484d140d89ea9601c122ece0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a347cb3fe0d9c191ed73a33b3669ae8d') in 0.109577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000387 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-7.png
+  artifactKey: Guid(056b6a3f6e14d4af2a7d641c4dd44e79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-7.png using Guid(056b6a3f6e14d4af2a7d641c4dd44e79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f668d0e8c5e72413ffc51496dccaf24') in 0.093468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Files/images/01_arm_left_n.png
+  artifactKey: Guid(35b4c1da3211c7a438ac6bff0a57b170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Files/images/01_arm_left_n.png using Guid(35b4c1da3211c7a438ac6bff0a57b170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05e8117ab7aba3145847eca9fe4e223e') in 0.165740 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000699 seconds.
+  path: Assets/Art/artwork/Environment/props/bush.png
+  artifactKey: Guid(ecc204495234d40f091d828790c56287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/bush.png using Guid(ecc204495234d40f091d828790c56287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45562ddd652b347ffdedb172ea7b1ca2') in 0.124475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000398 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-3.png
+  artifactKey: Guid(36ec151523b4340ef982c2e9eb0af881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-3.png using Guid(36ec151523b4340ef982c2e9eb0af881) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e48b0de3e23c5120e3915b0c0a0389c5') in 0.371267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000802 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Files/images/01_head_n.png
+  artifactKey: Guid(ca06de5fb36229641bcd248a371195f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Files/images/01_head_n.png using Guid(ca06de5fb36229641bcd248a371195f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c39b3de8110f693048995de87417cc0d') in 0.175662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000502 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-1.png
+  artifactKey: Guid(f240dfd4814d34d55a9b033f3c9d8a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/eagle/eagle-attack-1.png using Guid(f240dfd4814d34d55a9b033f3c9d8a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce6309f6a0a0f091469ead4876bafc0b') in 0.113021 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000502 seconds.
+  path: Assets/Art/2D Zombie/Cutted Zombie/Body.png
+  artifactKey: Guid(bc41d334202026746bf6425ee2e540cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Cutted Zombie/Body.png using Guid(bc41d334202026746bf6425ee2e540cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7882d8623756d085b1761658c5e82707') in 0.206764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000736 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-1.png
+  artifactKey: Guid(bdce2a9cb3d0242958c2593a3b8d8742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-1.png using Guid(bdce2a9cb3d0242958c2593a3b8d8742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1844640f5d13d4179cac88fd02b51cd6') in 0.107428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/opossum/opossum-1.png
+  artifactKey: Guid(baa0c643131554ff99574059ec7da1cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/opossum/opossum-1.png using Guid(baa0c643131554ff99574059ec7da1cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c63f567bd03b3562b0b13bf98250863') in 0.054360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000432 seconds.
+  path: Assets/Art/artwork/Environment/props/block.png
+  artifactKey: Guid(8a8849b7b8b964564b9e89cb1ded0658) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/block.png using Guid(8a8849b7b8b964564b9e89cb1ded0658) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '438a17eb417d40c787cc58d5da008e6d') in 0.065764 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000781 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Files/images/01_leg_right_n.png
+  artifactKey: Guid(8afc32a443237b24aa361efc7b58e80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Files/images/01_leg_right_n.png using Guid(8afc32a443237b24aa361efc7b58e80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd434355442e814e28ef5c3c718d0dd8b') in 0.410866 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000536 seconds.
+  path: Assets/Art/ImpactEffect/explosion 2.png
+  artifactKey: Guid(63bb4a4f6115e84449a4f1f4a8e552c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/ImpactEffect/explosion 2.png using Guid(63bb4a4f6115e84449a4f1f4a8e552c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '551414ce069130693640cf478930e4e3') in 0.558974 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000754 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Files/images/01_body_n.png
+  artifactKey: Guid(d7c82189f43fd9a49a35ad556937b500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Files/images/01_body_n.png using Guid(d7c82189f43fd9a49a35ad556937b500) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2efa4d07ce917bfce0c2ebe15d0b27ed') in 0.109222 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000873 seconds.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/Left hand.PNG
+  artifactKey: Guid(316f8ad96d8f7d24a9c46944f1f90902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/Left hand.PNG using Guid(316f8ad96d8f7d24a9c46944f1f90902) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98691b53bb7ba642b88cbea14eb2ea9b') in 0.115929 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Art/artwork/Sprites/Items/cherry/cherry-6.png
+  artifactKey: Guid(4f35b6058a719446ba48dc4dc2704635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Items/cherry/cherry-6.png using Guid(4f35b6058a719446ba48dc4dc2704635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc72c233e5eb30e702c86b34468f00ce') in 0.077248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/Art/artwork/Sprites/Enemies/opossum/opossum-2.png
+  artifactKey: Guid(2c5f3b2250c31495db3ffcf7e90bb619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Sprites/Enemies/opossum/opossum-2.png using Guid(2c5f3b2250c31495db3ffcf7e90bb619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a23ea6e9201fb75ee77f6474c0c2cb5') in 0.044679 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 48.253723 seconds.
+  path: Assets/Art/Shop Item/buy-button-png.png
+  artifactKey: Guid(eef9dffc94f04b14fb9c4ce3d33cdc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/buy-button-png.png using Guid(eef9dffc94f04b14fb9c4ce3d33cdc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc2a5d1b462ee6de262bb558776d8d68') in 0.081134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.793324 seconds.
+  path: Assets/Art/Shop Item/buy-button-png.png
+  artifactKey: Guid(eef9dffc94f04b14fb9c4ce3d33cdc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/buy-button-png.png using Guid(eef9dffc94f04b14fb9c4ce3d33cdc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf4d975b81d45bc90113b53fb2e5f282') in 0.076591 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 591.863420 seconds.
+  path: Assets/Art/Shop Item/fireball1.0.png
+  artifactKey: Guid(b36346bb6b1e46a479f12c77c2043bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/fireball1.0.png using Guid(b36346bb6b1e46a479f12c77c2043bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132dec1a73b36c98dd8aa59f5222dcab') in 0.033543 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.717862 seconds.
+  path: Assets/Art/Shop Item/fireball1.0.png
+  artifactKey: Guid(b36346bb6b1e46a479f12c77c2043bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/fireball1.0.png using Guid(b36346bb6b1e46a479f12c77c2043bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d00e088dc9a698e21cea91571708ae6') in 0.062656 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.013439 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  4.590 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 3.17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3381 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 203.1 MB.
+System memory in use after: 203.4 MB.
+
+Unloading 81 unused Assets to reduce memory usage. Loaded Objects now: 5143.
+Total: 20.919400 ms (FindLiveObjects: 1.000500 ms CreateObjectMapping: 0.509300 ms MarkObjects: 19.267700 ms  DeleteObjects: 0.139500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.016265 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.56 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Unable to allocate new scene culling mask
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene (bool)
+UnityEditor.SceneManagement.EditorSceneManager:NewPreviewScene ()
+UnityEditor.PreviewScene:.ctor (string)
+UnityEditor.PreviewRenderUtility:.ctor ()
+UnityEditor.Texture3DPreview:InitPreviewUtility ()
+UnityEditor.Texture3DPreview:OnEnable ()
+
+[C:\buildslave\unity\build\Editor/Src/SceneManager/EditorSceneManager.cpp line 672]
+
+Mono: successfully reloaded assembly
+- Completed reload, in  5.016 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3320 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 200.9 MB.
+System memory in use after: 201.2 MB.
+
+Unloading 81 unused Assets to reduce memory usage. Loaded Objects now: 5146.
+Total: 24.829100 ms (FindLiveObjects: 2.117100 ms CreateObjectMapping: 1.527300 ms MarkObjects: 21.094500 ms  DeleteObjects: 0.085200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
