@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField] AudioSource buttonSound;
     [SerializeField] Sprite buttonDiseableSprite;
     [SerializeField] Text msgText;
     [SerializeField] GameObject msgTextObject;
@@ -55,6 +56,7 @@ public class Shop : MonoBehaviour
 
     public void Fireball2BuyButton()
     {
+        buttonSound.Play();
         if(GameDataVariable.dataVariables[2] == 1)
         {
             msgTextObject.SetActive(true);
@@ -86,6 +88,7 @@ public class Shop : MonoBehaviour
 
     public void Fireball1SelectButton()
     {
+        buttonSound.Play();
         GameDataVariable.dataVariables[3] = 1;
         playerFireball2SelectButton.GetComponentInChildren<Text>().text = "Select";
         playerFireball1SelectButton.GetComponentInChildren<Text>().text = "Selected";
@@ -93,11 +96,13 @@ public class Shop : MonoBehaviour
         playerFireball2SelectButton.interactable = true;
         playerFireball1SelectButton.image.overrideSprite = buttonDiseableSprite;
         playerFireball2SelectButton.image.overrideSprite = null;
+        PlayGamesController.Instance.SaveData();
     }
 
     public void Fireball2SelectButton()
     {
-        if(GameDataVariable.dataVariables[2] == 1)
+        buttonSound.Play();
+        if (GameDataVariable.dataVariables[2] == 1)
         {
             GameDataVariable.dataVariables[3] = 2;
             playerFireball2SelectButton.GetComponentInChildren<Text>().text = "Selected";
@@ -106,6 +111,7 @@ public class Shop : MonoBehaviour
             playerFireball1SelectButton.interactable = true;
             playerFireball1SelectButton.image.overrideSprite = null;
             playerFireball2SelectButton.image.overrideSprite = buttonDiseableSprite;
+            PlayGamesController.Instance.SaveData();
         }
         else
         {

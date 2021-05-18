@@ -25,7 +25,14 @@ public class PlayerFireball : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         firballReleseSound = GetComponent<AudioSource>();
         twoFireballCollide = false;
-        rigidBody.velocity = transform.right * speed * player.speed;
+        if(GameDataVariable.dataVariables[3] == 2)
+        {
+            rigidBody.velocity = -transform.right * speed * player.speed;
+        }
+        else
+        {
+            rigidBody.velocity = transform.right * speed * player.speed;
+        }
         firballReleseSound.Play();
     }
 

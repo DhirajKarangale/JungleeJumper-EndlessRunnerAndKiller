@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject fireballButton;
     [SerializeField] GameObject playerDestroyEffect;
     [SerializeField] GameObject fireBall;
+    [SerializeField] GameObject fireBall2;
     [SerializeField] GameObject playerDeadBody;
     [SerializeField] GameObject zombieFireball;
     [SerializeField] Transform attackPoint;
@@ -339,9 +340,18 @@ public class Player : MonoBehaviour
     {
      if(GameManager.isGameStart)
      {
-        GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
-        Destroy(currentFireball,1.3f);
-        if(isPlayerDead) Destroy(currentFireball);
+            if(GameDataVariable.dataVariables[3] == 2)
+            {
+                GameObject currentFireball = Instantiate(fireBall2, attackPoint.position + new Vector3(0,1,0), Quaternion.Euler(0,0,180));
+                Destroy(currentFireball, 1.6f);
+                if (isPlayerDead) Destroy(currentFireball);
+            }
+            else
+            {
+                GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
+                Destroy(currentFireball, 1.3f);
+                if (isPlayerDead) Destroy(currentFireball);
+            }
      }
     }
 }

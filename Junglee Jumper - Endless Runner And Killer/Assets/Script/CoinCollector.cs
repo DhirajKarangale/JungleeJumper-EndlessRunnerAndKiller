@@ -4,6 +4,7 @@ public class CoinCollector : MonoBehaviour
 {
     private AudioSource coinPickSound;
     [SerializeField] GameObject coinCollectEffect;
+    public static Transform coinPosition;
     public static bool isCoinHit;
 
     private void Start()
@@ -16,10 +17,20 @@ public class CoinCollector : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            coinPosition = transform;
             if (coinPickSound.isPlaying) coinPickSound.Stop();
             coinPickSound.Play();
             gameObject.SetActive(false);
             Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position,Quaternion.identity), 0.1f);
+            isCoinHit = true;
+        }
+        else if((collision.gameObject.tag == "PlayerFireball") && (GameDataVariable.dataVariables[3] == 2))
+        {
+            coinPosition = transform;
+            if (coinPickSound.isPlaying) coinPickSound.Stop();
+            coinPickSound.Play();
+            gameObject.SetActive(false);
+            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position, Quaternion.identity), 0.1f);
             isCoinHit = true;
         }
         else
