@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] Camera cam;
-    private int coinPickPoints = 2;
+    private int coinPickPoints = 2000;
     private int coin;
     private float highScore;
 
