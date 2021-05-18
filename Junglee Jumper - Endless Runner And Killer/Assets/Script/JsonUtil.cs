@@ -1,10 +1,8 @@
 using System.Collections;
 using Boomlagoon.JSON;
 using System;
-using UnityEngine;
 
-public class JsonUtil : MonoBehaviour
-{
+public class JsonUtil {
 
     public static string CollectionToJsonString<T>(T arr, string jsonKey) where T : IList
     {
