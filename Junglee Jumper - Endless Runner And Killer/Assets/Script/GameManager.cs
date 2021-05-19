@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     private void DelayInRestart()
     {
         backGroundMusic.Play();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Continue()
     {

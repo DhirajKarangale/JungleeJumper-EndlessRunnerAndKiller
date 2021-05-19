@@ -11,7 +11,7 @@ public class PlayGamesController : MonoBehaviour
 
     public static PlayGamesController Instance { get; private set; }
 
-    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData4";
+    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData6";
     bool isSaving;
     bool isCloudDataLoaded = false;
     [SerializeField] AudioSource buttonSound;
@@ -115,6 +115,8 @@ public class PlayGamesController : MonoBehaviour
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 if (msgText != null) msgText.text = "Successfully Logged in";
                 Invoke("DesablemsgText", 3);
+                shop.ShopSelectButtonManager();
+                shop.CloseSignInPanel();
                 if(shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
                 if(shop.msgText != null)
                 {
@@ -139,17 +141,18 @@ public class PlayGamesController : MonoBehaviour
                 Debug.Log("Unable to sign in to Google Play Games Services");
                 if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
                 profileMsgTxt.color = Color.red;
-                if (profileMsgTxt != null) profileMsgTxt.text = "Could not login to Google Play Games Services. \n Try Again.";
+                if (profileMsgTxt != null) profileMsgTxt.text = "Could not login to Google Play Games Services. \n Check Network.";
                 Invoke("DesableProfilemsgText", 3);
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 msgText.color = Color.red;
-                if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
+                if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n  Check Network.";
                 Invoke("DesablemsgText", 3);
+                shop.ShopSelectButtonManager();
                 if (shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
                 if (shop.msgText != null)
                 {
                     shop.msgText.color = Color.red;
-                    shop.msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
+                    shop.msgText.text = "Could not login to Google Play Games Services. \n  Check Network.";
                 }
                 Invoke("DesableShopText", 3);
             }
@@ -212,7 +215,7 @@ public class PlayGamesController : MonoBehaviour
     #region LeaderBoard
     public static void PostToLeaderboard(long newScore)
     {
-        Social.ReportScore(newScore, "CgkI59ausbsKEAIQAg", (bool success) => {
+        Social.ReportScore(newScore, "CgkIm7HY6ZwREAIQAQ", (bool success) => {
             if (success)
             {
                 Debug.Log("Posted new score to leaderboard");
@@ -229,7 +232,7 @@ public class PlayGamesController : MonoBehaviour
         buttonSound.Play();
         if (Social.localUser.authenticated)
         {
-            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkI59ausbsKEAIQAg");
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIm7HY6ZwREAIQAQ");
         }
         else
         {

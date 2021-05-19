@@ -20,6 +20,23 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         msgTextObject.SetActive(false);
+        ShowScore();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
+        {
+            mainMenu.CloseShopButton();
+        }
+        if(Input.GetKey(KeyCode.Escape) && isSigninPanelActivate)
+        {
+            CloseSignInPanel();
+        }
+    }
+
+    public void ShopSelectButtonManager()
+    {
         // Fireballs
         if ((GameDataVariable.dataVariables[2] == 1) && (GameDataVariable.dataVariables[3] == 2))
         {
@@ -58,19 +75,6 @@ public class Shop : MonoBehaviour
             game2SelectButton.GetComponentInChildren<Text>().text = "Select";
             game1SelectButton.image.overrideSprite = buttonDiseableSprite;
             game2SelectButton.image.overrideSprite = null;
-        }
-        ShowScore();
-    }
-
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
-        {
-            mainMenu.CloseShopButton();
-        }
-        if(Input.GetKey(KeyCode.Escape) && isSigninPanelActivate)
-        {
-            CloseSignInPanel();
         }
     }
 
@@ -129,8 +133,8 @@ public class Shop : MonoBehaviour
         {
             GameDataVariable.dataVariables[1] -= 1000;
             GameDataVariable.dataVariables[2] = 1;
-            Fireball2SelectButton();
             PlayGamesController.Instance.SaveData();
+            Fireball2SelectButton();
             ShowScore();
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
@@ -205,8 +209,8 @@ public class Shop : MonoBehaviour
         {
             GameDataVariable.dataVariables[1] -= 5000;
             GameDataVariable.dataVariables[4] = 1;
-            Game2SelectButton();
             PlayGamesController.Instance.SaveData();
+            Game2SelectButton();
             ShowScore();
             msgTextObject.SetActive(true);
             msgText.color = Color.green;

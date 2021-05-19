@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    private float pointePerSecond = 0.5f;
+    private float pointePerSecond;
     [SerializeField] Text scoreText;
     [SerializeField] Text highScoreText;
     [SerializeField] Player player;
@@ -39,11 +39,13 @@ public class ScoreManager : MonoBehaviour
     {
         if (GameDataVariable.dataVariables[5] == 2)
         {
-            coinPickPoints = 2;
+            pointePerSecond = 1f;
+            coinPickPoints = 100;
         }
         else
         {
-            coinPickPoints = 1;
+            pointePerSecond = 0.5f;
+            coinPickPoints = 50;
         }
         scoreDecreseTextObject.SetActive(false);
         pauseScreen.SetActive(false);

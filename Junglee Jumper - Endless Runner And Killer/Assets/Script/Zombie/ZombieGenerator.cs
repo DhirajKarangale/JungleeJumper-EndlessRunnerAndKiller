@@ -18,6 +18,7 @@ public class ZombieGenerator : MonoBehaviour
                 {
                     GameObject frog = frogPooler.GetPooledGameObject();
                     frog.transform.position = new Vector3(position.x, position.y + 2, 0);
+                    frog.SetActive(true);
                 }
                 else
                 {
