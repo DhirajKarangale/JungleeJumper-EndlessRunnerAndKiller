@@ -24,15 +24,15 @@ public class CutterGenerator : MonoBehaviour
            int randomCutter = Random.Range(0, 100);
                     if (randomCutter < 50)
                     {
-                        cutter = cutterPooler.GetPooledGameObject();
-                        cutter.transform.position = new Vector3(position.x, position.y + 1, 100);
-                        cutter.SetActive(true);
+                      verticalCutter = verticalCutterPooler.GetPooledGameObject();
+                      verticalCutter.transform.position = new Vector3(position.x, position.y + 2.5f, 100);
+                      verticalCutter.SetActive(true);
                     }
-                    else if (randomCutter > 50)
+                    else  
                     {
-                        verticalCutter = verticalCutterPooler.GetPooledGameObject();
-                        verticalCutter.transform.position = new Vector3(position.x, position.y + 2.5f, 100);
-                        verticalCutter.SetActive(true);
+                      cutter = cutterPooler.GetPooledGameObject();
+                      cutter.transform.position = new Vector3(position.x, position.y + 1, 100);
+                      cutter.SetActive(true);
                     }
         }
         else

@@ -11,7 +11,7 @@ public class VerticalCutter : MonoBehaviour
     {
         scoreManager = FindObjectOfType<ScoreManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        if (!cutterSound.isPlaying && !Player.isPlayerDead && GameManager.isGameStart && !ScoreManager.isPause) cutterSound.Play();
+        if (!Player.isPlayerDead && GameManager.isGameStart && !ScoreManager.isPause) cutterSound.Play();
     }
 
     private void Update()

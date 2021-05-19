@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] GameObject coinPrefab;
     [SerializeField] Camera cam;
-    private int coinPickPoints = 2;
+    private int coinPickPoints;
     private int coin;
     private float highScore;
 
@@ -37,6 +37,14 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        if (GameDataVariable.dataVariables[5] == 2)
+        {
+            coinPickPoints = 2;
+        }
+        else
+        {
+            coinPickPoints = 1;
+        }
         scoreDecreseTextObject.SetActive(false);
         pauseScreen.SetActive(false);
         backGroundMusic.Play();

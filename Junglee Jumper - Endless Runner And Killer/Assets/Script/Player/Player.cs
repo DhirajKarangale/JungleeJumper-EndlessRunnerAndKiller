@@ -342,7 +342,7 @@ public class Player : MonoBehaviour
      {
             if(GameDataVariable.dataVariables[3] == 2)
             {
-                GameObject currentFireball = Instantiate(fireBall2, attackPoint.position + new Vector3(0,1,0), Quaternion.Euler(0,0,180));
+                GameObject currentFireball = Instantiate(fireBall2, attackPoint.position , Quaternion.Euler(0,0,180));
                 Destroy(currentFireball, 1.6f);
                 if (isPlayerDead) Destroy(currentFireball);
             }

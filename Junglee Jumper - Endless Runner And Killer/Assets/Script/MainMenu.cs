@@ -4,6 +4,7 @@ using System;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] Shop shop;
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
@@ -58,10 +59,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void StartButton(string sceneToLoad)
+    public void StartButton()
     {
         startButtonSound.Play();
-        FindObjectOfType<SceneFader>().FadeTo(sceneToLoad);
+        if(GameDataVariable.dataVariables[5] == 2)
+        {
+            FindObjectOfType<SceneFader>().FadeTo("Game 2");
+        }
+        else
+        {
+            FindObjectOfType<SceneFader>().FadeTo("Game");
+        }
     }
 
     public void QuitButton()
@@ -113,6 +121,7 @@ public class MainMenu : MonoBehaviour
       
     public void CloseShopButton()
     {
+        shop.CloseSignInPanel();
         buttonSound.Play();
         isShopActive = false;
         mainPanel.SetActive(true);

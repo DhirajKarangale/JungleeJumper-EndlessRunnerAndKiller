@@ -11,7 +11,7 @@ public class PlayGamesController : MonoBehaviour
 
     public static PlayGamesController Instance { get; private set; }
 
-    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData3";
+    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData4";
     bool isSaving;
     bool isCloudDataLoaded = false;
     [SerializeField] AudioSource buttonSound;
@@ -24,6 +24,7 @@ public class PlayGamesController : MonoBehaviour
     [SerializeField] Text msgText;
     [SerializeField] Text profileMsgTxt;
     [SerializeField] GameObject profileMsgTxtObject;
+    [SerializeField] Shop shop;
 
     public static bool isSignInCheck = true;
 
@@ -114,6 +115,13 @@ public class PlayGamesController : MonoBehaviour
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 if (msgText != null) msgText.text = "Successfully Logged in";
                 Invoke("DesablemsgText", 3);
+                if(shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
+                if(shop.msgText != null)
+                {
+                    shop.msgText.color = Color.green;
+                    shop.msgText.text = "Successfully Logged in";
+                }
+                Invoke("DesableShopText", 3);
                 Debug.Log("Logged in to Google Play Games Services");
             }
             else
@@ -137,9 +145,21 @@ public class PlayGamesController : MonoBehaviour
                 msgText.color = Color.red;
                 if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
                 Invoke("DesablemsgText", 3);
+                if (shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
+                if (shop.msgText != null)
+                {
+                    shop.msgText.color = Color.red;
+                    shop.msgText.text = "Could not login to Google Play Games Services. \n Try Again.";
+                }
+                Invoke("DesableShopText", 3);
             }
         });
 
+    }
+
+    private void DesableShopText()
+    {
+        shop.DesaibleMsgText();
     }
 
     public void SignInButton()

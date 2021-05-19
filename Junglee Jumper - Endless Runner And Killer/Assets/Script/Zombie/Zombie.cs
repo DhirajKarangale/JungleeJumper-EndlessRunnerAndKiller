@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
@@ -10,14 +9,12 @@ public class Zombie : MonoBehaviour
     [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject fireBall;
     [SerializeField] GameObject enemieDestriyEffect;
-    [SerializeField] AudioSource zombieSound;
     [SerializeField] float timeBetweenAttack;
     private float currentTimeBetweenAttack;
     public static bool isZombieDead;
 
     private void Start()
     {
-      //  if(!zombieSound.isPlaying && !player.isPlayerDead && GameManager.isGameStart) zombieSound.Play();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         currentTimeBetweenAttack = timeBetweenAttack;
@@ -31,13 +28,16 @@ public class Zombie : MonoBehaviour
         {
             if(currentTimeBetweenAttack <= 0)
             {
-                animator.SetBool("Attack", true);
-                animator.SetBool("Idel", false);
-                animator.SetBool("Dye", false);
+               if(GameDataVariable.dataVariables[5] != 2)
+               {
+                    animator.SetBool("Attack", true);
+                    animator.SetBool("Idel", false);
+                    animator.SetBool("Dye", false);
+                    Invoke("SetAttackAnimToFalse", 0.5f);
+               }
                 GameObject currentFireball = Instantiate(fireBall, attackPoint.position, attackPoint.rotation);
                 Destroy(currentFireball, 3f);
                 currentTimeBetweenAttack = timeBetweenAttack;
-                Invoke("SetAttackAnimToFalse", 0.5f);
             }
             else
             {
