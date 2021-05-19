@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive)
+        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive && !isShopActive)
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();

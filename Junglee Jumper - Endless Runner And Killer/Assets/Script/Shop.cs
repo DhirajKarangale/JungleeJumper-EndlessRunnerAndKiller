@@ -16,9 +16,14 @@ public class Shop : MonoBehaviour
     [SerializeField] Button game1SelectButton;
     [SerializeField] Button game2SelectButton;
     private bool isSigninPanelActivate;
-
+    private int data2 = 0, data3 = 0, data4 = 0, data5 = 0;
+    
     private void Start()
     {
+        data2 = GameDataVariable.dataVariables[2];
+        data3 = GameDataVariable.dataVariables[3];
+        data4 = GameDataVariable.dataVariables[4];
+        data5 = GameDataVariable.dataVariables[5];
         msgTextObject.SetActive(false);
         ShowScore();
     }
@@ -33,12 +38,17 @@ public class Shop : MonoBehaviour
         {
             CloseSignInPanel();
         }
+
+        data2 = GameDataVariable.dataVariables[2];
+        data3 = GameDataVariable.dataVariables[3];
+        data4 = GameDataVariable.dataVariables[4];
+        data5 = GameDataVariable.dataVariables[5];
     }
 
     public void ShopSelectButtonManager()
     {
         // Fireballs
-        if ((GameDataVariable.dataVariables[2] == 1) && (GameDataVariable.dataVariables[3] == 2))
+        if ((data2 == 1) && (data3 == 2))
         {
             playerFireball1SelectButton.interactable = true;
             playerFireball2SelectButton.interactable = false;
@@ -58,7 +68,7 @@ public class Shop : MonoBehaviour
         }
 
         // Areana
-        if ((GameDataVariable.dataVariables[4] == 1) && (GameDataVariable.dataVariables[5] == 2))
+        if ((data4 == 1) && (data5 == 2))
         {
             game1SelectButton.interactable = true;
             game2SelectButton.interactable = false;
@@ -106,29 +116,29 @@ public class Shop : MonoBehaviour
     public void Fireball2BuyButton()
     {
         buttonSound.Play();
-        if(GameDataVariable.dataVariables[2] == 1)
+        if(data2 == 1)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
-            Invoke("DesaibleMsgText", 1.5f);
+            Invoke("DesaibleMsgText", 1f);
         }
         else if(GameDataVariable.dataVariables[1] < 1000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
             msgText.text = "Not Enough Coin";
-            Invoke("DesaibleMsgText", 2.5f);
+            Invoke("DesaibleMsgText", 1.7f);
         }
-        else if (!Social.localUser.authenticated)
+      /*  else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
             msgText.text = "Your are not login to Google play";
-            Invoke("DesaibleMsgText", 2.5f);
+            Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }
+        }*/
         else
         {
             GameDataVariable.dataVariables[1] -= 1000;
@@ -139,7 +149,7 @@ public class Shop : MonoBehaviour
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Purchased Sucessfully !";
-            Invoke("DesaibleMsgText", 2.5f);
+            Invoke("DesaibleMsgText", 1.19f);
         }
     }
 
@@ -174,7 +184,7 @@ public class Shop : MonoBehaviour
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
-            msgText.text = "Purchase First then Select";
+            msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 2.5f);
         }
     }
@@ -182,29 +192,29 @@ public class Shop : MonoBehaviour
     public void Game2BuyButton()
     {
         buttonSound.Play();
-        if (GameDataVariable.dataVariables[4] == 1)
+        if (data4 == 1)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
-            Invoke("DesaibleMsgText", 1.5f);
+            Invoke("DesaibleMsgText", 1f);
         }
         else if (GameDataVariable.dataVariables[1] < 5000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
             msgText.text = "Not Enough Coin";
-            Invoke("DesaibleMsgText", 2.5f);
+            Invoke("DesaibleMsgText", 1.7f);
         }
-        else if (!Social.localUser.authenticated)
+        /*else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
             msgText.text = "Your are not login to Google play";
-            Invoke("DesaibleMsgText", 2.5f);
+            Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }
+        }*/
         else
         {
             GameDataVariable.dataVariables[1] -= 5000;
@@ -215,7 +225,7 @@ public class Shop : MonoBehaviour
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Purchased Sucessfully !";
-            Invoke("DesaibleMsgText", 2.5f);
+            Invoke("DesaibleMsgText", 1.19f);
         }
     }
 
@@ -235,7 +245,7 @@ public class Shop : MonoBehaviour
     public void Game2SelectButton()
     {
         buttonSound.Play();
-        if (GameDataVariable.dataVariables[4] == 1)
+        if (data4 == 1)
         {
             GameDataVariable.dataVariables[5] = 2;
             game2SelectButton.GetComponentInChildren<Text>().text = "Selected";
@@ -250,8 +260,8 @@ public class Shop : MonoBehaviour
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
-            msgText.text = "Purchase First then Select";
-            Invoke("DesaibleMsgText", 2.5f);
+            msgText.text = "Item is not Purchased";
+            Invoke("DesaibleMsgText", 1.5f);
         }
     }
 }

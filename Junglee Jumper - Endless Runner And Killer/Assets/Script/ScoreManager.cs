@@ -40,12 +40,12 @@ public class ScoreManager : MonoBehaviour
         if (GameDataVariable.dataVariables[5] == 2)
         {
             pointePerSecond = 1f;
-            coinPickPoints = 100;
+            coinPickPoints = 2;
         }
         else
         {
             pointePerSecond = 0.5f;
-            coinPickPoints = 50;
+            coinPickPoints = 1;
         }
         scoreDecreseTextObject.SetActive(false);
         pauseScreen.SetActive(false);

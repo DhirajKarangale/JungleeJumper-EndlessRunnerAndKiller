@@ -3499,6 +3499,7 @@ GameObject:
   - component: {fileID: 474683239}
   - component: {fileID: 474683241}
   - component: {fileID: 474683240}
+  - component: {fileID: 474683238}
   m_Layer: 0
   m_Name: PlayGameServicesController
   m_TagString: Untagged
@@ -3506,6 +3507,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &474683238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474683237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb45ca10db80f549b248f5bbbf9934a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &474683239
 Transform:
   m_ObjectHideFlags: 0

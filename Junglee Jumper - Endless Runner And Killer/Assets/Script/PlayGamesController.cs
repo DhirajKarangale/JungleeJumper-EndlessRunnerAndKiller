@@ -59,6 +59,10 @@ public class PlayGamesController : MonoBehaviour
             profileMsgTxt.text = "Signing in to Google Play .....";
             SignIn();
         }
+        else
+        {
+            shop.ShopSelectButtonManager();
+        }
     }
 
     private void OnApplicationQuit()
