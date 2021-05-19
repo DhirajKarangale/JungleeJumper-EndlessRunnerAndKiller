@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField] MainMenu mainMenu;
+    [SerializeField] GameObject signInPanel;
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Sprite buttonDiseableSprite;
     [SerializeField] Text msgText;
@@ -11,6 +13,7 @@ public class Shop : MonoBehaviour
     [SerializeField] Text coinCountText;
     [SerializeField] Button playerFireball1SelectButton;
     [SerializeField] Button playerFireball2SelectButton;
+    private bool isSigninPanelActivate;
 
     private void Start()
     {
@@ -36,6 +39,18 @@ public class Shop : MonoBehaviour
         ShowScore();
     }
 
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
+        {
+            mainMenu.CloseShopButton();
+        }
+        if(Input.GetKey(KeyCode.Escape) && isSigninPanelActivate)
+        {
+            CloseSignInPanel();
+        }
+    }
+
     private void ShowScore()
     {
         if (GameDataVariable.dataVariables[1] >= 1000)
@@ -53,6 +68,12 @@ public class Shop : MonoBehaviour
     {
         msgTextObject.SetActive(false);
     }
+    public void CloseSignInPanel()
+    {
+        isSigninPanelActivate = false;
+        signInPanel.SetActive(false);
+    }
+
 
     public void Fireball2BuyButton()
     {
@@ -70,6 +91,15 @@ public class Shop : MonoBehaviour
             msgText.color = Color.red;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 2.5f);
+        }
+        else if (!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Your are not login to Google play";
+            Invoke("DesaibleMsgText", 2.5f);
+            signInPanel.SetActive(true);
+            isSigninPanelActivate = true;
         }
         else
         {

@@ -17,7 +17,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Text coinCount;
     private bool isQuitPanelActive,isShopActive;
     public static bool isProfilePanelActive;
-   
+
+
     private void Update()
     {
         if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive)
