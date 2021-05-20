@@ -15,17 +15,15 @@ public class Shop : MonoBehaviour
     [SerializeField] Button playerFireball2SelectButton;
     [SerializeField] Button game1SelectButton;
     [SerializeField] Button game2SelectButton;
+    [SerializeField] Button dashEffect1SelectButton;
+    [SerializeField] Button dashEffect2SelectButton;
     private bool isSigninPanelActivate;
-    private int data2 = 0, data3 = 0, data4 = 0, data5 = 0;
     
     private void Start()
     {
-        data2 = GameDataVariable.dataVariables[2];
-        data3 = GameDataVariable.dataVariables[3];
-        data4 = GameDataVariable.dataVariables[4];
-        data5 = GameDataVariable.dataVariables[5];
         msgTextObject.SetActive(false);
         ShowScore();
+        ShopSelectButtonManager();
     }
 
     private void Update()
@@ -39,16 +37,13 @@ public class Shop : MonoBehaviour
             CloseSignInPanel();
         }
 
-        data2 = GameDataVariable.dataVariables[2];
-        data3 = GameDataVariable.dataVariables[3];
-        data4 = GameDataVariable.dataVariables[4];
-        data5 = GameDataVariable.dataVariables[5];
+        ShopSelectButtonManager();
     }
 
     public void ShopSelectButtonManager()
     {
         // Fireballs
-        if ((data2 == 1) && (data3 == 2))
+        if ((GameDataVariable.dataVariables[2] == 1) && (GameDataVariable.dataVariables[3] == 2))
         {
             playerFireball1SelectButton.interactable = true;
             playerFireball2SelectButton.interactable = false;
@@ -68,7 +63,7 @@ public class Shop : MonoBehaviour
         }
 
         // Areana
-        if ((data4 == 1) && (data5 == 2))
+        if ((GameDataVariable.dataVariables[4] == 1) && (GameDataVariable.dataVariables[5] == 2))
         {
             game1SelectButton.interactable = true;
             game2SelectButton.interactable = false;
@@ -85,6 +80,26 @@ public class Shop : MonoBehaviour
             game2SelectButton.GetComponentInChildren<Text>().text = "Select";
             game1SelectButton.image.overrideSprite = buttonDiseableSprite;
             game2SelectButton.image.overrideSprite = null;
+        }
+
+        //DashEffect
+        if ((GameDataVariable.dataVariables[6] == 1) && (GameDataVariable.dataVariables[7] == 2))
+        {
+            dashEffect1SelectButton.interactable = true;
+            dashEffect2SelectButton.interactable = false;
+            dashEffect1SelectButton.GetComponentInChildren<Text>().text = "Select";
+            dashEffect2SelectButton.GetComponentInChildren<Text>().text = "Selected";
+            dashEffect1SelectButton.image.overrideSprite = null;
+            dashEffect2SelectButton.image.overrideSprite = buttonDiseableSprite;
+        }
+        else
+        {
+            dashEffect1SelectButton.interactable = false;
+            dashEffect2SelectButton.interactable = true;
+            dashEffect1SelectButton.GetComponentInChildren<Text>().text = "Selected";
+            dashEffect2SelectButton.GetComponentInChildren<Text>().text = "Select";
+            dashEffect1SelectButton.image.overrideSprite = buttonDiseableSprite;
+            dashEffect2SelectButton.image.overrideSprite = null;
         }
     }
 
@@ -116,21 +131,21 @@ public class Shop : MonoBehaviour
     public void Fireball2BuyButton()
     {
         buttonSound.Play();
-        if(data2 == 1)
+        if(GameDataVariable.dataVariables[2] == 1)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
-        else if(GameDataVariable.dataVariables[1] < 1000)
+        else if(GameDataVariable.dataVariables[1] < 2000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
-      /*  else if (!Social.localUser.authenticated)
+        else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -138,10 +153,10 @@ public class Shop : MonoBehaviour
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }*/
+        }
         else
         {
-            GameDataVariable.dataVariables[1] -= 1000;
+            GameDataVariable.dataVariables[1] -= 2000;
             GameDataVariable.dataVariables[2] = 1;
             PlayGamesController.Instance.SaveData();
             Fireball2SelectButton();
@@ -189,24 +204,26 @@ public class Shop : MonoBehaviour
         }
     }
 
+
+
     public void Game2BuyButton()
     {
         buttonSound.Play();
-        if (data4 == 1)
+        if (GameDataVariable.dataVariables[4] == 1)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
-        else if (GameDataVariable.dataVariables[1] < 5000)
+        else if (GameDataVariable.dataVariables[1] < 7000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
-        /*else if (!Social.localUser.authenticated)
+        else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -214,10 +231,10 @@ public class Shop : MonoBehaviour
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }*/
+        }
         else
         {
-            GameDataVariable.dataVariables[1] -= 5000;
+            GameDataVariable.dataVariables[1] -= 7000;
             GameDataVariable.dataVariables[4] = 1;
             PlayGamesController.Instance.SaveData();
             Game2SelectButton();
@@ -245,7 +262,7 @@ public class Shop : MonoBehaviour
     public void Game2SelectButton()
     {
         buttonSound.Play();
-        if (data4 == 1)
+        if (GameDataVariable.dataVariables[4] == 1)
         {
             GameDataVariable.dataVariables[5] = 2;
             game2SelectButton.GetComponentInChildren<Text>().text = "Selected";
@@ -254,6 +271,84 @@ public class Shop : MonoBehaviour
             game1SelectButton.interactable = true;
             game1SelectButton.image.overrideSprite = null;
             game2SelectButton.image.overrideSprite = buttonDiseableSprite;
+            PlayGamesController.Instance.SaveData();
+        }
+        else
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Item is not Purchased";
+            Invoke("DesaibleMsgText", 1.5f);
+        }
+    }
+
+
+
+    public void DashEffect2BuyButton()
+    {
+        buttonSound.Play();
+        if (GameDataVariable.dataVariables[6] == 1)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.green;
+            msgText.text = "Already Purchased !";
+            Invoke("DesaibleMsgText", 1f);
+        }
+        else if (GameDataVariable.dataVariables[1] < 500)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Not Enough Coin";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+        else if (!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Your are not login to Google play";
+            Invoke("DesaibleMsgText", 2f);
+            signInPanel.SetActive(true);
+            isSigninPanelActivate = true;
+        }
+        else
+        {
+            GameDataVariable.dataVariables[1] -= 500;
+            GameDataVariable.dataVariables[6] = 1;
+            PlayGamesController.Instance.SaveData();
+            DashEffect2SelectButton();
+            ShowScore();
+            msgTextObject.SetActive(true);
+            msgText.color = Color.green;
+            msgText.text = "Purchased Sucessfully !";
+            Invoke("DesaibleMsgText", 1.19f);
+        }
+    }
+
+    public void DashEffect1SelectButton()
+    {
+        buttonSound.Play();
+        GameDataVariable.dataVariables[7] = 1;
+        dashEffect2SelectButton.GetComponentInChildren<Text>().text = "Select";
+        dashEffect1SelectButton.GetComponentInChildren<Text>().text = "Selected";
+        dashEffect1SelectButton.interactable = false;
+        dashEffect2SelectButton.interactable = true;
+        dashEffect1SelectButton.image.overrideSprite = buttonDiseableSprite;
+        dashEffect2SelectButton.image.overrideSprite = null;
+        PlayGamesController.Instance.SaveData();
+    }
+
+    public void DashEffect2SelectButton()
+    {
+        buttonSound.Play();
+        if (GameDataVariable.dataVariables[6] == 1)
+        {
+            GameDataVariable.dataVariables[7] = 2;
+            dashEffect2SelectButton.GetComponentInChildren<Text>().text = "Selected";
+            dashEffect1SelectButton.GetComponentInChildren<Text>().text = "Select";
+            playerFireball2SelectButton.interactable = false;
+            dashEffect1SelectButton.interactable = true;
+            dashEffect1SelectButton.image.overrideSprite = null;
+            dashEffect2SelectButton.image.overrideSprite = buttonDiseableSprite;
             PlayGamesController.Instance.SaveData();
         }
         else

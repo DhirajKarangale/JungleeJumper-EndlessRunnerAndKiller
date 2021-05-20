@@ -636,7 +636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2418329595904070521, guid: 310f0c68649dda34fb5689c1083e411c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2418329595904070521, guid: 310f0c68649dda34fb5689c1083e411c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3945,7 +3945,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 29e438a02b1fdfe4792098d804d007db, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46fc223a4cdabbb46a063102f98ec269, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4328,6 +4328,7 @@ MonoBehaviour:
   dashImage: {fileID: 21300000, guid: 19bfb62fe3f6a5644bdcbd293101c027, type: 3}
   crounchImage: {fileID: 21300000, guid: c07382767ed9c60418d74b3497dd3e5d, type: 3}
   dashEffect: {fileID: 4328013565267778457, guid: a695902cb6217b34abe084b368e1806c, type: 3}
+  dashEffect2: {fileID: 4328013565267778457, guid: c9d07fa106dbfe7428efd52e92de87b2, type: 3}
   dashTime: 0.6
   dashSound: {fileID: 1317276781}
   jumpSound: {fileID: 2099857141}
@@ -4690,7 +4691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.71809363, g: 0.9339623, b: 0.73171926, a: 1}
+  m_Color: {r: 0.8627451, g: 1, b: 0.79607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5027,7 +5028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3490566, g: 0.2510154, b: 0.13336597, a: 1}
+  m_Color: {r: 0.2901961, g: 0.19607843, b: 0.10980392, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6008,7 +6009,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.71809363, g: 0.9339623, b: 0.73171926, a: 1}
+  m_Color: {r: 0.8627451, g: 1, b: 0.79607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6691,6 +6692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePooler: {fileID: 69387937}
+  frogPooler: {fileID: 0}
   generator: 90
 --- !u!1 &1916656986
 GameObject:
@@ -6996,7 +6998,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 381555897757373540, guid: 5d9fe10db458e664b841a2140f3fce05, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 381555897757373540, guid: 5d9fe10db458e664b841a2140f3fce05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7231,7 +7233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.322078, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.013794422, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

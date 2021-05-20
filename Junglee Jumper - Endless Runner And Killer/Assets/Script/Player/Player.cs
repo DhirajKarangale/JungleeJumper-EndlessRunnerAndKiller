@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     [SerializeField] Sprite dashImage;
     [SerializeField] Sprite crounchImage;
     [SerializeField] GameObject dashEffect;
+    [SerializeField] GameObject dashEffect2;
     [SerializeField] float dashTime;
     [SerializeField] AudioSource dashSound;
     private bool isPlayerDash,isDashAllowed,isSwipeDown;
@@ -181,7 +182,14 @@ public class Player : MonoBehaviour
     {
         GetComponent<BoxCollider2D>().size = new Vector2(2.172187f, 1.5f);
         GetComponent<BoxCollider2D>().offset = new Vector2(-0.2299106f, -1.15f);
-        Destroy(Instantiate(dashEffect, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity), 0.085f);
+        if(GameDataVariable.dataVariables[7] == 2)
+        {
+            Destroy(Instantiate(dashEffect2, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity), 0.099f);
+        }
+        else
+        {
+            Destroy(Instantiate(dashEffect, transform.position + new Vector3(-0.5f, -1f, 0), Quaternion.identity), 0.099f);
+        }
         isSwipeDown = false;
         animator.SetBool("PlayerDash", true);
         animator.SetBool("PlayerRuning", false);

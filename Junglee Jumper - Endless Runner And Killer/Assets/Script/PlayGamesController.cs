@@ -11,7 +11,7 @@ public class PlayGamesController : MonoBehaviour
 
     public static PlayGamesController Instance { get; private set; }
 
-    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData6";
+    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData7";
     bool isSaving;
     bool isCloudDataLoaded = false;
     [SerializeField] AudioSource buttonSound;
@@ -59,10 +59,7 @@ public class PlayGamesController : MonoBehaviour
             profileMsgTxt.text = "Signing in to Google Play .....";
             SignIn();
         }
-        else
-        {
-            shop.ShopSelectButtonManager();
-        }
+      
     }
 
     private void OnApplicationQuit()
@@ -119,7 +116,6 @@ public class PlayGamesController : MonoBehaviour
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 if (msgText != null) msgText.text = "Successfully Logged in";
                 Invoke("DesablemsgText", 3);
-                shop.ShopSelectButtonManager();
                 shop.CloseSignInPanel();
                 if(shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
                 if(shop.msgText != null)

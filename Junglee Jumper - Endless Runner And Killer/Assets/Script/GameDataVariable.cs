@@ -6,6 +6,6 @@ public class GameDataVariable : MonoBehaviour
 
     private void Awake()
     {
-        dataVariables = new int[6];
+        dataVariables = new int[8];
     }
 }
