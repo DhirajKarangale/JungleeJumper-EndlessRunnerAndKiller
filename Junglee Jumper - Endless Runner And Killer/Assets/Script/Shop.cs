@@ -23,6 +23,8 @@ public class Shop : MonoBehaviour
     
     private void Start()
     {
+        AdManager.instance.RequestRewardBasedVideo();
+
        if(GameDataVariable.dataVariables[8] == 1)
        {
             xGoldTimer = 3600f;
@@ -137,7 +139,7 @@ public class Shop : MonoBehaviour
         }
     }
 
-    private void ShowScore()
+    public void ShowScore()
     {
         if (GameDataVariable.dataVariables[1] >= 1000)
         {
@@ -412,7 +414,7 @@ public class Shop : MonoBehaviour
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
-      /*  else if (!Social.localUser.authenticated)
+        else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -420,7 +422,7 @@ public class Shop : MonoBehaviour
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }*/
+        }
         else
         {
             GameDataVariable.dataVariables[1] -= 2700;
@@ -450,7 +452,7 @@ public class Shop : MonoBehaviour
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
-       /* else if (!Social.localUser.authenticated)
+        else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -458,7 +460,7 @@ public class Shop : MonoBehaviour
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }*/
+        }
         else
         {
             GameDataVariable.dataVariables[1] -= 2500;
@@ -468,5 +470,24 @@ public class Shop : MonoBehaviour
             xScoreTimer -= TimeCalculator.instance.CheckDate();
             PlayGamesController.Instance.SaveData();
         }
+    }
+
+
+    public void RewardedAdButton()
+    {
+        AdManager.instance.ShowVideoRewardAd();
+        /*if (!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Your are not login to Google play";
+            Invoke("DesaibleMsgText", 2f);
+            signInPanel.SetActive(true);
+            isSigninPanelActivate = true;
+        }
+        else
+        {
+            AdManager.instance.ShowVideoRewardAd();
+        }*/
     }
 }

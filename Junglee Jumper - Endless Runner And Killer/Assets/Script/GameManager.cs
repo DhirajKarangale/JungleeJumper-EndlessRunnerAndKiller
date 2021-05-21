@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         Player.isPlayerDead = false;
         isGameStart = false;
         scoreManagerObject.SetActive(true);
+        AdManager.instance.RequestInterstitial();
         Time.timeScale = 0f;
     }
 
@@ -90,6 +91,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
+        if(UnityEngine.Random.Range(0,3) == 0) AdManager.instance.ShowInterstitialAd();
         if (Input.GetKey(KeyCode.Escape))
             SceneManager.LoadScene(0);
     }
