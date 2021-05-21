@@ -11,7 +11,7 @@ public class PlayGamesController : MonoBehaviour
 
     public static PlayGamesController Instance { get; private set; }
 
-    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData7";
+    const string SAVE_NAME = "JungleeJumperDKSoftwareSaveData9";
     bool isSaving;
     bool isCloudDataLoaded = false;
     [SerializeField] AudioSource buttonSound;

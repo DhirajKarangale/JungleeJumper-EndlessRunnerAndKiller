@@ -39,13 +39,41 @@ public class ScoreManager : MonoBehaviour
     {
         if (GameDataVariable.dataVariables[5] == 2)
         {
-            pointePerSecond = 1f;
-            coinPickPoints = 2000;
+            if(GameDataVariable.dataVariables[9] == 1)
+            {
+                pointePerSecond = 3f;
+            }
+            else
+            {
+                pointePerSecond = 1f;
+            }
+            if(GameDataVariable.dataVariables[8] == 1)
+            {
+                coinPickPoints = 6;
+            }
+            else
+            {
+                coinPickPoints = 2;
+            }
         }
         else
         {
-            pointePerSecond = 0.5f;
-            coinPickPoints = 1000;
+           if(GameDataVariable.dataVariables[9] == 1)
+            {
+                pointePerSecond = 1.5f;
+            }
+            else
+            {
+                pointePerSecond = 0.5f;
+            }
+            if (GameDataVariable.dataVariables[8] == 1)
+            {
+                coinPickPoints = 3;
+            }
+            else
+            {
+                coinPickPoints = 1;
+            }
         }
         scoreDecreseTextObject.SetActive(false);
         pauseScreen.SetActive(false);

@@ -17,10 +17,24 @@ public class Shop : MonoBehaviour
     [SerializeField] Button game2SelectButton;
     [SerializeField] Button dashEffect1SelectButton;
     [SerializeField] Button dashEffect2SelectButton;
+    public float xGoldTimer;
+    public float xScoreTimer;
     private bool isSigninPanelActivate;
     
     private void Start()
     {
+       if(GameDataVariable.dataVariables[8] == 1)
+       {
+            xGoldTimer = 3600f;
+            xGoldTimer -= TimeCalculator.instance.CheckDate();
+       }
+
+        if (GameDataVariable.dataVariables[9] == 1)
+        {
+            xScoreTimer = 3600f;
+            xScoreTimer -= TimeCalculator.instance.CheckDate();
+        }
+
         msgTextObject.SetActive(false);
         ShowScore();
         ShopSelectButtonManager();
@@ -28,7 +42,27 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
+       if(GameDataVariable.dataVariables[8] == 1)
+       {
+            xGoldTimer -= Time.deltaTime;
+       }
+
+       if(xGoldTimer <= 0)
+       {
+            GameDataVariable.dataVariables[8] = 0;
+       }
+
+        if (GameDataVariable.dataVariables[9] == 1)
+        {
+            xScoreTimer -= Time.deltaTime;
+        }
+
+        if (xScoreTimer <= 0)
+        {
+            GameDataVariable.dataVariables[9] = 0;
+        }
+
+        if (Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
         {
             mainMenu.CloseShopButton();
         }
@@ -138,7 +172,7 @@ public class Shop : MonoBehaviour
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
-        else if(GameDataVariable.dataVariables[1] < 2000)
+        else if(GameDataVariable.dataVariables[1] < 5000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -156,7 +190,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            GameDataVariable.dataVariables[1] -= 2000;
+            GameDataVariable.dataVariables[1] -= 5000;
             GameDataVariable.dataVariables[2] = 1;
             PlayGamesController.Instance.SaveData();
             Fireball2SelectButton();
@@ -216,7 +250,7 @@ public class Shop : MonoBehaviour
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
-        else if (GameDataVariable.dataVariables[1] < 7000)
+        else if (GameDataVariable.dataVariables[1] < 10000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -234,7 +268,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            GameDataVariable.dataVariables[1] -= 7000;
+            GameDataVariable.dataVariables[1] -= 10000;
             GameDataVariable.dataVariables[4] = 1;
             PlayGamesController.Instance.SaveData();
             Game2SelectButton();
@@ -294,7 +328,7 @@ public class Shop : MonoBehaviour
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
-        else if (GameDataVariable.dataVariables[1] < 500)
+        else if (GameDataVariable.dataVariables[1] < 1500)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -312,7 +346,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            GameDataVariable.dataVariables[1] -= 500;
+            GameDataVariable.dataVariables[1] -= 1500;
             GameDataVariable.dataVariables[6] = 1;
             PlayGamesController.Instance.SaveData();
             DashEffect2SelectButton();
@@ -357,6 +391,82 @@ public class Shop : MonoBehaviour
             msgText.color = Color.red;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 1.5f);
+        }
+    }
+
+
+
+    public void XGoldBuyButton()
+    {
+        if(GameDataVariable.dataVariables[8] == 1)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Last ability is not over yet";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+        else if (GameDataVariable.dataVariables[1] < 2700)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Not Enough Coin";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+      /*  else if (!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Your are not login to Google play";
+            Invoke("DesaibleMsgText", 2f);
+            signInPanel.SetActive(true);
+            isSigninPanelActivate = true;
+        }*/
+        else
+        {
+            GameDataVariable.dataVariables[1] -= 2700;
+            GameDataVariable.dataVariables[8] = 1;
+            TimeCalculator.instance.SaveTime();
+            xGoldTimer = 3600f;
+            xGoldTimer -= TimeCalculator.instance.CheckDate();
+            PlayGamesController.Instance.SaveData();
+        }
+    }
+
+
+
+    public void XScoreBuyButton()
+    {
+        if (GameDataVariable.dataVariables[9] == 1)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Last ability is not over yet";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+        else if (GameDataVariable.dataVariables[1] < 2500)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Not Enough Coin";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+       /* else if (!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Your are not login to Google play";
+            Invoke("DesaibleMsgText", 2f);
+            signInPanel.SetActive(true);
+            isSigninPanelActivate = true;
+        }*/
+        else
+        {
+            GameDataVariable.dataVariables[1] -= 2500;
+            GameDataVariable.dataVariables[9] = 1;
+            TimeCalculator.instance.SaveTime();
+            xScoreTimer = 3600f;
+            xScoreTimer -= TimeCalculator.instance.CheckDate();
+            PlayGamesController.Instance.SaveData();
         }
     }
 }
