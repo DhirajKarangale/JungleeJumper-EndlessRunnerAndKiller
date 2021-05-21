@@ -242,9 +242,9 @@ public class PlayGamesController : MonoBehaviour
 
             Invoke("DesableProfilemsgText", 3);
            msgTextObject.SetActive(true);
+                msgText.color = Color.red;
                 msgText.text = "You are Logged Out." + "\n" +
                     "Login First.";
-                msgText.color = Color.red;
                 Invoke("DesablemsgText", 3);
         }
     }
@@ -510,6 +510,7 @@ public class PlayGamesController : MonoBehaviour
                 profileMsgTxt.color = Color.red;
                 profileMsgTxt.text = "You are Loggout ! Login First";
             }
+            Invoke("DesablemsgText", 3);
         }
     }
          

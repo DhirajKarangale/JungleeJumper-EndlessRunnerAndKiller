@@ -21,10 +21,9 @@ public class Shop : MonoBehaviour
     private float xScoreTimer;
     private float xCoinMagnetTimer;
     private bool isSigninPanelActivate;
-    
+
     private void Start()
     {
-        AdManager.instance.RequestRewardBasedVideo();
 
        if(GameDataVariable.dataVariables[8] == 1)
        {
@@ -51,6 +50,8 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
+        ShowScore();
+
        if(GameDataVariable.dataVariables[8] == 1)
        {
             xGoldTimer -= Time.deltaTime;
@@ -530,7 +531,8 @@ public class Shop : MonoBehaviour
 
     public void RewardedAdButton()
     {
-        if (!Social.localUser.authenticated)
+        AdManager.instance.ShowRewardedVideoAd();
+        /*if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -541,7 +543,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            AdManager.instance.ShowVideoRewardAd();
-        }
+            AdManager.instance.ShowRewardedVideoAd();
+        }*/
     }
 }

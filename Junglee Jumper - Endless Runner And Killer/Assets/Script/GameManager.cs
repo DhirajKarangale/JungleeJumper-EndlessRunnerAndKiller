@@ -22,16 +22,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioSource zombieFireballHitSound;
     [SerializeField] AudioSource clickSound;
 
+    private bool isAdAllow;
+
     public static bool isGameStart;
 
     private void Start()
     {
+        isAdAllow = true;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameOverScreen.SetActive(false);
         Player.isPlayerDead = false;
         isGameStart = false;
         scoreManagerObject.SetActive(true);
-        AdManager.instance.RequestInterstitial();
         Time.timeScale = 0f;
     }
 
@@ -91,7 +93,15 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
-        if(UnityEngine.Random.Range(0,4) == 0) AdManager.instance.ShowInterstitialAd();
+        if(isAdAllow)
+        {
+            AdManager.instance.ShowBannerAd();
+            if (UnityEngine.Random.Range(0, 4) == 0)
+            {
+                AdManager.instance.ShowInterstitialAd();
+            }
+            isAdAllow = false;
+        }
         if (Input.GetKey(KeyCode.Escape))
             SceneManager.LoadScene(0);
     }
@@ -104,6 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
+        AdManager.instance.HideBanner();
         player.gameOverSound.Stop();
         restartSound.Play();
         Player.isPlayerDead = false;
@@ -124,6 +135,7 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
+        AdManager.instance.HideBanner();
         Time.timeScale = 1f;
         Player.isPlayerDead = false;
         clickSound.Play();
