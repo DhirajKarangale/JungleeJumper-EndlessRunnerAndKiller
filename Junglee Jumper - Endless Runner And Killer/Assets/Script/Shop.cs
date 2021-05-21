@@ -17,8 +17,9 @@ public class Shop : MonoBehaviour
     [SerializeField] Button game2SelectButton;
     [SerializeField] Button dashEffect1SelectButton;
     [SerializeField] Button dashEffect2SelectButton;
-    public float xGoldTimer;
-    public float xScoreTimer;
+    private float xGoldTimer;
+    private float xScoreTimer;
+    private float xCoinMagnetTimer;
     private bool isSigninPanelActivate;
     
     private void Start()
@@ -27,13 +28,19 @@ public class Shop : MonoBehaviour
 
        if(GameDataVariable.dataVariables[8] == 1)
        {
-            xGoldTimer = 3600f;
+            xGoldTimer = 1800f;
             xGoldTimer -= TimeCalculator.instance.CheckDate();
        }
 
+        if (GameDataVariable.dataVariables[10] == 1)
+        {
+            xCoinMagnetTimer = 3600f;
+            xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
+        }
+
         if (GameDataVariable.dataVariables[9] == 1)
         {
-            xScoreTimer = 3600f;
+            xScoreTimer = 2700f;
             xScoreTimer -= TimeCalculator.instance.CheckDate();
         }
 
@@ -53,6 +60,16 @@ public class Shop : MonoBehaviour
        {
             GameDataVariable.dataVariables[8] = 0;
        }
+
+        if (GameDataVariable.dataVariables[10] == 1)
+        {
+            xCoinMagnetTimer -= Time.deltaTime;
+        }
+
+        if (xCoinMagnetTimer <= 0)
+        {
+            GameDataVariable.dataVariables[10] = 0;
+        }
 
         if (GameDataVariable.dataVariables[9] == 1)
         {
@@ -428,7 +445,7 @@ public class Shop : MonoBehaviour
             GameDataVariable.dataVariables[1] -= 2700;
             GameDataVariable.dataVariables[8] = 1;
             TimeCalculator.instance.SaveTime();
-            xGoldTimer = 3600f;
+            xGoldTimer = 1800f;
             xGoldTimer -= TimeCalculator.instance.CheckDate();
             PlayGamesController.Instance.SaveData();
         }
@@ -466,8 +483,46 @@ public class Shop : MonoBehaviour
             GameDataVariable.dataVariables[1] -= 2500;
             GameDataVariable.dataVariables[9] = 1;
             TimeCalculator.instance.SaveTime();
-            xScoreTimer = 3600f;
+            xScoreTimer = 2700f;
             xScoreTimer -= TimeCalculator.instance.CheckDate();
+            PlayGamesController.Instance.SaveData();
+        }
+    }
+
+
+
+    public void CoinMagnetBuyButton()
+    {
+        if (GameDataVariable.dataVariables[10] == 1)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Last ability is not over yet";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+        else if (GameDataVariable.dataVariables[1] < 2000)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Not Enough Coin";
+            Invoke("DesaibleMsgText", 1.7f);
+        }
+        else if (!Social.localUser.authenticated)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.red;
+            msgText.text = "Your are not login to Google play";
+            Invoke("DesaibleMsgText", 2f);
+            signInPanel.SetActive(true);
+            isSigninPanelActivate = true;
+        }
+        else
+        {
+            GameDataVariable.dataVariables[1] -= 2000;
+            GameDataVariable.dataVariables[10] = 1;
+            TimeCalculator.instance.SaveTime();
+            xCoinMagnetTimer = 3600f;
+            xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
             PlayGamesController.Instance.SaveData();
         }
     }
@@ -475,8 +530,7 @@ public class Shop : MonoBehaviour
 
     public void RewardedAdButton()
     {
-        AdManager.instance.ShowVideoRewardAd();
-        /*if (!Social.localUser.authenticated)
+        if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -488,6 +542,6 @@ public class Shop : MonoBehaviour
         else
         {
             AdManager.instance.ShowVideoRewardAd();
-        }*/
+        }
     }
 }

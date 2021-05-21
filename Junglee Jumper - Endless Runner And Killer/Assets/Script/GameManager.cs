@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
-        if(UnityEngine.Random.Range(0,3) == 0) AdManager.instance.ShowInterstitialAd();
+        if(UnityEngine.Random.Range(0,4) == 0) AdManager.instance.ShowInterstitialAd();
         if (Input.GetKey(KeyCode.Escape))
             SceneManager.LoadScene(0);
     }

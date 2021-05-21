@@ -37,7 +37,7 @@ public class AdManager : MonoBehaviour
         this.RequestBanner();
         RequestInterstitial();
         ShowBannerAd();
-        if(UnityEngine.Random.Range(0,2) == 0) Invoke("ShowInterstitialAd", 3f);
+        if(UnityEngine.Random.Range(0,3) == 0) Invoke("ShowInterstitialAd", 3f);
     }
 
     private void OnDestroy()

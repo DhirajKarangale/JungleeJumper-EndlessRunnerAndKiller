@@ -41,11 +41,11 @@ public class ScoreManager : MonoBehaviour
         {
             if(GameDataVariable.dataVariables[9] == 1)
             {
-                pointePerSecond = 3f;
+                pointePerSecond = 2.1f;
             }
             else
             {
-                pointePerSecond = 1f;
+                pointePerSecond = 0.7f;
             }
             if(GameDataVariable.dataVariables[8] == 1)
             {
@@ -59,9 +59,9 @@ public class ScoreManager : MonoBehaviour
         else
         {
            if(GameDataVariable.dataVariables[9] == 1)
-            {
+           {
                 pointePerSecond = 1.5f;
-            }
+           }
             else
             {
                 pointePerSecond = 0.5f;
