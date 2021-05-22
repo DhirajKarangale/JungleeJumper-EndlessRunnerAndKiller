@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using Unity.RemoteConfig;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject quitPanel;
     [SerializeField] GameObject shopCanvas;
     [SerializeField] GameObject creditsPanel;
+    [SerializeField] GameObject forceUpdatePanel;
     [SerializeField] GameObject playerObject;
     [SerializeField] GameObject groundObject;
     [SerializeField] GameObject quadBGObject;
@@ -23,9 +25,37 @@ public class MainMenu : MonoBehaviour
     private bool isQuitPanelActive,isShopActive,isCreditsActive;
     public static bool isProfilePanelActive;
 
+    private int remoteVersionCode;
+
+    public struct userAttributes { }
+    public struct appAttributes { }
+
+
+    void Awake()
+    {
+        ConfigManager.FetchCompleted += CheckVersionCode;
+        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+    }
+
+    void CheckVersionCode(ConfigResponse response)
+    {
+        remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode");
+        Debug.Log("Remote Version Code is : " + remoteVersionCode);
+        if (remoteVersionCode != Convert.ToInt32(Application.version))
+        {
+            ShowForceUpdate();
+        }
+        else
+        {
+            CloseForceUpdate();
+        }
+    }
+
+
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive && !isShopActive)
+      
+        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive && !isShopActive && !isCreditsActive)
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();
@@ -68,7 +98,6 @@ public class MainMenu : MonoBehaviour
 
         AbilityActiveStatusImage();
     }
-      
 
     private void AbilityActiveStatusImage()
     {
@@ -195,4 +224,31 @@ public class MainMenu : MonoBehaviour
         quadBGObject.SetActive(true);
     }
 
+    public void ShowForceUpdate()
+    {
+        forceUpdatePanel.SetActive(true);
+        mainPanel.SetActive(false);
+        playerObject.SetActive(false);
+        groundObject.SetActive(false);
+        quadBGObject.SetActive(false);
+    }
+
+    public void CloseForceUpdate()
+    {
+        forceUpdatePanel.SetActive(false);
+        mainPanel.SetActive(true);
+        playerObject.SetActive(true);
+        groundObject.SetActive(true);
+        quadBGObject.SetActive(true);
+    }
+
+    public void UpdateNowButton()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/details?id=com.DKSoftware.JungleeJumperEndlessRunnerAndKiller");
+    }
+
+    void OnDestroy()
+    {
+        ConfigManager.FetchCompleted -= CheckVersionCode;
+    }
 }

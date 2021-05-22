@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"dabc6f31-c90c-46d7-bf75-2e401917b921\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"VersionCode\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 7\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"dabc6f31-c90c-46d7-bf75-2e401917b921\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"VersionCode\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 7\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"3b68ebd9-43ad-4be7-98bc-f01d54a690e1\",\r\n   
+    \"name\": \"Production\",\r\n    \"id\": \"af6b5dd5-cf27-455e-abb5-e864f7158ae5\",\r\n   
+    \"createdAt\": \"2021-05-22T14:11:00Z\",\r\n    \"updatedAt\": \"2021-05-22T16:31:59Z\",\r\n   
+    \"isDefault\": false\r\n  },\r\n  {\r\n    \"projectId\": \"3b68ebd9-43ad-4be7-98bc-f01d54a690e1\",\r\n   
+    \"name\": \"com.DKSoftware.JungleeJumperEndlessRunnerAndKiller.ForceUpdate\",\r\n   
+    \"id\": \"a34fbef2-104b-43a8-add7-12a4d01de770\",\r\n    \"createdAt\": \"2021-05-22T14:18:05Z\",\r\n   
+    \"updatedAt\": \"2021-05-22T16:31:59Z\",\r\n    \"isDefault\": true\r\n  }\r\n]"
+  _rulesList: '[]'
+  _lastCachedRulesList: '[]'
