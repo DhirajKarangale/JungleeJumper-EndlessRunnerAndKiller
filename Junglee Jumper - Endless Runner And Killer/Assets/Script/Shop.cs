@@ -1,8 +1,9 @@
 using UnityEngine;
 using System;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
-public class Shop : MonoBehaviour
+public class Shop : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] MainMenu mainMenu;
     [SerializeField] GameObject signInPanel;
@@ -24,23 +25,24 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        Advertisement.AddListener(this);
 
-       if(GameDataVariable.dataVariables[8] == 1)
+        if (GameDataVariable.dataVariables[8] == 1)
        {
             xGoldTimer = 1800f;
             xGoldTimer -= TimeCalculator.instance.CheckDate();
        }
 
-        if (GameDataVariable.dataVariables[10] == 1)
-        {
-            xCoinMagnetTimer = 3600f;
-            xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
-        }
-
         if (GameDataVariable.dataVariables[9] == 1)
         {
             xScoreTimer = 2700f;
             xScoreTimer -= TimeCalculator.instance.CheckDate();
+        }
+
+        if (GameDataVariable.dataVariables[10] == 1)
+        {
+            xCoinMagnetTimer = 3600f;
+            xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
         }
 
         msgTextObject.SetActive(false);
@@ -50,8 +52,6 @@ public class Shop : MonoBehaviour
 
     private void Update()
     {
-        ShowScore();
-
        if(GameDataVariable.dataVariables[8] == 1)
        {
             xGoldTimer -= Time.deltaTime;
@@ -522,6 +522,7 @@ public class Shop : MonoBehaviour
             GameDataVariable.dataVariables[1] -= 2000;
             GameDataVariable.dataVariables[10] = 1;
             TimeCalculator.instance.SaveTime();
+            ShowScore();
             xCoinMagnetTimer = 3600f;
             xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
             PlayGamesController.Instance.SaveData();
@@ -531,8 +532,7 @@ public class Shop : MonoBehaviour
 
     public void RewardedAdButton()
     {
-        AdManager.instance.ShowRewardedVideoAd();
-        /*if (!Social.localUser.authenticated)
+        if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.red;
@@ -543,7 +543,58 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            AdManager.instance.ShowRewardedVideoAd();
-        }*/
+           ShowRewardedVideoAd();
+        }
+    }
+
+
+
+    public void ShowRewardedVideoAd()
+    {
+        if (Advertisement.IsReady("Rewarded_Android"))
+            Advertisement.Show("Rewarded_Android");
+        else
+        {
+            Debug.Log("Reward Ad is not loaded");
+        }
+    }
+
+
+    public void OnUnityAdsReady(string placementId)
+    {
+        Debug.Log("Ads ready");
+    }
+
+    public void OnUnityAdsDidError(string message)
+    {
+        if (msgTextObject != null) msgTextObject.SetActive(true);
+        if (msgText != null)
+        {
+            msgText.color = Color.red;
+            msgText.text = "Error" + message;
+        }
+        Invoke("DesableTxt", 1.8f);
+    }
+
+    public void OnUnityAdsDidStart(string placementId)
+    {
+        Debug.Log("Ads Started");
+    }
+
+    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+    {
+        if ((placementId == "Rewarded_Android") && (showResult == ShowResult.Finished))
+        {
+            if (msgTextObject != null) msgTextObject.SetActive(true);
+            if (msgText != null)
+            {
+                msgText.color = Color.green;
+                msgText.text = "You Received Reward";
+            }
+            Invoke("DesaibleMsgText", 1.8f);
+            GameDataVariable.dataVariables[1] += 100;
+            ShowScore();
+            PlayGamesController.Instance.SaveData();
+        }
     }
 }

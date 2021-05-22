@@ -61,7 +61,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartButton()
     {
-        AdManager.instance.HideBanner();
         startButtonSound.Play();
         if(GameDataVariable.dataVariables[5] == 2)
         {

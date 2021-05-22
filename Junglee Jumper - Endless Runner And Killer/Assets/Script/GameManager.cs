@@ -93,13 +93,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
-        if(isAdAllow)
+        if(isAdAllow && (UnityEngine.Random.Range(0, 5) == 0))
         {
-            AdManager.instance.ShowBannerAd();
-            if (UnityEngine.Random.Range(0, 4) == 0)
-            {
-                AdManager.instance.ShowInterstitialAd();
-            }
+            AdManager.instance.ShowInterstitialAd();
             isAdAllow = false;
         }
         if (Input.GetKey(KeyCode.Escape))
@@ -114,7 +110,6 @@ public class GameManager : MonoBehaviour
 
     public void Restart()
     {
-        AdManager.instance.HideBanner();
         player.gameOverSound.Stop();
         restartSound.Play();
         Player.isPlayerDead = false;
@@ -135,7 +130,6 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
-        AdManager.instance.HideBanner();
         Time.timeScale = 1f;
         Player.isPlayerDead = false;
         clickSound.Play();
