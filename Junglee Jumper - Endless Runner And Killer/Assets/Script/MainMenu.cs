@@ -5,6 +5,9 @@ using System;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] Shop shop;
+    [SerializeField] GameObject xGold;
+    [SerializeField] GameObject xScore;
+    [SerializeField] GameObject coinMagnet;
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
@@ -57,6 +60,13 @@ public class MainMenu : MonoBehaviour
             coinCount.text = GameDataVariable.dataVariables[1].ToString();
 
         }
+
+        if (GameDataVariable.dataVariables[10] == 1) coinMagnet.SetActive(true);
+        else coinMagnet.SetActive(false);
+        if (GameDataVariable.dataVariables[8] == 1) xGold.SetActive(true);
+        else xGold.SetActive(false);
+        if (GameDataVariable.dataVariables[9] == 1) xScore.SetActive(true);
+        else xScore.SetActive(false);
     }
 
     public void StartButton()

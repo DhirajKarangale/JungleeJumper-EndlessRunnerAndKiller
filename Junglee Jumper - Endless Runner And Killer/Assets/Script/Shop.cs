@@ -446,6 +446,10 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             GameDataVariable.dataVariables[1] -= 2700;
             GameDataVariable.dataVariables[8] = 1;
             TimeCalculator.instance.SaveTime();
+            msgTextObject.SetActive(true);
+            msgText.color = Color.green;
+            msgText.text = "3X Gold Added for 30Min";
+            Invoke("DesaibleMsgText", 2f);
             xGoldTimer = 1800f;
             xGoldTimer -= TimeCalculator.instance.CheckDate();
             PlayGamesController.Instance.SaveData();
@@ -483,6 +487,10 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         {
             GameDataVariable.dataVariables[1] -= 2500;
             GameDataVariable.dataVariables[9] = 1;
+            msgTextObject.SetActive(true);
+            msgText.color = Color.green;
+            msgText.text = "3X Score Added for 45Min";
+            Invoke("DesaibleMsgText", 2f);
             TimeCalculator.instance.SaveTime();
             xScoreTimer = 2700f;
             xScoreTimer -= TimeCalculator.instance.CheckDate();
@@ -522,6 +530,10 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             GameDataVariable.dataVariables[1] -= 2000;
             GameDataVariable.dataVariables[10] = 1;
             TimeCalculator.instance.SaveTime();
+            msgTextObject.SetActive(true);
+            msgText.color = Color.green;
+            msgText.text = "Coin Magnet Added for 1Hr";
+            Invoke("DesaibleMsgText", 2f);
             ShowScore();
             xCoinMagnetTimer = 3600f;
             xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
