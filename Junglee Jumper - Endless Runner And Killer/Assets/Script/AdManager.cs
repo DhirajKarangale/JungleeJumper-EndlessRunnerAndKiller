@@ -9,22 +9,27 @@ public class AdManager : MonoBehaviour
 
     private void Awake()
     {
-      instance = this;
+        instance = this;
     }
 
     private void Start()
     {
         Advertisement.Initialize("4086101", true);
         ShowBannerAd();
-        if(Random.Range(0,3) == 0) Invoke("ShowInterstitialAd", 2f);
+        if (UnityEngine.Random.Range(0, 3) == 2) Invoke("ShowInterstitialAd", 2f);
     }
 
     private void OnDestroy()
     {
         Advertisement.Banner.Hide();
     }
+
+    public void HideBanner()
+    {
+        Advertisement.Banner.Hide();
+    }
        
-    private void ShowBannerAd()
+    public void ShowBannerAd()
     {
         if (Advertisement.IsReady("Banner_Android"))
         {

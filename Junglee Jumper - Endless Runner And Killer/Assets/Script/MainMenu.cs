@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
     [SerializeField] GameObject shopCanvas;
+    [SerializeField] GameObject creditsPanel;
     [SerializeField] GameObject playerObject;
     [SerializeField] GameObject groundObject;
     [SerializeField] GameObject quadBGObject;
@@ -19,9 +20,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
-    private bool isQuitPanelActive,isShopActive;
+    private bool isQuitPanelActive,isShopActive,isCreditsActive;
     public static bool isProfilePanelActive;
-
 
     private void Update()
     {
@@ -31,14 +31,19 @@ public class MainMenu : MonoBehaviour
             else SetQuitPanel();
         }
 
-        if(Input.GetKey(KeyCode.Escape) && isProfilePanelActive)
+        if (Input.GetKey(KeyCode.Escape) && isProfilePanelActive)
         {
             CloseProfileButton();
         }
 
-        if(Input.GetKey(KeyCode.Escape) && isShopActive)
+        if (Input.GetKey(KeyCode.Escape) && isShopActive)
         {
             CloseShopButton();
+        }
+
+        if ((Input.GetKey(KeyCode.Escape) && isCreditsActive))
+        {
+            CloseCreditsButton();
         }
 
         if (GameDataVariable.dataVariables[0] >= 1000)
@@ -61,12 +66,48 @@ public class MainMenu : MonoBehaviour
 
         }
 
-        if (GameDataVariable.dataVariables[10] == 1) coinMagnet.SetActive(true);
-        else coinMagnet.SetActive(false);
-        if (GameDataVariable.dataVariables[8] == 1) xGold.SetActive(true);
-        else xGold.SetActive(false);
-        if (GameDataVariable.dataVariables[9] == 1) xScore.SetActive(true);
-        else xScore.SetActive(false);
+        AbilityActiveStatusImage();
+    }
+      
+
+    private void AbilityActiveStatusImage()
+    {
+        if (GameDataVariable.dataVariables[10] == 1)
+        {
+            coinMagnet.SetActive(true);
+        }
+        else
+        {
+            coinMagnet.SetActive(false);
+        }
+        if (GameDataVariable.dataVariables[8] == 1)
+        {
+            xGold.SetActive(true);
+        }
+        else
+        {
+            xGold.SetActive(false);
+        }
+        if (GameDataVariable.dataVariables[9] == 1)
+        {
+            xScore.SetActive(true);
+        }
+        else
+        {
+            xScore.SetActive(false);
+        }
+    }
+
+    public void CreditsButton()
+    {
+        AdManager.instance.HideBanner();
+        isCreditsActive = true;
+        creditsPanel.SetActive(true);
+        buttonSound.Play();
+        mainPanel.SetActive(false);
+        playerObject.SetActive(false);
+        groundObject.SetActive(false);
+        quadBGObject.SetActive(false);
     }
 
     public void StartButton()
@@ -120,13 +161,13 @@ public class MainMenu : MonoBehaviour
 
     public void ShopButton()
     {
+        shopCanvas.SetActive(true);
         buttonSound.Play();
         isShopActive = true;
         mainPanel.SetActive(false);
         playerObject.SetActive(false);
         groundObject.SetActive(false);
         quadBGObject.SetActive(false);
-        shopCanvas.SetActive(true);
     }
       
     public void CloseShopButton()
@@ -139,6 +180,19 @@ public class MainMenu : MonoBehaviour
         groundObject.SetActive(true);
         quadBGObject.SetActive(true);
         shopCanvas.SetActive(false);
+    }
+
+
+    public void CloseCreditsButton()
+    {
+        AdManager.instance.ShowBannerAd();
+        isCreditsActive = false;
+        creditsPanel.SetActive(false);
+        buttonSound.Play();
+        mainPanel.SetActive(true);
+        playerObject.SetActive(true);
+        groundObject.SetActive(true);
+        quadBGObject.SetActive(true);
     }
 
 }

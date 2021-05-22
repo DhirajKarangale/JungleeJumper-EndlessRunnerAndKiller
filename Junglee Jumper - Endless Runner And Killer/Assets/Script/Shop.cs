@@ -18,13 +18,15 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     [SerializeField] Button game2SelectButton;
     [SerializeField] Button dashEffect1SelectButton;
     [SerializeField] Button dashEffect2SelectButton;
-    private float xGoldTimer;
-    private float xScoreTimer;
-    private float xCoinMagnetTimer;
+    public float xGoldTimer;
+    public float xScoreTimer;
+    public float xCoinMagnetTimer;
     private bool isSigninPanelActivate;
+
 
     private void Start()
     {
+        Advertisement.Initialize("4086101", true);
         Advertisement.AddListener(this);
 
         if (GameDataVariable.dataVariables[8] == 1)
@@ -52,15 +54,18 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     private void Update()
     {
-       if(GameDataVariable.dataVariables[8] == 1)
-       {
-            xGoldTimer -= Time.deltaTime;
-       }
+        ShowScore();
 
-       if(xGoldTimer <= 0)
-       {
+        if (GameDataVariable.dataVariables[8] == 1)
+        {
+            xGoldTimer -= Time.deltaTime;
+        }
+
+        if (xGoldTimer <= 0)
+        {
             GameDataVariable.dataVariables[8] = 0;
-       }
+            PlayGamesController.Instance.SaveData();
+        }
 
         if (GameDataVariable.dataVariables[10] == 1)
         {
@@ -70,6 +75,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (xCoinMagnetTimer <= 0)
         {
             GameDataVariable.dataVariables[10] = 0;
+            PlayGamesController.Instance.SaveData();
         }
 
         if (GameDataVariable.dataVariables[9] == 1)
@@ -80,6 +86,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (xScoreTimer <= 0)
         {
             GameDataVariable.dataVariables[9] = 0;
+            PlayGamesController.Instance.SaveData();
         }
 
         if (Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
@@ -535,7 +542,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             msgText.text = "Coin Magnet Added for 1Hr";
             Invoke("DesaibleMsgText", 2f);
             ShowScore();
-            xCoinMagnetTimer = 3600f;
+            xCoinMagnetTimer = 3600;
             xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
             PlayGamesController.Instance.SaveData();
         }
@@ -555,7 +562,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         }
         else
         {
-           ShowRewardedVideoAd();
+            ShowRewardedVideoAd();
         }
     }
 
@@ -597,16 +604,16 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     {
         if ((placementId == "Rewarded_Android") && (showResult == ShowResult.Finished))
         {
+            GameDataVariable.dataVariables[1] += 100;
+            Advertisement.RemoveListener(this);
+            PlayGamesController.Instance.SaveData();
             if (msgTextObject != null) msgTextObject.SetActive(true);
             if (msgText != null)
             {
                 msgText.color = Color.green;
                 msgText.text = "You Received Reward";
+                Invoke("DesaibleMsgText", 1.8f);
             }
-            Invoke("DesaibleMsgText", 1.8f);
-            GameDataVariable.dataVariables[1] += 100;
-            ShowScore();
-            PlayGamesController.Instance.SaveData();
         }
     }
 }

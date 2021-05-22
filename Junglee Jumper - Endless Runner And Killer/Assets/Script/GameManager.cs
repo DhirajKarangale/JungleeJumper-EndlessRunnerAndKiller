@@ -93,9 +93,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
-        if(isAdAllow && (UnityEngine.Random.Range(0, 5) == 0))
+       
+        if (isAdAllow)
         {
-            AdManager.instance.ShowInterstitialAd();
+            if (UnityEngine.Random.Range(0, 5) == 3)
+            {
+                AdManager.instance.ShowInterstitialAd();
+            }
+            
             isAdAllow = false;
         }
         if (Input.GetKey(KeyCode.Escape))
