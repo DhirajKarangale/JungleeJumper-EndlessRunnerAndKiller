@@ -20,7 +20,7 @@ public class Cutter : MonoBehaviour
        if(PlayerFireball.playerFireballCollideWithCutter)
        {
           PlayerFireball.playerFireballCollideWithCutter = false;
-          scoreManager.score -= 3;
+          scoreManager.score -= 15;
           gameObject.SetActive(false);
           GameObject currentDestryEffect = Instantiate(destroyEffect,transform.position,transform.rotation);
           Destroy(currentDestryEffect,2f);

@@ -206,14 +206,14 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else if(GameDataVariable.dataVariables[1] < 5000)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -263,7 +263,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 2.5f);
         }
@@ -284,14 +284,14 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else if (GameDataVariable.dataVariables[1] < 10000)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -341,7 +341,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 1.5f);
         }
@@ -362,14 +362,14 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else if (GameDataVariable.dataVariables[1] < 1500)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -419,7 +419,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 1.5f);
         }
@@ -433,21 +433,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (GameDataVariable.dataVariables[8] == 1)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Last ability is not over yet";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (GameDataVariable.dataVariables[1] < 2700)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -476,21 +476,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (GameDataVariable.dataVariables[9] == 1)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Last ability is not over yet";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (GameDataVariable.dataVariables[1] < 2500)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -519,21 +519,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (GameDataVariable.dataVariables[10] == 1)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Last ability is not over yet";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (GameDataVariable.dataVariables[1] < 2000)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -562,7 +562,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
@@ -584,7 +584,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         {
             Debug.Log("Reward Ad is not loaded");
             msgTextObject.SetActive(true);
-            msgText.color = Color.gray;
+            msgText.color = Color.white;
             msgText.text = "Ad not Loaded Check Network";
             Invoke("DesaibleMsgText", 1.5f);
         }
@@ -601,7 +601,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         if (msgTextObject != null) msgTextObject.SetActive(true);
         if (msgText != null)
         {
-            msgText.color = Color.red;
+            msgText.color = Color.white;
             msgText.text = "Error" + message;
         }
         Invoke("DesableTxt", 1.8f);
@@ -670,7 +670,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     public void OnPurchaseFailed(Product product, PurchaseFailureReason purchaseFailureReason)
     {
         msgTextObject.SetActive(true);
-        msgText.color = Color.gray;
+        msgText.color = Color.white;
         msgText.text = "Purchased Failed " + purchaseFailureReason;
         Invoke("DesaibleMsgText", 1.4f);
     }

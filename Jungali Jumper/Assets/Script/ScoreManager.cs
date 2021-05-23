@@ -114,21 +114,21 @@ public class ScoreManager : MonoBehaviour
         if(PlayerFireball.playerFireballCollideWithCutter)
         {
             scoreDescreaseText.color = Color.red;
-            scoreDescreaseText.text = "-3";
+            scoreDescreaseText.text = "-15";
             scoreDecreseTextObject.SetActive(true);
             Invoke("ScoreDecreaseTestFalse", 1f);
         }
         else if(PlayerFireball.playerFireballCollideWithVerticalCutter)
         {
             scoreDescreaseText.color = Color.red;
-            scoreDescreaseText.text = "-7";
+            scoreDescreaseText.text = "-25";
             scoreDecreseTextObject.SetActive(true);
             Invoke("ScoreDecreaseTestFalse", 1f);
         }
         else if (PlayerFireball.playerFireballCollideZombie)
         {
             scoreDescreaseText.color = Color.green;
-            scoreDescreaseText.text = "+15";
+            scoreDescreaseText.text = "+10";
             scoreDecreseTextObject.SetActive(true);
             Invoke("ScoreDecreaseTestFalse", 1f);
         }

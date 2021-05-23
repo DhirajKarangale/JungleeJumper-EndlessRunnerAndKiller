@@ -19,7 +19,7 @@ public class VerticalCutter : MonoBehaviour
         if (Player.isPlayerDead || ScoreManager.isPause) cutterSound.Stop();
         if (PlayerFireball.playerFireballCollideWithVerticalCutter)
         {
-            scoreManager.score -= 7;
+            scoreManager.score -= 25;
             gameObject.SetActive(false);
             GameObject currentDestryEffect = Instantiate(destroyEffect, transform.position, transform.rotation);
             Destroy(currentDestryEffect, 2f);
