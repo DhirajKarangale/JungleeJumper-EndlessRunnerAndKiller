@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
-    private bool isQuitPanelActive,isShopActive,isCreditsActive;
+    private bool isQuitPanelActive,isShopActive,isCreditsActive,isForceUpdateActive;
     public static bool isProfilePanelActive;
 
     private int remoteVersionCode;
@@ -74,6 +74,11 @@ public class MainMenu : MonoBehaviour
         if ((Input.GetKey(KeyCode.Escape) && isCreditsActive))
         {
             CloseCreditsButton();
+        }
+
+        if(Input.GetKey(KeyCode.Escape) && isForceUpdateActive)
+        {
+            UpdateNowButton();
         }
 
         if (GameDataVariable.dataVariables[0] >= 1000)
@@ -226,6 +231,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowForceUpdate()
     {
+        isForceUpdateActive = true; 
         forceUpdatePanel.SetActive(true);
         mainPanel.SetActive(false);
         playerObject.SetActive(false);
@@ -235,6 +241,7 @@ public class MainMenu : MonoBehaviour
 
     public void CloseForceUpdate()
     {
+        isForceUpdateActive = false;
         forceUpdatePanel.SetActive(false);
         mainPanel.SetActive(true);
         playerObject.SetActive(true);

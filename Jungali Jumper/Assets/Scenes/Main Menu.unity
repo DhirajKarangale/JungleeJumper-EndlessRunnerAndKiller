@@ -8133,7 +8133,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Junglee Jumper
+  m_Text: Jungali Jumper
 --- !u!222 &818015114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17711,7 +17711,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Junglee Jumper
+  m_Text: Jungali Jumper
 --- !u!222 &1750400924
 CanvasRenderer:
   m_ObjectHideFlags: 0
