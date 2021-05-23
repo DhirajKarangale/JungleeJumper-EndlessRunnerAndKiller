@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
         gameOverScreen.SetActive(true);
        
-        if (isAdAllow)
+        if (isAdAllow && (GameDataVariable.dataVariables[11] != 1))
         {
             if (UnityEngine.Random.Range(0, 5) == 3)
             {

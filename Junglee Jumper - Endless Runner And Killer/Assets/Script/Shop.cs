@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
+using UnityEngine.Purchasing;
 
 public class Shop : MonoBehaviour, IUnityAdsListener
 {
@@ -22,6 +23,9 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     public float xScoreTimer;
     public float xCoinMagnetTimer;
     private bool isSigninPanelActivate;
+
+    private const string coin5000 = "com.dksoftware.jungleejumperendlessrunnerandkiller.coin5000";
+    private const string removeAds = "com.dksoftware.jungleejumperendlessrunnerandkiller.removeads";
 
 
     private void Start()
@@ -615,5 +619,51 @@ public class Shop : MonoBehaviour, IUnityAdsListener
                 Invoke("DesaibleMsgText", 1.8f);
             }
         }
+    }
+
+
+
+
+    public void OnPurChaseComplete(Product product)
+    {
+        if (product.definition.id == coin5000)
+        {
+            msgTextObject.SetActive(true);
+            msgText.color = Color.green;
+            msgText.text = "Purchased Sucessfully ! You Got 5000 Coin";
+            Invoke("DesaibleMsgText", 1.9f);
+            GameDataVariable.dataVariables[1] += 5000;
+            PlayGamesController.Instance.SaveData();
+            ShowScore();
+        }
+
+        if(product.definition.id == removeAds)
+        {
+           if(GameDataVariable.dataVariables[11] != 1)
+           {
+                msgTextObject.SetActive(true);
+                msgText.color = Color.green;
+                msgText.text = "Purchased Sucessfully ! Ads Removed";
+                Invoke("DesaibleMsgText", 1.9f);
+                AdManager.instance.HideBanner();
+                GameDataVariable.dataVariables[11] = 1;
+                PlayGamesController.Instance.SaveData();
+           }
+            else
+            {
+                msgTextObject.SetActive(true);
+                msgText.color = Color.green;
+                msgText.text = "Already Purchased ! Ads already Removed";
+                Invoke("DesaibleMsgText", 1.9f);
+            }
+        }
+    }
+
+    public void OnPurchaseFailed(Product product, PurchaseFailureReason purchaseFailureReason)
+    {
+        msgTextObject.SetActive(true);
+        msgText.color = Color.red;
+        msgText.text = "Purchased Failed " + purchaseFailureReason;
+        Invoke("DesaibleMsgText", 1.4f);
     }
 }
