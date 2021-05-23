@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DK Software
-  productName: Junglee Jumper - Endless Runner And Killer
+  productName: Jungali Jumper
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -711,7 +711,7 @@ PlayerSettings:
   cloudProjectId: 3b68ebd9-43ad-4be7-98bc-f01d54a690e1
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: Junglee Jumper - Endless Runner And Killer
+  projectName: Jungali Jumper
   organizationId: dk_software
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
