@@ -7632,7 +7632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.24000001, y: 0.8785186}
   m_AnchorMax: {x: 0.758, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 1.4779968}
+  m_AnchoredPosition: {x: 2.5, y: 1.4780273}
   m_SizeDelta: {x: -12.1215, y: -2.9560013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725275086
@@ -16358,10 +16358,10 @@ RectTransform:
   m_Father: {fileID: 832476817}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.019520834, y: 0.333}
+  m_AnchorMin: {x: 0.019520834, y: 0.28848144}
   m_AnchorMax: {x: 0.98749995, y: 0.84800005}
-  m_AnchoredPosition: {x: -2.2324219, y: -1.6557922}
-  m_SizeDelta: {x: -6.443, y: -3.604599}
+  m_AnchoredPosition: {x: -2.2324219, y: 2.1909943}
+  m_SizeDelta: {x: -6.443, y: -11.299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598366436
 MonoBehaviour:
@@ -16395,7 +16395,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.5
+    m_LineSpacing: 1.55
   m_Text: 'Arun Karangale                         Lalita Karangale
 
     Pooja Karangale                      
@@ -18890,7 +18890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.928365, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.9898696, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -18911,8 +18911,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "You are using the old version of these game new version of the game available
-    pn Play Store Please Update It from Play store .\n\nClick On the Button to Update
-    \n   Update Now \n"
+    on Play store\n\nClick On Update to Update Now \n"
 --- !u!222 &1890265381
 CanvasRenderer:
   m_ObjectHideFlags: 0

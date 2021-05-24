@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     private bool isQuitPanelActive,isShopActive,isCreditsActive,isForceUpdateActive;
     public static bool isProfilePanelActive;
 
-    private int remoteVersionCode = 7;
+    private int remoteVersionCode;
 
     public struct userAttributes { }
     public struct appAttributes { }
@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
 
     void CheckVersionCode(ConfigResponse response)
     {
-        remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode");
+        remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode",9);
         Debug.Log("Remote Version Code is : " + remoteVersionCode);
         if (remoteVersionCode != Convert.ToInt32(Application.version))
         {

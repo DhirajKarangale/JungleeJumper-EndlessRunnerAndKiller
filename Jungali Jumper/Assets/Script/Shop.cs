@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     private void Start()
     {
-        Advertisement.Initialize("4086101", true);
+        Advertisement.Initialize("4086101", false);
         Advertisement.AddListener(this);
 
         if (GameDataVariable.dataVariables[8] == 1)

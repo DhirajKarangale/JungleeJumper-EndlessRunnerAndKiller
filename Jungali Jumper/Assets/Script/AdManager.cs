@@ -16,7 +16,7 @@ public class AdManager : MonoBehaviour
     {
        if(GameDataVariable.dataVariables[11] != 1)
        {
-            Advertisement.Initialize("4086101", true);
+            Advertisement.Initialize("4086101", false);
             ShowBannerAd();
             if (UnityEngine.Random.Range(0, 3) == 2) Invoke("ShowInterstitialAd", 2f);
        }
