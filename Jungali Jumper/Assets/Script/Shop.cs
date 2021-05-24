@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     public float xCoinMagnetTimer;
     private bool isSigninPanelActivate;
 
-    private const string coin5000 = "com.dksoftware.jungleejumperendlessrunnerandkiller.coin5000";
+    private const string coin3000 = "com.dksoftware.jungleejumperendlessrunnerandkiller.coin3000";
     private const string removeAds = "com.dksoftware.jungleejumperendlessrunnerandkiller.removeads";
 
 
@@ -634,13 +634,13 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     public void OnPurChaseComplete(Product product)
     {
-        if (product.definition.id == coin5000)
+        if (product.definition.id == coin3000)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.green;
-            msgText.text = "Purchased Sucessfully ! You Got 5000 Coin";
+            msgText.text = "Purchased Sucessfully ! You Got 3000 Coin";
             Invoke("DesaibleMsgText", 1.9f);
-            GameDataVariable.dataVariables[1] += 5000;
+            GameDataVariable.dataVariables[1] += 3000;
             PlayGamesController.Instance.SaveData();
             ShowScore();
         }

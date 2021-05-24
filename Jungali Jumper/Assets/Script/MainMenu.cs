@@ -25,7 +25,7 @@ public class MainMenu : MonoBehaviour
     private bool isQuitPanelActive,isShopActive,isCreditsActive,isForceUpdateActive;
     public static bool isProfilePanelActive;
 
-    private int remoteVersionCode;
+    private int remoteVersionCode = 7;
 
     public struct userAttributes { }
     public struct appAttributes { }
