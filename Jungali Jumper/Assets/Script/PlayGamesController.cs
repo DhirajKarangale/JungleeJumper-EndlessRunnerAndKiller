@@ -78,9 +78,9 @@ public class PlayGamesController : MonoBehaviour
             if (playerProfile2 != null)
                 playerProfile2.sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0f, 0f));
             if (playerName != null)
-                playerName.text = "Junglee Jumper";
+                playerName.text = "Jungali Jumper";
             if (playerName2 != null)
-                playerName2.text = "Junglee Jumper";
+                playerName2.text = "Jungali Jumper";
         }
        else
         {
@@ -215,7 +215,7 @@ public class PlayGamesController : MonoBehaviour
     #region LeaderBoard
     public static void PostToLeaderboard(long newScore)
     {
-        Social.ReportScore(newScore, "CgkIm7HY6ZwREAIQAQ", (bool success) => {
+        Social.ReportScore(newScore, "CgkIx7O8ucQBEAIQAQ", (bool success) => {
             if (success)
             {
                 Debug.Log("Posted new score to leaderboard");
@@ -232,7 +232,7 @@ public class PlayGamesController : MonoBehaviour
         buttonSound.Play();
         if (Social.localUser.authenticated)
         {
-            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIm7HY6ZwREAIQAQ");
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIx7O8ucQBEAIQAQ");
         }
         else
         {
