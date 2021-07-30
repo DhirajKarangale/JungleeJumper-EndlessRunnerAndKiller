@@ -14,7 +14,6 @@ public class PlayerFireball : MonoBehaviour
     [Header("Camera Shake")]
     private Vector3 cameraInitialPosition;
     private float shakeMagnetude = 0.18f, shakeTime = 0.43f;
-    private float shakeMagnetudeLarge = 0.36f, shakeTimeLarge = 0.58f;
     private Camera mainCamera;
 
 
@@ -64,7 +63,7 @@ public class PlayerFireball : MonoBehaviour
         }
         else if (collision.gameObject.tag == "ZombieFireball")
         {
-            ShakeItLarge();
+            ShakeIt();
             firballReleseSound.Stop();
             playerFireballHitObject = false;
             twoFireballCollide = true;
@@ -119,23 +118,7 @@ public class PlayerFireball : MonoBehaviour
         cameraIntermadiatePosition.y += cameraShakingOffsetY;
         mainCamera.transform.position = cameraIntermadiatePosition;
     }
-
-    private void ShakeItLarge()
-    {
-        cameraInitialPosition = mainCamera.transform.position;
-        InvokeRepeating("StartCameraShaking", 0f, 0.005f);
-        Invoke("StopCameraShaking", shakeTimeLarge);
-    }
-
-    private void StartCameraShakingLarge()
-    {
-        float cameraShakingOffsetX = Random.value * shakeMagnetudeLarge * 2 - shakeMagnetudeLarge;
-        float cameraShakingOffsetY = Random.value * shakeMagnetudeLarge * 2 - shakeMagnetudeLarge;
-        Vector3 cameraIntermadiatePosition = mainCamera.transform.position;
-        cameraIntermadiatePosition.x += cameraShakingOffsetX;
-        cameraIntermadiatePosition.y += cameraShakingOffsetY;
-        mainCamera.transform.position = cameraIntermadiatePosition;
-    }
+   
 
     private void StopCameraShaking()
     {

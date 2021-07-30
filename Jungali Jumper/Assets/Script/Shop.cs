@@ -585,7 +585,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             Debug.Log("Reward Ad is not loaded");
             msgTextObject.SetActive(true);
             msgText.color = Color.white;
-            msgText.text = "Ad not Loaded Check Network";
+            msgText.text = "Ad not Loaded try again";
             Invoke("DesaibleMsgText", 1.5f);
         }
     }
@@ -653,7 +653,6 @@ public class Shop : MonoBehaviour, IUnityAdsListener
                 msgText.color = Color.green;
                 msgText.text = "Purchased Sucessfully ! Ads Removed";
                 Invoke("DesaibleMsgText", 1.9f);
-                AdManager.instance.HideBanner();
                 GameDataVariable.dataVariables[11] = 1;
                 PlayGamesController.Instance.SaveData();
            }

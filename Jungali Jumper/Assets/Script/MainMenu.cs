@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
     [SerializeField] GameObject shopCanvas;
-    [SerializeField] GameObject creditsPanel;
+    [SerializeField] GameObject aboutPanel;
     [SerializeField] GameObject forceUpdatePanel;
     [SerializeField] GameObject playerObject;
     [SerializeField] GameObject groundObject;
@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
-    private bool isQuitPanelActive,isShopActive,isCreditsActive,isForceUpdateActive;
+    private bool isQuitPanelActive,isShopActive,isAboutActive,isForceUpdateActive;
     public static bool isProfilePanelActive;
 
     private int remoteVersionCode;
@@ -55,7 +55,7 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
       
-        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive && !isShopActive && !isCreditsActive)
+        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive && !isShopActive && !isAboutActive)
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();
@@ -71,9 +71,9 @@ public class MainMenu : MonoBehaviour
             CloseShopButton();
         }
 
-        if ((Input.GetKey(KeyCode.Escape) && isCreditsActive))
+        if ((Input.GetKey(KeyCode.Escape) && isAboutActive))
         {
-            CloseCreditsButton();
+            CloseAboutButton();
         }
 
         if(Input.GetKey(KeyCode.Escape) && isForceUpdateActive)
@@ -132,16 +132,34 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void CreditsButton()
+    public void AboutButton()
     {
-        AdManager.instance.HideBanner();
-        isCreditsActive = true;
-        creditsPanel.SetActive(true);
+        isAboutActive = true;
+        aboutPanel.SetActive(true);
         buttonSound.Play();
         mainPanel.SetActive(false);
         playerObject.SetActive(false);
         groundObject.SetActive(false);
         quadBGObject.SetActive(false);
+    }
+
+
+    public void MoreGamesButton()
+    {
+        buttonSound.Play();
+        Application.OpenURL("https://play.google.com/store/apps/developer?id=DK_Software");
+    }
+
+    public void LinkedInButton()
+    {
+        buttonSound.Play();
+        Application.OpenURL("https://www.linkedin.com/in/dhiraj-karangale-464ab91bb");
+    }
+
+    public void YoutubeButton()
+    {
+        buttonSound.Play();
+        Application.OpenURL("https://www.youtube.com/channel/UC_Dnn-QqlnrdYpKXycyzJDA");
     }
 
     public void StartButton()
@@ -217,11 +235,10 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void CloseCreditsButton()
+    public void CloseAboutButton()
     {
-        AdManager.instance.ShowBannerAd();
-        isCreditsActive = false;
-        creditsPanel.SetActive(false);
+        isAboutActive = false;
+        aboutPanel.SetActive(false);
         buttonSound.Play();
         mainPanel.SetActive(true);
         playerObject.SetActive(true);

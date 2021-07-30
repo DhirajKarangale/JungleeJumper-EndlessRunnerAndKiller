@@ -15,11 +15,11 @@ E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Jungali Jumper
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49675
+65286
 Successfully changed project path to: E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Jungali Jumper
 E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Jungali Jumper
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 640.25 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 306.95 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.0f1 (61a549675243)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Resources/UnitySubsystems
@@ -36,22 +36,22 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56984
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.013188 seconds.
+Registered in 0.012865 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 277.49 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 367.97 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  6.552 seconds
+- Completed reload, in  6.516 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.023607 seconds.
+Registered in 0.038653 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 305.46 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 280.35 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 GPGSUpgrader start
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
@@ -76,78 +76,262 @@ UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 (Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
 
 Mono: successfully reloaded assembly
-- Completed reload, in  3.921 seconds
+- Completed reload, in  3.433 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
-Refreshing native plugins compatible for Editor in 2.09 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.18 seconds
+Refreshing native plugins compatible for Editor in 1.86 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4647 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.1 MB.
+System memory in use before: 171.2 MB.
 System memory in use after: 171.4 MB.
 
 Unloading 92 unused Assets to reduce memory usage. Loaded Objects now: 5044.
-Total: 10.794500 ms (FindLiveObjects: 0.649300 ms CreateObjectMapping: 0.499700 ms MarkObjects: 9.561400 ms  DeleteObjects: 0.082000 ms)
+Total: 14.614100 ms (FindLiveObjects: 0.766000 ms CreateObjectMapping: 0.548900 ms MarkObjects: 13.199300 ms  DeleteObjects: 0.095700 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Art/Ninja Files/Ninja PNG/Parts/upper torso.PNG
-  artifactKey: Guid(f7e16fea1a4446645afe6cd98602c280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/upper torso.PNG using Guid(f7e16fea1a4446645afe6cd98602c280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e41d62ed32d4414e6a229fb0f5baf789') in 0.478004 seconds 
+  path: Assets/Art/YouTube.jpg
+  artifactKey: Guid(59a6ff33cf9f575489d35004c4cfe5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/YouTube.jpg using Guid(59a6ff33cf9f575489d35004c4cfe5ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '295a93099f96e2467614bb47cd5ed446') in 0.500893 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.003605 seconds.
-  path: Assets/Art/artwork/Environment/props/tree.png
-  artifactKey: Guid(f7187675ec12e4aacaeb0e97ad31230a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/artwork/Environment/props/tree.png using Guid(f7187675ec12e4aacaeb0e97ad31230a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83b2125a1fcdba4a7774295c869f05e') in 0.104786 seconds 
+  Time since last request: 0.001701 seconds.
+  path: Assets/Art/LinkedIn.jpg
+  artifactKey: Guid(314269b2e00b7fe4886281aa4779dcb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/LinkedIn.jpg using Guid(314269b2e00b7fe4886281aa4779dcb7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd013db654d9e8f368ddda0d72cb9613') in 0.020715 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001063 seconds.
-  path: Assets/Art/artwork/Environment/tileset-sliced.png
-  artifactKey: Guid(261212b977f594d5dbc48631a5c1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/artwork/Environment/tileset-sliced.png using Guid(261212b977f594d5dbc48631a5c1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd72969ddfc61b9fad0e526c6994eae74') in 0.522506 seconds 
+  Time since last request: 140.878484 seconds.
+  path: Assets/Art/2D Zombie
+  artifactKey: Guid(0881f3c6464abf1408658d5e7f6b2b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie using Guid(0881f3c6464abf1408658d5e7f6b2b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59f4f5ac1b7e6f32f5862d9e5763be18') in 0.009081 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.004156 seconds.
-  path: Assets/Art/Shop Item/VideoAds Button.png
-  artifactKey: Guid(5f3afc1739f2dd94bbd6f7c65d0d7c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Shop Item/VideoAds Button.png using Guid(5f3afc1739f2dd94bbd6f7c65d0d7c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec782eb04dc58119ca143a8c20c5d3a') in 0.125801 seconds 
+  Time since last request: 2.669796 seconds.
+  path: Assets/Art/2D Zombie/Cutted Zombie
+  artifactKey: Guid(834754eec48fd8d4eac3eace629c8ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Cutted Zombie using Guid(834754eec48fd8d4eac3eace629c8ae0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4abe800adde540d8931bbcf669b24f85') in 0.028732 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.002707 seconds.
-  path: Assets/Art/2D Zombie/Spine2D Animations Exports/Zombie_Normal.png
-  artifactKey: Guid(98fa05f8e08cc6b499db8b5df5cc3b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/2D Zombie/Spine2D Animations Exports/Zombie_Normal.png using Guid(98fa05f8e08cc6b499db8b5df5cc3b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9a2222554e3a5e574f6de56f310b25d') in 0.210024 seconds 
+  Time since last request: 457.035174 seconds.
+  path: Assets/Script/MainMenu.cs
+  artifactKey: Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/MainMenu.cs using Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717514e422feb458c29dd6f2d191b524') in 1.059105 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001233 seconds.
-  path: Assets/Art/Shop Item/Untitled-1.png
-  artifactKey: Guid(d8f6e446c3f1f1e478422dc8a1b4be76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Shop Item/Untitled-1.png using Guid(d8f6e446c3f1f1e478422dc8a1b4be76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a5cb8a2bbfaf8b5a6389e816d41af6e') in 0.081840 seconds 
+  Time since last request: 136.019291 seconds.
+  path: Assets/Script/MainMenu.cs
+  artifactKey: Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/MainMenu.cs using Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e19c32dbbc79e49c936abbcd9d9de3a') in 0.016023 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1107.504324 seconds.
-  path: Assets/Art
-  artifactKey: Guid(285280d747766be4493f700faedf8f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art using Guid(285280d747766be4493f700faedf8f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feaf4864410c884276546e2426c8fa81') in 0.006701 seconds 
+  Time since last request: 57.881262 seconds.
+  path: Assets/Script/MainMenu.cs
+  artifactKey: Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/MainMenu.cs using Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fca62fb216063e84634b244e971870c') in 0.009274 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.002505 seconds.
-  path: Assets/Art/3XGold Activate.png
-  artifactKey: Guid(64af3421df1c45e47977df944b305054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/3XGold Activate.png using Guid(64af3421df1c45e47977df944b305054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8fab6f251249dfe9b0487b9fdfbeb7') in 8.181741 seconds 
+  Time since last request: 14.232430 seconds.
+  path: Assets/Script/MainMenu.cs
+  artifactKey: Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/MainMenu.cs using Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee529196eff656b2f4e5730675729ae1') in 0.007340 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001132 seconds.
-  path: Assets/Art/Blood.png
-  artifactKey: Guid(05c36fef35c97284b9f1c235eadfae48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Blood.png using Guid(05c36fef35c97284b9f1c235eadfae48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8f4c5f9fbcf17422cc6beccee377505') in 12.224645 seconds 
+  Time since last request: 31.784804 seconds.
+  path: Assets/Script/MainMenu.cs
+  artifactKey: Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/MainMenu.cs using Guid(0499d44eadad07343ae36d05b09789ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b9941b12b5a12b4be6fb03f67bddcfd') in 0.007417 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.185844 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 5.71 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  4.272 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.90 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4585 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.7 MB.
+System memory in use after: 172.0 MB.
+
+Unloading 84 unused Assets to reduce memory usage. Loaded Objects now: 5083.
+Total: 26.508000 ms (FindLiveObjects: 0.880500 ms CreateObjectMapping: 0.822000 ms MarkObjects: 24.659500 ms  DeleteObjects: 0.140700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.145464 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.05 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  3.615 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4583 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.7 MB.
+System memory in use after: 172.0 MB.
+
+Unloading 84 unused Assets to reduce memory usage. Loaded Objects now: 5086.
+Total: 15.447800 ms (FindLiveObjects: 0.713000 ms CreateObjectMapping: 0.440900 ms MarkObjects: 14.114300 ms  DeleteObjects: 0.176100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.360457 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.01 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  6.837 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 4.22 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4583 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.7 MB.
+System memory in use after: 172.0 MB.
+
+Unloading 84 unused Assets to reduce memory usage. Loaded Objects now: 5089.
+Total: 17.201300 ms (FindLiveObjects: 0.846800 ms CreateObjectMapping: 0.728200 ms MarkObjects: 15.540200 ms  DeleteObjects: 0.082200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 ========================================================================
 Received Import Request.
-  Time since last request: 0.001152 seconds.
-  path: Assets/Art/artwork
-  artifactKey: Guid(2f17d1e6a207e4d8eb72bd03b1b645ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/artwork using Guid(2f17d1e6a207e4d8eb72bd03b1b645ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68b53f93567c26bf4541b409c94c9c2e') in 0.065504 seconds 
+  Time since last request: 1518.750285 seconds.
+  path: Assets/Script/Player
+  artifactKey: Guid(f62ce723c7f4c7b4e97816477359e3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Script/Player using Guid(f62ce723c7f4c7b4e97816477359e3b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1055e4dc039ac06ef0afabbaf6d5892') in 0.028605 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.284533 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  5.420 seconds
+Platform modules already initialized, skipping
+Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 2.73 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4583 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.8 MB.
+System memory in use after: 172.0 MB.
+
+Unloading 84 unused Assets to reduce memory usage. Loaded Objects now: 5092.
+Total: 25.692800 ms (FindLiveObjects: 0.672800 ms CreateObjectMapping: 0.547000 ms MarkObjects: 24.343600 ms  DeleteObjects: 0.124700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

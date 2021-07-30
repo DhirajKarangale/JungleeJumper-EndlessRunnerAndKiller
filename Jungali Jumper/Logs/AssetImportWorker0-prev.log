@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2021.1/release' branch; Version is '2021.1.0f1 (61a549675243) revision 6399305'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro N; OS build 19042.631; Version 2009; 64bit' Language: 'en' Physical Memory: 4016 MB
+OS: 'Windows 10 Pro N; OS build 19042.572; Version 2009; 64bit' Language: 'en' Physical Memory: 4016 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -15,11 +15,11 @@ E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Jungali Jumper
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58551
+49675
 Successfully changed project path to: E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Jungali Jumper
 E:/Unity/Projects/JungleeJumper-EndlessRunnerAndKiller/Jungali Jumper
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 18686.05 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 640.25 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.0f1 (61a549675243)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Resources/UnitySubsystems
@@ -36,5 +36,118 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56128
 Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.013188 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 277.49 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.552 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.023607 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 305.46 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+GPGSUpgrader start
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:38)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 38)
+
+GPGSUpgrader done
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+GooglePlayGames.Editor.GPGSUpgrader:.cctor () (at Assets/GooglePlayGames/Editor/GPGSUpgrader.cs:105)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Assets/GooglePlayGames/Editor/GPGSUpgrader.cs Line: 105)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  3.921 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.16 seconds
+Refreshing native plugins compatible for Editor in 2.09 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4647 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 171.1 MB.
+System memory in use after: 171.4 MB.
+
+Unloading 92 unused Assets to reduce memory usage. Loaded Objects now: 5044.
+Total: 10.794500 ms (FindLiveObjects: 0.649300 ms CreateObjectMapping: 0.499700 ms MarkObjects: 9.561400 ms  DeleteObjects: 0.082000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Art/Ninja Files/Ninja PNG/Parts/upper torso.PNG
+  artifactKey: Guid(f7e16fea1a4446645afe6cd98602c280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Ninja Files/Ninja PNG/Parts/upper torso.PNG using Guid(f7e16fea1a4446645afe6cd98602c280) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e41d62ed32d4414e6a229fb0f5baf789') in 0.478004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.003605 seconds.
+  path: Assets/Art/artwork/Environment/props/tree.png
+  artifactKey: Guid(f7187675ec12e4aacaeb0e97ad31230a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/props/tree.png using Guid(f7187675ec12e4aacaeb0e97ad31230a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83b2125a1fcdba4a7774295c869f05e') in 0.104786 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001063 seconds.
+  path: Assets/Art/artwork/Environment/tileset-sliced.png
+  artifactKey: Guid(261212b977f594d5dbc48631a5c1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork/Environment/tileset-sliced.png using Guid(261212b977f594d5dbc48631a5c1295c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd72969ddfc61b9fad0e526c6994eae74') in 0.522506 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.004156 seconds.
+  path: Assets/Art/Shop Item/VideoAds Button.png
+  artifactKey: Guid(5f3afc1739f2dd94bbd6f7c65d0d7c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/VideoAds Button.png using Guid(5f3afc1739f2dd94bbd6f7c65d0d7c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ec782eb04dc58119ca143a8c20c5d3a') in 0.125801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002707 seconds.
+  path: Assets/Art/2D Zombie/Spine2D Animations Exports/Zombie_Normal.png
+  artifactKey: Guid(98fa05f8e08cc6b499db8b5df5cc3b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/2D Zombie/Spine2D Animations Exports/Zombie_Normal.png using Guid(98fa05f8e08cc6b499db8b5df5cc3b3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9a2222554e3a5e574f6de56f310b25d') in 0.210024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001233 seconds.
+  path: Assets/Art/Shop Item/Untitled-1.png
+  artifactKey: Guid(d8f6e446c3f1f1e478422dc8a1b4be76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Shop Item/Untitled-1.png using Guid(d8f6e446c3f1f1e478422dc8a1b4be76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a5cb8a2bbfaf8b5a6389e816d41af6e') in 0.081840 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1107.504324 seconds.
+  path: Assets/Art
+  artifactKey: Guid(285280d747766be4493f700faedf8f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art using Guid(285280d747766be4493f700faedf8f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feaf4864410c884276546e2426c8fa81') in 0.006701 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002505 seconds.
+  path: Assets/Art/3XGold Activate.png
+  artifactKey: Guid(64af3421df1c45e47977df944b305054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/3XGold Activate.png using Guid(64af3421df1c45e47977df944b305054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d8fab6f251249dfe9b0487b9fdfbeb7') in 8.181741 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001132 seconds.
+  path: Assets/Art/Blood.png
+  artifactKey: Guid(05c36fef35c97284b9f1c235eadfae48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/Blood.png using Guid(05c36fef35c97284b9f1c235eadfae48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8f4c5f9fbcf17422cc6beccee377505') in 12.224645 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001152 seconds.
+  path: Assets/Art/artwork
+  artifactKey: Guid(2f17d1e6a207e4d8eb72bd03b1b645ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art/artwork using Guid(2f17d1e6a207e4d8eb72bd03b1b645ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68b53f93567c26bf4541b409c94c9c2e') in 0.065504 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

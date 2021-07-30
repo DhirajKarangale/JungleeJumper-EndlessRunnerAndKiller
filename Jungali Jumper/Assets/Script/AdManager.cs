@@ -17,38 +17,8 @@ public class AdManager : MonoBehaviour
        if(GameDataVariable.dataVariables[11] != 1)
        {
             Advertisement.Initialize("4086101", false);
-            ShowBannerAd();
             if (UnityEngine.Random.Range(0, 3) == 2) Invoke("ShowInterstitialAd", 2f);
        }
-    }
-
-    private void OnDestroy()
-    {
-        Advertisement.Banner.Hide();
-    }
-
-    public void HideBanner()
-    {
-        Advertisement.Banner.Hide();
-    }
-       
-    public void ShowBannerAd()
-    {
-        if (Advertisement.IsReady("Banner_Android"))
-        {
-            Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
-            Advertisement.Banner.Show("Banner_Android");
-        }
-        else
-        {
-            StartCoroutine(RepeatShowBanner());
-        }
-    }
-    
-    IEnumerator RepeatShowBanner()
-    {
-        yield return new WaitForSeconds(1);
-        ShowBannerAd();
     }
 
     public void ShowInterstitialAd()
