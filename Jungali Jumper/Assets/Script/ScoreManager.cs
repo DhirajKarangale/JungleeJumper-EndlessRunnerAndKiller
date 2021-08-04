@@ -97,6 +97,9 @@ public class ScoreManager : MonoBehaviour
         if (score > highScore)
         {
            highScore = score;
+           GameDataVariable.dataVariables[0] = Convert.ToInt32(highScore);
+            PlayGamesController.Instance.SaveData();
+            if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -107,7 +110,10 @@ public class ScoreManager : MonoBehaviour
 
         if(CoinCollector.isCoinHit)
         {
-            StartCoinMove(CoinCollector.coinPosition.position, ()=> {coin += coinPickPoints;});
+            StartCoinMove(CoinCollector.coinPosition.position, ()=> {coin += coinPickPoints;
+                GameDataVariable.dataVariables[1] = coin;
+                PlayGamesController.Instance.SaveData();
+            });
             CoinCollector.isCoinHit = false;
         }
         
@@ -219,16 +225,20 @@ public class ScoreManager : MonoBehaviour
 
     public void HomeButton()
     {
-        clickSound.Play();
         Time.timeScale = 1f;
+        PlayGamesController.Instance.SaveData();
+        if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
+        clickSound.Play();
         SceneManager.LoadScene(0);
         ResumeButton();
     }
 
     public void RestartButton()
     {
+        PlayGamesController.Instance.SaveData();
+        if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
         clickSound.Play();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         ResumeButton();
     }
 }

@@ -7809,16 +7809,16 @@ RectTransform:
   m_GameObject: {fileID: 715834214}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3072, y: 1.3072, z: 1.3072}
   m_Children:
   - {fileID: 1865044067}
   m_Father: {fileID: 832476817}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.41400003, y: 0.446}
-  m_AnchorMax: {x: 0.58500004, y: 0.55200005}
-  m_AnchoredPosition: {x: 1, y: 1}
-  m_SizeDelta: {x: 5.9219055, y: 2.2176971}
+  m_AnchorMin: {x: 0.377, y: 0.52084875}
+  m_AnchorMax: {x: 0.6071888, y: 0.65933895}
+  m_AnchoredPosition: {x: 2.5, y: 2.5}
+  m_SizeDelta: {x: -93.078094, y: -38.782303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &715834216
 MonoBehaviour:
@@ -16838,10 +16838,10 @@ RectTransform:
   m_Father: {fileID: 832476817}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.019520834, y: 0.5814445}
+  m_AnchorMin: {x: 0.019520834, y: 0.71282065}
   m_AnchorMax: {x: 0.98749995, y: 0.84800005}
-  m_AnchoredPosition: {x: -2.2324219, y: 0.5090332}
-  m_SizeDelta: {x: -6.443, y: -7.936096}
+  m_AnchoredPosition: {x: -2.2324219, y: -2.2669983}
+  m_SizeDelta: {x: -6.443001, y: -2.3840027}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1598366436
 MonoBehaviour:
@@ -16865,8 +16865,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f9f40de7fe432e14d90f5cd0d8caa7be, type: 3}
-    m_FontSize: 80
-    m_FontStyle: 0
+    m_FontSize: 85
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 8
     m_MaxSize: 94
@@ -16876,7 +16876,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.55
-  m_Text: "Contact us on\n           dkhelp02@gmail.com"
+  m_Text: Contact us on      dkhelp02@gmail.com
 --- !u!222 &1598366437
 CanvasRenderer:
   m_ObjectHideFlags: 0

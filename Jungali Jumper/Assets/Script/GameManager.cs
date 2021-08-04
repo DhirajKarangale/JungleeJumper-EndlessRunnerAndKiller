@@ -86,6 +86,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        PlayGamesController.Instance.SaveData();
+        if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
         player.runingSound.Stop();
         backGroundMusic.Stop();
         Player.isPlayerDead = true;
@@ -98,7 +100,7 @@ public class GameManager : MonoBehaviour
         {
             if (UnityEngine.Random.Range(0, 5) == 3)
             {
-                AdManager.instance.ShowInterstitialAd();
+                Invoke("ShowAD", 2);
             }
             
             isAdAllow = false;
@@ -106,15 +108,24 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
             SceneManager.LoadScene(0);
     }
+
+    private void ShowAD()
+    {
+        AdManager.instance.ShowInterstitialAd();
+    }
   
     public void Quit()
     {
+        PlayGamesController.Instance.SaveData();
+        if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
         clickSound.Play();
         Application.Quit();
     }
 
     public void Restart()
     {
+        PlayGamesController.Instance.SaveData();
+        if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
         player.gameOverSound.Stop();
         restartSound.Play();
         Player.isPlayerDead = false;
@@ -135,6 +146,8 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
+        PlayGamesController.Instance.SaveData();
+        if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
         Time.timeScale = 1f;
         Player.isPlayerDead = false;
         clickSound.Play();
