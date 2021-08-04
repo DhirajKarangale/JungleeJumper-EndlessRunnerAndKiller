@@ -18,8 +18,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] GameObject pauseScreen;
     public static bool isPause;
     [SerializeField] Text coinText;
-    [SerializeField] GameObject scoreDecreseTextObject;
-    [SerializeField] Text scoreDescreaseText;
+    public Text scoreDescreaseText;
 
 
     [Header("Coin Collect")]
@@ -75,7 +74,7 @@ public class ScoreManager : MonoBehaviour
                 coinPickPoints = 1;
             }
         }
-        scoreDecreseTextObject.SetActive(false);
+        scoreDescreaseText.gameObject.SetActive(false);
         pauseScreen.SetActive(false);
         backGroundMusic.Play();
         if (cam == null)
@@ -89,7 +88,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if(!Player.isPlayerDead && !isPause && player.playerRuning && !player.isPlayerHitObstacles)
+        if(!Player.isPlayerDead && !isPause && player.playerRuning )
         {
             score += pointePerSecond * Time.deltaTime * player.speed;
         }
@@ -117,28 +116,7 @@ public class ScoreManager : MonoBehaviour
             CoinCollector.isCoinHit = false;
         }
         
-        if(PlayerFireball.playerFireballCollideWithCutter)
-        {
-            scoreDescreaseText.color = Color.red;
-            scoreDescreaseText.text = "-15";
-            scoreDecreseTextObject.SetActive(true);
-            Invoke("ScoreDecreaseTestFalse", 1f);
-        }
-        else if(PlayerFireball.playerFireballCollideWithVerticalCutter)
-        {
-            scoreDescreaseText.color = Color.red;
-            scoreDescreaseText.text = "-25";
-            scoreDecreseTextObject.SetActive(true);
-            Invoke("ScoreDecreaseTestFalse", 1f);
-        }
-        else if (PlayerFireball.playerFireballCollideZombie)
-        {
-            scoreDescreaseText.color = Color.green;
-            scoreDescreaseText.text = "+10";
-            scoreDecreseTextObject.SetActive(true);
-            Invoke("ScoreDecreaseTestFalse", 1f);
-        }
-
+       
         if (score >= 1000)
         {
             scoreText.text = string.Format("{0}.{1}K", Convert.ToInt32((score / 1000)), int.Parse(((score%1000)/100).ToString()[0].ToString()));
@@ -176,10 +154,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void ScoreDecreaseTestFalse()
-    {
-        scoreDecreseTextObject.SetActive(false);
-    }
+   
 
     private void StartCoinMove(Vector3 initial, Action onComplete)
     {
@@ -203,7 +178,6 @@ public class ScoreManager : MonoBehaviour
 
     public void PauseButton()
     {
-        player.runingSound.Stop();
         backGroundMusic.Stop();
         clickSound.Play();
         isPause = true;
@@ -214,7 +188,6 @@ public class ScoreManager : MonoBehaviour
 
     public void ResumeButton()
     {
-        player.runingSound.Play();
         backGroundMusic.Play();
         clickSound.Play();
         isPause = false;
@@ -240,5 +213,15 @@ public class ScoreManager : MonoBehaviour
         clickSound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         ResumeButton();
+    }
+
+    public void DesableText()
+    {
+        Invoke("ScoreDecreaseTestFalse", 1);
+    }
+
+    private void ScoreDecreaseTestFalse()
+    {
+        scoreDescreaseText.gameObject.SetActive(false);
     }
 }

@@ -9,7 +9,7 @@ public class ZombieGenerator : MonoBehaviour
     public void SpwanZombie(Vector3 position)
     {
         int platfrom = Random.Range(0, 100);
-           if (platfrom > generator)
+           if (platfrom >= generator)
            {
             if(GameDataVariable.dataVariables[5] == 2)
             {

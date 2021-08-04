@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text highScore;
     [SerializeField] Text coin;
 
-
-    [SerializeField] AudioSource playerFireballHitSound;
-    [SerializeField] AudioSource zombieFireballHitSound;
     [SerializeField] AudioSource clickSound;
 
     private bool isAdAllow;
@@ -31,7 +28,6 @@ public class GameManager : MonoBehaviour
         isAdAllow = true;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         gameOverScreen.SetActive(false);
-        Player.isPlayerDead = false;
         isGameStart = false;
         scoreManagerObject.SetActive(true);
         Time.timeScale = 0f;
@@ -39,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Player.isPlayerDead) Invoke("GameOver", 0.5f);
+        if (Player.isGameOver) GameOver();
         if (scoreManager.score >= 1000)
         {
             score.text = string.Format("{0}.{1}K", Convert.ToInt32((scoreManager.score / 1000)), int.Parse(((scoreManager.score%1000)/100).ToString()[0].ToString()));
@@ -69,28 +65,13 @@ public class GameManager : MonoBehaviour
         }
         if (ScoreManager.isPause) continueScreen.SetActive(false);
 
-        if(PlayerFireball.playerFireballHitObject)
-        {
-            if (playerFireballHitSound.isPlaying) playerFireballHitSound.Stop();
-            playerFireballHitSound.Play();
-            PlayerFireball.playerFireballHitObject = false;
-        }
-
-        if(ZombieFireball.zombieFireballHitObject)
-        {
-            if (zombieFireballHitSound.isPlaying) zombieFireballHitSound.Stop();
-            zombieFireballHitSound.Play();
-            ZombieFireball.zombieFireballHitObject = false;
-        }
     }
 
     public void GameOver()
     {
         PlayGamesController.Instance.SaveData();
         if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
-        player.runingSound.Stop();
         backGroundMusic.Stop();
-        Player.isPlayerDead = true;
         scoreManagerObject.SetActive(false);
         Time.timeScale = 1f;
         player.gameObject.SetActive(false);
@@ -126,7 +107,6 @@ public class GameManager : MonoBehaviour
     {
         PlayGamesController.Instance.SaveData();
         if (Social.localUser.authenticated) PlayGamesController.PostToLeaderboard(long.Parse(GameDataVariable.dataVariables[0].ToString()));
-        player.gameOverSound.Stop();
         restartSound.Play();
         Player.isPlayerDead = false;
         Invoke("DelayInRestart", 0.2f);
@@ -137,6 +117,7 @@ public class GameManager : MonoBehaviour
         backGroundMusic.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void Continue()
     {
         Time.timeScale = 1f;

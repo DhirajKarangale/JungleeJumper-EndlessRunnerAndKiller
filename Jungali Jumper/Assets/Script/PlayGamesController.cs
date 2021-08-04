@@ -117,7 +117,7 @@ public class PlayGamesController : MonoBehaviour
                 if (msgText != null) msgText.text = "Successfully Logged in";
                 Invoke("DesablemsgText", 3);
                 shop.CloseSignInPanel();
-                if(shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
+                if(shop.msgText.gameObject != null) shop.msgText.gameObject.SetActive(true);
                 if(shop.msgText != null)
                 {
                     shop.msgText.color = Color.green;
@@ -148,7 +148,7 @@ public class PlayGamesController : MonoBehaviour
                 if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n  Check Network.";
                 Invoke("DesablemsgText", 3);
                 shop.ShopSelectButtonManager();
-                if (shop.msgTextObject != null) shop.msgTextObject.SetActive(true);
+                if (shop.msgText.gameObject != null) shop.msgText.gameObject.SetActive(true);
                 if (shop.msgText != null)
                 {
                     shop.msgText.color = Color.red;
@@ -162,7 +162,7 @@ public class PlayGamesController : MonoBehaviour
 
     private void DesableShopText()
     {
-        shop.DesaibleMsgText();
+        shop.msgText.gameObject.SetActive(false);
     }
 
     public void SignInButton()

@@ -40,7 +40,6 @@ public class MainMenu : MonoBehaviour
     void CheckVersionCode(ConfigResponse response)
     {
         remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode",10);
-        Debug.Log("Remote Version Code is : " + remoteVersionCode);
         if (remoteVersionCode != Convert.ToInt32(Application.version))
         {
             ShowForceUpdate();

@@ -11,7 +11,6 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Sprite buttonDiseableSprite;
     public Text msgText;
-    public GameObject msgTextObject;
     [SerializeField] Text coinCountText;
     [SerializeField] Button playerFireball1SelectButton;
     [SerializeField] Button playerFireball2SelectButton;
@@ -51,7 +50,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             xCoinMagnetTimer -= TimeCalculator.instance.CheckDate();
         }
 
-        msgTextObject.SetActive(false);
+        msgText.gameObject.SetActive(false);
         ShowScore();
         ShopSelectButtonManager();
     }
@@ -181,10 +180,6 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    public void DesaibleMsgText()
-    {
-        msgTextObject.SetActive(false);
-    }
     public void CloseSignInPanel()
     {
         buttonSound.Play();
@@ -192,27 +187,33 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         signInPanel.SetActive(false);
     }
 
+    public void DesaibleMsgText()
+    {
+        msgText.gameObject.SetActive(false);
+    }
+
+
 
     public void Fireball2BuyButton()
     {
         buttonSound.Play();
         if(GameDataVariable.dataVariables[2] == 1)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
         else if(GameDataVariable.dataVariables[1] < 5000)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -226,7 +227,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             PlayGamesController.Instance.SaveData();
             Fireball2SelectButton();
             ShowScore();
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Purchased Sucessfully !";
             Invoke("DesaibleMsgText", 1.19f);
@@ -262,7 +263,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         }
         else
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 2.5f);
@@ -276,21 +277,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         buttonSound.Play();
         if (GameDataVariable.dataVariables[4] == 1)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
         else if (GameDataVariable.dataVariables[1] < 10000)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -304,7 +305,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             PlayGamesController.Instance.SaveData();
             Game2SelectButton();
             ShowScore();
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Purchased Sucessfully !";
             Invoke("DesaibleMsgText", 1.19f);
@@ -340,7 +341,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         }
         else
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 1.5f);
@@ -354,21 +355,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         buttonSound.Play();
         if (GameDataVariable.dataVariables[6] == 1)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Already Purchased !";
             Invoke("DesaibleMsgText", 1f);
         }
         else if (GameDataVariable.dataVariables[1] < 1500)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -382,7 +383,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             PlayGamesController.Instance.SaveData();
             DashEffect2SelectButton();
             ShowScore();
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Purchased Sucessfully !";
             Invoke("DesaibleMsgText", 1.19f);
@@ -418,7 +419,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         }
         else
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Item is not Purchased";
             Invoke("DesaibleMsgText", 1.5f);
@@ -432,21 +433,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         buttonSound.Play();
         if (GameDataVariable.dataVariables[8] == 1)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Last ability is not over yet";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (GameDataVariable.dataVariables[1] < 2700)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -458,7 +459,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             GameDataVariable.dataVariables[1] -= 2700;
             GameDataVariable.dataVariables[8] = 1;
             TimeCalculator.instance.SaveTime();
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "3X Gold Added for 30Min";
             Invoke("DesaibleMsgText", 2f);
@@ -475,21 +476,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         buttonSound.Play();
         if (GameDataVariable.dataVariables[9] == 1)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Last ability is not over yet";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (GameDataVariable.dataVariables[1] < 2500)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -500,7 +501,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         {
             GameDataVariable.dataVariables[1] -= 2500;
             GameDataVariable.dataVariables[9] = 1;
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "3X Score Added for 45Min";
             Invoke("DesaibleMsgText", 2f);
@@ -518,21 +519,21 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         buttonSound.Play();
         if (GameDataVariable.dataVariables[10] == 1)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Last ability is not over yet";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (GameDataVariable.dataVariables[1] < 2000)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
         else if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -544,7 +545,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             GameDataVariable.dataVariables[1] -= 2000;
             GameDataVariable.dataVariables[10] = 1;
             TimeCalculator.instance.SaveTime();
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Coin Magnet Added for 1Hr";
             Invoke("DesaibleMsgText", 2f);
@@ -561,7 +562,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         buttonSound.Play();
         if (!Social.localUser.authenticated)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Your are not login to Google play";
             Invoke("DesaibleMsgText", 2f);
@@ -583,7 +584,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         else
         {
             Debug.Log("Reward Ad is not loaded");
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.white;
             msgText.text = "Ad not Loaded try again";
             Invoke("DesaibleMsgText", 1.5f);
@@ -598,7 +599,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidError(string message)
     {
-        if (msgTextObject != null) msgTextObject.SetActive(true);
+        if (msgText.gameObject != null) msgText.gameObject.SetActive(true);
         if (msgText != null)
         {
             msgText.color = Color.white;
@@ -619,7 +620,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             GameDataVariable.dataVariables[1] += 100;
             Advertisement.RemoveListener(this);
             PlayGamesController.Instance.SaveData();
-            if (msgTextObject != null) msgTextObject.SetActive(true);
+            if (msgText.gameObject != null) msgText.gameObject.SetActive(true);
             if (msgText != null)
             {
                 msgText.color = Color.green;
@@ -636,7 +637,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     {
         if (product.definition.id == coin3000)
         {
-            msgTextObject.SetActive(true);
+            msgText.gameObject.SetActive(true);
             msgText.color = Color.green;
             msgText.text = "Purchased Sucessfully ! You Got 3000 Coin";
             Invoke("DesaibleMsgText", 1.9f);
@@ -649,7 +650,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         {
            if(GameDataVariable.dataVariables[11] != 1)
            {
-                msgTextObject.SetActive(true);
+                msgText.gameObject.SetActive(true);
                 msgText.color = Color.green;
                 msgText.text = "Purchased Sucessfully ! Ads Removed";
                 Invoke("DesaibleMsgText", 1.9f);
@@ -658,7 +659,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
            }
             else
             {
-                msgTextObject.SetActive(true);
+                msgText.gameObject.SetActive(true);
                 msgText.color = Color.green;
                 msgText.text = "Already Purchased ! Ads already Removed";
                 Invoke("DesaibleMsgText", 1.9f);
@@ -668,9 +669,10 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     public void OnPurchaseFailed(Product product, PurchaseFailureReason purchaseFailureReason)
     {
-        msgTextObject.SetActive(true);
+        msgText.gameObject.SetActive(true);
         msgText.color = Color.white;
         msgText.text = "Purchased Failed " + purchaseFailureReason;
         Invoke("DesaibleMsgText", 1.4f);
     }
+
 }

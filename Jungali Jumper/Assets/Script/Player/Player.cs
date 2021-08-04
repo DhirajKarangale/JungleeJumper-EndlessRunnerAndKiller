@@ -4,29 +4,18 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    [Header("Refrences")]
+    [Header("Player")]
     private Rigidbody2D rigidBody;
     private Collider2D playerCollider;
     private Animator animator;
-    [SerializeField] ZombieGenerator zombieGenerator;
-    [SerializeField] CutterGenerator cutterGenerator;
-    [SerializeField] LayerMask ground;
-    [SerializeField] LayerMask deathGround;
-    [SerializeField] ScrowllingBackGround scrowlling;
+    [SerializeField] Slider healthSlider;
     [SerializeField] GameObject cutedPlayer;
     [SerializeField] GameObject playerBloodEffect;
     [SerializeField] GameObject bloodSplash;
-    [SerializeField] Slider healthSlider;
-    [SerializeField] GameObject healthSliderGameObject;
-    [SerializeField] GameObject dashButtonObject;
-    [SerializeField] GameObject fireballButton;
     [SerializeField] GameObject playerDestroyEffect;
-    [SerializeField] GameObject fireBall;
-    [SerializeField] GameObject fireBall2;
     [SerializeField] GameObject playerDeadBody;
-    [SerializeField] GameObject zombieFireball;
     [SerializeField] Transform attackPoint;
-    public bool isEnemyFireballAllowed;
+
 
     [Header("Attributes")]
     public float speed;
@@ -34,8 +23,7 @@ public class Player : MonoBehaviour
     private float jumpTimeCounter;
     public float runingSpeedAnim;
     public bool playerRuning;
-    public bool isPlayerHitObstacles;
-    public static bool isPlayerDead;
+    public static bool isPlayerFallDown, isGameOver ,isPlayerDead;
     private Vector3 playerStartPosition;
     public float health;
     public float currentHealth;
@@ -49,16 +37,29 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject dashEffect2;
     [SerializeField] float dashTime;
     [SerializeField] AudioSource dashSound;
-    private bool isPlayerDash,isDashAllowed,isSwipeDown;
+    private bool isPlayerDash, isDashAllowed, isSwipeDown;
+
+    [Header("Layer Mask")]
+    [SerializeField] LayerMask ground;
+    [SerializeField] LayerMask deathGround;
+    
+    [Header("Script Refrence")]
+    [SerializeField] ZombieGenerator zombieGenerator;
+    [SerializeField] CutterGenerator cutterGenerator;
+    [SerializeField] ScrowllingBackGround scrowlling;
+
+    [Header("Objects")]
+    [SerializeField] GameObject dashButtonObject;
+    [SerializeField] GameObject fireballButton;
+    [SerializeField] GameObject fireBall;
+    [SerializeField] GameObject fireBall2;
+    [SerializeField] GameObject zombieFireball;
 
     [Header("Audio")]
     [SerializeField] AudioSource jumpSound;
-    [SerializeField] AudioSource fireBallCollisionSound;
-    [SerializeField] AudioSource deathSound;
     [SerializeField] AudioSource hurtSound;
-    public AudioSource runingSound;
     [SerializeField] AudioSource slideDownSound;
-    public AudioSource gameOverSound;
+    [SerializeField] AudioSource runingSound;
 
     [Header("Level")]
     [SerializeField] float levelDistance;
@@ -69,24 +70,34 @@ public class Player : MonoBehaviour
     
     private void Start()
     {
+        isPlayerDead = false;
+        isGameOver = false;
         rigidBody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+       
         zombieFireball.SetActive(true);
+      
         dashButtonObject.SetActive(true);
         fireballButton.SetActive(true);
-        healthSliderGameObject.SetActive(true);
-        isEnemyFireballAllowed = true;
-        levelDistanceCount = levelDistance;
-        runingSpeedAnim = 1f;
-        playerStartPosition = transform.position;
+        healthSlider.gameObject.SetActive(true);
+      
         isDashAllowed = true;
+     
+        levelDistanceCount = levelDistance;
         currentHealth = health;
+        playerStartPosition = transform.position;
         healthSlider.value = currentHealth / health;
+        runingSpeedAnim = 1f;
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            FireBallButton();
+        }
+
         healthSlider.value = currentHealth / health;
         if (playerStartPosition.x == transform.position.x)
         {
@@ -98,8 +109,8 @@ public class Player : MonoBehaviour
         }
         playerStartPosition = transform.position;
 
-        isPlayerDead = Physics2D.IsTouchingLayers(playerCollider, deathGround);
-        if (isPlayerDead) gameOverSound.Play();
+        isPlayerFallDown = Physics2D.IsTouchingLayers(playerCollider, deathGround);
+        if (isPlayerFallDown) Invoke("SetGameOverTrue", 0.2f);
 
         rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
         isGrounded = Physics2D.IsTouchingLayers(playerCollider, ground);
@@ -153,20 +164,10 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("PlayerDash", false);
             animator.SetBool("PlayerRuning", true);
+            if (!ScoreManager.isPause && GameManager.isGameStart && !isPlayerDead) runingSound.Play();
+            else runingSound.Pause();
         }
-        
-       
-        if (!isGrounded && !isPlayerDash)
-        {
-            runingSound.Play();
-        }
-
-
-        if (PlayerFireball.twoFireballCollide)
-        {
-            if (fireBallCollisionSound.isPlaying) fireBallCollisionSound.Stop();
-            fireBallCollisionSound.Play();
-        }
+             
 
         if(ZombieFireball.zombieFireballHitPlayer)
         {
@@ -193,6 +194,7 @@ public class Player : MonoBehaviour
         isSwipeDown = false;
         animator.SetBool("PlayerDash", true);
         animator.SetBool("PlayerRuning", false);
+        runingSound.Pause();
         Invoke("DesableDash", dashTime);
     }
 
@@ -203,6 +205,8 @@ public class Player : MonoBehaviour
         isSwipeDown = false;
         animator.SetBool("PlayerDash", false);
         animator.SetBool("PlayerRuning", true);
+        if (!ScoreManager.isPause && GameManager.isGameStart && !isPlayerDead) runingSound.Play();
+        else runingSound.Pause();
         isPlayerDash = false;
         isDashAllowed = true;
     }
@@ -244,6 +248,7 @@ public class Player : MonoBehaviour
 
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("PlayerRuning", false);
+        runingSound.Pause();
         animator.SetBool("isDoubleJump", isDoubleJump);
     }
 
@@ -267,22 +272,12 @@ public class Player : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Cutter") || (collision.gameObject.tag == "VerC"))
         {
-            DestroyPlayer();
+            CutPlayer();
         }
         else if(collision.gameObject.tag == "Zombie")
         {
-            runingSound.Stop();
-            scrowlling.backGroundSpeed = 0f;
-            isPlayerHitObstacles = true;
-            isEnemyFireballAllowed = false;
-            zombieFireball.SetActive(false);
-            dashButtonObject.SetActive(false);
-            fireballButton.SetActive(false);
-            Invoke("PlayerHitZombie", 0.3f);
-        }
-        else
-        {
-            isPlayerHitObstacles = false;
+
+            PlayerHitZombie();
         }
     }
 
@@ -290,58 +285,48 @@ public class Player : MonoBehaviour
     {
         if (hurtSound.isPlaying) hurtSound.Stop();
         hurtSound.Play();
+
         if (currentHealth <= 0)
         {
-            Destroy(Instantiate(playerDestroyEffect, transform.position, transform.rotation), 3f);
-            isEnemyFireballAllowed = false;
-            DestroyPlayer();
+            CutPlayer();
         }
         else
         {
             currentHealth -= damage;
         }
     }
-
-    private void GameOverSound()
-    {
-        gameOverSound.Play();
-    }
             
-    private void DestroyPlayer()
+    private void CutPlayer()
     {
         runingSound.Stop();
-        isPlayerHitObstacles = true;
+        isPlayerDead = true;
         scrowlling.backGroundSpeed = 0f;
-        deathSound.Play();
         currentHealth = 0;
         Instantiate(cutedPlayer, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
         Instantiate(bloodSplash, transform.position + new Vector3(0, -1, -1), transform.rotation);
         Destroy(Instantiate(playerBloodEffect, transform.position, Quaternion.identity), 2f);
-        healthSliderGameObject.SetActive(false);
+        healthSlider.gameObject.SetActive(false);
         dashButtonObject.SetActive(false);
         fireballButton.SetActive(false);
         this.gameObject.SetActive(false);
         zombieFireball.SetActive(false);
-        Invoke("GameOverSound", 1f);
-        Invoke("PlayerDead", 2f);
-    }
-
-    private void PlayerDead()
-    {
-        isPlayerDead = true;
+        Invoke("SetGameOverTrue", 2f);
     }
 
     private void PlayerHitZombie()
     {
-        Destroy(Instantiate(playerDestroyEffect, transform.position, transform.rotation), 5f);
-        
+        isPlayerDead = true;
+        runingSound.Stop();
+        scrowlling.backGroundSpeed = 0f;
         speed = 0;
-        deathSound.Play();
-        gameObject.SetActive(false);
-        Instantiate(playerDeadBody, transform.position, Quaternion.identity);
         currentHealth = 0;
-        Invoke("GameOverSound", 1f);
-        Invoke("PlayerDead", 2f);
+        zombieFireball.SetActive(false);
+        dashButtonObject.SetActive(false);
+        fireballButton.SetActive(false);
+        gameObject.SetActive(false);
+        Destroy(Instantiate(playerDestroyEffect, transform.position, transform.rotation), 5f);
+        Instantiate(playerDeadBody, transform.position, Quaternion.identity);
+        Invoke("SetGameOverTrue", 2f);
     }
 
     public void FireBallButton()
@@ -361,5 +346,12 @@ public class Player : MonoBehaviour
                 if (isPlayerDead) Destroy(currentFireball);
             }
      }
+    }
+
+    private void SetGameOverTrue()
+    {
+        speed = 0;
+        isPlayerDead = true;
+        isGameOver = true;
     }
 }

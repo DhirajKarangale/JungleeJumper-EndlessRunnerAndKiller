@@ -28,9 +28,5 @@ public class AdManager : MonoBehaviour
         {
             Advertisement.Show("Interstitial_Android");
         }
-        else
-        {
-            Debug.Log("Interstitial ad not ready at the moment! Please try again later!");
-        }
     }
 }

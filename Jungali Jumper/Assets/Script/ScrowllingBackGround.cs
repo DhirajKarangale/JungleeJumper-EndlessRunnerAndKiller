@@ -14,7 +14,7 @@ public class ScrowllingBackGround : MonoBehaviour
 
     private void Update()
     {
-        if(player.playerRuning && !player.isPlayerHitObstacles && !Player.isPlayerDead)
+        if(player.playerRuning && !Player.isPlayerDead)
         {
             backGround.material.mainTextureOffset += new Vector2(backGroundSpeed * Time.deltaTime, 0);
         }
