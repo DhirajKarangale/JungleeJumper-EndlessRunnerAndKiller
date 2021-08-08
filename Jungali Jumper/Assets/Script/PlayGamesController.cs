@@ -162,7 +162,7 @@ public class PlayGamesController : MonoBehaviour
 
     private void DesableShopText()
     {
-        shop.msgText.gameObject.SetActive(false);
+        shop.msgTextObject.SetActive(false);
     }
 
     public void SignInButton()

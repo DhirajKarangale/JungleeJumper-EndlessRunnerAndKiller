@@ -12,6 +12,5 @@ public class Cutter : MonoBehaviour
    private void Update()
    {
         if(Player.isPlayerDead || ScoreManager.isPause) cutterSound.Stop();
-      
    }
 }

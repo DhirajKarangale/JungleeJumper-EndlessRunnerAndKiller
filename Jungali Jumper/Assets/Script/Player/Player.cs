@@ -93,10 +93,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            FireBallButton();
-        }
+        if (Input.GetKeyDown(KeyCode.C)) FireBallButton();
+
+        if (Input.GetKeyDown(KeyCode.V)) DashButton();
 
         healthSlider.value = currentHealth / health;
         if (playerStartPosition.x == transform.position.x)
@@ -252,7 +251,7 @@ public class Player : MonoBehaviour
         animator.SetBool("isDoubleJump", isDoubleJump);
     }
 
-    public void SwipeUp()
+    public void DashButton()
     {
         if(isGrounded)
         {

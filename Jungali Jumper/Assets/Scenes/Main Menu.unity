@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 231528810}
   - component: {fileID: 231528809}
   m_Layer: 0
-  m_Name: 240804__ryanconway__woodcutting
+  m_Name: woodcutting Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10502,7 +10502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1018984522
 RectTransform:
   m_ObjectHideFlags: 0

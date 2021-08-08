@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class CoinCollector : MonoBehaviour
 {
-    private AudioSource coinPickSound;
     [SerializeField] GameObject coinCollectEffect;
     public static Transform coinPosition;
     public static bool isCoinHit;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rigidBody;
     private float timeStamp;
     private bool goToPlayer;
     private GameObject player;
@@ -14,8 +13,7 @@ public class CoinCollector : MonoBehaviour
 
     private void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
-        coinPickSound = GameObject.Find("CoinPickSound").GetComponent<AudioSource>();
+        rigidBody = GetComponent<Rigidbody2D>();
         isCoinHit = false;
     }
 
@@ -24,7 +22,7 @@ public class CoinCollector : MonoBehaviour
         if (goToPlayer)
         {
             playerDirection = -(transform.position - player.transform.position).normalized;
-            rigidbody.velocity = new Vector2(playerDirection.x, playerDirection.y) * 15f * (Time.time / timeStamp);
+            rigidBody.velocity = new Vector2(playerDirection.x, playerDirection.y) * 15f * (Time.time / timeStamp);
         }
     }
 
@@ -33,20 +31,16 @@ public class CoinCollector : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             coinPosition = transform;
-            if (coinPickSound.isPlaying) coinPickSound.Stop();
-            coinPickSound.Play();
             gameObject.SetActive(false);
-            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position,Quaternion.identity), 0.1f);
+            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position,Quaternion.identity), 0.4f);
             isCoinHit = true;
             goToPlayer = false;
         }
         else if((collision.gameObject.tag == "PlayerFireball") && (GameDataVariable.dataVariables[3] == 2))
         {
             coinPosition = transform;
-            if (coinPickSound.isPlaying) coinPickSound.Stop();
-            coinPickSound.Play();
             gameObject.SetActive(false);
-            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position, Quaternion.identity), 0.1f);
+            Destroy(Instantiate(coinCollectEffect, this.gameObject.transform.position, Quaternion.identity), 0.4f);
             isCoinHit = true;
             goToPlayer = false;
         }
