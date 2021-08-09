@@ -116,14 +116,14 @@ public class JSONObjectTester : MonoBehaviour {
 
 		//You can iterate through all values with a simple for-each loop
 		foreach (KeyValuePair<string, JSONValue> pair in emptyObject) {
-			Debug.Log("key : value -> " + pair.Key + " : " + pair.Value);
+		//	Debug.Log("key : value -> " + pair.Key + " : " + pair.Value);
 			
 			//Each JSONValue has a JSONValueType that tells you what type of value it is. Valid values are: String, Number, Object, Array, Boolean or Null.
-			Debug.Log("pair.Value.Type.ToString() -> " + pair.Value.Type.ToString());
+			// Debug.Log("pair.Value.Type.ToString() -> " + pair.Value.Type.ToString());
 
 			if (pair.Value.Type == JSONValueType.Number) {
 				//You can access values with the properties Str, Number, Obj, Array and Boolean
-				Debug.Log("Value is a number: " + pair.Value.Number);
+			//	Debug.Log("Value is a number: " + pair.Value.Number);
 			}
 		}
 
@@ -134,24 +134,24 @@ public class JSONObjectTester : MonoBehaviour {
 			{"thirdKey", false}
 		};
 
-		//JSONObject overrides ToString() and outputs valid JSON
-		Debug.Log("newObject.ToString() -> " + newObject.ToString());
+        //JSONObject overrides ToString() and outputs valid JSON
+        //	Debug.Log("newObject.ToString() -> " + newObject.ToString());
 
-		//JSONObjects support array accessors
-		Debug.Log("newObject[\"key\"].Str -> " + newObject["key"].Str);
+        //JSONObjects support array accessors
+        //	Debug.Log("newObject[\"key\"].Str -> " + newObject["key"].Str);
 
-		//It also has a method to do the same
-		Debug.Log("newObject.GetValue(\"otherKey\").ToString() -> " + newObject.GetValue("otherKey").ToString());
+        //It also has a method to do the same
+        //	Debug.Log("newObject.GetValue(\"otherKey\").ToString() -> " + newObject.GetValue("otherKey").ToString());
 
-		//As well as a method to determine whether a key exists or not
-		Debug.Log("newObject.ContainsKey(\"NotAKey\") -> " + newObject.ContainsKey("NotAKey"));
+        //As well as a method to determine whether a key exists or not
+        //	Debug.Log("newObject.ContainsKey(\"NotAKey\") -> " + newObject.ContainsKey("NotAKey"));
 
-		//Elements can removed with Remove() and the whole object emptied with Clear()
-		newObject.Remove("key");
-		Debug.Log("newObject with \"key\" removed: " + newObject.ToString());
-		
-		newObject.Clear();
-		Debug.Log("newObject cleared: " + newObject.ToString());
+        //Elements can removed with Remove() and the whole object emptied with Clear()
+        newObject.Remove("key");
+        //	Debug.Log("newObject with \"key\" removed: " + newObject.ToString());
+
+        newObject.Clear();
+	  // Debug.Log("newObject cleared: " + newObject.ToString());
 	}
 	
 	void OnGUI() {
@@ -159,13 +159,14 @@ public class JSONObjectTester : MonoBehaviour {
 
 		if (GUI.Button(new Rect(Screen.width - 150, 10, 145, 75), "Evaluate JSON")) {
 			var jsonObject = JSONObject.Parse(stringToEvaluate);
-			if (jsonObject == null) {
-				Debug.LogError("Failed to parse string, JSONObject == null");
-			} else {
-				Debug.Log("Succesfully created JSONObject");
-				Debug.Log(jsonObject.ToString());
-			}
-		}
+		/*	if (jsonObject == null) {
+                //Debug.LogError("Failed to parse string, JSONObject == null");
+            }
+            else {
+				//Debug.Log("Succesfully created JSONObject");
+                //Debug.Log(jsonObject.ToString());
+            }*/
+        }
 
 		if (GUI.Button(new Rect(Screen.width - 150, 95, 145, 75), "Clear textbox")) {
 			stringToEvaluate = string.Empty;

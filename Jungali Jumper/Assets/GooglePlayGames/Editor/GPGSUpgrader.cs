@@ -35,11 +35,11 @@ namespace GooglePlayGames.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 return;
-            Debug.Log("GPGSUpgrader start");
+         //   Debug.Log("GPGSUpgrader start");
             string initialVer = GPGSProjectSettings.Instance.Get(GPGSUtil.LASTUPGRADEKEY, "00000");
             if (!initialVer.Equals(PluginVersion.VersionKey))
             {
-                Debug.Log("Upgrading from format version " + initialVer + " to " + PluginVersion.VersionKey);
+             //   Debug.Log("Upgrading from format version " + initialVer + " to " + PluginVersion.VersionKey);
                 string prevVer = initialVer;
                 prevVer = Upgrade911(prevVer);
                 prevVer = Upgrade915(prevVer);
@@ -53,7 +53,7 @@ namespace GooglePlayGames.Editor
                 prevVer = Upgrade941(prevVer);
                 prevVer = Upgrade942(prevVer);
 
-                Debug.Log("Done all upgrades to " + PluginVersion.VersionKey);
+              //  Debug.Log("Done all upgrades to " + PluginVersion.VersionKey);
 
                 string msg = GPGSStrings.PostInstall.Text.Replace(
                     "$VERSION",
@@ -102,7 +102,7 @@ namespace GooglePlayGames.Editor
             }
 
             AssetDatabase.Refresh();
-            Debug.Log("GPGSUpgrader done");
+          //  Debug.Log("GPGSUpgrader done");
         }
 
         /// <summary>
@@ -118,14 +118,14 @@ namespace GooglePlayGames.Editor
             string[] dups = Directory.GetFiles(root, "* 1.*");
             foreach (string d in dups)
             {
-                Debug.Log("Deleting duplicate file: " + d);
+             //   Debug.Log("Deleting duplicate file: " + d);
                 File.Delete(d);
             }
 
             dups = Directory.GetFiles(root, "* 2.*");
             foreach (string d in dups)
             {
-                Debug.Log("Deleting duplicate file: " + d);
+             //   Debug.Log("Deleting duplicate file: " + d);
                 File.Delete(d);
             }
 
@@ -141,7 +141,7 @@ namespace GooglePlayGames.Editor
             string file = "Assets/Plugins/Android/play-games-plugin-support.aar";
             if (File.Exists(file))
             {
-                Debug.Log("Deleting obsolete file: " + file);
+              //  Debug.Log("Deleting obsolete file: " + file);
                 File.Delete(file);
             }
 
@@ -170,7 +170,7 @@ namespace GooglePlayGames.Editor
             {
                 if (Directory.Exists(directory))
                 {
-                    Debug.Log("Deleting obsolete directory: " + directory);
+                  //  Debug.Log("Deleting obsolete directory: " + directory);
                     Directory.Delete(directory, true);
                 }
             }
@@ -179,7 +179,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                  //  Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -234,7 +234,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                 //   Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -260,7 +260,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                  //  Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -275,7 +275,7 @@ namespace GooglePlayGames.Editor
         /// <returns>the version string upgraded to.</returns>
         private static string Upgrade930(string prevVer)
         {
-            Debug.Log("Upgrading from format version " + prevVer + " to 00930");
+         //   Debug.Log("Upgrading from format version " + prevVer + " to 00930");
 
             // As of 930, the CRM API is handled by the Native SDK, not GmsCore.
             string[] obsoleteFiles =
@@ -313,7 +313,7 @@ namespace GooglePlayGames.Editor
 
         private static string Upgrade928(string prevVer)
         {
-            Debug.Log("Upgrading from version " + prevVer + " to 00928");
+          //  Debug.Log("Upgrading from version " + prevVer + " to 00928");
             //remove the jar resolver and if found, then
             // warn the user that restarting the editor is required.
             string[] obsoleteFiles =
@@ -330,7 +330,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                  //  Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -366,7 +366,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                  //  Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -381,7 +381,7 @@ namespace GooglePlayGames.Editor
         /// <returns>the version string upgraded to.</returns>
         private static string Upgrade915(string prevVer)
         {
-            Debug.Log("Upgrading from format version " + prevVer + " to 00915");
+           // Debug.Log("Upgrading from format version " + prevVer + " to 00915");
 
             // all that was done was moving the Editor files to be in GooglePlayGames/Editor
             string[] obsoleteFiles =
@@ -428,7 +428,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                  //  Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -443,7 +443,7 @@ namespace GooglePlayGames.Editor
         /// <returns>the version string upgraded to.</returns>
         private static string Upgrade911(string prevVer)
         {
-            Debug.Log("Upgrading from format version " + prevVer + " to 00911");
+          //  Debug.Log("Upgrading from format version " + prevVer + " to 00911");
 
             // delete obsolete files, if they are there
             string[] obsoleteFiles =
@@ -460,7 +460,7 @@ namespace GooglePlayGames.Editor
             {
                 if (File.Exists(file))
                 {
-                    Debug.Log("Deleting obsolete file: " + file);
+                  //  Debug.Log("Deleting obsolete file: " + file);
                     File.Delete(file);
                 }
             }
@@ -475,12 +475,12 @@ namespace GooglePlayGames.Editor
             {
                 if (Directory.Exists(directory))
                 {
-                    Debug.Log("Deleting obsolete directory: " + directory);
+                 //   Debug.Log("Deleting obsolete directory: " + directory);
                     Directory.Delete(directory, true);
                 }
             }
 
-            Debug.Log("Done upgrading from format version " + prevVer + " to 00911");
+          //  Debug.Log("Done upgrading from format version " + prevVer + " to 00911");
             return "00911";
         }
     }

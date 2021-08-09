@@ -33,6 +33,8 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
+        Unity.Collections.NativeLeakDetection.Mode = Unity.Collections.NativeLeakDetectionMode.Disabled;
+        Debug.unityLogger.logEnabled = false;
         ConfigManager.FetchCompleted += CheckVersionCode;
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
@@ -54,28 +56,28 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
       
-        if (Input.GetKey(KeyCode.Escape) && !isProfilePanelActive && !isShopActive && !isAboutActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isProfilePanelActive && !isShopActive && !isAboutActive)
         {
             if (isQuitPanelActive) DesableQuitPanel();
             else SetQuitPanel();
         }
 
-        if (Input.GetKey(KeyCode.Escape) && isProfilePanelActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && isProfilePanelActive)
         {
             CloseProfileButton();
         }
 
-        if (Input.GetKey(KeyCode.Escape) && isShopActive)
+        if (Input.GetKeyDown(KeyCode.Escape) && isShopActive)
         {
             CloseShopButton();
         }
 
-        if ((Input.GetKey(KeyCode.Escape) && isAboutActive))
+        if ((Input.GetKeyDown(KeyCode.Escape) && isAboutActive))
         {
             CloseAboutButton();
         }
 
-        if(Input.GetKey(KeyCode.Escape) && isForceUpdateActive)
+        if(Input.GetKeyDown(KeyCode.Escape) && isForceUpdateActive)
         {
             UpdateNowButton();
         }

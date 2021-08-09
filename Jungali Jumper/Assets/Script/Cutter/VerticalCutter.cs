@@ -3,7 +3,6 @@ using UnityEngine;
 public class VerticalCutter : MonoBehaviour
 {
     private Player player;
-    [SerializeField] GameObject destroyEffect;
     [SerializeField] AudioSource cutterSound;
 
     private void Start()

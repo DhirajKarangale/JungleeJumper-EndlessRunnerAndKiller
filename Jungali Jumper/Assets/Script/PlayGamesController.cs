@@ -124,7 +124,7 @@ public class PlayGamesController : MonoBehaviour
                     shop.msgText.text = "Successfully Logged in";
                 }
                 Invoke("DesableShopText", 3);
-                Debug.Log("Logged in to Google Play Games Services");
+               // Debug.Log("Logged in to Google Play Games Services");
             }
             else
             {
@@ -138,7 +138,7 @@ public class PlayGamesController : MonoBehaviour
                     playerName.text = "Junglee Jumper";
                 if (playerName2 != null)
                     playerName2.text = "Junglee Jumper";
-                Debug.Log("Unable to sign in to Google Play Games Services");
+              //  Debug.Log("Unable to sign in to Google Play Games Services");
                 if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
                 profileMsgTxt.color = Color.red;
                 if (profileMsgTxt != null) profileMsgTxt.text = "Could not login to Google Play Games Services. \n Check Network.";
@@ -216,14 +216,14 @@ public class PlayGamesController : MonoBehaviour
     public static void PostToLeaderboard(long newScore)
     {
         Social.ReportScore(newScore, "CgkIytPyyJcSEAIQAg", (bool success) => {
-            if (success)
+           /* if (success)
             {
                 Debug.Log("Posted new score to leaderboard");
             }
             else
             {
                 Debug.LogError("Unable to post new score to leaderboard");
-            }
+            }*/
         });
     }
 

@@ -210,7 +210,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
-        else if (!Social.localUser.authenticated)
+       /* else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.white;
@@ -218,7 +218,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }
+        }*/
         else
         {
             GameDataVariable.dataVariables[1] -= 5000;
@@ -582,10 +582,10 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             Advertisement.Show("Rewarded_Android");
         else
         {
-            Debug.Log("Reward Ad is not loaded");
+          //  Debug.Log("Reward Ad is not loaded");
             msgTextObject.SetActive(true);
             msgText.color = Color.white;
-            msgText.text = "Ad not Loaded Check Network";
+            msgText.text = "Ad not Loaded Check Try Again";
             Invoke("DesaibleMsgText", 1.5f);
         }
     }
@@ -593,7 +593,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsReady(string placementId)
     {
-        Debug.Log("Ads ready");
+     //   Debug.Log("Ads ready");
     }
 
     public void OnUnityAdsDidError(string message)
@@ -609,7 +609,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        Debug.Log("Ads Started");
+      //  Debug.Log("Ads Started");
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
