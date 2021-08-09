@@ -210,7 +210,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             msgText.text = "Not Enough Coin";
             Invoke("DesaibleMsgText", 1.7f);
         }
-       /* else if (!Social.localUser.authenticated)
+        else if (!Social.localUser.authenticated)
         {
             msgTextObject.SetActive(true);
             msgText.color = Color.white;
@@ -218,7 +218,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
             Invoke("DesaibleMsgText", 2f);
             signInPanel.SetActive(true);
             isSigninPanelActivate = true;
-        }*/
+        }
         else
         {
             GameDataVariable.dataVariables[1] -= 5000;
@@ -559,19 +559,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
     public void RewardedAdButton()
     {
         buttonSound.Play();
-        if (!Social.localUser.authenticated)
-        {
-            msgTextObject.SetActive(true);
-            msgText.color = Color.white;
-            msgText.text = "Your are not login to Google play";
-            Invoke("DesaibleMsgText", 2f);
-            signInPanel.SetActive(true);
-            isSigninPanelActivate = true;
-        }
-        else
-        {
-            ShowRewardedVideoAd();
-        }
+        ShowRewardedVideoAd();
     }
 
 
@@ -585,7 +573,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
           //  Debug.Log("Reward Ad is not loaded");
             msgTextObject.SetActive(true);
             msgText.color = Color.white;
-            msgText.text = "Ad not Loaded Check Try Again";
+            msgText.text = "Ad not Loaded Try Again";
             Invoke("DesaibleMsgText", 1.5f);
         }
     }

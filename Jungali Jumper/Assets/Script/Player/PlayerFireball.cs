@@ -11,25 +11,22 @@ public class PlayerFireball : MonoBehaviour
     private Player player;
     private ScoreManager scoreManager;
 
-    
+
     [SerializeField] GameObject cutterDestroyEffect;
 
     [SerializeField] GameObject zombieBloodSplash;
     [SerializeField] GameObject enemieDestriyEffect;
-
-
+          
     [Header("Camera Shake")]
     private Vector3 cameraInitialPosition;
-    private float shakeMagnetude = 0.2f, shakeTime = 0.45f;
+    private float shakeMagnetude = 0.22f, shakeTime = 0.2f;
     private Camera mainCamera;
-
-
 
     private void Start()
     {
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         scoreManager = FindObjectOfType<ScoreManager>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rigidBody = GetComponent<Rigidbody2D>();
         if(GameDataVariable.dataVariables[3] == 2)
         {
@@ -46,11 +43,11 @@ public class PlayerFireball : MonoBehaviour
 
         if (collision.gameObject.tag == "Ground")
         {
-            Destroy(gameObject);
             Destroy(Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation), 1f);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Zombie")
-        {          
+        {
             ShakeIt();
 
             collision.gameObject.SetActive(false);
@@ -63,8 +60,8 @@ public class PlayerFireball : MonoBehaviour
             scoreManager.scoreDescreaseText.gameObject.SetActive(true);
             scoreManager.DesableText();
 
-            Destroy(gameObject);
             Destroy(Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation), 1);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "ZombieFireball")
         {
@@ -77,12 +74,12 @@ public class PlayerFireball : MonoBehaviour
             scoreManager.DesableText();
 
             Destroy(collision.gameObject);
-            Destroy(gameObject);
             Destroy(Instantiate(fireballExplosionEffect, transform.position, transform.rotation), 2f);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "Cutter")
         {
-            ShakeIt();
+           ShakeIt();
 
             collision.gameObject.SetActive(false);
             Destroy(Instantiate(cutterDestroyEffect, transform.position, transform.rotation), 2f);
@@ -93,8 +90,8 @@ public class PlayerFireball : MonoBehaviour
             scoreManager.scoreDescreaseText.text = "-15";
             scoreManager.DesableText();
 
-            Destroy(gameObject);
             Destroy(Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation), 1);
+            Destroy(gameObject);
         }
         else if (collision.gameObject.tag == "VerC")
         {
@@ -109,12 +106,12 @@ public class PlayerFireball : MonoBehaviour
             scoreManager.scoreDescreaseText.gameObject.SetActive(true);
             scoreManager.DesableText();
 
-            Destroy(gameObject);
             Destroy(Instantiate(impactEffect, transform.position + new Vector3(1, 0, 0), transform.rotation), 1);
+            Destroy(gameObject);
         }
     }
 
-    private void ShakeIt()
+    public void ShakeIt()
     {
         cameraInitialPosition = mainCamera.transform.position;
         InvokeRepeating("StartCameraShaking", 0f, 0.005f);
@@ -130,12 +127,10 @@ public class PlayerFireball : MonoBehaviour
         cameraIntermadiatePosition.y += cameraShakingOffsetY;
         mainCamera.transform.position = cameraIntermadiatePosition;
     }
-   
 
     private void StopCameraShaking()
     {
         CancelInvoke("StartCameraShaking");
         mainCamera.transform.position = cameraInitialPosition;
     }
-   
 }

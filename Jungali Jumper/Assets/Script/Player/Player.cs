@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Collider2D playerCollider;
     private Animator animator;
+    private float maxYVelocity;
+    [SerializeField] ParticleSystem fallDownEffect;
     [SerializeField] Slider healthSlider;
     [SerializeField] GameObject cutedPlayer;
     [SerializeField] GameObject playerBloodEffect;
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     public float currentHealth;
     [SerializeField] float zombieFireballDamage;
 
+    
     [Header("Dash")]
     [SerializeField] Button dashButton;
     [SerializeField] Sprite dashImage;
@@ -63,7 +66,7 @@ public class Player : MonoBehaviour
 
     [Header("Level")]
     [SerializeField] float levelDistance;
-    private float levelDistanceCount;
+    [SerializeField] float levelDistanceCount;
     [SerializeField] float speedMultiplier;
     
     private bool isGrounded, doubleJumpAllowed, isJumping, isButtonPressed, isDoubleJump;
@@ -130,6 +133,13 @@ public class Player : MonoBehaviour
             }
         }
 
+        if (isGrounded)
+        {
+            if (maxYVelocity <= -20)
+            {
+                fallDownEffect.Play();
+            }
+        }
         if (!isButtonPressed && !isPlayerDead)
         {
             Jump();
@@ -212,6 +222,7 @@ public class Player : MonoBehaviour
        
     private void Jump()
     {
+        maxYVelocity = 0;
         if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Stationary) && (isJumping))
         {
             if (jumpTimeCounter > 0)
@@ -243,7 +254,11 @@ public class Player : MonoBehaviour
                 if (jumpSound.isPlaying) jumpSound.Stop();
                 jumpSound.Play();
         }
-        
+
+        if (rigidBody.velocity.y < maxYVelocity)
+        {
+            maxYVelocity = rigidBody.velocity.y;
+        }
 
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("PlayerRuning", false);
@@ -353,4 +368,6 @@ public class Player : MonoBehaviour
         isPlayerDead = true;
         isGameOver = true;
     }
+      
+
 }

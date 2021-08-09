@@ -142,11 +142,9 @@ public class PlayGamesController : MonoBehaviour
                 if (profileMsgTxtObject != null) profileMsgTxtObject.SetActive(true);
                 profileMsgTxt.color = Color.red;
                 if (profileMsgTxt != null) profileMsgTxt.text = "Could not login to Google Play Games Services. \n Check Network.";
-                Invoke("DesableProfilemsgText", 3);
                 if (msgTextObject != null) msgTextObject.SetActive(true);
                 msgText.color = Color.red;
                 if (msgText != null) msgText.text = "Could not login to Google Play Games Services. \n  Check Network.";
-                Invoke("DesablemsgText", 3);
                 shop.ShopSelectButtonManager();
                 if (shop.msgText.gameObject != null) shop.msgText.gameObject.SetActive(true);
                 if (shop.msgText != null)
@@ -154,6 +152,8 @@ public class PlayGamesController : MonoBehaviour
                     shop.msgText.color = Color.red;
                     shop.msgText.text = "Could not login to Google Play Games Services. \n  Check Network.";
                 }
+                Invoke("DesablemsgText", 3);
+                Invoke("DesableProfilemsgText", 3);
                 Invoke("DesableShopText", 3);
             }
         });
