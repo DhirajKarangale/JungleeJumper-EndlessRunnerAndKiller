@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
 
         if (isGrounded)
         {
-            if (maxYVelocity <= -20)
+            if (maxYVelocity <= -22)
             {
                 fallDownEffect.Play();
             }

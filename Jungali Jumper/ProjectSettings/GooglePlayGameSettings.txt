@@ -1,8 +1,8 @@
 lastUpgrade=01012
 proj.pluginVersion=0.10.12
-proj.AppId=624802179530
+proj.AppId=170730653496
 and.BundleId=com.DKSoftware.JungleeJumperEndlessRunnerAndKiller
 proj.classDir=Assets
 proj.ConstantsClassName=GPGSIds
-and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e624802179530%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.DKSoftware.JungleeJumperEndlessRunnerAndKiller%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+High+Score--%3e%0d%0a++%3cstring+name%3d%22leaderboard_high_score%22+translatable%3d%22false%22%3eCgkIytPyyJcSEAIQAg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
-and.ClientId=624802179530-gd63p9jk8k1oepkfcb69m6528i4o5bqp.apps.googleusercontent.com
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e170730653496%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.DKSoftware.JungleeJumperEndlessRunnerAndKiller%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+High+Score--%3e%0d%0a++%3cstring+name%3d%22leaderboard_high_score%22+translatable%3d%22false%22%3eCgkIuI7cgvwEEAIQAg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=170730653496-vavn298u7iefla492nt3fbppii2ukohf.apps.googleusercontent.com

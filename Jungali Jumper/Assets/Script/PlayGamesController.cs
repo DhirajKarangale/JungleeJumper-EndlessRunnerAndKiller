@@ -215,7 +215,7 @@ public class PlayGamesController : MonoBehaviour
     #region LeaderBoard
     public static void PostToLeaderboard(long newScore)
     {
-        Social.ReportScore(newScore, "CgkIytPyyJcSEAIQAg", (bool success) => {
+        Social.ReportScore(newScore, "CgkIuI7cgvwEEAIQAg", (bool success) => {
            /* if (success)
             {
                 Debug.Log("Posted new score to leaderboard");
@@ -232,7 +232,7 @@ public class PlayGamesController : MonoBehaviour
         buttonSound.Play();
         if (Social.localUser.authenticated)
         {
-            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIytPyyJcSEAIQAg");
+            PlayGamesPlatform.Instance.ShowLeaderboardUI("CgkIuI7cgvwEEAIQAg");
         }
         else
         {

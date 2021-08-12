@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
 
     void CheckVersionCode(ConfigResponse response)
     {
-        remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode",10);
+        remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode",13);
         if (remoteVersionCode != Convert.ToInt32(Application.version))
         {
             ShowForceUpdate();
@@ -249,6 +249,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowForceUpdate()
     {
+        buttonSound.Play();
         isForceUpdateActive = true; 
         forceUpdatePanel.SetActive(true);
         mainPanel.SetActive(false);
@@ -259,6 +260,7 @@ public class MainMenu : MonoBehaviour
 
     public void CloseForceUpdate()
     {
+        buttonSound.Play();
         isForceUpdateActive = false;
         forceUpdatePanel.SetActive(false);
         mainPanel.SetActive(true);
@@ -269,6 +271,7 @@ public class MainMenu : MonoBehaviour
 
     public void UpdateNowButton()
     {
+        buttonSound.Play();
         Application.OpenURL("https://play.google.com/store/apps/details?id=com.DKSoftware.JungleeJumperEndlessRunnerAndKiller");
     }
 
