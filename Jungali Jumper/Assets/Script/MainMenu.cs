@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
 using Unity.RemoteConfig;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,18 +13,14 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject profilePanel;
     [SerializeField] GameObject quitPanel;
-    [SerializeField] GameObject shopCanvas;
+    [SerializeField] GameObject shopPanel;
     [SerializeField] GameObject aboutPanel;
     [SerializeField] GameObject forceUpdatePanel;
-    [SerializeField] GameObject playerObject;
-    [SerializeField] GameObject groundObject;
-    [SerializeField] GameObject quadBGObject;
     [SerializeField] AudioSource startButtonSound;
     [SerializeField] AudioSource buttonSound;
     [SerializeField] Text highScoreCount;
     [SerializeField] Text coinCount;
-    private bool isQuitPanelActive,isShopActive,isAboutActive,isForceUpdateActive;
-    public static bool isProfilePanelActive;
+    private bool isQuitPanelActive;
 
     private int remoteVersionCode;
 
@@ -31,55 +28,35 @@ public class MainMenu : MonoBehaviour
     public struct appAttributes { }
 
 
-    void Awake()
+    private void Awake()
     {
+        isQuitPanelActive = false;
+
         Unity.Collections.NativeLeakDetection.Mode = Unity.Collections.NativeLeakDetectionMode.Disabled;
-        Debug.unityLogger.logEnabled = false;
         ConfigManager.FetchCompleted += CheckVersionCode;
         ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
     }
 
-    void CheckVersionCode(ConfigResponse response)
+    private void CheckVersionCode(ConfigResponse response)
     {
         remoteVersionCode = ConfigManager.appConfig.GetInt("VersionCode",13);
         if (remoteVersionCode != Convert.ToInt32(Application.version))
         {
-            ShowForceUpdate();
+            ActivePanel(forceUpdatePanel);
         }
         else
         {
-            CloseForceUpdate();
+            CloseButton();
         }
     }
 
 
     private void Update()
     {
-      
-        if (Input.GetKeyDown(KeyCode.Escape) && !isProfilePanelActive && !isShopActive && !isAboutActive)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isQuitPanelActive) DesableQuitPanel();
-            else SetQuitPanel();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && isProfilePanelActive)
-        {
-            CloseProfileButton();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && isShopActive)
-        {
-            CloseShopButton();
-        }
-
-        if ((Input.GetKeyDown(KeyCode.Escape) && isAboutActive))
-        {
-            CloseAboutButton();
-        }
-
-        if(Input.GetKeyDown(KeyCode.Escape) && isForceUpdateActive)
-        {
-            UpdateNowButton();
+            if (!isQuitPanelActive) ActivePanel(quitPanel);
+            else CloseButton();
         }
 
         if (GameDataVariable.dataVariables[0] >= 1000)
@@ -103,6 +80,12 @@ public class MainMenu : MonoBehaviour
         }
 
         AbilityActiveStatusImage();
+    }
+
+
+    private void OnDestroy()
+    {
+        ConfigManager.FetchCompleted -= CheckVersionCode;
     }
 
     private void AbilityActiveStatusImage()
@@ -133,46 +116,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void AboutButton()
-    {
-        isAboutActive = true;
-        aboutPanel.SetActive(true);
-        buttonSound.Play();
-        mainPanel.SetActive(false);
-        playerObject.SetActive(false);
-        groundObject.SetActive(false);
-        quadBGObject.SetActive(false);
-    }
-
-
-    public void MoreGamesButton()
-    {
-        buttonSound.Play();
-        Application.OpenURL("https://play.google.com/store/apps/developer?id=DK_Software");
-    }
-
-    public void LinkedInButton()
-    {
-        buttonSound.Play();
-        Application.OpenURL("https://www.linkedin.com/in/dhiraj-karangale-464ab91bb");
-    }
-
-    public void YoutubeButton()
-    {
-        buttonSound.Play();
-        Application.OpenURL("https://www.youtube.com/channel/UC_Dnn-QqlnrdYpKXycyzJDA");
-    }
-
     public void StartButton()
     {
         startButtonSound.Play();
+
         if(GameDataVariable.dataVariables[5] == 2)
         {
-            FindObjectOfType<SceneFader>().FadeTo("Game 2");
+            SceneManager.LoadScene(2);
         }
         else
         {
-            FindObjectOfType<SceneFader>().FadeTo("Game");
+            SceneManager.LoadScene(1);
         }
     }
 
@@ -182,101 +136,39 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    private void SetQuitPanel()
+    public void OpenLinkButton(string link)
     {
         buttonSound.Play();
-        quitPanel.SetActive(true);
+        Application.OpenURL(link);
+    }
+
+    public void ActivePanel(GameObject panel)
+    {
+        buttonSound.Play();
         isQuitPanelActive = true;
-    }
 
-    public void DesableQuitPanel()
-    {
-        buttonSound.Play();
-        quitPanel.SetActive(false);
-        isQuitPanelActive = false;
-    }
-
-    public void ProfileButton()
-    {
-        buttonSound.Play();
-        isProfilePanelActive = true;
-        profilePanel.SetActive(true);
         mainPanel.SetActive(false);
-    }
-
-    public void CloseProfileButton()
-    {
-        buttonSound.Play();
-        isProfilePanelActive = false;
         profilePanel.SetActive(false);
-        mainPanel.SetActive(true);
-    }
-
-    public void ShopButton()
-    {
-        shopCanvas.SetActive(true);
-        buttonSound.Play();
-        isShopActive = true;
-        mainPanel.SetActive(false);
-        playerObject.SetActive(false);
-        groundObject.SetActive(false);
-        quadBGObject.SetActive(false);
-    }
-      
-    public void CloseShopButton()
-    {
-        shop.CloseSignInPanel();
-        buttonSound.Play();
-        isShopActive = false;
-        mainPanel.SetActive(true);
-        playerObject.SetActive(true);
-        groundObject.SetActive(true);
-        quadBGObject.SetActive(true);
-        shopCanvas.SetActive(false);
-    }
-
-
-    public void CloseAboutButton()
-    {
-        isAboutActive = false;
+        quitPanel.SetActive(false);
+        shopPanel.SetActive(false);
         aboutPanel.SetActive(false);
-        buttonSound.Play();
-        mainPanel.SetActive(true);
-        playerObject.SetActive(true);
-        groundObject.SetActive(true);
-        quadBGObject.SetActive(true);
-    }
-
-    public void ShowForceUpdate()
-    {
-        buttonSound.Play();
-        isForceUpdateActive = true; 
-        forceUpdatePanel.SetActive(true);
-        mainPanel.SetActive(false);
-        playerObject.SetActive(false);
-        groundObject.SetActive(false);
-        quadBGObject.SetActive(false);
-    }
-
-    public void CloseForceUpdate()
-    {
-        buttonSound.Play();
-        isForceUpdateActive = false;
         forceUpdatePanel.SetActive(false);
-        mainPanel.SetActive(true);
-        playerObject.SetActive(true);
-        groundObject.SetActive(true);
-        quadBGObject.SetActive(true);
+
+        panel.SetActive(true);
     }
 
-    public void UpdateNowButton()
+    public void CloseButton()
     {
         buttonSound.Play();
-        Application.OpenURL("https://play.google.com/store/apps/details?id=com.DKSoftware.JungleeJumperEndlessRunnerAndKiller");
-    }
+        isQuitPanelActive = false;
 
-    void OnDestroy()
-    {
-        ConfigManager.FetchCompleted -= CheckVersionCode;
+        mainPanel.SetActive(true);
+        profilePanel.SetActive(false);
+        quitPanel.SetActive(false);
+        shopPanel.SetActive(false);
+        aboutPanel.SetActive(false);
+        forceUpdatePanel.SetActive(false);
+
+        shop.CloseSignInPanel();
     }
 }

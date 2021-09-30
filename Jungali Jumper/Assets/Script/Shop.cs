@@ -95,7 +95,7 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
         if (Input.GetKey(KeyCode.Escape) && !isSigninPanelActivate)
         {
-            mainMenu.CloseShopButton();
+           // mainMenu.CloseShopButton();
         }
         if (Input.GetKey(KeyCode.Escape) && isSigninPanelActivate)
         {
