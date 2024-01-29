@@ -1,10 +1,9 @@
 using UnityEngine;
 using System;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
 using UnityEngine.Purchasing;
 
-public class Shop : MonoBehaviour, IUnityAdsListener
+public class Shop : MonoBehaviour
 {
     [SerializeField] MainMenu mainMenu;
     [SerializeField] GameObject signInPanel;
@@ -30,8 +29,8 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     private void Start()
     {
-        Advertisement.Initialize("4086101", false);
-        Advertisement.AddListener(this);
+        // Advertisement.Initialize("4086101", false);
+        // Advertisement.AddListener(this);
 
         if (GameDataVariable.dataVariables[8] == 1)
         {
@@ -566,16 +565,16 @@ public class Shop : MonoBehaviour, IUnityAdsListener
 
     public void ShowRewardedVideoAd()
     {
-        if (Advertisement.IsReady("Rewarded_Android"))
-            Advertisement.Show("Rewarded_Android");
-        else
-        {
-          //  Debug.Log("Reward Ad is not loaded");
-            msgTextObject.SetActive(true);
-            msgText.color = Color.white;
-            msgText.text = "Ad not Loaded Try Again";
-            Invoke("DesaibleMsgText", 1.5f);
-        }
+        // if (Advertisement.IsReady("Rewarded_Android"))
+        //     Advertisement.Show("Rewarded_Android");
+        // else
+        // {
+        //   //  Debug.Log("Reward Ad is not loaded");
+        //     msgTextObject.SetActive(true);
+        //     msgText.color = Color.white;
+        //     msgText.text = "Ad not Loaded Try Again";
+        //     Invoke("DesaibleMsgText", 1.5f);
+        // }
     }
 
 
@@ -595,27 +594,27 @@ public class Shop : MonoBehaviour, IUnityAdsListener
         Invoke("DesableTxt", 1.8f);
     }
 
-    public void OnUnityAdsDidStart(string placementId)
-    {
-      //  Debug.Log("Ads Started");
-    }
+    // public void OnUnityAdsDidStart(string placementId)
+    // {
+    //   //  Debug.Log("Ads Started");
+    // }
 
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
-    {
-        if ((placementId == "Rewarded_Android") && (showResult == ShowResult.Finished))
-        {
-            GameDataVariable.dataVariables[1] += 100;
-            Advertisement.RemoveListener(this);
-            PlayGamesController.Instance.SaveData();
-            if (msgTextObject != null) msgTextObject.SetActive(true);
-            if (msgText != null)
-            {
-                msgText.color = Color.green;
-                msgText.text = "You Received Reward";
-                Invoke("DesaibleMsgText", 1.8f);
-            }
-        }
-    }
+    // public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+    // {
+    //     if ((placementId == "Rewarded_Android") && (showResult == ShowResult.Finished))
+    //     {
+    //         GameDataVariable.dataVariables[1] += 100;
+    //         Advertisement.RemoveListener(this);
+    //         PlayGamesController.Instance.SaveData();
+    //         if (msgTextObject != null) msgTextObject.SetActive(true);
+    //         if (msgText != null)
+    //         {
+    //             msgText.color = Color.green;
+    //             msgText.text = "You Received Reward";
+    //             Invoke("DesaibleMsgText", 1.8f);
+    //         }
+    //     }
+    // }
 
 
 

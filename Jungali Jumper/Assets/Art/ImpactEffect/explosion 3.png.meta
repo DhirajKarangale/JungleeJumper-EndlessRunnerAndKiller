@@ -444,7 +444,7 @@ TextureImporter:
       213: -8900215669861450441
     second: explosion 3_146
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -465,6 +465,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -473,9 +474,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -503,6 +504,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -530,6 +532,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1855,6 +1869,69 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      explosion 3_0: -1036348413749657139
+      explosion 3_1: 825741535263581220
+      explosion 3_100: -280867849702555828
+      explosion 3_102: 8431554639192451628
+      explosion 3_111: 4285651852062601911
+      explosion 3_113: -7656358525593858768
+      explosion 3_115: -5396291418179004230
+      explosion 3_117: 2560085429451760685
+      explosion 3_119: 331383303423584971
+      explosion 3_121: 4261413192293586082
+      explosion 3_123: -6300236140773934448
+      explosion 3_125: -2119703618062418651
+      explosion 3_131: -5379125007785038362
+      explosion 3_132: 6334358835546449722
+      explosion 3_133: -6595370130513787990
+      explosion 3_134: 3101775435928575580
+      explosion 3_135: 2063175235864108700
+      explosion 3_136: 1630031752201215835
+      explosion 3_137: 576848835533533926
+      explosion 3_138: 3927093617669239630
+      explosion 3_139: 491429289678451805
+      explosion 3_140: 5127745924196349793
+      explosion 3_141: -8660825365662261355
+      explosion 3_142: 2400711543931504005
+      explosion 3_143: -6573623739794539800
+      explosion 3_144: 3885200138557354171
+      explosion 3_145: 711620241449023907
+      explosion 3_146: -8900215669861450441
+      explosion 3_19: -6828305140409741256
+      explosion 3_2: 2939571424828699776
+      explosion 3_21: -337087182313597709
+      explosion 3_23: -3936560643350397366
+      explosion 3_25: -1692188049903146477
+      explosion 3_27: 1846891798749663075
+      explosion 3_29: 569470831256193554
+      explosion 3_31: -7042956229483197969
+      explosion 3_33: 3086616273321192128
+      explosion 3_4: 7850220295422962621
+      explosion 3_42: -6342604679686061660
+      explosion 3_44: 7862307491292992316
+      explosion 3_46: 626513293294047498
+      explosion 3_48: 263772125194453594
+      explosion 3_50: 2723955762274451469
+      explosion 3_52: -5523636703762974845
+      explosion 3_54: 8492129284020807204
+      explosion 3_56: 5181887091497746883
+      explosion 3_6: 3033488457665925646
+      explosion 3_65: -6336079833700407017
+      explosion 3_67: -7510277005908979026
+      explosion 3_69: 2197943075000914777
+      explosion 3_71: 8640282135760104887
+      explosion 3_73: 7918157118859309774
+      explosion 3_75: -2361897311262839579
+      explosion 3_77: -5898896530475501620
+      explosion 3_79: -1023013887211040642
+      explosion 3_8: -6838148517007843206
+      explosion 3_88: -6215062297856189576
+      explosion 3_90: 5840268405152221593
+      explosion 3_92: 4430127237532317708
+      explosion 3_94: 8052393785977101281
+      explosion 3_96: 4110557200131834754
+      explosion 3_98: 1645852676224401157
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

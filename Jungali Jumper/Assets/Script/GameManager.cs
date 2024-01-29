@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
 
     private void ShowAD()
     {
-        AdManager.instance.ShowInterstitialAd();
+        // AdManager.instance.ShowInterstitialAd();
     }
   
     public void Quit()
